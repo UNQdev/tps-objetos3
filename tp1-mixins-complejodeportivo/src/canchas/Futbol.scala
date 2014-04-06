@@ -1,8 +1,7 @@
 package canchas
 
-import scala.collection.mutable.ArrayBuffer
+class Futbol(var cantidadDeJugadores : Int) extends Cancha {
 
-class Futbol extends Cancha {
-  def precio(cantidad:Int) = 40*cantidad
-  
+  def precio() : Int = 40 * this.cantidadDeJugadores
 }
+

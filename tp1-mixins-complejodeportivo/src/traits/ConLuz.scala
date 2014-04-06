@@ -1,12 +1,21 @@
-package main
+package traits
 
-import org.joda.time.Interval
+import canchas.Cancha
+import org.joda.time.DateTime
 
 trait ConLuz extends Cancha {
-  var horarioNoche = new Interval(20, 07)
-  override def reservar(horario:Interval) = if(esDeNoche(horario)){
-    /*retorna el precio de noche*/
-  } else { /*retorna el precio de dia*/ }
-  def esDeNoche(horario:Interval) : Boolean = 
-  def precio() = precio*1.20
+  
+  def esDeNoche(hora : Int) : Boolean = {
+    hora > 19
+  } 
+  
+  abstract override def precio() = 0.2 * super.precio
+  
+  override def reservar(dia : DateTime, horarioInicial : Int, horarioFinal : Int) {
+    if (esDeNoche(horarioInicial)){
+      super.nuevaReserva(dia, horarioInicial, horarioFinal)
+    }
+    
+  }
+
 }
