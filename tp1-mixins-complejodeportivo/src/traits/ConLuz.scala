@@ -6,7 +6,7 @@ import org.joda.time.DateTime
 trait ConLuz extends Cancha {
   
   def esDeNoche(hora : Int) : Boolean = {
-    hora > 19
+    hora > 18
   } 
   
   abstract override def precio() = 0.2 * super.precio
