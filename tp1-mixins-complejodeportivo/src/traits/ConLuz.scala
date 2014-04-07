@@ -1,21 +1,14 @@
 package traits
 
-import canchas.Cancha
+import canchas._
 import org.joda.time.DateTime
 
 trait ConLuz extends Cancha {
   
-  def esDeNoche(hora : Int) : Boolean = {
-    hora > 19
-  } 
+  override def calcularPrecio(reserva : Reserva) = 
+    if (esDeNoche(reserva.horaInicial)) 0.2 * super.precio else super.precio
   
-  abstract override def precio() = 0.2 * super.precio
+  override def horarioCierre = 22 
   
-  override def reservar(dia : DateTime, horarioInicial : Int, horarioFinal : Int) {
-    if (esDeNoche(horarioInicial)){
-      super.nuevaReserva(dia, horarioInicial, horarioFinal)
-    }
-    
-  }
-
+  def esDeNoche(hora : Int) : Boolean = hora > 18 
 }
