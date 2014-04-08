@@ -47,4 +47,12 @@ class ComplejoDeportivo {
     
     2.10
   }
+  
+  def canchasConReservaElDia(dia : DateTime) : ArrayBuffer[Cancha] = {
+    canchas filter (_.reservas exists (_.dia.equals(dia)))
+  }
+  
+  def reservasDelDia(dia : DateTime) : ArrayBuffer[Reserva] = {
+    this.canchasConReservaElDia(dia).map(_.reservas).fold(new ArrayBuffer[Reserva])((r, rs) => r ++ rs)
+  }
 }

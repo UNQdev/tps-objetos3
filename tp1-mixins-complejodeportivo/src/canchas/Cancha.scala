@@ -4,7 +4,7 @@ import scala.collection.mutable.ArrayBuffer
 import org.joda.time.DateTime
 import excepciones._
 
-abstract class Cancha {
+abstract class Cancha(var numero : Int) {
   var reservas : ArrayBuffer[Reserva] = new ArrayBuffer[Reserva]()
   
   def horarioCierre = 18
@@ -32,7 +32,8 @@ abstract class Cancha {
   def excedeElHorario(reserva : Reserva) : Boolean = {
     reserva.horaInicial > horarioCierre
   }
-  
+    
+  //REPORTES
   def reportarReservas() : ArrayBuffer[Reserva] = {
     
     new ArrayBuffer[Reserva]()

@@ -1,7 +1,6 @@
 package traits
 
 import canchas._
-import org.joda.time.DateTime
 
 trait ConLuz extends Cancha {
   

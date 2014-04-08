@@ -1,7 +1,7 @@
 package canchas
 
-class Futbol(var cantidadDeJugadores : Int) extends Cancha {
-
-  def precio() : Double = 40 * this.cantidadDeJugadores
+class Futbol(numero : Int, var cantidadDeJugadores : Int) extends Cancha(numero) { 
+  
+  def precio() : Double = 40.5 * this.cantidadDeJugadores
 }
 
