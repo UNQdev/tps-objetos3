@@ -13,8 +13,8 @@ abstract class Cancha(var numero : Int) {
   
   def calcularPrecio(reserva: Reserva) = precio
   
-  def reservar(dia : DateTime, horarioInicial : Int, horarioFinal : Int) = { 
-	var reservaTentativa = new Reserva(dia, horarioInicial, horarioFinal) 
+  def reservar(dia : DateTime, horarioInicial : Int) = { 
+	var reservaTentativa = new Reserva(dia, horarioInicial) 
     if (noHayDisponibilidad(reservaTentativa)) {
       throw new SinDisponibilidadException()
     }
@@ -24,15 +24,19 @@ abstract class Cancha(var numero : Int) {
 	reservaTentativa.costoDeReserva = calcularPrecio(reservaTentativa)
 	reservas += reservaTentativa
   }
-    
+  
   def noHayDisponibilidad(reserva : Reserva) : Boolean = {
 	this.reservas exists (_.esIgualA(reserva))
   }
   
   def excedeElHorario(reserva : Reserva) : Boolean = {
-    reserva.horaInicial > horarioCierre
+    reserva.hora > horarioCierre
   }
-    
+  
+  def cantidadReservas() : Int = {
+    this.reservas.length
+  }
+  
   //REPORTES
   def reportarReservas() : ArrayBuffer[Reserva] = {
     

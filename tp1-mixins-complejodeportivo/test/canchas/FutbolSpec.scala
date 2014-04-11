@@ -3,7 +3,7 @@ package canchas
 import collection.mutable.Stack
 import org.scalatest._
 
-class ExampleSpec extends FlatSpec with Matchers {
+class FutbolSpec extends FlatSpec with Matchers {
 
   "A Stack" should "pop values in last-in-first-out order" in {
     val stack = new Stack[Int]

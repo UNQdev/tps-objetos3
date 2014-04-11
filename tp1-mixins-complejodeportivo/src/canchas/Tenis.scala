@@ -1,7 +1,6 @@
 package canchas
 
-class Tenis extends Cancha {
+class Tenis(numero : Int) extends Cancha(numero) {
   
   def precio() = 150
-
 }
