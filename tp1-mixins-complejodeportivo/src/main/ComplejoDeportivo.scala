@@ -1,12 +1,9 @@
 package main
 
 import scala.collection.mutable.ArrayBuffer
-import canchas._
+import canchas.{Cancha, Reserva}
 import org.joda.time.DateTime
 import excepciones.CanchaInexistenteException
-import traits.ConLuz
-import traits.ConTecho
-import traits.ConTribuna
 
 class ComplejoDeportivo {
   var canchas : ArrayBuffer[Cancha] = new ArrayBuffer[Cancha] 
@@ -17,16 +14,13 @@ class ComplejoDeportivo {
 	  case Some(cancha) => cancha.reservar(dia, horarioInicial, horarioFinal)
 	}
   }
-  
-  /*
-   * REPORTES
-   */
+
   def canchasConReservaElDia(dia : DateTime) : ArrayBuffer[Cancha] = {
-    canchas filter (_.reservas exists (_.dia.equals(dia)))
+    canchas filter (! _.reservasDelDia(dia).isEmpty)
   }
   
   def reservasDelDia(dia : DateTime) : ArrayBuffer[Reserva] = {
-    this.canchasConReservaElDia(dia).map(_.reservas).flatten
+    canchas.map(_.reservasDelDia(dia)).flatten
   }
   
   def canchaLibreDiaYHorario(dia: DateTime, horario: Int) : Option[Cancha] = {	
@@ -42,4 +36,5 @@ class ComplejoDeportivo {
   }
 
 }
+
 

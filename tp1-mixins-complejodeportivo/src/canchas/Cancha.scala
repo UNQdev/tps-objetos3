@@ -33,12 +33,16 @@ abstract class Cancha(var numero : Int) {
     reserva.horaInicial > horarioCierre
   }
   
+  def reservasDelDia(dia : DateTime) : ArrayBuffer[Reserva] = {
+	 this.reservas filter (_.dia.equals(dia))
+  }
+  
   def cantidadReservas() : Int = {
     this.reservas.length
   }
   
   def estaLibre(dia : DateTime, horario : Int) : Boolean = {
-    this.reservas.find(! _.seSuperponeCon(new Reserva(dia, horario, 0))).fold(false){r => true}
+    this.reservas.find(_.seSuperponeCon(new Reserva(dia, horario, 0))).fold(true){r => false}
   }
   
   def totalDeFacturacion() : Double = { this.reservas.map(_.costoDeReserva).sum }

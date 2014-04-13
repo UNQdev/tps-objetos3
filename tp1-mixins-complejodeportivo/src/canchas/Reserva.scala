@@ -9,7 +9,7 @@ class Reserva(var dia : DateTime, var horaInicial : Int, var horaFinal : Int) {
   
   def seSuperponeCon(reserva : Reserva) : Boolean = 
     (reserva.dia).equals(this.dia) && 
-    (reserva.horaInicial < this.horaInicial && this.horaInicial < reserva.horaFinal || 
-      reserva.horaInicial < this.horaFinal && this.horaFinal < reserva.horaFinal)
+    (this.horaInicial <= reserva.horaInicial && reserva.horaInicial < this.horaFinal || 
+      this.horaInicial < reserva.horaFinal && reserva.horaFinal < this.horaFinal)
   
 }
