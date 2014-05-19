@@ -6,12 +6,10 @@ public aspect ContadorLlamadasAspect {
 	
 	int llamadas = 0;
 	
-	pointcut cantLlamadas(Object target, Object value) : 
-		execution(* (@Monitored *).*(*))
-		&& target(target)
-		&& args(value);
+	pointcut cantLlamadas() : 
+		execution(@Monitored * *(..));
 	
-	after(Object target, Object value) : cantLlamadas(target, value) {
+	after() : cantLlamadas() {
 		this.llamadas =+ 1;
 	}
 
