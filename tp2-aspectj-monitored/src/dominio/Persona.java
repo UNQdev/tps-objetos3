@@ -5,6 +5,7 @@ import annotations.Monitored;
 @Monitored
 public class Persona {
 
+	@Monitored
 	String nombre;
 	
 	public Persona(){};
