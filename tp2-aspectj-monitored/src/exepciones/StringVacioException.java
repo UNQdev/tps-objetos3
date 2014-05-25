@@ -1,4 +1,4 @@
-package execpciones;
+package exepciones;
 
 public class StringVacioException extends Exception {
 

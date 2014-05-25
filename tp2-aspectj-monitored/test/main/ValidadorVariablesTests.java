@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import validadores.ValidadorStringNoVacio;
 import dominio.Persona;
-import execpciones.StringVacioException;
+import exepciones.StringVacioException;
 import aspectos.ValidadorVariablesAspect;
 
 public class ValidadorVariablesTests {

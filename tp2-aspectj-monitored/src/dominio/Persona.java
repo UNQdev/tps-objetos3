@@ -1,11 +1,10 @@
 package dominio;
 
-import annotations.Monitored;
+import annotations.*;
 
 @Monitored
 public class Persona {
 
-	@Monitored
 	String nombre;
 	
 	public Persona(){};
@@ -17,7 +16,7 @@ public class Persona {
 	@Monitored
 	public String getNombre() { return nombre; }
 	@Monitored
-	public void setNombre(String nombre) { this.nombre = nombre; };
+	public void setNombre(String nombre) { this.nombre = nombre; }
 	
 }
  

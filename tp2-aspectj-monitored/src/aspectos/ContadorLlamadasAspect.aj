@@ -2,6 +2,7 @@ package aspectos;
 
 import java.util.HashMap;
 
+import exepciones.*;
 import annotations.*;
 
 public aspect ContadorLlamadasAspect pertarget(execution((@Monitored *).new(..))) {

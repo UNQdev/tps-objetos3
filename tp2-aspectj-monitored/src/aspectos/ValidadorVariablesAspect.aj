@@ -1,29 +1,35 @@
 package aspectos;
 
 import validadores.ValidadorStringNoVacio;
-import dominio.*;
-import execpciones.StringVacioException;
+import annotations.*;
+import exepciones.*;
 
 
 public aspect ValidadorVariablesAspect {
 
-	ValidadorStringNoVacio validador; 
+	Object objeto;
+	String propiedad;
+	ValidadorStringNoVacio validador;
 	
-	pointcut setearVariable(Object target, String newValue) : 
-		set(@Monitored * *) //Segun la documentacion, esta es la signature para advicear 
-							//una property con la annotation @Monitored
-		&& handler(StringVacioException) 
-		&& target(target)
+	pointcut setearVariable(String newValue) : 
+		set(String dominio..*)
 		&& args(newValue)
 		&& !withincode(*.new(..)); //Excluyo al constructor del filtro
 	
-	before(Object target, String newValue) throws StringVacioException : setearVariable(target, newValue) {
-		this.validador.validar(newValue); 
+	before(String newValue) throws StringVacioException : setearVariable(newValue) {
+		String propiedadActual = thisJoinPoint.getSignature().getName();
+		if(propiedadActual.equals(this.propiedad)){		
+			if (this.validador.validar(newValue)){
+				throw new StringVacioException();
+			}
+		}
 	}
 	
-	public void agregarValidador(Object target, String newValue, 
+	public void agregarValidador(Object objetoObjetivo, String nombrePropiedad, 
 			ValidadorStringNoVacio validadorVariable) {
 		this.validador = validadorVariable;
+		this.objeto = objetoObjetivo;
+		this.propiedad = nombrePropiedad;
 	}
 
 }
