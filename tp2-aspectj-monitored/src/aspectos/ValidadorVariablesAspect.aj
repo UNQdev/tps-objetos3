@@ -1,11 +1,7 @@
 package aspectos;
 
 import validadores.ValidadorVariables;
-import validadores.ValidadorStringNoVacio;
-import dominio.Persona;
-import execpciones.ValorInvalidoException;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+import dominio.*;
 
 
 public aspect ValidadorVariablesAspect {
@@ -21,7 +17,6 @@ public aspect ValidadorVariablesAspect {
 	
 	before(Object target, Object newValue) : setearVariable(target, newValue) {
 		this.validador.validar(newValue);
-		proceed(target, newValue); //TODO: QUE CARAJO!?
 	}
 	
 	public void agregarValidador(Object target, String newValue, 
