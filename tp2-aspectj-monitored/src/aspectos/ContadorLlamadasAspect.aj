@@ -12,15 +12,19 @@ public aspect ContadorLlamadasAspect pertarget(execution((@Monitored *).new(..))
 	
 	after() : llamadasAMetodo() {
 		String metodoActual = thisJoinPoint.getSignature().getName();
-		if(!this.metodosCapturados.containsKey(metodoActual)) {
+		if(!esMetodoMonitoreado(metodoActual)) {
 			metodosCapturados.put(metodoActual, 1);
 		} else {
 			this.metodosCapturados.put(metodoActual, this.metodosCapturados.get(metodoActual)+1);
 		}
 	}
+
+	private boolean esMetodoMonitoreado(String metodoActual) {
+		return this.metodosCapturados.containsKey(metodoActual);
+	}
 	
 	public int cantLlamadas(String nombreMetodo) {
-		if(this.metodosCapturados.containsKey(nombreMetodo)) {
+		if(esMetodoMonitoreado(nombreMetodo)) {
 			return this.metodosCapturados.get(nombreMetodo);
 		} else { return 0; }
 	}
