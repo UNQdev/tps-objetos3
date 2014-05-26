@@ -1,9 +1,7 @@
-package aspectos;
+package src.aspectos;
 
 import java.util.HashMap;
-
-import exepciones.*;
-import annotations.*;
+import src.annotations.*;
 
 public aspect ContadorLlamadasAspect pertarget(execution((@Monitored *).new(..))) {
 	
@@ -20,7 +18,6 @@ public aspect ContadorLlamadasAspect pertarget(execution((@Monitored *).new(..))
 			this.metodosCapturados.put(metodoActual, this.metodosCapturados.get(metodoActual)+1);
 		}
 	}
-	
 	
 	public int cantLlamadas(String nombreMetodo) {
 		if(this.metodosCapturados.containsKey(nombreMetodo)) {

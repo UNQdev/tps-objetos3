@@ -1,5 +1,7 @@
-package exepciones;
+package src.exepciones;
 
-public class ValorInvalidoException extends Exception {
+public class ValorInvalidoException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
 
 }

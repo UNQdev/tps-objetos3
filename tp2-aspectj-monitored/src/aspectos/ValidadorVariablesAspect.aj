@@ -1,35 +1,35 @@
-package aspectos;
+package src.aspectos;
 
-import validadores.ValidadorStringNoVacio;
-import annotations.*;
-import exepciones.*;
+import java.util.HashMap;
+import java.util.Map;
+import src.validadores.Validador;
+import src.annotations.*;
 
-
-public aspect ValidadorVariablesAspect {
-
-	Object objeto;
-	String propiedad;
-	ValidadorStringNoVacio validador;
+public aspect ValidadorVariablesAspect pertarget(execution((@Monitored *).new(..))){
+	
+	@SuppressWarnings("rawtypes")
+	private Map<String, Validador> validaciones = new HashMap<String, Validador>();
 	
 	pointcut setearVariable(String newValue) : 
-		set(String dominio..*)
+		set(* src.dominio..*)
 		&& args(newValue)
-		&& !withincode(*.new(..)); //Excluyo al constructor del filtro
+		&& !withincode(*.new(..));
 	
-	before(String newValue) throws StringVacioException : setearVariable(newValue) {
-		String propiedadActual = thisJoinPoint.getSignature().getName();
-		if(propiedadActual.equals(this.propiedad)){		
-			if (this.validador.validar(newValue)){
-				throw new StringVacioException();
-			}
-		}
+	before(Object newValue) : setearVariable(newValue) {
+		String propiedad = thisJoinPoint.getSignature().getName();
+		this.buscarValidadorYValidar(propiedad, newValue);
+    }
+	
+	@SuppressWarnings("unchecked")
+	private void buscarValidadorYValidar(String propiedad, Object newValue) {
+		if(this.validaciones.containsKey(propiedad)){
+			this.validaciones.get(propiedad).validar(newValue);
+		}		
 	}
-	
-	public void agregarValidador(Object objetoObjetivo, String nombrePropiedad, 
-			ValidadorStringNoVacio validadorVariable) {
-		this.validador = validadorVariable;
-		this.objeto = objetoObjetivo;
-		this.propiedad = nombrePropiedad;
+
+	@SuppressWarnings("rawtypes")
+	public void agregarValidador(String nombrePropiedad, Validador validadorVariable) {
+		this.validaciones.put(nombrePropiedad, validadorVariable);
 	}
 
 }

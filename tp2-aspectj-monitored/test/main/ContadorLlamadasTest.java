@@ -1,8 +1,8 @@
-package main;
+package test.main;
 
 import junit.framework.TestCase;
-import aspectos.ContadorLlamadasAspect;
-import dominio.Persona;
+import src.aspectos.ContadorLlamadasAspect;
+import src.dominio.Persona;
 
 import org.junit.*;
 

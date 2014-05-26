@@ -1,6 +1,6 @@
-package dominio;
+package src.dominio;
 
-import annotations.*;
+import src.annotations.*;
 
 @Monitored
 public class Persona {
