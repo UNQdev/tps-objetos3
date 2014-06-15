@@ -14,7 +14,7 @@ public class Agenda {
 	
 	public void tick(int horaActual, AgendaListener listener) {
 		for(Evento event : this.eventos){
-			if(event.getHora() == horaActual){
+			if(event.getHora() == horaActual+1){
 				listener.sucedio(event);
 			}
 		}

@@ -15,6 +15,14 @@ public class Evento {
 	}
 	
 	
+	public void notificarUsuario(Notificador notificador) {
+		for(Recordatorio r : this.getRecordatorios()){
+			r.notificar(notificador, this.getNombre());
+		}
+	}
+	
+	
+	
 	public float getHora() {
 		return hora;
 	}
@@ -38,5 +46,6 @@ public class Evento {
 	public void setRecordatorios(ArrayList<Recordatorio> recordatorios) {
 		this.recordatorios = recordatorios;
 	}
+
 
 }
