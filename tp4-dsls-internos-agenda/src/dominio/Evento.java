@@ -17,7 +17,7 @@ public class Evento {
 	
 	public void notificarUsuario(Notificador notificador) {
 		for(Recordatorio r : this.getRecordatorios()){
-			r.notificar(notificador, this.getNombre());
+			r.notificar(notificador, this.getHora(), this.getNombre());
 		}
 	}
 	

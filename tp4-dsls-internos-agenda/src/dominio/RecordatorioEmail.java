@@ -3,9 +3,9 @@ package dominio;
 public class RecordatorioEmail extends Recordatorio {
 
 	@Override
-	public void notificar(Notificador notificador, String nombre) {
-		this.setMensaje(nombre);
-		notificador.notificarViaMail(this);		
+	public void notificar(Notificador notificador, float horaEvento, String nombre) {
+		this.hidratar(horaEvento, nombre);
+		notificador.notificarViaMail(this);
 	}
 
 }

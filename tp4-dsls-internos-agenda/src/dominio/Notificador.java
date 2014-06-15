@@ -10,6 +10,8 @@ public class Notificador implements AgendaListener {
 		evento.notificarUsuario(this);
 	}
 
+	
+	
 	public void notificarViaMail(Recordatorio recordatorioEmail) {
 		this.getLogRecordatorios().add(recordatorioEmail);
 	}
@@ -23,6 +25,8 @@ public class Notificador implements AgendaListener {
 	}
 
 
+	
+	
 	public ArrayList<Recordatorio> getLogRecordatorios() {
 		return logRecordatorios;
 	}

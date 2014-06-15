@@ -2,7 +2,7 @@ package dominio;
 
 import java.util.ArrayList;
 
-import exepciones.NoHayEventoException;
+import exepciones.NoExisteEventoException;
 import exepciones.YaHayEventoAEsaHoraException;
 
 public class Agenda {
@@ -31,17 +31,17 @@ public class Agenda {
 	public void cancelarEvento(float hora, String nombre) {
 		try{
 			this.eventos.remove(this.obtenerEvento(hora, nombre));
-		} catch (NoHayEventoException e) {}
+		} catch (NoExisteEventoException e) {}
 	}
 	
-	private Evento obtenerEvento(float hora, String nombre) throws NoHayEventoException {
+	private Evento obtenerEvento(float hora, String nombre) throws NoExisteEventoException {
 		Evento evento = null;
 		for(Evento event : this.eventos){
 			if(event.getHora() == hora 
 					&& event.getNombre().equals(nombre)) {
 				evento = event;
 			} else {
-				throw new NoHayEventoException(hora, nombre);
+				throw new NoExisteEventoException(hora, nombre);
 			}
 		}
 		return evento;
