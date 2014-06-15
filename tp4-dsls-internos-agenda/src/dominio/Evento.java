@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Evento {
 	
-	float hora;
+	double hora;
 	String nombre;
 	ArrayList<Recordatorio> recordatorios;
 	
 
-	public Evento(float hora, String nombreEvento) {
+	public Evento(double hora, String nombreEvento) {
 		this.setHora(hora);
 		this.setNombre(nombreEvento);
 	}
@@ -17,17 +17,16 @@ public class Evento {
 	
 	public void notificarUsuario(Notificador notificador) {
 		for(Recordatorio r : this.getRecordatorios()){
-			r.notificar(notificador, this.getHora(), this.getNombre());
+			r.notificar(notificador);
 		}
 	}
+
 	
-	
-	
-	public float getHora() {
+	public double getHora() {
 		return hora;
 	}
 
-	public void setHora(float hora) {
+	public void setHora(double hora) {
 		this.hora = hora;
 	}
 
@@ -39,6 +38,11 @@ public class Evento {
 		this.nombre = nombre;
 	}
 
+	
+	public void agregarRecordatorio(Recordatorio recordatorio) {
+		this.recordatorios.add(recordatorio);
+	}
+	
 	public ArrayList<Recordatorio> getRecordatorios() {
 		return this.recordatorios;
 	}

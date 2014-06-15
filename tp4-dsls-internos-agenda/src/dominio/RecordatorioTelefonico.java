@@ -2,10 +2,13 @@ package dominio;
 
 public class RecordatorioTelefonico extends Recordatorio {
 
-	@Override
-	public void notificar(Notificador notificador, float horaEvento, String nombre) {
+	public RecordatorioTelefonico(double horaEvento, String nombre) {
 		this.hidratar(horaEvento, nombre);
-		notificador.notificarViaLlamada(this);	
+	}
+	
+	@Override
+	public void notificar(Notificador notificador) {
+		notificador.notificarViaLlamada(this);		
 	}
 
 }

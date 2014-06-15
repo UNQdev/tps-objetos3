@@ -9,7 +9,21 @@ public class Agenda {
 
 	ArrayList<Evento> eventos;
 	
-	public Agenda(){}	
+	public ArrayList<Evento> getEventos() {
+		return eventos;
+	}
+
+
+	public void setEventos(ArrayList<Evento> eventos) {
+		this.eventos = eventos;
+	}
+
+
+	public Agenda(ArrayList<Evento> eventos) {
+		for(Evento event : eventos){
+			this.eventos.add(event);
+		}
+	}	
 	
 	
 	public void tick(int horaActual, AgendaListener listener) {

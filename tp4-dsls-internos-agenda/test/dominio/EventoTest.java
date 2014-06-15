@@ -1,14 +1,47 @@
 package dominio;
 
-import static org.junit.Assert.*;
+import org.junit.*;
+import static org.mockito.Mockito.*;
 
-import org.junit.Test;
+import java.util.ArrayList;
+
 
 public class EventoTest {
 
+	Notificador mockedNotificador;
+	
+	Recordatorio mockedRecordT;
+	Recordatorio mockedRecordS;
+	Recordatorio mockedRecordM;
+	ArrayList<Recordatorio> recordatorios;
+	
+	Evento evento;
+	
+	
+	@Before
+	public void setUp(){
+		mockedNotificador = mock(Notificador.class);
+		
+		mockedRecordT = mock(RecordatorioTelefonico.class);
+		mockedRecordS = mock(RecordatorioSMS.class);
+		mockedRecordM = mock(RecordatorioEmail.class);
+		
+		recordatorios = new ArrayList<Recordatorio>();
+		recordatorios.add(mockedRecordM);
+		recordatorios.add(mockedRecordS);
+		recordatorios.add(mockedRecordT);
+		
+		evento = new Evento(19.00, "Arranca el partido!");
+		evento.setRecordatorios(recordatorios);
+	}
+	
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testNotificarUsuario() {
+		evento.notificarUsuario(mockedNotificador);
+		verify(mockedRecordM, times(1)).notificar(mockedNotificador);
+		verify(mockedRecordS, times(1)).notificar(mockedNotificador);
+		verify(mockedRecordT, times(1)).notificar(mockedNotificador);
 	}
 
 }
