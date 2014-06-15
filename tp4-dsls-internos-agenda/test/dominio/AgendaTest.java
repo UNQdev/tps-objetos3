@@ -6,8 +6,9 @@ import org.junit.Test;
 
 public class AgendaTest {
 
-	
-	Agenda agenda = new Agenda();	
+//	ArrayList<Evento> eventos = 
+//	
+//	Agenda agenda = new Agenda(eventos);
 	
 	
 	@Test
