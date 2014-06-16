@@ -19,9 +19,9 @@ public class RecordatorioTest {
 		mockedNotificador = mock(Notificador.class);
 		mockedEvento = mock(Evento.class);
 		
-		recordMail = new RecordatorioEmail(19.00, "Arranca el partido!");
-		recordSMS = new RecordatorioSMS(19.00, "Arranca el partido!");
-		recordTelefonico = new RecordatorioTelefonico(19.00, "Arranca el partido!");
+		recordMail = new RecordatorioEmail("Arranca el partido!");
+		recordSMS = new RecordatorioSMS("Arranca el partido!");
+		recordTelefonico = new RecordatorioTelefonico("Arranca el partido!");
 	}
 	
 	

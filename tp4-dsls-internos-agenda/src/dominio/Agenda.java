@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import exepciones.NoExisteEventoException;
-import exepciones.YaHayEventoAEsaHoraException;
+import exepciones.YaExisteEventoException;
 
 public class Agenda {
 
-public List<Evento> eventos;
+	public List<Evento> eventos;
 	
 	public Agenda(){
 		this.eventos = new ArrayList<Evento>();
@@ -27,29 +27,33 @@ public List<Evento> eventos;
 	}
 	
 	//API Eventos con horario
-	public void agregarEvento(Horario horario, String nombre) throws YaHayEventoAEsaHoraException {
+	public void agregarEvento(Horario horario, String nombre) throws YaExisteEventoException {
 		if(this.noExisteEvento(horario, nombre)) {
 			this.eventos.add(new Evento(horario, nombre));
+		} else {
+			throw new YaExisteEventoException();
 		}
 	}
 	
-	public void cancelarEvento(Horario hora, String nombre) {
-		try{
+	public void cancelarEvento(Horario hora, String nombre) throws NoExisteEventoException {
+		if(this.noExisteEvento(hora, nombre)){
+			throw new NoExisteEventoException();
+		} else {
 			this.eventos.remove(this.obtenerEvento(hora, nombre));
-		} catch (NoExisteEventoException e) {}
+		}
 	}
 	
-	private Evento obtenerEvento(Horario horario, String nombre) throws NoExisteEventoException {
+	public Evento obtenerEvento(Horario horario, String nombre) throws NoExisteEventoException {
 		Evento evento = null;
 		for(Evento e : this.eventos){
 			if(e.getHorario().equals(horario) 
 					&& e.getNombre().equals(nombre)) {
 				evento = e;
-			} else {
-				throw new NoExisteEventoException(horario, nombre);
 			}
 		}
-		return evento;
+		if(evento == null){
+			throw new NoExisteEventoException();
+		} else { return evento; }
 	}
 	
 	private boolean noExisteEvento(Horario hora, String nombre) {
@@ -60,4 +64,9 @@ public List<Evento> eventos;
 		return existe;
 	}
 
+	
+	
+	
+	
+	
 }

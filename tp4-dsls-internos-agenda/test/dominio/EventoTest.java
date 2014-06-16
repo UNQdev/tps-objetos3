@@ -31,7 +31,7 @@ public class EventoTest {
 		recordatorios.add(mockedRecordS);
 		recordatorios.add(mockedRecordT);
 		
-		evento = new Evento(19.00, "Arranca el partido!");
+		evento = new Evento(new Horario(19, 0), "Arranca el partido!");
 		evento.setRecordatorios(recordatorios);
 	}
 	
