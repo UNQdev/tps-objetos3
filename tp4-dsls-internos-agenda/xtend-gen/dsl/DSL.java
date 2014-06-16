@@ -5,6 +5,7 @@ import dominio.Evento;
 import dominio.Horario;
 import dominio.Notificador;
 import dominio.Recordatorio;
+import dominio.RecordatorioBloque;
 import dominio.RecordatorioEmail;
 import dominio.RecordatorioSMS;
 import dominio.RecordatorioTelefonico;
@@ -12,9 +13,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
@@ -64,6 +67,10 @@ public class DSL {
   
   public RecordatorioTelefonico viaTelefonico(final String asuntoRecordatorio) {
     return new RecordatorioTelefonico(asuntoRecordatorio);
+  }
+  
+  public RecordatorioBloque ejecutar(final String asunto, final Procedure0 bloque) {
+    return new RecordatorioBloque(asunto, bloque);
   }
   
   public List<Horario> operator_upTo(final Horario hAnterior, final Horario hPosterior) {
@@ -143,6 +150,14 @@ public class DSL {
         };
         RecordatorioEmail _doubleArrow_1 = ObjectExtensions.<RecordatorioEmail>operator_doubleArrow(_viaEmail, _function_1);
         DSL.this.operator_greaterThan(_recordar_1, _doubleArrow_1);
+        Evento _recordar_2 = DSL.this.recordar(it);
+        final Procedure0 _function_2 = new Procedure0() {
+          public void apply() {
+            InputOutput.<String>println("Hola");
+          }
+        };
+        RecordatorioBloque _ejecutar = DSL.this.ejecutar("BLe", _function_2);
+        DSL.this.operator_greaterThan(_recordar_2, _ejecutar);
       }
     };
     Evento _doubleArrow_2 = ObjectExtensions.<Evento>operator_doubleArrow(_minus_3, _function_2);

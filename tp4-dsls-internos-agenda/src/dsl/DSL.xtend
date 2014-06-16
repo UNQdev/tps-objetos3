@@ -10,6 +10,7 @@ import dominio.RecordatorioSMS
 import dominio.Horario
 import java.util.List
 import java.util.ArrayList
+import dominio.RecordatorioBloque
 
 class DSL {
 	
@@ -58,6 +59,10 @@ class DSL {
 	def RecordatorioTelefonico viaTelefonico(String asuntoRecordatorio){
 		new RecordatorioTelefonico(asuntoRecordatorio)
 	}
+
+	def RecordatorioBloque ejecutar(String asunto, () => void bloque){
+		new RecordatorioBloque(asunto, bloque)
+	}
 	
 	def List<Horario> operator_upTo(Horario hAnterior, Horario hPosterior) {
 		var listaDeHorarios = new ArrayList<Horario>()
@@ -92,6 +97,7 @@ class DSL {
 					remitente = "comida@mail.com"
 					asunto = "Para no olvidarme..."
 				]
+				recordar > "BLe".ejecutar[| println("Hola")]
 			]
 		)
 		
@@ -103,3 +109,4 @@ class DSL {
 		new DSL().run();
 	}
 }
+
