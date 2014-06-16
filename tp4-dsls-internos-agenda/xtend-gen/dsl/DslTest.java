@@ -64,8 +64,8 @@ public class DslTest {
       }
     };
     Evento _doubleArrow = ObjectExtensions.<Evento>operator_doubleArrow(_minus_1, _function);
-    Pair<Integer, Integer> _modulo = this.dsl.operator_modulo(19, 35);
-    Horario _h_2 = this.dsl.h(_modulo);
+    Pair<Integer, Integer> _elvis = this.dsl.operator_elvis(19, 35);
+    Horario _h_2 = this.dsl.h(_elvis);
     Evento _minus_2 = this.dsl.operator_minus(_h_2, "Llegada a casa");
     final Procedure1<Evento> _function_1 = new Procedure1<Evento>() {
       public void apply(final Evento it) {
@@ -75,8 +75,8 @@ public class DslTest {
       }
     };
     Evento _doubleArrow_1 = ObjectExtensions.<Evento>operator_doubleArrow(_minus_2, _function_1);
-    Pair<Integer, Integer> _modulo_1 = this.dsl.operator_modulo(21, 40);
-    Horario _h_3 = this.dsl.h(_modulo_1);
+    Pair<Integer, Integer> _elvis_1 = this.dsl.operator_elvis(21, 40);
+    Horario _h_3 = this.dsl.h(_elvis_1);
     Evento _minus_3 = this.dsl.operator_minus(_h_3, "Cena");
     final Procedure1<Evento> _function_2 = new Procedure1<Evento>() {
       public void apply(final Evento it) {
@@ -133,10 +133,10 @@ public class DslTest {
   @Test
   public void agendaTicks() {
     final Notificador listenerDeTest2 = this.dsl.crearListener();
-    Pair<Integer, Integer> _modulo = this.dsl.operator_modulo(19, 25);
-    Horario _h = this.dsl.h(_modulo);
-    Pair<Integer, Integer> _modulo_1 = this.dsl.operator_modulo(21, 50);
-    Horario _h_1 = this.dsl.h(_modulo_1);
+    Pair<Integer, Integer> _elvis = this.dsl.operator_elvis(19, 25);
+    Horario _h = this.dsl.h(_elvis);
+    Pair<Integer, Integer> _elvis_1 = this.dsl.operator_elvis(21, 50);
+    Horario _h_1 = this.dsl.h(_elvis_1);
     List<Horario> _upTo = this.dsl.operator_upTo(_h, _h_1);
     final Procedure1<Horario> _function = new Procedure1<Horario>() {
       public void apply(final Horario h) {
@@ -151,8 +151,8 @@ public class DslTest {
     int _size = _logRecordatorios.size();
     Assert.assertEquals(_size, 3);
     Horario _h_2 = this.dsl.h(Integer.valueOf(18));
-    Pair<Integer, Integer> _modulo_2 = this.dsl.operator_modulo(20, 05);
-    Horario _h_3 = this.dsl.h(_modulo_2);
+    Pair<Integer, Integer> _elvis_2 = this.dsl.operator_elvis(20, 05);
+    Horario _h_3 = this.dsl.h(_elvis_2);
     List<Horario> _upTo_1 = this.dsl.operator_upTo(_h_2, _h_3);
     final Procedure1<Horario> _function_1 = new Procedure1<Horario>() {
       public void apply(final Horario h) {

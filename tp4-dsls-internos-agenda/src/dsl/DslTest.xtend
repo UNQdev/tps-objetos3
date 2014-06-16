@@ -20,10 +20,10 @@ class DslTest {
 		        	remitente = "profesor@mail.com"
 		        ]
 			],
-		    (19%35).h - "Llegada a casa" => [
+		    (19?:35).h - "Llegada a casa" => [
 				recordar > "Enviar enunciado de TP".viaSMS
 			],
-		    (21%40).h - "Cena" => [
+		    (21?:40).h - "Cena" => [
 				recordar > "Lavarse Las Manos".viaTelefonico => [
 					numeroDestino = "15-265-3598"
 				]
@@ -46,10 +46,10 @@ class DslTest {
 	@Test def void agendaTicks(){
 		val listenerDeTest2 = crearListener()
 		
-		((19%25).h .. (21%50).h).forEach[ h | agenda.tick(h, listenerDeTest)]
+		((19?:25).h .. (21?:50).h).forEach[ h | agenda.tick(h, listenerDeTest)]
 		assertEquals(listenerDeTest.logRecordatorios.size, 3)
 		
-		(18.h .. (20%05).h).forEach[ h | agenda.tick(h, listenerDeTest2)]
+		(18.h .. (20?:05).h).forEach[ h | agenda.tick(h, listenerDeTest2)]
 		assertEquals(listenerDeTest2.logRecordatorios.size, 1)
 	}
 }

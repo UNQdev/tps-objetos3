@@ -29,6 +29,10 @@ class DSL {
 		evento;
 	}
 	
+	def void operator_greaterThan(Evento evento, Recordatorio recordatorio){
+		evento.agregarRecordatorio(recordatorio);
+	}
+	
 	// ------- Bonus 3) ----------------------
 	def dispatch Horario h(int hora){
 		new Horario(hora)
@@ -42,10 +46,6 @@ class DSL {
 		horas -> minutos
 	}
 	
-	def void operator_greaterThan(Evento evento, Recordatorio recordatorio){
-		evento.agregarRecordatorio(recordatorio);
-	}
-
 	// ------- Extension methods -------------
 	def RecordatorioEmail viaEmail(String asuntoRecordatorio){
 		new RecordatorioEmail(asuntoRecordatorio)

@@ -36,6 +36,10 @@ public class DSL {
     return evento;
   }
   
+  public void operator_greaterThan(final Evento evento, final Recordatorio recordatorio) {
+    evento.agregarRecordatorio(recordatorio);
+  }
+  
   protected Horario _h(final int hora) {
     return new Horario(hora);
   }
@@ -48,10 +52,6 @@ public class DSL {
   
   public Pair<Integer, Integer> operator_elvis(final int horas, final int minutos) {
     return Pair.<Integer, Integer>of(Integer.valueOf(horas), Integer.valueOf(minutos));
-  }
-  
-  public void operator_greaterThan(final Evento evento, final Recordatorio recordatorio) {
-    evento.agregarRecordatorio(recordatorio);
   }
   
   public RecordatorioEmail viaEmail(final String asuntoRecordatorio) {
