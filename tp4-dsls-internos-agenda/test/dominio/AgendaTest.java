@@ -39,11 +39,11 @@ public class AgendaTest {
 	public void testTicks() {
 		when(mockedHorario.getHoras()).thenReturn(18, 19);
 		when(mockedHorario.getMinutos()).thenReturn(55, 00);
+		when(mockedHorario.esPosteriorA(mockedHorario)).thenReturn(true, false);
 		when(mockedHorario.minutosDeDiferenciaCon(mockedHorario)).thenReturn(5, 0);
 		when(mockedEvento.getHorario()).thenReturn(mockedHorario);
 		
 		agenda.eventos.add(mockedEvento);
-		agenda.tick(mockedHorario, mockedNotificador);
 		agenda.tick(mockedHorario, mockedNotificador);
 		
 		assertEquals(agenda.eventos.size(), 2);
