@@ -1,17 +1,20 @@
 package dsl
 
+import org.eclipse.xtext.xbase.lib.Functions
 import dominio.Evento
 import dominio.Agenda
-import dominio.AgendaListener
 import dominio.Notificador
 import dominio.RecordatorioEmail
 import dominio.Recordatorio
 import dominio.RecordatorioTelefonico
 import dominio.RecordatorioSMS
+import dominio.Horario
+import java.util.List
+import java.util.ArrayList
 
 class DSL {
 	
-	def AgendaListener crearListener(){
+	def Notificador crearListener(){
 		new Notificador()
 	}
 	
@@ -19,14 +22,32 @@ class DSL {
 		new Agenda(eventos.toList)
 	}
 	
-	def Evento operator_minus(int horario, String nombreEvento){
+	def Evento operator_minus(Horario horario, String nombreEvento){
 		new Evento(horario, nombreEvento)
 	}
 	
-	def void recordar(Evento evento, Recordatorio recordatorio){
+	def Evento recordar(Evento evento){
+		evento;
+	}
+	
+	// ------- Bonus 3) ----------------------
+	
+	def dispatch Horario h(int hora){
+		new Horario(hora)
+	}
+	
+	def dispatch Horario h(Pair<Integer, Integer> horasYminutos){
+		new Horario(horasYminutos.key, horasYminutos.value)
+	}
+	
+	def Pair<Integer, Integer> operator_modulo(int horas, int minutos){
+		horas -> minutos
+	}
+	
+	def void operator_greaterThan(Evento evento, Recordatorio recordatorio){
 		evento.agregarRecordatorio(recordatorio);
 	}
-		
+
 	// ------- Extension methods -------------
 	
 	def RecordatorioEmail viaEmail(String asuntoRecordatorio){
@@ -41,22 +62,39 @@ class DSL {
 		new RecordatorioTelefonico(asuntoRecordatorio)
 	}
 	
+	def List<Horario> operator_upTo(Horario hAnterior, Horario hPosterior) {
+		var listaDeHorarios = new ArrayList<Horario>()
+		var ultimoHorario = hAnterior
+		while(! ultimoHorario.esPosteriorA(hPosterior)){
+			listaDeHorarios.add(ultimoHorario)
+			ultimoHorario = Horario.masCincoMinutos(ultimoHorario);
+		}
+		listaDeHorarios
+	}
+	
 	def run() {
 		val agenda = agenda(
-			14 - "Inicia Objetos 3",
-			    18 - "Fin objetos3" => [
-			        recordar("Escribir Bitacora".viaEmail)
-				],
-			    19 - "Llegada a casa" => [
-					recordar("Enviar enunciado de TP".viaSMS)
-				],
-			    21 - "Cena" => [
-					recordar("Lavarse Las Manos".viaTelefonico)
-					recordar("Poner la mesa".viaEmail)
+			14.h - "Inicia Objetos 3",
+		    18.h - "Fin objetos3" => [
+		        recordar > "Escribir Bitacora".viaEmail => [
+		        	remitente = "profesor@mail.com"
+		        ]
+			],
+		    (19%35).h - "Llegada a casa" => [
+				recordar > "Enviar enunciado de TP".viaSMS
+			],
+		    (21%40).h - "Cena" => [
+				recordar > "Lavarse Las Manos".viaTelefonico => [
+					numeroDestino = "15-265-3598"
 				]
-			)
+				recordar > "Poner la mesa".viaEmail => [
+					remitente = "comida@mail.com"
+					asunto = "Para no olvidarme..."
+				]
+			]
+		)
 		val listenerDeTest = crearListener()
-		(13 .. 19).forEach[ int h | agenda.tick(h, listenerDeTest)]
+		((19%25).h .. (21%50).h).forEach[ h | agenda.tick(h, listenerDeTest)]
 	}
 
 	def static void main(String[] args) {
