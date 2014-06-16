@@ -39,13 +39,14 @@ public class AgendaTest {
 	public void testTicks() {
 		when(mockedHorario.getHoras()).thenReturn(18, 19);
 		when(mockedHorario.getMinutos()).thenReturn(55, 00);
-		when(mockedEvento.getHorario().minutosDeDiferenciaCon(mockedHorario)).thenReturn(5, 0);
+		when(mockedHorario.minutosDeDiferenciaCon(mockedHorario)).thenReturn(5, 0);
+		when(mockedEvento.getHorario()).thenReturn(mockedHorario);
 		
 		agenda.eventos.add(mockedEvento);
 		agenda.tick(mockedHorario, mockedNotificador);
 		agenda.tick(mockedHorario, mockedNotificador);
 		
-		assertTrue(agenda.eventos.size() == 2);
+		assertEquals(agenda.eventos.size(), 2);
 		verify(mockedNotificador, times(1)).sucedio(mockedEvento);
 	}
 
@@ -62,7 +63,7 @@ public class AgendaTest {
 		} catch (YaExisteEventoException e) {
 			
 		} finally {
-			assertTrue(agenda.eventos.size() == 2);
+			assertEquals(agenda.eventos.size(), 2);
 		}
 	}
 	
@@ -76,7 +77,7 @@ public class AgendaTest {
 		try {
 			agenda.agregarEvento(mockedHorario, "Arranca el partido!");
 		} catch (YaExisteEventoException e) {
-			assertTrue(agenda.eventos.size() == 1);
+			assertEquals(agenda.eventos.size(), 1);
 		} finally {
 		}
 	}	
@@ -133,7 +134,7 @@ public class AgendaTest {
 		} catch (NoExisteEventoException e) {
 			
 		} finally {
-			assertTrue(agenda.eventos.size() == 0);
+			assertEquals(agenda.eventos.size(), 0);
 		}
 	}
 	
@@ -147,9 +148,8 @@ public class AgendaTest {
 		try {
 			agenda.cancelarEvento(mockedHorario, "Hay que dormir");
 		} catch (NoExisteEventoException e) {
-			assertTrue(agenda.eventos.size() == 1);
+			assertEquals(agenda.eventos.size(), 1);
 		}
-		
 	}
 	
 	

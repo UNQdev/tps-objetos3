@@ -10,6 +10,8 @@ public class EventoTest {
 
 	Notificador mockedNotificador;
 	
+	Horario mockedHorario;
+	
 	Recordatorio mockedRecordT;
 	Recordatorio mockedRecordS;
 	Recordatorio mockedRecordM;
@@ -22,6 +24,8 @@ public class EventoTest {
 	public void setUp(){
 		mockedNotificador = mock(Notificador.class);
 		
+		mockedHorario = mock(Horario.class);
+		
 		mockedRecordT = mock(RecordatorioTelefonico.class);
 		mockedRecordS = mock(RecordatorioSMS.class);
 		mockedRecordM = mock(RecordatorioEmail.class);
@@ -31,7 +35,7 @@ public class EventoTest {
 		recordatorios.add(mockedRecordS);
 		recordatorios.add(mockedRecordT);
 		
-		evento = new Evento(new Horario(19, 0), "Arranca el partido!");
+		evento = new Evento(mockedHorario, "Arranca el partido!");
 		evento.setRecordatorios(recordatorios);
 	}
 	

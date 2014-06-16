@@ -48,9 +48,7 @@ public class NotificadorTest {
 
 	@Test
 	public void testSucedio() {
-		//Profundizar el test y hacer que el evento dispare notificarViaALGO
 		notificador.sucedio(mockedEvento);
 		verify(mockedEvento, times(1)).notificarUsuario(notificador);
-		
 	}
 }
