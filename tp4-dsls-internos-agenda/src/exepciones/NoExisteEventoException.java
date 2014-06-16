@@ -1,11 +1,13 @@
 package exepciones;
 
+import dominio.Horario;
+
 public class NoExisteEventoException extends Exception {
 
-	float hora;
+	Horario hora;
 	String nombre;
 	
-	public NoExisteEventoException(float hora, String nombre) {
+	public NoExisteEventoException(Horario hora, String nombre) {
 		this.hora = hora;
 		this.nombre = nombre;
 	}
