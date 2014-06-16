@@ -46,7 +46,7 @@ public class DSL {
     return new Horario((_key).intValue(), (_value).intValue());
   }
   
-  public Pair<Integer, Integer> operator_modulo(final int horas, final int minutos) {
+  public Pair<Integer, Integer> operator_elvis(final int horas, final int minutos) {
     return Pair.<Integer, Integer>of(Integer.valueOf(horas), Integer.valueOf(minutos));
   }
   
@@ -108,8 +108,8 @@ public class DSL {
       }
     };
     Evento _doubleArrow = ObjectExtensions.<Evento>operator_doubleArrow(_minus_1, _function);
-    Pair<Integer, Integer> _modulo = this.operator_modulo(19, 35);
-    Horario _h_2 = this.h(_modulo);
+    Pair<Integer, Integer> _elvis = this.operator_elvis(19, 35);
+    Horario _h_2 = this.h(_elvis);
     Evento _minus_2 = this.operator_minus(_h_2, "Llegada a casa");
     final Procedure1<Evento> _function_1 = new Procedure1<Evento>() {
       public void apply(final Evento it) {
@@ -119,8 +119,8 @@ public class DSL {
       }
     };
     Evento _doubleArrow_1 = ObjectExtensions.<Evento>operator_doubleArrow(_minus_2, _function_1);
-    Pair<Integer, Integer> _modulo_1 = this.operator_modulo(21, 40);
-    Horario _h_3 = this.h(_modulo_1);
+    Pair<Integer, Integer> _elvis_1 = this.operator_elvis(21, 40);
+    Horario _h_3 = this.h(_elvis_1);
     Evento _minus_3 = this.operator_minus(_h_3, "Cena");
     final Procedure1<Evento> _function_2 = new Procedure1<Evento>() {
       public void apply(final Evento it) {
@@ -148,10 +148,10 @@ public class DSL {
     Evento _doubleArrow_2 = ObjectExtensions.<Evento>operator_doubleArrow(_minus_3, _function_2);
     final Agenda agenda = this.agenda(_minus, _doubleArrow, _doubleArrow_1, _doubleArrow_2);
     final Notificador listenerDeTest = this.crearListener();
-    Pair<Integer, Integer> _modulo_2 = this.operator_modulo(19, 25);
-    Horario _h_4 = this.h(_modulo_2);
-    Pair<Integer, Integer> _modulo_3 = this.operator_modulo(21, 50);
-    Horario _h_5 = this.h(_modulo_3);
+    Pair<Integer, Integer> _elvis_2 = this.operator_elvis(19, 25);
+    Horario _h_4 = this.h(_elvis_2);
+    Pair<Integer, Integer> _elvis_3 = this.operator_elvis(21, 50);
+    Horario _h_5 = this.h(_elvis_3);
     List<Horario> _upTo = this.operator_upTo(_h_4, _h_5);
     final Procedure1<Horario> _function_3 = new Procedure1<Horario>() {
       public void apply(final Horario h) {

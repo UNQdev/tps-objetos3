@@ -4,8 +4,8 @@ public class RecordatorioTelefonico extends Recordatorio {
 
 	String numeroDestino;
 	
-	public RecordatorioTelefonico(String nombre) {
-		super(nombre);
+	public RecordatorioTelefonico(String titulo) {
+		super(titulo);
 		this.numeroDestino = "*sin numero de destino*";
 	}
 	

@@ -5,8 +5,8 @@ public class RecordatorioEmail extends Recordatorio {
 	String remitente;
 	String asunto;
 	
-	public RecordatorioEmail(String nombre) {
-		super(nombre);
+	public RecordatorioEmail(String titulo) {
+		super(titulo);
 		this.remitente = "*sin remitente*";
 		this.asunto = "*sin asunto*";
 	}

@@ -2,24 +2,24 @@ package dominio;
 
 public abstract class Recordatorio {
 	
-	String mensaje;
+	String titulo;
 	
-	public Recordatorio(String asunto){
-		this.mensaje = asunto;
+	public Recordatorio(String titulo){
+		this.titulo = titulo;
 	}
 	
 	public abstract void notificar(Notificador notificador);
 	
-	public void hidratar(double horaEvento, String nombre) {
-		this.setMensaje(String.valueOf(horaEvento) + " - " + nombre); //TODO: Ver que salga bien LA string jaja
+	public void hidratar(Horario horaEvento, String titulo) {
+		this.setTitulo(horaEvento.toString() + "  " + titulo);
 	}
 	
-	public String getMensaje() {
-		return mensaje;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
+	public void setTitulo(String mensaje) {
+		this.titulo = mensaje;
 	}
 	
 	@Override
