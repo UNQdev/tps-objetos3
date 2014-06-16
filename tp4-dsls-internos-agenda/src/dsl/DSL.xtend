@@ -31,7 +31,6 @@ class DSL {
 	}
 	
 	// ------- Bonus 3) ----------------------
-	
 	def dispatch Horario h(int hora){
 		new Horario(hora)
 	}
@@ -40,7 +39,7 @@ class DSL {
 		new Horario(horasYminutos.key, horasYminutos.value)
 	}
 	
-	def Pair<Integer, Integer> operator_modulo(int horas, int minutos){
+	def Pair<Integer, Integer> operator_elvis(int horas, int minutos){
 		horas -> minutos
 	}
 	
@@ -49,7 +48,6 @@ class DSL {
 	}
 
 	// ------- Extension methods -------------
-	
 	def RecordatorioEmail viaEmail(String asuntoRecordatorio){
 		new RecordatorioEmail(asuntoRecordatorio)
 	}
@@ -74,16 +72,20 @@ class DSL {
 	
 	def run() {
 		val agenda = agenda(
+			
 			14.h - "Inicia Objetos 3",
+		    
 		    18.h - "Fin objetos3" => [
 		        recordar > "Escribir Bitacora".viaEmail => [
 		        	remitente = "profesor@mail.com"
 		        ]
 			],
-		    (19%35).h - "Llegada a casa" => [
+		    
+		    (19?:35).h - "Llegada a casa" => [
 				recordar > "Enviar enunciado de TP".viaSMS
 			],
-		    (21%40).h - "Cena" => [
+		    
+		    (21?:40).h - "Cena" => [
 				recordar > "Lavarse Las Manos".viaTelefonico => [
 					numeroDestino = "15-265-3598"
 				]
@@ -93,8 +95,9 @@ class DSL {
 				]
 			]
 		)
+		
 		val listenerDeTest = crearListener()
-		((19%25).h .. (21%50).h).forEach[ h | agenda.tick(h, listenerDeTest)]
+		((19?:25).h .. (21?:50).h).forEach[ h | agenda.tick(h, listenerDeTest)]
 	}
 
 	def static void main(String[] args) {
