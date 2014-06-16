@@ -20,7 +20,8 @@ public class Agenda {
 	
 	public void tick(Horario horaActual, AgendaListener listener) {
 		for(Evento evento : this.eventos){
-			if(evento.getHorario().minutosDeDiferenciaCon(horaActual) == 5){
+			if(evento.getHorario().esPosteriorA(horaActual) && 
+					evento.getHorario().minutosDeDiferenciaCon(horaActual) == 5){
 				listener.sucedio(evento);
 			}
 		}

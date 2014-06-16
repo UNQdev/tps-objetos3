@@ -1,6 +1,5 @@
 package dsl
 
-import org.eclipse.xtext.xbase.lib.Functions
 import dominio.Evento
 import dominio.Agenda
 import dominio.Notificador
