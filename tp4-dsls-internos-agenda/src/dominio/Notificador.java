@@ -1,16 +1,20 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Notificador implements AgendaListener {
 
-	private ArrayList<Recordatorio> logRecordatorios;
+	private List<Recordatorio> logRecordatorios;
+	
+	public Notificador(){
+		this.setLogRecordatorios(new ArrayList<Recordatorio>());
+	}
 	
 	public void sucedio(Evento evento) {
 		evento.notificarUsuario(this);
 	}
 
-		
 	public void notificarViaMail(Recordatorio recordatorioEmail) {
 		this.getLogRecordatorios().add(recordatorioEmail);
 	}
@@ -23,13 +27,12 @@ public class Notificador implements AgendaListener {
 		this.getLogRecordatorios().add(recordatorioTelefonico);
 	}
 
-	
-	public ArrayList<Recordatorio> getLogRecordatorios() {
+	public List<Recordatorio> getLogRecordatorios() {
 		return logRecordatorios;
 	}
 
-	public void setLogRecordatorios(ArrayList<Recordatorio> logRecordatorios) {
+	public void setLogRecordatorios(List<Recordatorio> logRecordatorios) {
 		this.logRecordatorios = logRecordatorios;
 	}
-
+	
 }

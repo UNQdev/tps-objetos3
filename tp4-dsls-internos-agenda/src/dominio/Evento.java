@@ -1,33 +1,32 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Evento {
 	
-	double hora;
+	Horario horario;
 	String nombre;
-	ArrayList<Recordatorio> recordatorios;
-	
+	List<Recordatorio> recordatorios;
 
-	public Evento(double hora, String nombreEvento) {
-		this.setHora(hora);
+	public Evento(Horario horario, String nombreEvento) {
+		this.setHorario(horario);
 		this.setNombre(nombreEvento);
+		this.recordatorios = new ArrayList<Recordatorio>();
 	}
-	
 	
 	public void notificarUsuario(Notificador notificador) {
 		for(Recordatorio r : this.getRecordatorios()){
 			r.notificar(notificador);
 		}
 	}
-
 	
-	public double getHora() {
-		return hora;
+	public Horario getHorario() {
+		return horario;
 	}
 
-	public void setHora(double hora) {
-		this.hora = hora;
+	public void setHorario(Horario horario) {
+		this.horario = horario;
 	}
 
 	public String getNombre() {
@@ -38,18 +37,15 @@ public class Evento {
 		this.nombre = nombre;
 	}
 
-	
 	public void agregarRecordatorio(Recordatorio recordatorio) {
 		this.recordatorios.add(recordatorio);
 	}
 	
-	public ArrayList<Recordatorio> getRecordatorios() {
+	public List<Recordatorio> getRecordatorios() {
 		return this.recordatorios;
 	}
 
-	public void setRecordatorios(ArrayList<Recordatorio> recordatorios) {
+	public void setRecordatorios(List<Recordatorio> recordatorios) {
 		this.recordatorios = recordatorios;
 	}
-
-
 }
