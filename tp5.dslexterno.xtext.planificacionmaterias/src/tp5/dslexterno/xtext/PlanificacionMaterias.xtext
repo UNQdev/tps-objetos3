@@ -5,7 +5,70 @@ generate planificacionMaterias "http://www.dslexterno.tp5/xtext/PlanificacionMat
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 
 Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+	//declaracion de repeticion de reglas
+	(materias+=MATERIA)*
+	(asignaciones+=ASIGNACION_MATERIA)*	
+;
+
+
+//ENTIDADES DEL MODELO
+PLANIFICACION:
+	'planificacion' anio=INT 'semestre' semestre=INT '{'
+		'a dictar:' (materias+=[MATERIA])+
+			'horarios' '{'
+				(asignaciones+=[ASIGNACION_MATERIA])+
+			'}'
+	'}'
+;
+MATERIA:
+	'materia' nombre=ID '{'
+		declaracionRequerimientos=DECLARACION_REQUERIMIENTO
+	'}' asignacionProfesor=ASIGNACION_PROFESOR
+;
+AULA:
+	'aula' numero=ID '{'
+		'recursos:' (recusos+=[RECURSO])+
+	'}'
+;
+RECURSO:
+	'recurso' nombre=ID
+;
+PROFESOR:
+	'profesor' nombre=ID 'con dedicacion' dedicacion=DEDICACION
+;
+DEDICACION:
+	'SIMPLE'
+	'SEMI'
+	'EXCLUSIVA' 	
+;
+
+
+//ENTIDADES COLABORADORAS
+DIA:
+	'lunes'
+	'martes'
+	'miercoles'
+	'jueves'
+	'viernes'
+	'sabado'
+;
+HORARIO:
+	hora=INT ':' minutos=INT
+;
+
+
+//MODULARIZACION DE ACCIONES
+DECLARACION_REQUERIMIENTO:
+	'requiere' (requerimientos+=[RECURSO])+
+;
+ASIGNACION_PROFESOR:
+	'dictada por' profesor=PROFESOR
+;
+ASIGNACION_MATERIA:
+	dia=DIA ':' horaInicio=HORARIO 'a' horaFinal=HORARIO materia=MATERIA
+;
+
+
+
+
+
