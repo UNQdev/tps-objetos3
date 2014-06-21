@@ -1,0 +1,11 @@
+grammar tp5.dslexterno.xtext.PlanificacionMaterias with org.eclipse.xtext.xbase.Xbase
+
+generate planificacionMaterias "http://www.dslexterno.tp5/xtext/PlanificacionMaterias"
+
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
