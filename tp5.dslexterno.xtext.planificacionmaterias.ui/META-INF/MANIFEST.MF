@@ -8,6 +8,20 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: tp5.dslexterno.xtext.planificacionmaterias;visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0"
-Import-Package: org.apache.log4j
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.xbase.ui,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: tp5.dslexterno.xtext.ui.quickfix,
+ tp5.dslexterno.xtext.ui.contentassist,
+ tp5.dslexterno.xtext.ui.contentassist.antlr,
+ tp5.dslexterno.xtext.ui.internal
+Bundle-Activator: tp5.dslexterno.xtext.ui.internal.PlanificacionMateriasActivator

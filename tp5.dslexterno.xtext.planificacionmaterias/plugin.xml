@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.dslexterno.tp5/xtext/PlanificacionMaterias" 
+       class = "tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage"
+       genModel = "model/generated/PlanificacionMaterias.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

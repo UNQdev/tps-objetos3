@@ -2,73 +2,68 @@ grammar tp5.dslexterno.xtext.PlanificacionMaterias with org.eclipse.xtext.xbase.
 
 generate planificacionMaterias "http://www.dslexterno.tp5/xtext/PlanificacionMaterias"
 
-import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
-
 Model:
-	//declaracion de repeticion de reglas
-	(materias+=MATERIA)*
-	(asignaciones+=ASIGNACION_MATERIA)*	
+	(elementos+=Elementos)*
+	planificacion=Planificacion
+; 
+
+
+Elementos:
+	Nomina_Profesores | Aulas_Disponibles | Materias_Abiertas | Asignacion_Materia 
 ;
 
 
-//ENTIDADES DEL MODELO
-PLANIFICACION:
-	'planificacion' anio=INT 'semestre' semestre=INT '{'
-		'a dictar:' (materias+=[MATERIA])+
-			'horarios' '{'
-				(asignaciones+=[ASIGNACION_MATERIA])+
-			'}'
+Nomina_Profesores:
+	{Nomina_Profesores}
+		'profesores en nomina' '{' (profesorsLibres+=Profesor)* '}'
+;
+Aulas_Disponibles:	
+	{Aulas_Disponibles}
+		'aulas disponibles' '{' (aulasDisponibles+=Aula)* '}'
+;
+Materias_Abiertas:
+	{Materias_Abiertas}
+		'materias disponibles' '{' (materiasAbiertas+=Materia)* '}'
+;	
+Planificacion:
+	'planificacion' anio=INT 'semestre' semestre=INT '{' 
+		(asignacionDeMaterias+=Asignacion_Materia)*
 	'}'
 ;
-MATERIA:
+Asignacion_Materia:
+	dia=Dia 'de' horaInicio=Horario 'a' horaFinal=Horario ',' materia=[Materia]       
+;
+Materia:
 	'materia' nombre=ID '{'
-		declaracionRequerimientos=DECLARACION_REQUERIMIENTO
-	'}' asignacionProfesor=ASIGNACION_PROFESOR
+		'requiere' (requerimientos+=Recurso)*
+		'dictada por' profesor=[Profesor] 'en' aula=[Aula]
+	'}' 
 ;
-AULA:
+Aula:
 	'aula' numero=ID '{'
-		'recursos:' (recusos+=[RECURSO])+
+		'recursos' (recusos+=Recurso)*
 	'}'
 ;
-RECURSO:
-	'recurso' nombre=ID
+Recurso:
+	nombre=STRING
 ;
-PROFESOR:
-	'profesor' nombre=ID 'con dedicacion' dedicacion=DEDICACION
+Profesor:
+	'profesor' nombre=ID 'con dedicacion' dedicacion=Dedicacion
 ;
-DEDICACION:
-	'SIMPLE'
-	'SEMI'
-	'EXCLUSIVA' 	
+Dedicacion:
+	//los defino como clases con el nombre entre llaves, los extension methods deberian definirse con (dispatch) 
+	  {Simple} 'Simple'
+	| {Semi} 'Semi'
+	| {Exclusiva} 'Exclusiva' 	
 ;
 
-
-//ENTIDADES COLABORADORAS
-DIA:
-	'lunes'
-	'martes'
-	'miercoles'
-	'jueves'
-	'viernes'
-	'sabado'
+enum Dia:
+	  Lunes
+	| Martes
+	| Miercoles
+	| Jueves
+	| Viernes
 ;
-HORARIO:
+Horario:
 	hora=INT ':' minutos=INT
 ;
-
-
-//MODULARIZACION DE ACCIONES
-DECLARACION_REQUERIMIENTO:
-	'requiere' (requerimientos+=[RECURSO])+
-;
-ASIGNACION_PROFESOR:
-	'dictada por' profesor=PROFESOR
-;
-ASIGNACION_MATERIA:
-	dia=DIA ':' horaInicio=HORARIO 'a' horaFinal=HORARIO materia=MATERIA
-;
-
-
-
-
-

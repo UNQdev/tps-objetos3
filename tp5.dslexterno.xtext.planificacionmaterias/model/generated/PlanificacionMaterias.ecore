@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="planificacionMaterias" nsURI="http://www.dslexterno.tp5/xtext/PlanificacionMaterias"
+    nsPrefix="planificacionMaterias">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementos" upperBound="-1"
+        eType="#//Elementos" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planificacion" eType="#//Planificacion"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Elementos"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Nomina_Profesores" eSuperTypes="#//Elementos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profesorsLibres" upperBound="-1"
+        eType="#//Profesor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aulas_Disponibles" eSuperTypes="#//Elementos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aulas" upperBound="-1"
+        eType="#//Aula" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Materias_Abiertas" eSuperTypes="#//Elementos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="materiasADictar" upperBound="-1"
+        eType="#//Materia" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Planificacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semestre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="asignacionDeMaterias" upperBound="-1"
+        eType="#//Asignacion_Materia" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asignacion_Materia" eSuperTypes="#//Elementos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dia" eType="#//Dia"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horaInicio" eType="#//Horario"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horaFinal" eType="#//Horario"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="materia" eType="#//Materia"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Materia" eSuperTypes="#//Elementos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requerimientos" upperBound="-1"
+        eType="#//Recurso" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profesor" eType="#//Profesor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aula" eType="#//Aula"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aula">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recusos" upperBound="-1"
+        eType="#//Recurso" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Recurso">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Profesor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dedicacion" eType="#//Dedicacion"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dedicacion"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Dia">
+    <eLiterals name="Lunes" literal="Lunes"/>
+    <eLiterals name="Martes" value="1" literal="Martes"/>
+    <eLiterals name="Miercoles" value="2" literal="Miercoles"/>
+    <eLiterals name="Jueves" value="3" literal="Jueves"/>
+    <eLiterals name="Viernes" value="4" literal="Viernes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Horario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hora" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple" eSuperTypes="#//Dedicacion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Semi" eSuperTypes="#//Dedicacion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Exclusiva" eSuperTypes="#//Dedicacion"/>
+</ecore:EPackage>
