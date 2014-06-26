@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Dia;
@@ -32,7 +33,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  *
  * @generated
  */
-public class Asignacion_MateriaImpl extends ElementosImpl implements Asignacion_Materia
+public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container implements Asignacion_Materia
 {
   /**
    * The default value of the '{@link #getDia() <em>Dia</em>}' attribute.

@@ -25,10 +25,10 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	@Check
 	def validarDedicacionesDeProfesor(Materia materia) {
 		val profesor = materia.dictadaPor
-		val materias = (materia.eContainer as Model).elementos.filter(Materias_Abiertas).get(0).materiasADictar
-		if (materias.materiasConProfesor(profesor) >= profesor.cantMateriasSegunDedicacion) {
-			error('''El profesor «profesor.nombre» supera el limite de su dedicacion''', materia,
-				PlanificacionMateriasPackage.Literals.MATERIA__PROFESOR) //Mensaje, Objeto que no cumple la validacion, Identificacion del objeto que no cumple
+		val materias = (materia.eContainer as Model).elementosPlanificacion.filter(Materias_Abiertas).get(0).materiasAbiertas
+		if (materias.materiasConProfesor(profesor) > profesor.cantMateriasSegunDedicacion) {
+			error('''El profesor «profesor.name» supera el limite de su dedicacion''', materia,
+				PlanificacionMateriasPackage.Literals.MATERIA__PROFESOR) //Mensaje, Objeto que no cumple la validacion, Property del objeto que falla
 		}
 	}
 	
@@ -44,8 +44,8 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		return (profesor.dedicacion).cantidadMaterias
 	}
 
-	def dispatch int cantidadMaterias(Simple dedicacion) { return 2 }
-	def dispatch int cantidadMaterias(Semi dedicacion) { return 4 }
-	def dispatch int cantidadMaterias(Exclusiva dedicacion) { return 1 }
+	def dispatch int cantidadMaterias(Simple dedicacion) { return 1 }
+	def dispatch int cantidadMaterias(Semi dedicacion) { return 2 }
+	def dispatch int cantidadMaterias(Exclusiva dedicacion) { return 5 }
 
 }

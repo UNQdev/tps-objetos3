@@ -25,23 +25,23 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Materias_AbiertasImpl#getMateriasADictar <em>Materias ADictar</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Materias_AbiertasImpl#getMateriasAbiertas <em>Materias Abiertas</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abiertas
+public class Materias_AbiertasImpl extends Estructuras_PlanificacionImpl implements Materias_Abiertas
 {
   /**
-   * The cached value of the '{@link #getMateriasADictar() <em>Materias ADictar</em>}' containment reference list.
+   * The cached value of the '{@link #getMateriasAbiertas() <em>Materias Abiertas</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMateriasADictar()
+   * @see #getMateriasAbiertas()
    * @generated
    * @ordered
    */
-  protected EList<Materia> materiasADictar;
+  protected EList<Materia> materiasAbiertas;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +69,13 @@ public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Materia> getMateriasADictar()
+  public EList<Materia> getMateriasAbiertas()
   {
-    if (materiasADictar == null)
+    if (materiasAbiertas == null)
     {
-      materiasADictar = new EObjectContainmentEList<Materia>(Materia.class, this, PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ADICTAR);
+      materiasAbiertas = new EObjectContainmentEList<Materia>(Materia.class, this, PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ABIERTAS);
     }
-    return materiasADictar;
+    return materiasAbiertas;
   }
 
   /**
@@ -88,8 +88,8 @@ public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abi
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ADICTAR:
-        return ((InternalEList<?>)getMateriasADictar()).basicRemove(otherEnd, msgs);
+      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ABIERTAS:
+        return ((InternalEList<?>)getMateriasAbiertas()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abi
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ADICTAR:
-        return getMateriasADictar();
+      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ABIERTAS:
+        return getMateriasAbiertas();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abi
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ADICTAR:
-        getMateriasADictar().clear();
-        getMateriasADictar().addAll((Collection<? extends Materia>)newValue);
+      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ABIERTAS:
+        getMateriasAbiertas().clear();
+        getMateriasAbiertas().addAll((Collection<? extends Materia>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abi
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ADICTAR:
-        getMateriasADictar().clear();
+      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ABIERTAS:
+        getMateriasAbiertas().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +156,8 @@ public class Materias_AbiertasImpl extends ElementosImpl implements Materias_Abi
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ADICTAR:
-        return materiasADictar != null && !materiasADictar.isEmpty();
+      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS__MATERIAS_ABIERTAS:
+        return materiasAbiertas != null && !materiasAbiertas.isEmpty();
     }
     return super.eIsSet(featureID);
   }

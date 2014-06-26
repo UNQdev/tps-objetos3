@@ -80,14 +80,9 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseElementos(Elementos object)
+      public Adapter caseMaterias_Abiertas(Materias_Abiertas object)
       {
-        return createElementosAdapter();
-      }
-      @Override
-      public Adapter caseNomina_Profesores(Nomina_Profesores object)
-      {
-        return createNomina_ProfesoresAdapter();
+        return createMaterias_AbiertasAdapter();
       }
       @Override
       public Adapter caseAulas_Disponibles(Aulas_Disponibles object)
@@ -95,14 +90,9 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
         return createAulas_DisponiblesAdapter();
       }
       @Override
-      public Adapter caseMaterias_Abiertas(Materias_Abiertas object)
+      public Adapter caseNomina_Profesores(Nomina_Profesores object)
       {
-        return createMaterias_AbiertasAdapter();
-      }
-      @Override
-      public Adapter casePlanificacion(Planificacion object)
-      {
-        return createPlanificacionAdapter();
+        return createNomina_ProfesoresAdapter();
       }
       @Override
       public Adapter caseAsignacion_Materia(Asignacion_Materia object)
@@ -110,19 +100,19 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
         return createAsignacion_MateriaAdapter();
       }
       @Override
+      public Adapter caseEstructuras_Planificacion(Estructuras_Planificacion object)
+      {
+        return createEstructuras_PlanificacionAdapter();
+      }
+      @Override
+      public Adapter casePlanificacion(Planificacion object)
+      {
+        return createPlanificacionAdapter();
+      }
+      @Override
       public Adapter caseMateria(Materia object)
       {
         return createMateriaAdapter();
-      }
-      @Override
-      public Adapter caseAula(Aula object)
-      {
-        return createAulaAdapter();
-      }
-      @Override
-      public Adapter caseRecurso(Recurso object)
-      {
-        return createRecursoAdapter();
       }
       @Override
       public Adapter caseProfesor(Profesor object)
@@ -133,6 +123,16 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDedicacion(Dedicacion object)
       {
         return createDedicacionAdapter();
+      }
+      @Override
+      public Adapter caseAula(Aula object)
+      {
+        return createAulaAdapter();
+      }
+      @Override
+      public Adapter caseRecurso(Recurso object)
+      {
+        return createRecursoAdapter();
       }
       @Override
       public Adapter caseHorario(Horario object)
@@ -192,31 +192,16 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Elementos <em>Elementos</em>}'.
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas <em>Materias Abiertas</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Elementos
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas
    * @generated
    */
-  public Adapter createElementosAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores <em>Nomina Profesores</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores
-   * @generated
-   */
-  public Adapter createNomina_ProfesoresAdapter()
+  public Adapter createMaterias_AbiertasAdapter()
   {
     return null;
   }
@@ -237,31 +222,16 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas <em>Materias Abiertas</em>}'.
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores <em>Nomina Profesores</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores
    * @generated
    */
-  public Adapter createMaterias_AbiertasAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion <em>Planificacion</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Planificacion
-   * @generated
-   */
-  public Adapter createPlanificacionAdapter()
+  public Adapter createNomina_ProfesoresAdapter()
   {
     return null;
   }
@@ -282,6 +252,36 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion <em>Estructuras Planificacion</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion
+   * @generated
+   */
+  public Adapter createEstructuras_PlanificacionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion <em>Planificacion</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Planificacion
+   * @generated
+   */
+  public Adapter createPlanificacionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia <em>Materia</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -292,36 +292,6 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMateriaAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Aula <em>Aula</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Aula
-   * @generated
-   */
-  public Adapter createAulaAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Recurso <em>Recurso</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Recurso
-   * @generated
-   */
-  public Adapter createRecursoAdapter()
   {
     return null;
   }
@@ -352,6 +322,36 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDedicacionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Aula <em>Aula</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Aula
+   * @generated
+   */
+  public Adapter createAulaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Recurso <em>Recurso</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Recurso
+   * @generated
+   */
+  public Adapter createRecursoAdapter()
   {
     return null;
   }

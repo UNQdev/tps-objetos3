@@ -15,7 +15,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Aulas_Disponibles;
 import tp5.dslexterno.xtext.planificacionMaterias.Dedicacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Dia;
-import tp5.dslexterno.xtext.planificacionMaterias.Elementos;
+import tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Horario;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
@@ -50,14 +50,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass elementosEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass nomina_ProfesoresEClass = null;
+  private EClass materias_AbiertasEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,14 +64,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass materias_AbiertasEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass planificacionEClass = null;
+  private EClass nomina_ProfesoresEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -92,21 +78,21 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass estructuras_PlanificacionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass planificacionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass materiaEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass aulaEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass recursoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,6 +107,20 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * @generated
    */
   private EClass dedicacionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass aulaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass recursoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -235,7 +235,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Elementos()
+  public EReference getModel_ElementosPlanificacion()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -255,9 +255,9 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getElementos()
+  public EClass getMaterias_Abiertas()
   {
-    return elementosEClass;
+    return materias_AbiertasEClass;
   }
 
   /**
@@ -265,19 +265,9 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNomina_Profesores()
+  public EReference getMaterias_Abiertas_MateriasAbiertas()
   {
-    return nomina_ProfesoresEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getNomina_Profesores_ProfesorsLibres()
-  {
-    return (EReference)nomina_ProfesoresEClass.getEStructuralFeatures().get(0);
+    return (EReference)materias_AbiertasEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -295,7 +285,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAulas_Disponibles_Aulas()
+  public EReference getAulas_Disponibles_AulasDisponibles()
   {
     return (EReference)aulas_DisponiblesEClass.getEStructuralFeatures().get(0);
   }
@@ -305,9 +295,9 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMaterias_Abiertas()
+  public EClass getNomina_Profesores()
   {
-    return materias_AbiertasEClass;
+    return nomina_ProfesoresEClass;
   }
 
   /**
@@ -315,49 +305,9 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMaterias_Abiertas_MateriasADictar()
+  public EReference getNomina_Profesores_ProfesoresLibres()
   {
-    return (EReference)materias_AbiertasEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPlanificacion()
-  {
-    return planificacionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPlanificacion_Anio()
-  {
-    return (EAttribute)planificacionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPlanificacion_Semestre()
-  {
-    return (EAttribute)planificacionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPlanificacion_AsignacionDeMaterias()
-  {
-    return (EReference)planificacionEClass.getEStructuralFeatures().get(2);
+    return (EReference)nomina_ProfesoresEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -415,6 +365,56 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getEstructuras_Planificacion()
+  {
+    return estructuras_PlanificacionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPlanificacion()
+  {
+    return planificacionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPlanificacion_Anio()
+  {
+    return (EAttribute)planificacionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPlanificacion_Semestre()
+  {
+    return (EAttribute)planificacionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPlanificacion_AsignacionDeMaterias()
+  {
+    return (EReference)planificacionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMateria()
   {
     return materiaEClass;
@@ -425,7 +425,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMateria_Nombre()
+  public EAttribute getMateria_Name()
   {
     return (EAttribute)materiaEClass.getEStructuralFeatures().get(0);
   }
@@ -465,6 +465,46 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getProfesor()
+  {
+    return profesorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProfesor_Name()
+  {
+    return (EAttribute)profesorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProfesor_Dedicacion()
+  {
+    return (EReference)profesorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDedicacion()
+  {
+    return dedicacionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAula()
   {
     return aulaEClass;
@@ -475,7 +515,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAula_Numero()
+  public EAttribute getAula_Name()
   {
     return (EAttribute)aulaEClass.getEStructuralFeatures().get(0);
   }
@@ -505,49 +545,9 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRecurso_Nombre()
+  public EAttribute getRecurso_Name()
   {
     return (EAttribute)recursoEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getProfesor()
-  {
-    return profesorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getProfesor_Nombre()
-  {
-    return (EAttribute)profesorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getProfesor_Dedicacion()
-  {
-    return (EReference)profesorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDedicacion()
-  {
-    return dedicacionEClass;
   }
 
   /**
@@ -651,24 +651,17 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__ELEMENTOS);
+    createEReference(modelEClass, MODEL__ELEMENTOS_PLANIFICACION);
     createEReference(modelEClass, MODEL__PLANIFICACION);
 
-    elementosEClass = createEClass(ELEMENTOS);
-
-    nomina_ProfesoresEClass = createEClass(NOMINA_PROFESORES);
-    createEReference(nomina_ProfesoresEClass, NOMINA_PROFESORES__PROFESORS_LIBRES);
+    materias_AbiertasEClass = createEClass(MATERIAS_ABIERTAS);
+    createEReference(materias_AbiertasEClass, MATERIAS_ABIERTAS__MATERIAS_ABIERTAS);
 
     aulas_DisponiblesEClass = createEClass(AULAS_DISPONIBLES);
-    createEReference(aulas_DisponiblesEClass, AULAS_DISPONIBLES__AULAS);
+    createEReference(aulas_DisponiblesEClass, AULAS_DISPONIBLES__AULAS_DISPONIBLES);
 
-    materias_AbiertasEClass = createEClass(MATERIAS_ABIERTAS);
-    createEReference(materias_AbiertasEClass, MATERIAS_ABIERTAS__MATERIAS_ADICTAR);
-
-    planificacionEClass = createEClass(PLANIFICACION);
-    createEAttribute(planificacionEClass, PLANIFICACION__ANIO);
-    createEAttribute(planificacionEClass, PLANIFICACION__SEMESTRE);
-    createEReference(planificacionEClass, PLANIFICACION__ASIGNACION_DE_MATERIAS);
+    nomina_ProfesoresEClass = createEClass(NOMINA_PROFESORES);
+    createEReference(nomina_ProfesoresEClass, NOMINA_PROFESORES__PROFESORES_LIBRES);
 
     asignacion_MateriaEClass = createEClass(ASIGNACION_MATERIA);
     createEAttribute(asignacion_MateriaEClass, ASIGNACION_MATERIA__DIA);
@@ -676,24 +669,31 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     createEReference(asignacion_MateriaEClass, ASIGNACION_MATERIA__HORA_FINAL);
     createEReference(asignacion_MateriaEClass, ASIGNACION_MATERIA__MATERIA);
 
+    estructuras_PlanificacionEClass = createEClass(ESTRUCTURAS_PLANIFICACION);
+
+    planificacionEClass = createEClass(PLANIFICACION);
+    createEAttribute(planificacionEClass, PLANIFICACION__ANIO);
+    createEAttribute(planificacionEClass, PLANIFICACION__SEMESTRE);
+    createEReference(planificacionEClass, PLANIFICACION__ASIGNACION_DE_MATERIAS);
+
     materiaEClass = createEClass(MATERIA);
-    createEAttribute(materiaEClass, MATERIA__NOMBRE);
+    createEAttribute(materiaEClass, MATERIA__NAME);
     createEReference(materiaEClass, MATERIA__REQUERIMIENTOS);
     createEReference(materiaEClass, MATERIA__PROFESOR);
     createEReference(materiaEClass, MATERIA__AULA);
 
-    aulaEClass = createEClass(AULA);
-    createEAttribute(aulaEClass, AULA__NUMERO);
-    createEReference(aulaEClass, AULA__RECUSOS);
-
-    recursoEClass = createEClass(RECURSO);
-    createEAttribute(recursoEClass, RECURSO__NOMBRE);
-
     profesorEClass = createEClass(PROFESOR);
-    createEAttribute(profesorEClass, PROFESOR__NOMBRE);
+    createEAttribute(profesorEClass, PROFESOR__NAME);
     createEReference(profesorEClass, PROFESOR__DEDICACION);
 
     dedicacionEClass = createEClass(DEDICACION);
+
+    aulaEClass = createEClass(AULA);
+    createEAttribute(aulaEClass, AULA__NAME);
+    createEReference(aulaEClass, AULA__RECUSOS);
+
+    recursoEClass = createEClass(RECURSO);
+    createEAttribute(recursoEClass, RECURSO__NAME);
 
     horarioEClass = createEClass(HORARIO);
     createEAttribute(horarioEClass, HORARIO__HORA);
@@ -738,35 +738,26 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    nomina_ProfesoresEClass.getESuperTypes().add(this.getElementos());
-    aulas_DisponiblesEClass.getESuperTypes().add(this.getElementos());
-    materias_AbiertasEClass.getESuperTypes().add(this.getElementos());
-    asignacion_MateriaEClass.getESuperTypes().add(this.getElementos());
-    materiaEClass.getESuperTypes().add(this.getElementos());
+    materias_AbiertasEClass.getESuperTypes().add(this.getEstructuras_Planificacion());
+    aulas_DisponiblesEClass.getESuperTypes().add(this.getEstructuras_Planificacion());
+    nomina_ProfesoresEClass.getESuperTypes().add(this.getEstructuras_Planificacion());
     simpleEClass.getESuperTypes().add(this.getDedicacion());
     semiEClass.getESuperTypes().add(this.getDedicacion());
     exclusivaEClass.getESuperTypes().add(this.getDedicacion());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Elementos(), this.getElementos(), null, "elementos", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_ElementosPlanificacion(), this.getEstructuras_Planificacion(), null, "elementosPlanificacion", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Planificacion(), this.getPlanificacion(), null, "planificacion", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(elementosEClass, Elementos.class, "Elementos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(nomina_ProfesoresEClass, Nomina_Profesores.class, "Nomina_Profesores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNomina_Profesores_ProfesorsLibres(), this.getProfesor(), null, "profesorsLibres", null, 0, -1, Nomina_Profesores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(materias_AbiertasEClass, Materias_Abiertas.class, "Materias_Abiertas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMaterias_Abiertas_MateriasAbiertas(), this.getMateria(), null, "materiasAbiertas", null, 0, -1, Materias_Abiertas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(aulas_DisponiblesEClass, Aulas_Disponibles.class, "Aulas_Disponibles", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAulas_Disponibles_Aulas(), this.getAula(), null, "aulas", null, 0, -1, Aulas_Disponibles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAulas_Disponibles_AulasDisponibles(), this.getAula(), null, "aulasDisponibles", null, 0, -1, Aulas_Disponibles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(materias_AbiertasEClass, Materias_Abiertas.class, "Materias_Abiertas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMaterias_Abiertas_MateriasADictar(), this.getMateria(), null, "materiasADictar", null, 0, -1, Materias_Abiertas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(planificacionEClass, Planificacion.class, "Planificacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPlanificacion_Anio(), ecorePackage.getEInt(), "anio", null, 0, 1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPlanificacion_Semestre(), ecorePackage.getEInt(), "semestre", null, 0, 1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlanificacion_AsignacionDeMaterias(), this.getAsignacion_Materia(), null, "asignacionDeMaterias", null, 0, -1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(nomina_ProfesoresEClass, Nomina_Profesores.class, "Nomina_Profesores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNomina_Profesores_ProfesoresLibres(), this.getProfesor(), null, "profesoresLibres", null, 0, -1, Nomina_Profesores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(asignacion_MateriaEClass, Asignacion_Materia.class, "Asignacion_Materia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAsignacion_Materia_Dia(), this.getDia(), "dia", null, 0, 1, Asignacion_Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -774,24 +765,31 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     initEReference(getAsignacion_Materia_HoraFinal(), this.getHorario(), null, "horaFinal", null, 0, 1, Asignacion_Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAsignacion_Materia_Materia(), this.getMateria(), null, "materia", null, 0, 1, Asignacion_Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(estructuras_PlanificacionEClass, Estructuras_Planificacion.class, "Estructuras_Planificacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(planificacionEClass, Planificacion.class, "Planificacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPlanificacion_Anio(), ecorePackage.getEInt(), "anio", null, 0, 1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPlanificacion_Semestre(), ecorePackage.getEInt(), "semestre", null, 0, 1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPlanificacion_AsignacionDeMaterias(), this.getAsignacion_Materia(), null, "asignacionDeMaterias", null, 0, -1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(materiaEClass, Materia.class, "Materia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMateria_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMateria_Name(), ecorePackage.getEString(), "name", null, 0, 1, Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMateria_Requerimientos(), this.getRecurso(), null, "requerimientos", null, 0, -1, Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMateria_Profesor(), this.getProfesor(), null, "profesor", null, 0, 1, Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMateria_Aula(), this.getAula(), null, "aula", null, 0, 1, Materia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(aulaEClass, Aula.class, "Aula", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAula_Numero(), ecorePackage.getEString(), "numero", null, 0, 1, Aula.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAula_Recusos(), this.getRecurso(), null, "recusos", null, 0, -1, Aula.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(recursoEClass, Recurso.class, "Recurso", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRecurso_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Recurso.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(profesorEClass, Profesor.class, "Profesor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProfesor_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Profesor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProfesor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Profesor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProfesor_Dedicacion(), this.getDedicacion(), null, "dedicacion", null, 0, 1, Profesor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dedicacionEClass, Dedicacion.class, "Dedicacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(aulaEClass, Aula.class, "Aula", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAula_Name(), ecorePackage.getEString(), "name", null, 0, 1, Aula.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAula_Recusos(), this.getRecurso(), null, "recusos", null, 0, -1, Aula.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(recursoEClass, Recurso.class, "Recurso", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRecurso_Name(), ecorePackage.getEString(), "name", null, 0, 1, Recurso.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(horarioEClass, Horario.class, "Horario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHorario_Hora(), ecorePackage.getEInt(), "hora", null, 0, 1, Horario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

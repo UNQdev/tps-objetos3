@@ -25,23 +25,23 @@ import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Nomina_ProfesoresImpl#getProfesorsLibres <em>Profesors Libres</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Nomina_ProfesoresImpl#getProfesoresLibres <em>Profesores Libres</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profesores
+public class Nomina_ProfesoresImpl extends Estructuras_PlanificacionImpl implements Nomina_Profesores
 {
   /**
-   * The cached value of the '{@link #getProfesorsLibres() <em>Profesors Libres</em>}' containment reference list.
+   * The cached value of the '{@link #getProfesoresLibres() <em>Profesores Libres</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProfesorsLibres()
+   * @see #getProfesoresLibres()
    * @generated
    * @ordered
    */
-  protected EList<Profesor> profesorsLibres;
+  protected EList<Profesor> profesoresLibres;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +69,13 @@ public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profe
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Profesor> getProfesorsLibres()
+  public EList<Profesor> getProfesoresLibres()
   {
-    if (profesorsLibres == null)
+    if (profesoresLibres == null)
     {
-      profesorsLibres = new EObjectContainmentEList<Profesor>(Profesor.class, this, PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORS_LIBRES);
+      profesoresLibres = new EObjectContainmentEList<Profesor>(Profesor.class, this, PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORES_LIBRES);
     }
-    return profesorsLibres;
+    return profesoresLibres;
   }
 
   /**
@@ -88,8 +88,8 @@ public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profe
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORS_LIBRES:
-        return ((InternalEList<?>)getProfesorsLibres()).basicRemove(otherEnd, msgs);
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORES_LIBRES:
+        return ((InternalEList<?>)getProfesoresLibres()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profe
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORS_LIBRES:
-        return getProfesorsLibres();
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORES_LIBRES:
+        return getProfesoresLibres();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profe
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORS_LIBRES:
-        getProfesorsLibres().clear();
-        getProfesorsLibres().addAll((Collection<? extends Profesor>)newValue);
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORES_LIBRES:
+        getProfesoresLibres().clear();
+        getProfesoresLibres().addAll((Collection<? extends Profesor>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profe
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORS_LIBRES:
-        getProfesorsLibres().clear();
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORES_LIBRES:
+        getProfesoresLibres().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +156,8 @@ public class Nomina_ProfesoresImpl extends ElementosImpl implements Nomina_Profe
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORS_LIBRES:
-        return profesorsLibres != null && !profesorsLibres.isEmpty();
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES__PROFESORES_LIBRES:
+        return profesoresLibres != null && !profesoresLibres.isEmpty();
     }
     return super.eIsSet(featureID);
   }

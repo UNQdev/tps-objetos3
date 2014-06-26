@@ -22,7 +22,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ProfesorImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ProfesorImpl#getName <em>Name</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ProfesorImpl#getDedicacion <em>Dedicacion</em>}</li>
  * </ul>
  * </p>
@@ -32,24 +32,24 @@ import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
 public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profesor
 {
   /**
-   * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNombre()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NOMBRE_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNombre()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String nombre = NOMBRE_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getDedicacion() <em>Dedicacion</em>}' containment reference.
@@ -87,9 +87,9 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNombre()
+  public String getName()
   {
-    return nombre;
+    return name;
   }
 
   /**
@@ -97,12 +97,12 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNombre(String newNombre)
+  public void setName(String newName)
   {
-    String oldNombre = nombre;
-    nombre = newNombre;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.PROFESOR__NOMBRE, oldNombre, nombre));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.PROFESOR__NAME, oldName, name));
   }
 
   /**
@@ -179,8 +179,8 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.PROFESOR__NOMBRE:
-        return getNombre();
+      case PlanificacionMateriasPackage.PROFESOR__NAME:
+        return getName();
       case PlanificacionMateriasPackage.PROFESOR__DEDICACION:
         return getDedicacion();
     }
@@ -197,8 +197,8 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.PROFESOR__NOMBRE:
-        setNombre((String)newValue);
+      case PlanificacionMateriasPackage.PROFESOR__NAME:
+        setName((String)newValue);
         return;
       case PlanificacionMateriasPackage.PROFESOR__DEDICACION:
         setDedicacion((Dedicacion)newValue);
@@ -217,8 +217,8 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.PROFESOR__NOMBRE:
-        setNombre(NOMBRE_EDEFAULT);
+      case PlanificacionMateriasPackage.PROFESOR__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case PlanificacionMateriasPackage.PROFESOR__DEDICACION:
         setDedicacion((Dedicacion)null);
@@ -237,8 +237,8 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.PROFESOR__NOMBRE:
-        return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+      case PlanificacionMateriasPackage.PROFESOR__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case PlanificacionMateriasPackage.PROFESOR__DEDICACION:
         return dedicacion != null;
     }
@@ -256,8 +256,8 @@ public class ProfesorImpl extends MinimalEObjectImpl.Container implements Profes
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nombre: ");
-    result.append(nombre);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

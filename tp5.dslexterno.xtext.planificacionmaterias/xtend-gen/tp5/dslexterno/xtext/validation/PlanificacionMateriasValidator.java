@@ -13,7 +13,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tp5.dslexterno.xtext.planificacionMaterias.Dedicacion;
-import tp5.dslexterno.xtext.planificacionMaterias.Elementos;
+import tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas;
@@ -35,18 +35,18 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   public void validarDedicacionesDeProfesor(final Materia materia) {
     final Profesor profesor = this.dictadaPor(materia);
     EObject _eContainer = materia.eContainer();
-    EList<Elementos> _elementos = ((Model) _eContainer).getElementos();
-    Iterable<Materias_Abiertas> _filter = Iterables.<Materias_Abiertas>filter(_elementos, Materias_Abiertas.class);
+    EList<Estructuras_Planificacion> _elementosPlanificacion = ((Model) _eContainer).getElementosPlanificacion();
+    Iterable<Materias_Abiertas> _filter = Iterables.<Materias_Abiertas>filter(_elementosPlanificacion, Materias_Abiertas.class);
     Materias_Abiertas _get = ((Materias_Abiertas[])Conversions.unwrapArray(_filter, Materias_Abiertas.class))[0];
-    final EList<Materia> materias = _get.getMateriasADictar();
+    final EList<Materia> materias = _get.getMateriasAbiertas();
     int _materiasConProfesor = this.materiasConProfesor(materias, profesor);
     int _cantMateriasSegunDedicacion = this.cantMateriasSegunDedicacion(profesor);
-    boolean _greaterEqualsThan = (_materiasConProfesor >= _cantMateriasSegunDedicacion);
-    if (_greaterEqualsThan) {
+    boolean _greaterThan = (_materiasConProfesor > _cantMateriasSegunDedicacion);
+    if (_greaterThan) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("El profesor ");
-      String _nombre = profesor.getNombre();
-      _builder.append(_nombre, "");
+      String _name = profesor.getName();
+      _builder.append(_name, "");
       _builder.append(" supera el limite de su dedicacion");
       this.error(_builder.toString(), materia, 
         PlanificacionMateriasPackage.Literals.MATERIA__PROFESOR);
@@ -74,15 +74,15 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   }
   
   protected int _cantidadMaterias(final Simple dedicacion) {
-    return 2;
+    return 1;
   }
   
   protected int _cantidadMaterias(final Semi dedicacion) {
-    return 4;
+    return 2;
   }
   
   protected int _cantidadMaterias(final Exclusiva dedicacion) {
-    return 1;
+    return 5;
   }
   
   public int cantidadMaterias(final Dedicacion dedicacion) {

@@ -106,9 +106,9 @@ T__39=39
 RULE_WS=11
 'materia'=66
 'instanceof'=78
-'profesores en nomina'=57
+'profesores en nomina'=61
 '#'=81
-'de'=64
+'de'=62
 '>='=25
 'en'=69
 '=='=21
@@ -129,7 +129,7 @@ RULE_WS=11
 '+'=34
 '=>'=31
 '.'=43
-'a'=65
+'a'=63
 'import'=48
 '?:'=33
 '++'=41
@@ -140,7 +140,8 @@ RULE_WS=11
 'aulas disponibles'=60
 'extends'=46
 '+='=16
-'Simple'=74
+'Simple'=72
+'recursos'=76
 '{'=58
 'as'=79
 '?'=103
@@ -156,7 +157,7 @@ RULE_WS=11
 'synchronized'=101
 ','=44
 'default'=89
-'materias disponibles'=61
+'materias disponibles'=57
 '-='=17
 ']'=83
 '..'=30
@@ -171,18 +172,18 @@ RULE_WS=11
 'Lunes'=52
 'val'=45
 'null'=95
-'planificacion'=62
+'planificacion'=64
 'typeof'=96
 '='=13
 'dictada por'=68
 '::'=105
 'throw'=97
-'Semi'=75
-'profesor'=72
-'aula'=70
+'Semi'=73
+'profesor'=70
+'aula'=75
 ')'=80
 '*='=18
-'con dedicacion'=73
+'con dedicacion'=71
 '->'=28
 '%'=39
 'do'=93
@@ -190,14 +191,13 @@ RULE_WS=11
 'case'=90
 'Martes'=53
 '}'=59
-'recursos:'=71
-'semestre'=63
+'semestre'=65
 '!='=22
 '!=='=24
 'false'=51
 '<'=27
 '--'=42
 '['=82
-'Exclusiva'=76
+'Exclusiva'=74
 '*'=36
 '&'=104

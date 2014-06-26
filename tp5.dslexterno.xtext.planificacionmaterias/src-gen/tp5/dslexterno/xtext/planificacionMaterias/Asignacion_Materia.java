@@ -2,6 +2,7 @@
  */
 package tp5.dslexterno.xtext.planificacionMaterias;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ package tp5.dslexterno.xtext.planificacionMaterias;
  * @model
  * @generated
  */
-public interface Asignacion_Materia extends Elementos
+public interface Asignacion_Materia extends EObject
 {
   /**
    * Returns the value of the '<em><b>Dia</b></em>' attribute.

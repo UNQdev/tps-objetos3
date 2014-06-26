@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getElementos <em>Elementos</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getElementosPlanificacion <em>Elementos Planificacion</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}</li>
  * </ul>
  * </p>
@@ -26,20 +26,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Elementos</b></em>' containment reference list.
-   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Elementos}.
+   * Returns the value of the '<em><b>Elementos Planificacion</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elementos</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Elementos Planificacion</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elementos</em>' containment reference list.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_Elementos()
+   * @return the value of the '<em>Elementos Planificacion</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_ElementosPlanificacion()
    * @model containment="true"
    * @generated
    */
-  EList<Elementos> getElementos();
+  EList<Estructuras_Planificacion> getElementosPlanificacion();
 
   /**
    * Returns the value of the '<em><b>Planificacion</b></em>' containment reference.

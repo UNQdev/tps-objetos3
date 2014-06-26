@@ -29,7 +29,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.AulaImpl#getNumero <em>Numero</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.AulaImpl#getName <em>Name</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.AulaImpl#getRecusos <em>Recusos</em>}</li>
  * </ul>
  * </p>
@@ -39,24 +39,24 @@ import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
 public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
 {
   /**
-   * The default value of the '{@link #getNumero() <em>Numero</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNumero()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NUMERO_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNumero() <em>Numero</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNumero()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String numero = NUMERO_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRecusos() <em>Recusos</em>}' containment reference list.
@@ -94,9 +94,9 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNumero()
+  public String getName()
   {
-    return numero;
+    return name;
   }
 
   /**
@@ -104,12 +104,12 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNumero(String newNumero)
+  public void setName(String newName)
   {
-    String oldNumero = numero;
-    numero = newNumero;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.AULA__NUMERO, oldNumero, numero));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.AULA__NAME, oldName, name));
   }
 
   /**
@@ -152,8 +152,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULA__NUMERO:
-        return getNumero();
+      case PlanificacionMateriasPackage.AULA__NAME:
+        return getName();
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         return getRecusos();
     }
@@ -171,8 +171,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULA__NUMERO:
-        setNumero((String)newValue);
+      case PlanificacionMateriasPackage.AULA__NAME:
+        setName((String)newValue);
         return;
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         getRecusos().clear();
@@ -192,8 +192,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULA__NUMERO:
-        setNumero(NUMERO_EDEFAULT);
+      case PlanificacionMateriasPackage.AULA__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         getRecusos().clear();
@@ -212,8 +212,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULA__NUMERO:
-        return NUMERO_EDEFAULT == null ? numero != null : !NUMERO_EDEFAULT.equals(numero);
+      case PlanificacionMateriasPackage.AULA__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         return recusos != null && !recusos.isEmpty();
     }
@@ -231,8 +231,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (numero: ");
-    result.append(numero);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

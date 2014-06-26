@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getNumero <em>Numero</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getName <em>Name</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getRecusos <em>Recusos</em>}</li>
  * </ul>
  * </p>
@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Aula extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Numero</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Numero</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Numero</em>' attribute.
-   * @see #setNumero(String)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAula_Numero()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAula_Name()
    * @model
    * @generated
    */
-  String getNumero();
+  String getName();
 
   /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getNumero <em>Numero</em>}' attribute.
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Numero</em>' attribute.
-   * @see #getNumero()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setNumero(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Recusos</b></em>' containment reference list.

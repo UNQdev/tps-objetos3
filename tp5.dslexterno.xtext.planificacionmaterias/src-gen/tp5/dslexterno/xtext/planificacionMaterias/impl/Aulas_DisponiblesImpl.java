@@ -25,23 +25,23 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Aulas_DisponiblesImpl#getAulas <em>Aulas</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Aulas_DisponiblesImpl#getAulasDisponibles <em>Aulas Disponibles</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Disponibles
+public class Aulas_DisponiblesImpl extends Estructuras_PlanificacionImpl implements Aulas_Disponibles
 {
   /**
-   * The cached value of the '{@link #getAulas() <em>Aulas</em>}' containment reference list.
+   * The cached value of the '{@link #getAulasDisponibles() <em>Aulas Disponibles</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAulas()
+   * @see #getAulasDisponibles()
    * @generated
    * @ordered
    */
-  protected EList<Aula> aulas;
+  protected EList<Aula> aulasDisponibles;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +69,13 @@ public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Dispon
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Aula> getAulas()
+  public EList<Aula> getAulasDisponibles()
   {
-    if (aulas == null)
+    if (aulasDisponibles == null)
     {
-      aulas = new EObjectContainmentEList<Aula>(Aula.class, this, PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS);
+      aulasDisponibles = new EObjectContainmentEList<Aula>(Aula.class, this, PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS_DISPONIBLES);
     }
-    return aulas;
+    return aulasDisponibles;
   }
 
   /**
@@ -88,8 +88,8 @@ public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Dispon
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS:
-        return ((InternalEList<?>)getAulas()).basicRemove(otherEnd, msgs);
+      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS_DISPONIBLES:
+        return ((InternalEList<?>)getAulasDisponibles()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Dispon
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS:
-        return getAulas();
+      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS_DISPONIBLES:
+        return getAulasDisponibles();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Dispon
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS:
-        getAulas().clear();
-        getAulas().addAll((Collection<? extends Aula>)newValue);
+      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS_DISPONIBLES:
+        getAulasDisponibles().clear();
+        getAulasDisponibles().addAll((Collection<? extends Aula>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Dispon
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS:
-        getAulas().clear();
+      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS_DISPONIBLES:
+        getAulasDisponibles().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +156,8 @@ public class Aulas_DisponiblesImpl extends ElementosImpl implements Aulas_Dispon
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS:
-        return aulas != null && !aulas.isEmpty();
+      case PlanificacionMateriasPackage.AULAS_DISPONIBLES__AULAS_DISPONIBLES:
+        return aulasDisponibles != null && !aulasDisponibles.isEmpty();
     }
     return super.eIsSet(featureID);
   }

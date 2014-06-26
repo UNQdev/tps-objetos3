@@ -3,58 +3,60 @@ grammar tp5.dslexterno.xtext.PlanificacionMaterias with org.eclipse.xtext.xbase.
 generate planificacionMaterias "http://www.dslexterno.tp5/xtext/PlanificacionMaterias"
 
 Model:
-	(elementos+=Elementos)*
+	(elementosPlanificacion+=Estructuras_Planificacion)* //seudo-inicializacion de variables
 	planificacion=Planificacion
 ; 
 
+//====================================================================================
 
-Elementos:
-	Nomina_Profesores | Aulas_Disponibles | Materias_Abiertas | Asignacion_Materia 
+Materias_Abiertas:	{Materias_Abiertas}
+	'materias disponibles' '{' (materiasAbiertas+=Materia)* '}'
+;
+Aulas_Disponibles:	{Aulas_Disponibles}
+	'aulas disponibles' '{' (aulasDisponibles+=Aula)* '}'
+;
+Nomina_Profesores:	{Nomina_Profesores}
+	'profesores en nomina' '{' (profesoresLibres+=Profesor)* '}'
+;
+Asignacion_Materia: 
+	dia=Dia 'de' horaInicio=Horario 'a' horaFinal=Horario ',' materia=[Materia]       
 ;
 
+//====================================================================================
 
-Nomina_Profesores:
-	{Nomina_Profesores}
-		'profesores en nomina' '{' (profesorsLibres+=Profesor)* '}'
+Estructuras_Planificacion:
+	Nomina_Profesores | Aulas_Disponibles | Materias_Abiertas 
 ;
-Aulas_Disponibles:	
-	{Aulas_Disponibles}
-		'aulas disponibles' '{' (aulasDisponibles+=Aula)* '}'
-;
-Materias_Abiertas:
-	{Materias_Abiertas}
-		'materias disponibles' '{' (materiasAbiertas+=Materia)* '}'
-;	
 Planificacion:
 	'planificacion' anio=INT 'semestre' semestre=INT '{' 
 		(asignacionDeMaterias+=Asignacion_Materia)*
 	'}'
 ;
-Asignacion_Materia:
-	dia=Dia 'de' horaInicio=Horario 'a' horaFinal=Horario ',' materia=[Materia]       
-;
+
+//====================================================================================
+
 Materia:
-	'materia' nombre=ID '{'
+	'materia' name=ID '{'
 		'requiere' (requerimientos+=Recurso)*
 		'dictada por' profesor=[Profesor] 'en' aula=[Aula]
 	'}' 
 ;
-Aula:
-	'aula' numero=ID '{'
-		'recursos' (recusos+=Recurso)*
-	'}'
-;
-Recurso:
-	nombre=STRING
-;
 Profesor:
-	'profesor' nombre=ID 'con dedicacion' dedicacion=Dedicacion
+	'profesor' name=ID 'con dedicacion' dedicacion=Dedicacion
 ;
 Dedicacion:
 	//los defino como clases con el nombre entre llaves, los extension methods deberian definirse con (dispatch) 
 	  {Simple} 'Simple'
 	| {Semi} 'Semi'
 	| {Exclusiva} 'Exclusiva' 	
+;
+Aula:
+	'aula' name=ID '{'
+		'recursos' (recusos+=Recurso)*
+	'}'
+;
+Recurso:
+	name=ID	
 ;
 
 enum Dia:

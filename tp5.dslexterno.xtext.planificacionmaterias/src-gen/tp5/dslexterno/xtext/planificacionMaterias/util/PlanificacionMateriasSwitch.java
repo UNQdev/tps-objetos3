@@ -79,18 +79,11 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PlanificacionMateriasPackage.ELEMENTOS:
+      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS:
       {
-        Elementos elementos = (Elementos)theEObject;
-        T result = caseElementos(elementos);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES:
-      {
-        Nomina_Profesores nomina_Profesores = (Nomina_Profesores)theEObject;
-        T result = caseNomina_Profesores(nomina_Profesores);
-        if (result == null) result = caseElementos(nomina_Profesores);
+        Materias_Abiertas materias_Abiertas = (Materias_Abiertas)theEObject;
+        T result = caseMaterias_Abiertas(materias_Abiertas);
+        if (result == null) result = caseEstructuras_Planificacion(materias_Abiertas);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -98,15 +91,29 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
       {
         Aulas_Disponibles aulas_Disponibles = (Aulas_Disponibles)theEObject;
         T result = caseAulas_Disponibles(aulas_Disponibles);
-        if (result == null) result = caseElementos(aulas_Disponibles);
+        if (result == null) result = caseEstructuras_Planificacion(aulas_Disponibles);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS:
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES:
       {
-        Materias_Abiertas materias_Abiertas = (Materias_Abiertas)theEObject;
-        T result = caseMaterias_Abiertas(materias_Abiertas);
-        if (result == null) result = caseElementos(materias_Abiertas);
+        Nomina_Profesores nomina_Profesores = (Nomina_Profesores)theEObject;
+        T result = caseNomina_Profesores(nomina_Profesores);
+        if (result == null) result = caseEstructuras_Planificacion(nomina_Profesores);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA:
+      {
+        Asignacion_Materia asignacion_Materia = (Asignacion_Materia)theEObject;
+        T result = caseAsignacion_Materia(asignacion_Materia);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlanificacionMateriasPackage.ESTRUCTURAS_PLANIFICACION:
+      {
+        Estructuras_Planificacion estructuras_Planificacion = (Estructuras_Planificacion)theEObject;
+        T result = caseEstructuras_Planificacion(estructuras_Planificacion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -117,33 +124,10 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA:
-      {
-        Asignacion_Materia asignacion_Materia = (Asignacion_Materia)theEObject;
-        T result = caseAsignacion_Materia(asignacion_Materia);
-        if (result == null) result = caseElementos(asignacion_Materia);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case PlanificacionMateriasPackage.MATERIA:
       {
         Materia materia = (Materia)theEObject;
         T result = caseMateria(materia);
-        if (result == null) result = caseElementos(materia);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PlanificacionMateriasPackage.AULA:
-      {
-        Aula aula = (Aula)theEObject;
-        T result = caseAula(aula);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PlanificacionMateriasPackage.RECURSO:
-      {
-        Recurso recurso = (Recurso)theEObject;
-        T result = caseRecurso(recurso);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -158,6 +142,20 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
       {
         Dedicacion dedicacion = (Dedicacion)theEObject;
         T result = caseDedicacion(dedicacion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlanificacionMateriasPackage.AULA:
+      {
+        Aula aula = (Aula)theEObject;
+        T result = caseAula(aula);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlanificacionMateriasPackage.RECURSO:
+      {
+        Recurso recurso = (Recurso)theEObject;
+        T result = caseRecurso(recurso);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,33 +211,17 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Elementos</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Materias Abiertas</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Elementos</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Materias Abiertas</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseElementos(Elementos object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Nomina Profesores</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Nomina Profesores</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNomina_Profesores(Nomina_Profesores object)
+  public T caseMaterias_Abiertas(Materias_Abiertas object)
   {
     return null;
   }
@@ -261,33 +243,17 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Materias Abiertas</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Nomina Profesores</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Materias Abiertas</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Nomina Profesores</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMaterias_Abiertas(Materias_Abiertas object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Planificacion</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Planificacion</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePlanificacion(Planificacion object)
+  public T caseNomina_Profesores(Nomina_Profesores object)
   {
     return null;
   }
@@ -309,6 +275,38 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Estructuras Planificacion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Estructuras Planificacion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEstructuras_Planificacion(Estructuras_Planificacion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Planificacion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Planificacion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePlanificacion(Planificacion object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Materia</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -320,38 +318,6 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMateria(Materia object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Aula</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Aula</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAula(Aula object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Recurso</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Recurso</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRecurso(Recurso object)
   {
     return null;
   }
@@ -384,6 +350,38 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDedicacion(Dedicacion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Aula</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Aula</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAula(Aula object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Recurso</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Recurso</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRecurso(Recurso object)
   {
     return null;
   }

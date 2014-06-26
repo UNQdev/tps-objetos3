@@ -83,8 +83,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == PlanificacionMateriasPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case PlanificacionMateriasPackage.ASIGNACION_MATERIA:
-				if(context == grammarAccess.getAsignacion_MateriaRule() ||
-				   context == grammarAccess.getElementosRule()) {
+				if(context == grammarAccess.getAsignacion_MateriaRule()) {
 					sequence_Asignacion_Materia(context, (Asignacion_Materia) semanticObject); 
 					return; 
 				}
@@ -97,7 +96,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 				else break;
 			case PlanificacionMateriasPackage.AULAS_DISPONIBLES:
 				if(context == grammarAccess.getAulas_DisponiblesRule() ||
-				   context == grammarAccess.getElementosRule()) {
+				   context == grammarAccess.getEstructuras_PlanificacionRule()) {
 					sequence_Aulas_Disponibles(context, (Aulas_Disponibles) semanticObject); 
 					return; 
 				}
@@ -115,14 +114,13 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 				}
 				else break;
 			case PlanificacionMateriasPackage.MATERIA:
-				if(context == grammarAccess.getElementosRule() ||
-				   context == grammarAccess.getMateriaRule()) {
+				if(context == grammarAccess.getMateriaRule()) {
 					sequence_Materia(context, (Materia) semanticObject); 
 					return; 
 				}
 				else break;
 			case PlanificacionMateriasPackage.MATERIAS_ABIERTAS:
-				if(context == grammarAccess.getElementosRule() ||
+				if(context == grammarAccess.getEstructuras_PlanificacionRule() ||
 				   context == grammarAccess.getMaterias_AbiertasRule()) {
 					sequence_Materias_Abiertas(context, (Materias_Abiertas) semanticObject); 
 					return; 
@@ -135,7 +133,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 				}
 				else break;
 			case PlanificacionMateriasPackage.NOMINA_PROFESORES:
-				if(context == grammarAccess.getElementosRule() ||
+				if(context == grammarAccess.getEstructuras_PlanificacionRule() ||
 				   context == grammarAccess.getNomina_ProfesoresRule()) {
 					sequence_Nomina_Profesores(context, (Nomina_Profesores) semanticObject); 
 					return; 
@@ -1294,7 +1292,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (numero=ID recusos+=Recurso*)
+	 *     (name=ID recusos+=Recurso*)
 	 */
 	protected void sequence_Aula(EObject context, Aula semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1303,7 +1301,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (aulas+=Aula*)
+	 *     (aulasDisponibles+=Aula*)
 	 */
 	protected void sequence_Aulas_Disponibles(EObject context, Aulas_Disponibles semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1358,7 +1356,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (nombre=ID requerimientos+=Recurso profesor=[Profesor|ID] aula=[Aula|ID])
+	 *     (name=ID requerimientos+=Recurso* profesor=[Profesor|ID] aula=[Aula|ID])
 	 */
 	protected void sequence_Materia(EObject context, Materia semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1367,7 +1365,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (materiasADictar+=Materia*)
+	 *     (materiasAbiertas+=Materia*)
 	 */
 	protected void sequence_Materias_Abiertas(EObject context, Materias_Abiertas semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1376,7 +1374,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (elementos+=Elementos* planificacion=Planificacion)
+	 *     (elementosPlanificacion+=Estructuras_Planificacion* planificacion=Planificacion)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1385,7 +1383,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (profesorsLibres+=Profesor*)
+	 *     (profesoresLibres+=Profesor*)
 	 */
 	protected void sequence_Nomina_Profesores(EObject context, Nomina_Profesores semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1403,18 +1401,18 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (nombre=ID dedicacion=Dedicacion)
+	 *     (name=ID dedicacion=Dedicacion)
 	 */
 	protected void sequence_Profesor(EObject context, Profesor semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, PlanificacionMateriasPackage.Literals.PROFESOR__NOMBRE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PlanificacionMateriasPackage.Literals.PROFESOR__NOMBRE));
+			if(transientValues.isValueTransient(semanticObject, PlanificacionMateriasPackage.Literals.PROFESOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PlanificacionMateriasPackage.Literals.PROFESOR__NAME));
 			if(transientValues.isValueTransient(semanticObject, PlanificacionMateriasPackage.Literals.PROFESOR__DEDICACION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PlanificacionMateriasPackage.Literals.PROFESOR__DEDICACION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getProfesorAccess().getNombreIDTerminalRuleCall_1_0(), semanticObject.getNombre());
+		feeder.accept(grammarAccess.getProfesorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getProfesorAccess().getDedicacionDedicacionParserRuleCall_3_0(), semanticObject.getDedicacion());
 		feeder.finish();
 	}
@@ -1422,16 +1420,16 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     nombre=STRING
+	 *     name=ID
 	 */
 	protected void sequence_Recurso(EObject context, Recurso semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, PlanificacionMateriasPackage.Literals.RECURSO__NOMBRE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PlanificacionMateriasPackage.Literals.RECURSO__NOMBRE));
+			if(transientValues.isValueTransient(semanticObject, PlanificacionMateriasPackage.Literals.RECURSO__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PlanificacionMateriasPackage.Literals.RECURSO__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRecursoAccess().getNombreSTRINGTerminalRuleCall_0(), semanticObject.getNombre());
+		feeder.accept(grammarAccess.getRecursoAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 }

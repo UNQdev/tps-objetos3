@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import tp5.dslexterno.xtext.planificacionMaterias.Elementos;
+import tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Model;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
@@ -30,7 +30,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ModelImpl#getElementos <em>Elementos</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ModelImpl#getElementosPlanificacion <em>Elementos Planificacion</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ModelImpl#getPlanificacion <em>Planificacion</em>}</li>
  * </ul>
  * </p>
@@ -40,14 +40,14 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getElementos() <em>Elementos</em>}' containment reference list.
+   * The cached value of the '{@link #getElementosPlanificacion() <em>Elementos Planificacion</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElementos()
+   * @see #getElementosPlanificacion()
    * @generated
    * @ordered
    */
-  protected EList<Elementos> elementos;
+  protected EList<Estructuras_Planificacion> elementosPlanificacion;
 
   /**
    * The cached value of the '{@link #getPlanificacion() <em>Planificacion</em>}' containment reference.
@@ -85,13 +85,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Elementos> getElementos()
+  public EList<Estructuras_Planificacion> getElementosPlanificacion()
   {
-    if (elementos == null)
+    if (elementosPlanificacion == null)
     {
-      elementos = new EObjectContainmentEList<Elementos>(Elementos.class, this, PlanificacionMateriasPackage.MODEL__ELEMENTOS);
+      elementosPlanificacion = new EObjectContainmentEList<Estructuras_Planificacion>(Estructuras_Planificacion.class, this, PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION);
     }
-    return elementos;
+    return elementosPlanificacion;
   }
 
   /**
@@ -152,8 +152,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MODEL__ELEMENTOS:
-        return ((InternalEList<?>)getElementos()).basicRemove(otherEnd, msgs);
+      case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
+        return ((InternalEList<?>)getElementosPlanificacion()).basicRemove(otherEnd, msgs);
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
         return basicSetPlanificacion(null, msgs);
     }
@@ -170,8 +170,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MODEL__ELEMENTOS:
-        return getElementos();
+      case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
+        return getElementosPlanificacion();
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
         return getPlanificacion();
     }
@@ -189,9 +189,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MODEL__ELEMENTOS:
-        getElementos().clear();
-        getElementos().addAll((Collection<? extends Elementos>)newValue);
+      case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
+        getElementosPlanificacion().clear();
+        getElementosPlanificacion().addAll((Collection<? extends Estructuras_Planificacion>)newValue);
         return;
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
         setPlanificacion((Planificacion)newValue);
@@ -210,8 +210,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MODEL__ELEMENTOS:
-        getElementos().clear();
+      case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
+        getElementosPlanificacion().clear();
         return;
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
         setPlanificacion((Planificacion)null);
@@ -230,8 +230,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MODEL__ELEMENTOS:
-        return elementos != null && !elementos.isEmpty();
+      case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
+        return elementosPlanificacion != null && !elementosPlanificacion.isEmpty();
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
         return planificacion != null;
     }

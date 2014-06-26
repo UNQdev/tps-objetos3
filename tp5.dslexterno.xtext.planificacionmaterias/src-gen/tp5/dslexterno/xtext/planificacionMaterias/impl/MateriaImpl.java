@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +31,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getName <em>Name</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getRequerimientos <em>Requerimientos</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getProfesor <em>Profesor</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getAula <em>Aula</em>}</li>
@@ -39,27 +40,27 @@ import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
  *
  * @generated
  */
-public class MateriaImpl extends ElementosImpl implements Materia
+public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
 {
   /**
-   * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNombre()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NOMBRE_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNombre()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String nombre = NOMBRE_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRequerimientos() <em>Requerimientos</em>}' containment reference list.
@@ -117,9 +118,9 @@ public class MateriaImpl extends ElementosImpl implements Materia
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNombre()
+  public String getName()
   {
-    return nombre;
+    return name;
   }
 
   /**
@@ -127,12 +128,12 @@ public class MateriaImpl extends ElementosImpl implements Materia
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNombre(String newNombre)
+  public void setName(String newName)
   {
-    String oldNombre = nombre;
-    nombre = newNombre;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MATERIA__NOMBRE, oldNombre, nombre));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MATERIA__NAME, oldName, name));
   }
 
   /**
@@ -261,8 +262,8 @@ public class MateriaImpl extends ElementosImpl implements Materia
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIA__NOMBRE:
-        return getNombre();
+      case PlanificacionMateriasPackage.MATERIA__NAME:
+        return getName();
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         return getRequerimientos();
       case PlanificacionMateriasPackage.MATERIA__PROFESOR:
@@ -286,8 +287,8 @@ public class MateriaImpl extends ElementosImpl implements Materia
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIA__NOMBRE:
-        setNombre((String)newValue);
+      case PlanificacionMateriasPackage.MATERIA__NAME:
+        setName((String)newValue);
         return;
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         getRequerimientos().clear();
@@ -313,8 +314,8 @@ public class MateriaImpl extends ElementosImpl implements Materia
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIA__NOMBRE:
-        setNombre(NOMBRE_EDEFAULT);
+      case PlanificacionMateriasPackage.MATERIA__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         getRequerimientos().clear();
@@ -339,8 +340,8 @@ public class MateriaImpl extends ElementosImpl implements Materia
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.MATERIA__NOMBRE:
-        return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+      case PlanificacionMateriasPackage.MATERIA__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         return requerimientos != null && !requerimientos.isEmpty();
       case PlanificacionMateriasPackage.MATERIA__PROFESOR:
@@ -362,8 +363,8 @@ public class MateriaImpl extends ElementosImpl implements Materia
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nombre: ");
-    result.append(nombre);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

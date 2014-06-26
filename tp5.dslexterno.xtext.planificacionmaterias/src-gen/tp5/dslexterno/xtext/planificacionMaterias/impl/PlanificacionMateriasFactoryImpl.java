@@ -66,17 +66,17 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
     switch (eClass.getClassifierID())
     {
       case PlanificacionMateriasPackage.MODEL: return createModel();
-      case PlanificacionMateriasPackage.ELEMENTOS: return createElementos();
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES: return createNomina_Profesores();
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES: return createAulas_Disponibles();
       case PlanificacionMateriasPackage.MATERIAS_ABIERTAS: return createMaterias_Abiertas();
-      case PlanificacionMateriasPackage.PLANIFICACION: return createPlanificacion();
+      case PlanificacionMateriasPackage.AULAS_DISPONIBLES: return createAulas_Disponibles();
+      case PlanificacionMateriasPackage.NOMINA_PROFESORES: return createNomina_Profesores();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA: return createAsignacion_Materia();
+      case PlanificacionMateriasPackage.ESTRUCTURAS_PLANIFICACION: return createEstructuras_Planificacion();
+      case PlanificacionMateriasPackage.PLANIFICACION: return createPlanificacion();
       case PlanificacionMateriasPackage.MATERIA: return createMateria();
-      case PlanificacionMateriasPackage.AULA: return createAula();
-      case PlanificacionMateriasPackage.RECURSO: return createRecurso();
       case PlanificacionMateriasPackage.PROFESOR: return createProfesor();
       case PlanificacionMateriasPackage.DEDICACION: return createDedicacion();
+      case PlanificacionMateriasPackage.AULA: return createAula();
+      case PlanificacionMateriasPackage.RECURSO: return createRecurso();
       case PlanificacionMateriasPackage.HORARIO: return createHorario();
       case PlanificacionMateriasPackage.SIMPLE: return createSimple();
       case PlanificacionMateriasPackage.SEMI: return createSemi();
@@ -136,21 +136,10 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Elementos createElementos()
+  public Materias_Abiertas createMaterias_Abiertas()
   {
-    ElementosImpl elementos = new ElementosImpl();
-    return elementos;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Nomina_Profesores createNomina_Profesores()
-  {
-    Nomina_ProfesoresImpl nomina_Profesores = new Nomina_ProfesoresImpl();
-    return nomina_Profesores;
+    Materias_AbiertasImpl materias_Abiertas = new Materias_AbiertasImpl();
+    return materias_Abiertas;
   }
 
   /**
@@ -169,21 +158,10 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Materias_Abiertas createMaterias_Abiertas()
+  public Nomina_Profesores createNomina_Profesores()
   {
-    Materias_AbiertasImpl materias_Abiertas = new Materias_AbiertasImpl();
-    return materias_Abiertas;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Planificacion createPlanificacion()
-  {
-    PlanificacionImpl planificacion = new PlanificacionImpl();
-    return planificacion;
+    Nomina_ProfesoresImpl nomina_Profesores = new Nomina_ProfesoresImpl();
+    return nomina_Profesores;
   }
 
   /**
@@ -202,32 +180,32 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
+  public Estructuras_Planificacion createEstructuras_Planificacion()
+  {
+    Estructuras_PlanificacionImpl estructuras_Planificacion = new Estructuras_PlanificacionImpl();
+    return estructuras_Planificacion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Planificacion createPlanificacion()
+  {
+    PlanificacionImpl planificacion = new PlanificacionImpl();
+    return planificacion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Materia createMateria()
   {
     MateriaImpl materia = new MateriaImpl();
     return materia;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Aula createAula()
-  {
-    AulaImpl aula = new AulaImpl();
-    return aula;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Recurso createRecurso()
-  {
-    RecursoImpl recurso = new RecursoImpl();
-    return recurso;
   }
 
   /**
@@ -250,6 +228,28 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
   {
     DedicacionImpl dedicacion = new DedicacionImpl();
     return dedicacion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Aula createAula()
+  {
+    AulaImpl aula = new AulaImpl();
+    return aula;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Recurso createRecurso()
+  {
+    RecursoImpl recurso = new RecursoImpl();
+    return recurso;
   }
 
   /**

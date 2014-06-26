@@ -32,22 +32,13 @@ public interface PlanificacionMateriasFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Elementos</em>'.
+   * Returns a new object of class '<em>Materias Abiertas</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Elementos</em>'.
+   * @return a new object of class '<em>Materias Abiertas</em>'.
    * @generated
    */
-  Elementos createElementos();
-
-  /**
-   * Returns a new object of class '<em>Nomina Profesores</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Nomina Profesores</em>'.
-   * @generated
-   */
-  Nomina_Profesores createNomina_Profesores();
+  Materias_Abiertas createMaterias_Abiertas();
 
   /**
    * Returns a new object of class '<em>Aulas Disponibles</em>'.
@@ -59,22 +50,13 @@ public interface PlanificacionMateriasFactory extends EFactory
   Aulas_Disponibles createAulas_Disponibles();
 
   /**
-   * Returns a new object of class '<em>Materias Abiertas</em>'.
+   * Returns a new object of class '<em>Nomina Profesores</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Materias Abiertas</em>'.
+   * @return a new object of class '<em>Nomina Profesores</em>'.
    * @generated
    */
-  Materias_Abiertas createMaterias_Abiertas();
-
-  /**
-   * Returns a new object of class '<em>Planificacion</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Planificacion</em>'.
-   * @generated
-   */
-  Planificacion createPlanificacion();
+  Nomina_Profesores createNomina_Profesores();
 
   /**
    * Returns a new object of class '<em>Asignacion Materia</em>'.
@@ -86,6 +68,24 @@ public interface PlanificacionMateriasFactory extends EFactory
   Asignacion_Materia createAsignacion_Materia();
 
   /**
+   * Returns a new object of class '<em>Estructuras Planificacion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Estructuras Planificacion</em>'.
+   * @generated
+   */
+  Estructuras_Planificacion createEstructuras_Planificacion();
+
+  /**
+   * Returns a new object of class '<em>Planificacion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Planificacion</em>'.
+   * @generated
+   */
+  Planificacion createPlanificacion();
+
+  /**
    * Returns a new object of class '<em>Materia</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,24 +93,6 @@ public interface PlanificacionMateriasFactory extends EFactory
    * @generated
    */
   Materia createMateria();
-
-  /**
-   * Returns a new object of class '<em>Aula</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Aula</em>'.
-   * @generated
-   */
-  Aula createAula();
-
-  /**
-   * Returns a new object of class '<em>Recurso</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Recurso</em>'.
-   * @generated
-   */
-  Recurso createRecurso();
 
   /**
    * Returns a new object of class '<em>Profesor</em>'.
@@ -129,6 +111,24 @@ public interface PlanificacionMateriasFactory extends EFactory
    * @generated
    */
   Dedicacion createDedicacion();
+
+  /**
+   * Returns a new object of class '<em>Aula</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Aula</em>'.
+   * @generated
+   */
+  Aula createAula();
+
+  /**
+   * Returns a new object of class '<em>Recurso</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Recurso</em>'.
+   * @generated
+   */
+  Recurso createRecurso();
 
   /**
    * Returns a new object of class '<em>Horario</em>'.
