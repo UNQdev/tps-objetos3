@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getDia <em>Dia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getHoraInicio <em>Hora Inicio</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getHoraFinal <em>Hora Final</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria <em>Materia</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getCantidadAlumnos <em>Cantidad Alumnos</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,56 +55,30 @@ public interface Asignacion_Materia extends EObject
   void setDia(Dia value);
 
   /**
-   * Returns the value of the '<em><b>Hora Inicio</b></em>' containment reference.
+   * Returns the value of the '<em><b>Rango Horario</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Hora Inicio</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Rango Horario</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Hora Inicio</em>' containment reference.
-   * @see #setHoraInicio(Horario)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_HoraInicio()
+   * @return the value of the '<em>Rango Horario</em>' containment reference.
+   * @see #setRangoHorario(Rango_Horario)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_RangoHorario()
    * @model containment="true"
    * @generated
    */
-  Horario getHoraInicio();
+  Rango_Horario getRangoHorario();
 
   /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getHoraInicio <em>Hora Inicio</em>}' containment reference.
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hora Inicio</em>' containment reference.
-   * @see #getHoraInicio()
+   * @param value the new value of the '<em>Rango Horario</em>' containment reference.
+   * @see #getRangoHorario()
    * @generated
    */
-  void setHoraInicio(Horario value);
-
-  /**
-   * Returns the value of the '<em><b>Hora Final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Hora Final</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Hora Final</em>' containment reference.
-   * @see #setHoraFinal(Horario)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_HoraFinal()
-   * @model containment="true"
-   * @generated
-   */
-  Horario getHoraFinal();
-
-  /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getHoraFinal <em>Hora Final</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hora Final</em>' containment reference.
-   * @see #getHoraFinal()
-   * @generated
-   */
-  void setHoraFinal(Horario value);
+  void setRangoHorario(Rango_Horario value);
 
   /**
    * Returns the value of the '<em><b>Materia</b></em>' reference.
@@ -131,5 +105,31 @@ public interface Asignacion_Materia extends EObject
    * @generated
    */
   void setMateria(Materia value);
+
+  /**
+   * Returns the value of the '<em><b>Cantidad Alumnos</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Cantidad Alumnos</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Cantidad Alumnos</em>' attribute.
+   * @see #setCantidadAlumnos(int)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_CantidadAlumnos()
+   * @model
+   * @generated
+   */
+  int getCantidadAlumnos();
+
+  /**
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getCantidadAlumnos <em>Cantidad Alumnos</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Cantidad Alumnos</em>' attribute.
+   * @see #getCantidadAlumnos()
+   * @generated
+   */
+  void setCantidadAlumnos(int value);
 
 } // Asignacion_Materia

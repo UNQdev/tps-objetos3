@@ -104,6 +104,15 @@ public interface PlanificacionMateriasFactory extends EFactory
   Profesor createProfesor();
 
   /**
+   * Returns a new object of class '<em>Disponibilidad</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Disponibilidad</em>'.
+   * @generated
+   */
+  Disponibilidad createDisponibilidad();
+
+  /**
    * Returns a new object of class '<em>Dedicacion</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -138,6 +147,15 @@ public interface PlanificacionMateriasFactory extends EFactory
    * @generated
    */
   Horario createHorario();
+
+  /**
+   * Returns a new object of class '<em>Rango Horario</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rango Horario</em>'.
+   * @generated
+   */
+  Rango_Horario createRango_Horario();
 
   /**
    * Returns a new object of class '<em>Simple</em>'.

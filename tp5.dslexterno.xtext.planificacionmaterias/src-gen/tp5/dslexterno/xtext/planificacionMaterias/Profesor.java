@@ -2,6 +2,8 @@
  */
 package tp5.dslexterno.xtext.planificacionMaterias;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Profesor#getName <em>Name</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Profesor#getDedicacion <em>Dedicacion</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Profesor#getDisponibilidad <em>Disponibilidad</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +77,21 @@ public interface Profesor extends EObject
    * @generated
    */
   void setDedicacion(Dedicacion value);
+
+  /**
+   * Returns the value of the '<em><b>Disponibilidad</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Disponibilidad</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Disponibilidad</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getProfesor_Disponibilidad()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Disponibilidad> getDisponibilidad();
 
 } // Profesor

@@ -30,6 +30,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.AulaImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.AulaImpl#getCapacidad <em>Capacidad</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.AulaImpl#getRecusos <em>Recusos</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +58,26 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCapacidad() <em>Capacidad</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCapacidad()
+   * @generated
+   * @ordered
+   */
+  protected static final int CAPACIDAD_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getCapacidad() <em>Capacidad</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCapacidad()
+   * @generated
+   * @ordered
+   */
+  protected int capacidad = CAPACIDAD_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRecusos() <em>Recusos</em>}' containment reference list.
@@ -117,6 +138,29 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getCapacidad()
+  {
+    return capacidad;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCapacidad(int newCapacidad)
+  {
+    int oldCapacidad = capacidad;
+    capacidad = newCapacidad;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.AULA__CAPACIDAD, oldCapacidad, capacidad));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Recurso> getRecusos()
   {
     if (recusos == null)
@@ -154,6 +198,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
     {
       case PlanificacionMateriasPackage.AULA__NAME:
         return getName();
+      case PlanificacionMateriasPackage.AULA__CAPACIDAD:
+        return getCapacidad();
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         return getRecusos();
     }
@@ -173,6 +219,9 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
     {
       case PlanificacionMateriasPackage.AULA__NAME:
         setName((String)newValue);
+        return;
+      case PlanificacionMateriasPackage.AULA__CAPACIDAD:
+        setCapacidad((Integer)newValue);
         return;
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         getRecusos().clear();
@@ -195,6 +244,9 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
       case PlanificacionMateriasPackage.AULA__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case PlanificacionMateriasPackage.AULA__CAPACIDAD:
+        setCapacidad(CAPACIDAD_EDEFAULT);
+        return;
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         getRecusos().clear();
         return;
@@ -214,6 +266,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
     {
       case PlanificacionMateriasPackage.AULA__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PlanificacionMateriasPackage.AULA__CAPACIDAD:
+        return capacidad != CAPACIDAD_EDEFAULT;
       case PlanificacionMateriasPackage.AULA__RECUSOS:
         return recusos != null && !recusos.isEmpty();
     }
@@ -233,6 +287,8 @@ public class AulaImpl extends MinimalEObjectImpl.Container implements Aula
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", capacidad: ");
+    result.append(capacidad);
     result.append(')');
     return result.toString();
   }

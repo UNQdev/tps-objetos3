@@ -138,6 +138,13 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PlanificacionMateriasPackage.DISPONIBILIDAD:
+      {
+        Disponibilidad disponibilidad = (Disponibilidad)theEObject;
+        T result = caseDisponibilidad(disponibilidad);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PlanificacionMateriasPackage.DEDICACION:
       {
         Dedicacion dedicacion = (Dedicacion)theEObject;
@@ -163,6 +170,13 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
       {
         Horario horario = (Horario)theEObject;
         T result = caseHorario(horario);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlanificacionMateriasPackage.RANGO_HORARIO:
+      {
+        Rango_Horario rango_Horario = (Rango_Horario)theEObject;
+        T result = caseRango_Horario(rango_Horario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -339,6 +353,22 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Disponibilidad</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Disponibilidad</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDisponibilidad(Disponibilidad object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Dedicacion</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -398,6 +428,22 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseHorario(Horario object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rango Horario</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rango Horario</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRango_Horario(Rango_Horario object)
   {
     return null;
   }

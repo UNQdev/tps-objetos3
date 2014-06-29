@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getName <em>Name</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getCapacidad <em>Capacidad</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getRecusos <em>Recusos</em>}</li>
  * </ul>
  * </p>
@@ -50,6 +51,32 @@ public interface Aula extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Capacidad</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Capacidad</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Capacidad</em>' attribute.
+   * @see #setCapacidad(int)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAula_Capacidad()
+   * @model
+   * @generated
+   */
+  int getCapacidad();
+
+  /**
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Aula#getCapacidad <em>Capacidad</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Capacidad</em>' attribute.
+   * @see #getCapacidad()
+   * @generated
+   */
+  void setCapacidad(int value);
 
   /**
    * Returns the value of the '<em><b>Recusos</b></em>' containment reference list.

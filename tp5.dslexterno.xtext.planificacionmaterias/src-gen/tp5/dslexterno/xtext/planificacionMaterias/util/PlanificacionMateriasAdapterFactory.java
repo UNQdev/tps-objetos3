@@ -120,6 +120,11 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
         return createProfesorAdapter();
       }
       @Override
+      public Adapter caseDisponibilidad(Disponibilidad object)
+      {
+        return createDisponibilidadAdapter();
+      }
+      @Override
       public Adapter caseDedicacion(Dedicacion object)
       {
         return createDedicacionAdapter();
@@ -138,6 +143,11 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
       public Adapter caseHorario(Horario object)
       {
         return createHorarioAdapter();
+      }
+      @Override
+      public Adapter caseRango_Horario(Rango_Horario object)
+      {
+        return createRango_HorarioAdapter();
       }
       @Override
       public Adapter caseSimple(Simple object)
@@ -312,6 +322,21 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad <em>Disponibilidad</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad
+   * @generated
+   */
+  public Adapter createDisponibilidadAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Dedicacion <em>Dedicacion</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -367,6 +392,21 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createHorarioAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario <em>Rango Horario</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario
+   * @generated
+   */
+  public Adapter createRango_HorarioAdapter()
   {
     return null;
   }

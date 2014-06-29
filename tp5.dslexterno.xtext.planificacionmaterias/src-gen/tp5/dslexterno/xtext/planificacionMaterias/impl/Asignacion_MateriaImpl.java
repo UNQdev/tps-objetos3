@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Dia;
-import tp5.dslexterno.xtext.planificacionMaterias.Horario;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
+import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +25,9 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getDia <em>Dia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getHoraInicio <em>Hora Inicio</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getHoraFinal <em>Hora Final</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getRangoHorario <em>Rango Horario</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getMateria <em>Materia</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getCantidadAlumnos <em>Cantidad Alumnos</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,24 +56,14 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   protected Dia dia = DIA_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getHoraInicio() <em>Hora Inicio</em>}' containment reference.
+   * The cached value of the '{@link #getRangoHorario() <em>Rango Horario</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHoraInicio()
+   * @see #getRangoHorario()
    * @generated
    * @ordered
    */
-  protected Horario horaInicio;
-
-  /**
-   * The cached value of the '{@link #getHoraFinal() <em>Hora Final</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHoraFinal()
-   * @generated
-   * @ordered
-   */
-  protected Horario horaFinal;
+  protected Rango_Horario rangoHorario;
 
   /**
    * The cached value of the '{@link #getMateria() <em>Materia</em>}' reference.
@@ -84,6 +74,26 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected Materia materia;
+
+  /**
+   * The default value of the '{@link #getCantidadAlumnos() <em>Cantidad Alumnos</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCantidadAlumnos()
+   * @generated
+   * @ordered
+   */
+  protected static final int CANTIDAD_ALUMNOS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getCantidadAlumnos() <em>Cantidad Alumnos</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCantidadAlumnos()
+   * @generated
+   * @ordered
+   */
+  protected int cantidadAlumnos = CANTIDAD_ALUMNOS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,9 +144,9 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public Horario getHoraInicio()
+  public Rango_Horario getRangoHorario()
   {
-    return horaInicio;
+    return rangoHorario;
   }
 
   /**
@@ -144,13 +154,13 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetHoraInicio(Horario newHoraInicio, NotificationChain msgs)
+  public NotificationChain basicSetRangoHorario(Rango_Horario newRangoHorario, NotificationChain msgs)
   {
-    Horario oldHoraInicio = horaInicio;
-    horaInicio = newHoraInicio;
+    Rango_Horario oldRangoHorario = rangoHorario;
+    rangoHorario = newRangoHorario;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO, oldHoraInicio, newHoraInicio);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, oldRangoHorario, newRangoHorario);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -161,68 +171,20 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHoraInicio(Horario newHoraInicio)
+  public void setRangoHorario(Rango_Horario newRangoHorario)
   {
-    if (newHoraInicio != horaInicio)
+    if (newRangoHorario != rangoHorario)
     {
       NotificationChain msgs = null;
-      if (horaInicio != null)
-        msgs = ((InternalEObject)horaInicio).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO, null, msgs);
-      if (newHoraInicio != null)
-        msgs = ((InternalEObject)newHoraInicio).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO, null, msgs);
-      msgs = basicSetHoraInicio(newHoraInicio, msgs);
+      if (rangoHorario != null)
+        msgs = ((InternalEObject)rangoHorario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, null, msgs);
+      if (newRangoHorario != null)
+        msgs = ((InternalEObject)newRangoHorario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, null, msgs);
+      msgs = basicSetRangoHorario(newRangoHorario, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO, newHoraInicio, newHoraInicio));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Horario getHoraFinal()
-  {
-    return horaFinal;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetHoraFinal(Horario newHoraFinal, NotificationChain msgs)
-  {
-    Horario oldHoraFinal = horaFinal;
-    horaFinal = newHoraFinal;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL, oldHoraFinal, newHoraFinal);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHoraFinal(Horario newHoraFinal)
-  {
-    if (newHoraFinal != horaFinal)
-    {
-      NotificationChain msgs = null;
-      if (horaFinal != null)
-        msgs = ((InternalEObject)horaFinal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL, null, msgs);
-      if (newHoraFinal != null)
-        msgs = ((InternalEObject)newHoraFinal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL, null, msgs);
-      msgs = basicSetHoraFinal(newHoraFinal, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL, newHoraFinal, newHoraFinal));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, newRangoHorario, newRangoHorario));
   }
 
   /**
@@ -273,15 +235,36 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getCantidadAlumnos()
+  {
+    return cantidadAlumnos;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCantidadAlumnos(int newCantidadAlumnos)
+  {
+    int oldCantidadAlumnos = cantidadAlumnos;
+    cantidadAlumnos = newCantidadAlumnos;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS, oldCantidadAlumnos, cantidadAlumnos));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO:
-        return basicSetHoraInicio(null, msgs);
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL:
-        return basicSetHoraFinal(null, msgs);
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
+        return basicSetRangoHorario(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -298,13 +281,13 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
     {
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
         return getDia();
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO:
-        return getHoraInicio();
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL:
-        return getHoraFinal();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
+        return getRangoHorario();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         if (resolve) return getMateria();
         return basicGetMateria();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
+        return getCantidadAlumnos();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -322,14 +305,14 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
         setDia((Dia)newValue);
         return;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO:
-        setHoraInicio((Horario)newValue);
-        return;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL:
-        setHoraFinal((Horario)newValue);
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
+        setRangoHorario((Rango_Horario)newValue);
         return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         setMateria((Materia)newValue);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
+        setCantidadAlumnos((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -348,14 +331,14 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
         setDia(DIA_EDEFAULT);
         return;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO:
-        setHoraInicio((Horario)null);
-        return;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL:
-        setHoraFinal((Horario)null);
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
+        setRangoHorario((Rango_Horario)null);
         return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         setMateria((Materia)null);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
+        setCantidadAlumnos(CANTIDAD_ALUMNOS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -373,12 +356,12 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
     {
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
         return dia != DIA_EDEFAULT;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_INICIO:
-        return horaInicio != null;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__HORA_FINAL:
-        return horaFinal != null;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
+        return rangoHorario != null;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         return materia != null;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
+        return cantidadAlumnos != CANTIDAD_ALUMNOS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -396,6 +379,8 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (dia: ");
     result.append(dia);
+    result.append(", cantidadAlumnos: ");
+    result.append(cantidadAlumnos);
     result.append(')');
     return result.toString();
   }

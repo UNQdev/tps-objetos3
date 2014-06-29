@@ -13,6 +13,10 @@ import tp5.dslexterno.xtext.planificacionMaterias.Profesor
 import tp5.dslexterno.xtext.planificacionMaterias.Semi
 import tp5.dslexterno.xtext.planificacionMaterias.Simple
 import tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas
+import tp5.dslexterno.xtext.planificacionMaterias.Planificacion
+import tp5.dslexterno.xtext.planificacionMaterias.Aula
+import tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion
+import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia
 
 //import org.eclipse.xtext.validation.Check
 /**
@@ -22,18 +26,79 @@ import tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas
  */
 class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValidator {
 
+
+	/*
+	 * Validaciones iniciales
+	 */
+
 	@Check
-	def validarDedicacionesDeProfesor(Materia materia) {
-		val profesor = materia.dictadaPor
-		val materias = (materia.eContainer as Model).elementosPlanificacion.filter(Materias_Abiertas).get(0).materiasAbiertas
-		if (materias.materiasConProfesor(profesor) > profesor.cantMateriasSegunDedicacion) {
-			error('''El profesor «profesor.name» supera el limite de su dedicacion''', materia,
+	def validarCargaHorariaDocente(Materia materia){
+		var planificacion = ((materia.eContainer as Estructuras_Planificacion).eContainer as Model).planificacion
+		var profesor = materia.profesor
+		if(profesor.cantMateriasSegunDedicacion < planificacion.cantidadMateriasDictadasPor(profesor)){
+			error('''El profesor «profesor.name.toUpperCase» supera el limite de su dedicacion''', materia,
 				PlanificacionMateriasPackage.Literals.MATERIA__PROFESOR) //Mensaje, Objeto que no cumple la validacion, Property del objeto que falla
 		}
 	}
 	
-	def int materiasConProfesor(EList<Materia> list, Profesor profesor){
-		return list.filter[m | m.profesor.equals(profesor)].size
+	@Check
+	def validarTodasLasMateriasAsignadas(Planificacion planificacion){
+		
+	}
+	
+	@Check
+	def validarCargaHorariaMateria(Materia m){
+		
+	}
+		
+	@Check
+	def validarCompatibilidadAulaMateria(Aula aula){
+		
+	}
+	
+	@Check
+	def validarSuperposicionEntreMaterias(Materia materia){
+		
+	}	
+	
+	
+	
+	/*
+	 * Validaciones de puntos bonus
+	 */
+	@Check
+	def validarCapacidadAula(Aula aula){
+		
+	}
+	
+	@Check
+	def validarDisponibilidadProfesor(Materia materia){
+		
+	}
+	
+	
+	
+	
+	
+	/*
+	 * Validaciones extras
+	 */
+	@Check
+	def validadDisponibilidadENProfesor(Profesor profesor){
+		//para validar que la disponibilidad DEL profesor este bien definida
+	}
+	
+	
+	
+	
+	
+	/*
+	 * Comportamiento agregado via extension methods
+	 */
+	
+	def int cantidadMateriasDictadasPor(Planificacion planificacion, Profesor profesor){
+		var listaMaterias = planificacion.asignacionDeMaterias.map[asignacion | asignacion.materia]
+		listaMaterias.filter[m | m.dictadaPor.equals(profesor)].size
 	}
 	
 	def Profesor dictadaPor(Materia materia){

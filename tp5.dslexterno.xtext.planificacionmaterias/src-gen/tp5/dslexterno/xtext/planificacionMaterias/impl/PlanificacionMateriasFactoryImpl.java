@@ -74,10 +74,12 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
       case PlanificacionMateriasPackage.PLANIFICACION: return createPlanificacion();
       case PlanificacionMateriasPackage.MATERIA: return createMateria();
       case PlanificacionMateriasPackage.PROFESOR: return createProfesor();
+      case PlanificacionMateriasPackage.DISPONIBILIDAD: return createDisponibilidad();
       case PlanificacionMateriasPackage.DEDICACION: return createDedicacion();
       case PlanificacionMateriasPackage.AULA: return createAula();
       case PlanificacionMateriasPackage.RECURSO: return createRecurso();
       case PlanificacionMateriasPackage.HORARIO: return createHorario();
+      case PlanificacionMateriasPackage.RANGO_HORARIO: return createRango_Horario();
       case PlanificacionMateriasPackage.SIMPLE: return createSimple();
       case PlanificacionMateriasPackage.SEMI: return createSemi();
       case PlanificacionMateriasPackage.EXCLUSIVA: return createExclusiva();
@@ -224,6 +226,17 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
+  public Disponibilidad createDisponibilidad()
+  {
+    DisponibilidadImpl disponibilidad = new DisponibilidadImpl();
+    return disponibilidad;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Dedicacion createDedicacion()
   {
     DedicacionImpl dedicacion = new DedicacionImpl();
@@ -261,6 +274,17 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
   {
     HorarioImpl horario = new HorarioImpl();
     return horario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Rango_Horario createRango_Horario()
+  {
+    Rango_HorarioImpl rango_Horario = new Rango_HorarioImpl();
+    return rango_Horario;
   }
 
   /**

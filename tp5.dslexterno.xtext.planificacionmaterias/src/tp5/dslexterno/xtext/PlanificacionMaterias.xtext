@@ -4,7 +4,7 @@ generate planificacionMaterias "http://www.dslexterno.tp5/xtext/PlanificacionMat
 
 Model:
 	(elementosPlanificacion+=Estructuras_Planificacion)* //seudo-inicializacion de variables
-	planificacion=Planificacion
+	(planificacion+=Planificacion)*
 ; 
 
 //====================================================================================
@@ -19,8 +19,9 @@ Nomina_Profesores:	{Nomina_Profesores}
 	'profesores en nomina' '{' (profesoresLibres+=Profesor)* '}'
 ;
 Asignacion_Materia: 
-	dia=Dia 'de' horaInicio=Horario 'a' horaFinal=Horario ',' materia=[Materia]       
+	dia=Dia rangoHorario=Rango_Horario ',' materia=[Materia] ':' cantidadAlumnos=INT 'alumnos inscriptos'      
 ;
+
 
 //====================================================================================
 
@@ -37,13 +38,23 @@ Planificacion:
 
 Materia:
 	'materia' name=ID '{'
-		'requiere' (requerimientos+=Recurso)*
-		'dictada por' profesor=[Profesor] 'en' aula=[Aula]
+		'requiere:' (requerimientos+=Recurso)*
+		'dictada por:' profesor=[Profesor] 'en' aula=[Aula]
 	'}' 
 ;
 Profesor:
-	'profesor' name=ID 'con dedicacion' dedicacion=Dedicacion
+	'profesor' name=ID 'con dedicacion' dedicacion=Dedicacion '{'
+		(disponibilidad+=Disponibilidad)*
+	'}'
 ;
+
+Disponibilidad:
+	'puede:' dia=Dia |
+	'puede:' dia=Dia rangoHorario=Rango_Horario |
+	'no puede' dia=Dia |
+	'no puede' dia=Dia rangoHorario=Rango_Horario
+;
+
 Dedicacion:
 	//los defino como clases con el nombre entre llaves, los extension methods deberian definirse con (dispatch) 
 	  {Simple} 'Simple'
@@ -52,7 +63,8 @@ Dedicacion:
 ;
 Aula:
 	'aula' name=ID '{'
-		'recursos' (recusos+=Recurso)*
+		'capacidad maxima:' capacidad=INT 'alumnos'
+		'recursos:' (recusos+=Recurso)*
 	'}'
 ;
 Recurso:
@@ -68,4 +80,7 @@ enum Dia:
 ;
 Horario:
 	hora=INT ':' minutos=INT
+;
+Rango_Horario:
+	'de' horaInicio=Horario 'a' horaFinal=Horario
 ;
