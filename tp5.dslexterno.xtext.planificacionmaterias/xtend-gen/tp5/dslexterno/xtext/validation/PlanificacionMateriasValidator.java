@@ -15,13 +15,13 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Dedicacion;
-import tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
-import tp5.dslexterno.xtext.planificacionMaterias.Model;
+import tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
+import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
 import tp5.dslexterno.xtext.planificacionMaterias.Semi;
 import tp5.dslexterno.xtext.planificacionMaterias.Simple;
 import tp5.dslexterno.xtext.validation.AbstractPlanificacionMateriasValidator;
@@ -39,11 +39,10 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   @Check
   public void validarCargaHorariaDocente(final Materia materia) {
     EObject _eContainer = materia.eContainer();
-    EObject _eContainer_1 = ((Estructuras_Planificacion) _eContainer).eContainer();
-    Planificacion planificacion = ((Model) _eContainer_1).getPlanificacion();
+    EList<Materia> listaMaterias = ((Materias_Abiertas) _eContainer).getMateriasAbiertas();
     Profesor profesor = materia.getProfesor();
     int _cantMateriasSegunDedicacion = this.cantMateriasSegunDedicacion(profesor);
-    int _cantidadMateriasDictadasPor = this.cantidadMateriasDictadasPor(planificacion, profesor);
+    int _cantidadMateriasDictadasPor = this.cantidadMateriasDictadasPor(listaMaterias, profesor);
     boolean _lessThan = (_cantMateriasSegunDedicacion < _cantidadMateriasDictadasPor);
     if (_lessThan) {
       StringConcatenation _builder = new StringConcatenation();
@@ -58,8 +57,30 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   }
   
   @Check
-  public Object validarTodasLasMateriasAsignadas(final Planificacion planificacion) {
-    return null;
+  public void validarTodasLasMateriasAsignadas(final Planificacion planificacion) {
+    EList<Materia> _materiasADictar = planificacion.getMateriasADictar();
+    final Function1<Materia, String> _function = new Function1<Materia, String>() {
+      public String apply(final Materia m) {
+        return m.getName();
+      }
+    };
+    List<String> mADictar = ListExtensions.<Materia, String>map(_materiasADictar, _function);
+    EList<Asignacion_Materia> _asignacionDeMaterias = planificacion.getAsignacionDeMaterias();
+    final Function1<Asignacion_Materia, String> _function_1 = new Function1<Asignacion_Materia, String>() {
+      public String apply(final Asignacion_Materia m) {
+        Materia _materia = m.getMateria();
+        return _materia.getName();
+      }
+    };
+    List<String> mAsignadas = ListExtensions.<Asignacion_Materia, String>map(_asignacionDeMaterias, _function_1);
+    boolean _containsAll = mAsignadas.containsAll(mADictar);
+    boolean _not = (!_containsAll);
+    if (_not) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Falta asignar alguna materia :P");
+      this.error(_builder.toString(), planificacion, 
+        PlanificacionMateriasPackage.Literals.PLANIFICACION__ASIGNACION_DE_MATERIAS);
+    }
   }
   
   @Check
@@ -68,8 +89,35 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   }
   
   @Check
-  public Object validarCompatibilidadAulaMateria(final Aula aula) {
-    return null;
+  public void validarCompatibilidadAulaMateria(final Materia materia) {
+    Aula _aula = materia.getAula();
+    EList<Recurso> _recusos = _aula.getRecusos();
+    final Function1<Recurso, String> _function = new Function1<Recurso, String>() {
+      public String apply(final Recurso r) {
+        return r.getName();
+      }
+    };
+    List<String> recursosAula = ListExtensions.<Recurso, String>map(_recusos, _function);
+    EList<Recurso> _requerimientos = materia.getRequerimientos();
+    final Function1<Recurso, String> _function_1 = new Function1<Recurso, String>() {
+      public String apply(final Recurso r) {
+        return r.getName();
+      }
+    };
+    List<String> requerimientosMateria = ListExtensions.<Recurso, String>map(_requerimientos, _function_1);
+    boolean _containsAll = recursosAula.containsAll(requerimientosMateria);
+    boolean _not = (!_containsAll);
+    if (_not) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("El aula ");
+      Aula _aula_1 = materia.getAula();
+      String _name = _aula_1.getName();
+      String _upperCase = _name.toUpperCase();
+      _builder.append(_upperCase, "");
+      _builder.append(" no tiene los recursos requeridos");
+      this.error(_builder.toString(), materia, 
+        PlanificacionMateriasPackage.Literals.MATERIA__AULA);
+    }
   }
   
   @Check
@@ -121,6 +169,17 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       _xblockexpression = IterableExtensions.size(_filter);
     }
     return _xblockexpression;
+  }
+  
+  public int cantidadMateriasDictadasPor(final EList<Materia> listaMaterias, final Profesor profesor) {
+    final Function1<Materia, Boolean> _function = new Function1<Materia, Boolean>() {
+      public Boolean apply(final Materia m) {
+        Profesor _dictadaPor = PlanificacionMateriasValidator.this.dictadaPor(m);
+        return Boolean.valueOf(_dictadaPor.equals(profesor));
+      }
+    };
+    Iterable<Materia> _filter = IterableExtensions.<Materia>filter(listaMaterias, _function);
+    return IterableExtensions.size(_filter);
   }
   
   public Profesor dictadaPor(final Materia materia) {

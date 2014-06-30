@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAnio <em>Anio</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getSemestre <em>Semestre</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getMateriasADictar <em>Materias ADictar</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionDeMaterias <em>Asignacion De Materias</em>}</li>
  * </ul>
  * </p>
@@ -77,6 +78,22 @@ public interface Planificacion extends EObject
    * @generated
    */
   void setSemestre(int value);
+
+  /**
+   * Returns the value of the '<em><b>Materias ADictar</b></em>' reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Materia}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Materias ADictar</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Materias ADictar</em>' reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getPlanificacion_MateriasADictar()
+   * @model
+   * @generated
+   */
+  EList<Materia> getMateriasADictar();
 
   /**
    * Returns the value of the '<em><b>Asignacion De Materias</b></em>' containment reference list.

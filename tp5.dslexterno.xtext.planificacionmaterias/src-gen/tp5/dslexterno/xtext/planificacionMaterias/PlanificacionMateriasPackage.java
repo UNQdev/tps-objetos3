@@ -77,7 +77,7 @@ public interface PlanificacionMateriasPackage extends EPackage
   int MODEL__ELEMENTOS_PLANIFICACION = 0;
 
   /**
-   * The feature id for the '<em><b>Planificacion</b></em>' containment reference.
+   * The feature id for the '<em><b>Planificacion</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -281,13 +281,22 @@ public interface PlanificacionMateriasPackage extends EPackage
   int PLANIFICACION__SEMESTRE = 1;
 
   /**
+   * The feature id for the '<em><b>Materias ADictar</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLANIFICACION__MATERIAS_ADICTAR = 2;
+
+  /**
    * The feature id for the '<em><b>Asignacion De Materias</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLANIFICACION__ASIGNACION_DE_MATERIAS = 2;
+  int PLANIFICACION__ASIGNACION_DE_MATERIAS = 3;
 
   /**
    * The number of structural features of the '<em>Planificacion</em>' class.
@@ -296,7 +305,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLANIFICACION_FEATURE_COUNT = 3;
+  int PLANIFICACION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl <em>Materia</em>}' class.
@@ -693,10 +702,10 @@ public interface PlanificacionMateriasPackage extends EPackage
   EReference getModel_ElementosPlanificacion();
 
   /**
-   * Returns the meta object for the containment reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}'.
+   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Planificacion</em>'.
+   * @return the meta object for the containment reference list '<em>Planificacion</em>'.
    * @see tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion()
    * @see #getModel()
    * @generated
@@ -861,6 +870,17 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @generated
    */
   EAttribute getPlanificacion_Semestre();
+
+  /**
+   * Returns the meta object for the reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getMateriasADictar <em>Materias ADictar</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Materias ADictar</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getMateriasADictar()
+   * @see #getPlanificacion()
+   * @generated
+   */
+  EReference getPlanificacion_MateriasADictar();
 
   /**
    * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionDeMaterias <em>Asignacion De Materias</em>}'.
@@ -1222,7 +1242,7 @@ public interface PlanificacionMateriasPackage extends EPackage
     EReference MODEL__ELEMENTOS_PLANIFICACION = eINSTANCE.getModel_ElementosPlanificacion();
 
     /**
-     * The meta object literal for the '<em><b>Planificacion</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Planificacion</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1360,6 +1380,14 @@ public interface PlanificacionMateriasPackage extends EPackage
      * @generated
      */
     EAttribute PLANIFICACION__SEMESTRE = eINSTANCE.getPlanificacion_Semestre();
+
+    /**
+     * The meta object literal for the '<em><b>Materias ADictar</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PLANIFICACION__MATERIAS_ADICTAR = eINSTANCE.getPlanificacion_MateriasADictar();
 
     /**
      * The meta object literal for the '<em><b>Asignacion De Materias</b></em>' containment reference list feature.

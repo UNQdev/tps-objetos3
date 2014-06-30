@@ -30,7 +30,8 @@ Estructuras_Planificacion:
 ;
 Planificacion:
 	'planificacion' anio=INT 'semestre' semestre=INT '{' 
-		(asignacionDeMaterias+=Asignacion_Materia)*
+		'a dictar:' (materiasADictar+=[Materia])*
+		'asignacion:' '{' (asignacionDeMaterias+=Asignacion_Materia)* '}'
 	'}'
 ;
 
@@ -38,6 +39,8 @@ Planificacion:
 
 Materia:
 	'materia' name=ID '{'
+		'carga horaria:' cantidadHorasSemanales=INT
+		'cantidad de dias a la semana:' diasSemanales=INT
 		'requiere:' (requerimientos+=Recurso)*
 		'dictada por:' profesor=[Profesor] 'en' aula=[Aula]
 	'}' 
@@ -82,5 +85,5 @@ Horario:
 	hora=INT ':' minutos=INT
 ;
 Rango_Horario:
-	'de' horaInicio=Horario 'a' horaFinal=Horario
+	'de:' horaInicio=Horario 'a:' horaFinal=Horario
 ;

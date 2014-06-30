@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
+import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 
@@ -31,6 +33,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getAnio <em>Anio</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getSemestre <em>Semestre</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getMateriasADictar <em>Materias ADictar</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getAsignacionDeMaterias <em>Asignacion De Materias</em>}</li>
  * </ul>
  * </p>
@@ -78,6 +81,16 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
    * @ordered
    */
   protected int semestre = SEMESTRE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getMateriasADictar() <em>Materias ADictar</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMateriasADictar()
+   * @generated
+   * @ordered
+   */
+  protected EList<Materia> materiasADictar;
 
   /**
    * The cached value of the '{@link #getAsignacionDeMaterias() <em>Asignacion De Materias</em>}' containment reference list.
@@ -161,6 +174,20 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Materia> getMateriasADictar()
+  {
+    if (materiasADictar == null)
+    {
+      materiasADictar = new EObjectResolvingEList<Materia>(Materia.class, this, PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR);
+    }
+    return materiasADictar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Asignacion_Materia> getAsignacionDeMaterias()
   {
     if (asignacionDeMaterias == null)
@@ -200,6 +227,8 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
         return getAnio();
       case PlanificacionMateriasPackage.PLANIFICACION__SEMESTRE:
         return getSemestre();
+      case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
+        return getMateriasADictar();
       case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
         return getAsignacionDeMaterias();
     }
@@ -222,6 +251,10 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
         return;
       case PlanificacionMateriasPackage.PLANIFICACION__SEMESTRE:
         setSemestre((Integer)newValue);
+        return;
+      case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
+        getMateriasADictar().clear();
+        getMateriasADictar().addAll((Collection<? extends Materia>)newValue);
         return;
       case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
         getAsignacionDeMaterias().clear();
@@ -247,6 +280,9 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
       case PlanificacionMateriasPackage.PLANIFICACION__SEMESTRE:
         setSemestre(SEMESTRE_EDEFAULT);
         return;
+      case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
+        getMateriasADictar().clear();
+        return;
       case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
         getAsignacionDeMaterias().clear();
         return;
@@ -268,6 +304,8 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
         return anio != ANIO_EDEFAULT;
       case PlanificacionMateriasPackage.PLANIFICACION__SEMESTRE:
         return semestre != SEMESTRE_EDEFAULT;
+      case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
+        return materiasADictar != null && !materiasADictar.isEmpty();
       case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
         return asignacionDeMaterias != null && !asignacionDeMaterias.isEmpty();
     }

@@ -105,7 +105,7 @@ ruleModel returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"planificacion",
         		lv_planificacion_1_0, 
@@ -114,7 +114,7 @@ ruleModel returns [EObject current=null]
 	    }
 
 )
-))
+)*)
 ;
 
 
@@ -504,27 +504,56 @@ rulePlanificacion returns [EObject current=null]
     {
     	newLeafNode(otherlv_4, grammarAccess.getPlanificacionAccess().getLeftCurlyBracketKeyword_4());
     }
+	otherlv_5='a dictar:' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getPlanificacionAccess().getADictarKeyword_5());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPlanificacionRule());
+	        }
+        }
+	otherlv_6=RULE_ID
+	{
+		newLeafNode(otherlv_6, grammarAccess.getPlanificacionAccess().getMateriasADictarMateriaCrossReference_6_0()); 
+	}
+
+)
+)*	otherlv_7='asignacion:' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getPlanificacionAccess().getAsignacionKeyword_7());
+    }
+	otherlv_8='{' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getPlanificacionAccess().getLeftCurlyBracketKeyword_8());
+    }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPlanificacionAccess().getAsignacionDeMateriasAsignacion_MateriaParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getPlanificacionAccess().getAsignacionDeMateriasAsignacion_MateriaParserRuleCall_9_0()); 
 	    }
-		lv_asignacionDeMaterias_5_0=ruleAsignacion_Materia		{
+		lv_asignacionDeMaterias_9_0=ruleAsignacion_Materia		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPlanificacionRule());
 	        }
        		add(
        			$current, 
        			"asignacionDeMaterias",
-        		lv_asignacionDeMaterias_5_0, 
+        		lv_asignacionDeMaterias_9_0, 
         		"Asignacion_Materia");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_6='}' 
+)*	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getPlanificacionAccess().getRightCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_10, grammarAccess.getPlanificacionAccess().getRightCurlyBracketKeyword_10());
+    }
+	otherlv_11='}' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getPlanificacionAccess().getRightCurlyBracketKeyword_11());
     }
 )
 ;
@@ -1145,7 +1174,7 @@ ruleRango_Horario returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='de' 
+(	otherlv_0='de:' 
     {
     	newLeafNode(otherlv_0, grammarAccess.getRango_HorarioAccess().getDeKeyword_0());
     }
@@ -1167,7 +1196,7 @@ ruleRango_Horario returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='a' 
+)	otherlv_2='a:' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getRango_HorarioAccess().getAKeyword_2());
     }

@@ -1397,7 +1397,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (elementosPlanificacion+=Estructuras_Planificacion* planificacion=Planificacion)
+	 *     (elementosPlanificacion+=Estructuras_Planificacion* planificacion+=Planificacion*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1415,7 +1415,7 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (anio=INT semestre=INT asignacionDeMaterias+=Asignacion_Materia*)
+	 *     (anio=INT semestre=INT materiasADictar+=[Materia|ID]* asignacionDeMaterias+=Asignacion_Materia*)
 	 */
 	protected void sequence_Planificacion(EObject context, Planificacion semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

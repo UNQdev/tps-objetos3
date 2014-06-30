@@ -4,7 +4,6 @@ package tp5.dslexterno.xtext.planificacionMaterias.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -50,14 +48,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EList<Estructuras_Planificacion> elementosPlanificacion;
 
   /**
-   * The cached value of the '{@link #getPlanificacion() <em>Planificacion</em>}' containment reference.
+   * The cached value of the '{@link #getPlanificacion() <em>Planificacion</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPlanificacion()
    * @generated
    * @ordered
    */
-  protected Planificacion planificacion;
+  protected EList<Planificacion> planificacion;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,47 +97,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public Planificacion getPlanificacion()
+  public EList<Planificacion> getPlanificacion()
   {
+    if (planificacion == null)
+    {
+      planificacion = new EObjectContainmentEList<Planificacion>(Planificacion.class, this, PlanificacionMateriasPackage.MODEL__PLANIFICACION);
+    }
     return planificacion;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPlanificacion(Planificacion newPlanificacion, NotificationChain msgs)
-  {
-    Planificacion oldPlanificacion = planificacion;
-    planificacion = newPlanificacion;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MODEL__PLANIFICACION, oldPlanificacion, newPlanificacion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPlanificacion(Planificacion newPlanificacion)
-  {
-    if (newPlanificacion != planificacion)
-    {
-      NotificationChain msgs = null;
-      if (planificacion != null)
-        msgs = ((InternalEObject)planificacion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.MODEL__PLANIFICACION, null, msgs);
-      if (newPlanificacion != null)
-        msgs = ((InternalEObject)newPlanificacion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.MODEL__PLANIFICACION, null, msgs);
-      msgs = basicSetPlanificacion(newPlanificacion, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MODEL__PLANIFICACION, newPlanificacion, newPlanificacion));
   }
 
   /**
@@ -155,7 +119,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
         return ((InternalEList<?>)getElementosPlanificacion()).basicRemove(otherEnd, msgs);
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
-        return basicSetPlanificacion(null, msgs);
+        return ((InternalEList<?>)getPlanificacion()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -194,7 +158,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getElementosPlanificacion().addAll((Collection<? extends Estructuras_Planificacion>)newValue);
         return;
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
-        setPlanificacion((Planificacion)newValue);
+        getPlanificacion().clear();
+        getPlanificacion().addAll((Collection<? extends Planificacion>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -214,7 +179,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getElementosPlanificacion().clear();
         return;
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
-        setPlanificacion((Planificacion)null);
+        getPlanificacion().clear();
         return;
     }
     super.eUnset(featureID);
@@ -233,7 +198,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case PlanificacionMateriasPackage.MODEL__ELEMENTOS_PLANIFICACION:
         return elementosPlanificacion != null && !elementosPlanificacion.isEmpty();
       case PlanificacionMateriasPackage.MODEL__PLANIFICACION:
-        return planificacion != null;
+        return planificacion != null && !planificacion.isEmpty();
     }
     return super.eIsSet(featureID);
   }

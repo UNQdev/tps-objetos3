@@ -42,29 +42,19 @@ public interface Model extends EObject
   EList<Estructuras_Planificacion> getElementosPlanificacion();
 
   /**
-   * Returns the value of the '<em><b>Planificacion</b></em>' containment reference.
+   * Returns the value of the '<em><b>Planificacion</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Planificacion</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Planificacion</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Planificacion</em>' containment reference.
-   * @see #setPlanificacion(Planificacion)
+   * @return the value of the '<em>Planificacion</em>' containment reference list.
    * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_Planificacion()
    * @model containment="true"
    * @generated
    */
-  Planificacion getPlanificacion();
-
-  /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Planificacion</em>' containment reference.
-   * @see #getPlanificacion()
-   * @generated
-   */
-  void setPlanificacion(Planificacion value);
+  EList<Planificacion> getPlanificacion();
 
 } // Model

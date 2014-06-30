@@ -280,7 +280,8 @@ public class PlanificacionMateriasParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAsignacion_MateriaAccess().getCantidadAlumnosAssignment_5(), "rule__Asignacion_Materia__CantidadAlumnosAssignment_5");
 					put(grammarAccess.getPlanificacionAccess().getAnioAssignment_1(), "rule__Planificacion__AnioAssignment_1");
 					put(grammarAccess.getPlanificacionAccess().getSemestreAssignment_3(), "rule__Planificacion__SemestreAssignment_3");
-					put(grammarAccess.getPlanificacionAccess().getAsignacionDeMateriasAssignment_5(), "rule__Planificacion__AsignacionDeMateriasAssignment_5");
+					put(grammarAccess.getPlanificacionAccess().getMateriasADictarAssignment_6(), "rule__Planificacion__MateriasADictarAssignment_6");
+					put(grammarAccess.getPlanificacionAccess().getAsignacionDeMateriasAssignment_9(), "rule__Planificacion__AsignacionDeMateriasAssignment_9");
 					put(grammarAccess.getMateriaAccess().getNameAssignment_1(), "rule__Materia__NameAssignment_1");
 					put(grammarAccess.getMateriaAccess().getRequerimientosAssignment_4(), "rule__Materia__RequerimientosAssignment_4");
 					put(grammarAccess.getMateriaAccess().getProfesorAssignment_6(), "rule__Materia__ProfesorAssignment_6");

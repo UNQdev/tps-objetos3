@@ -38,6 +38,7 @@
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Planificacion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Planificacion/anio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Planificacion/semestre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/materiasADictar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/asignacionDeMaterias"/>
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Materia">

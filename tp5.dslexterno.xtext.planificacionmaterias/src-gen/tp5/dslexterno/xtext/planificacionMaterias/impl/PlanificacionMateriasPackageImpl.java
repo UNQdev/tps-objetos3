@@ -421,9 +421,19 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPlanificacion_AsignacionDeMaterias()
+  public EReference getPlanificacion_MateriasADictar()
   {
     return (EReference)planificacionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPlanificacion_AsignacionDeMaterias()
+  {
+    return (EReference)planificacionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -770,6 +780,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     planificacionEClass = createEClass(PLANIFICACION);
     createEAttribute(planificacionEClass, PLANIFICACION__ANIO);
     createEAttribute(planificacionEClass, PLANIFICACION__SEMESTRE);
+    createEReference(planificacionEClass, PLANIFICACION__MATERIAS_ADICTAR);
     createEReference(planificacionEClass, PLANIFICACION__ASIGNACION_DE_MATERIAS);
 
     materiaEClass = createEClass(MATERIA);
@@ -854,7 +865,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_ElementosPlanificacion(), this.getEstructuras_Planificacion(), null, "elementosPlanificacion", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Planificacion(), this.getPlanificacion(), null, "planificacion", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Planificacion(), this.getPlanificacion(), null, "planificacion", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(materias_AbiertasEClass, Materias_Abiertas.class, "Materias_Abiertas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMaterias_Abiertas_MateriasAbiertas(), this.getMateria(), null, "materiasAbiertas", null, 0, -1, Materias_Abiertas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -876,6 +887,7 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     initEClass(planificacionEClass, Planificacion.class, "Planificacion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPlanificacion_Anio(), ecorePackage.getEInt(), "anio", null, 0, 1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPlanificacion_Semestre(), ecorePackage.getEInt(), "semestre", null, 0, 1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPlanificacion_MateriasADictar(), this.getMateria(), null, "materiasADictar", null, 0, -1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPlanificacion_AsignacionDeMaterias(), this.getAsignacion_Materia(), null, "asignacionDeMaterias", null, 0, -1, Planificacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(materiaEClass, Materia.class, "Materia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

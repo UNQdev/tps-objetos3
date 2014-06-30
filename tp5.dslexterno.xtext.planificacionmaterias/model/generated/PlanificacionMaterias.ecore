@@ -5,8 +5,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementosPlanificacion"
         upperBound="-1" eType="#//Estructuras_Planificacion" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="planificacion" eType="#//Planificacion"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planificacion" upperBound="-1"
+        eType="#//Planificacion" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Materias_Abiertas" eSuperTypes="#//Estructuras_Planificacion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="materiasAbiertas" upperBound="-1"
@@ -31,6 +31,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Planificacion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="anio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semestre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="materiasADictar" unique="false"
+        upperBound="-1" eType="#//Materia"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="asignacionDeMaterias" upperBound="-1"
         eType="#//Asignacion_Materia" containment="true"/>
   </eClassifiers>
