@@ -12,9 +12,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
-import tp5.dslexterno.xtext.planificacionMaterias.Dia;
+import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
+import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
 import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
 
 /**
@@ -24,10 +25,11 @@ import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getDia <em>Dia</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getRangoHorario <em>Rango Horario</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getMateria <em>Materia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getCantidadAlumnos <em>Cantidad Alumnos</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getProfesor <em>Profesor</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getAula <em>Aula</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getAlumnosInscriptos <em>Alumnos Inscriptos</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,26 +37,6 @@ import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
  */
 public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container implements Asignacion_Materia
 {
-  /**
-   * The default value of the '{@link #getDia() <em>Dia</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDia()
-   * @generated
-   * @ordered
-   */
-  protected static final Dia DIA_EDEFAULT = Dia.LUNES;
-
-  /**
-   * The cached value of the '{@link #getDia() <em>Dia</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDia()
-   * @generated
-   * @ordered
-   */
-  protected Dia dia = DIA_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getRangoHorario() <em>Rango Horario</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -76,24 +58,44 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   protected Materia materia;
 
   /**
-   * The default value of the '{@link #getCantidadAlumnos() <em>Cantidad Alumnos</em>}' attribute.
+   * The cached value of the '{@link #getProfesor() <em>Profesor</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCantidadAlumnos()
+   * @see #getProfesor()
    * @generated
    * @ordered
    */
-  protected static final int CANTIDAD_ALUMNOS_EDEFAULT = 0;
+  protected Profesor profesor;
 
   /**
-   * The cached value of the '{@link #getCantidadAlumnos() <em>Cantidad Alumnos</em>}' attribute.
+   * The cached value of the '{@link #getAula() <em>Aula</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCantidadAlumnos()
+   * @see #getAula()
    * @generated
    * @ordered
    */
-  protected int cantidadAlumnos = CANTIDAD_ALUMNOS_EDEFAULT;
+  protected Aula aula;
+
+  /**
+   * The default value of the '{@link #getAlumnosInscriptos() <em>Alumnos Inscriptos</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlumnosInscriptos()
+   * @generated
+   * @ordered
+   */
+  protected static final int ALUMNOS_INSCRIPTOS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getAlumnosInscriptos() <em>Alumnos Inscriptos</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlumnosInscriptos()
+   * @generated
+   * @ordered
+   */
+  protected int alumnosInscriptos = ALUMNOS_INSCRIPTOS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,29 +116,6 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   protected EClass eStaticClass()
   {
     return PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Dia getDia()
-  {
-    return dia;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDia(Dia newDia)
-  {
-    Dia oldDia = dia;
-    dia = newDia == null ? DIA_EDEFAULT : newDia;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA, oldDia, dia));
   }
 
   /**
@@ -235,9 +214,19 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getCantidadAlumnos()
+  public Profesor getProfesor()
   {
-    return cantidadAlumnos;
+    if (profesor != null && profesor.eIsProxy())
+    {
+      InternalEObject oldProfesor = (InternalEObject)profesor;
+      profesor = (Profesor)eResolveProxy(oldProfesor);
+      if (profesor != oldProfesor)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR, oldProfesor, profesor));
+      }
+    }
+    return profesor;
   }
 
   /**
@@ -245,12 +234,88 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCantidadAlumnos(int newCantidadAlumnos)
+  public Profesor basicGetProfesor()
   {
-    int oldCantidadAlumnos = cantidadAlumnos;
-    cantidadAlumnos = newCantidadAlumnos;
+    return profesor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProfesor(Profesor newProfesor)
+  {
+    Profesor oldProfesor = profesor;
+    profesor = newProfesor;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS, oldCantidadAlumnos, cantidadAlumnos));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR, oldProfesor, profesor));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Aula getAula()
+  {
+    if (aula != null && aula.eIsProxy())
+    {
+      InternalEObject oldAula = (InternalEObject)aula;
+      aula = (Aula)eResolveProxy(oldAula);
+      if (aula != oldAula)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlanificacionMateriasPackage.ASIGNACION_MATERIA__AULA, oldAula, aula));
+      }
+    }
+    return aula;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Aula basicGetAula()
+  {
+    return aula;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAula(Aula newAula)
+  {
+    Aula oldAula = aula;
+    aula = newAula;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__AULA, oldAula, aula));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getAlumnosInscriptos()
+  {
+    return alumnosInscriptos;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAlumnosInscriptos(int newAlumnosInscriptos)
+  {
+    int oldAlumnosInscriptos = alumnosInscriptos;
+    alumnosInscriptos = newAlumnosInscriptos;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS, oldAlumnosInscriptos, alumnosInscriptos));
   }
 
   /**
@@ -279,15 +344,19 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
-        return getDia();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
         return getRangoHorario();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         if (resolve) return getMateria();
         return basicGetMateria();
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
-        return getCantidadAlumnos();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR:
+        if (resolve) return getProfesor();
+        return basicGetProfesor();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__AULA:
+        if (resolve) return getAula();
+        return basicGetAula();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
+        return getAlumnosInscriptos();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -302,17 +371,20 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
-        setDia((Dia)newValue);
-        return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
         setRangoHorario((Rango_Horario)newValue);
         return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         setMateria((Materia)newValue);
         return;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
-        setCantidadAlumnos((Integer)newValue);
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR:
+        setProfesor((Profesor)newValue);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__AULA:
+        setAula((Aula)newValue);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
+        setAlumnosInscriptos((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -328,17 +400,20 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
-        setDia(DIA_EDEFAULT);
-        return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
         setRangoHorario((Rango_Horario)null);
         return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         setMateria((Materia)null);
         return;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
-        setCantidadAlumnos(CANTIDAD_ALUMNOS_EDEFAULT);
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR:
+        setProfesor((Profesor)null);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__AULA:
+        setAula((Aula)null);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
+        setAlumnosInscriptos(ALUMNOS_INSCRIPTOS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -354,14 +429,16 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__DIA:
-        return dia != DIA_EDEFAULT;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
         return rangoHorario != null;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         return materia != null;
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__CANTIDAD_ALUMNOS:
-        return cantidadAlumnos != CANTIDAD_ALUMNOS_EDEFAULT;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR:
+        return profesor != null;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__AULA:
+        return aula != null;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
+        return alumnosInscriptos != ALUMNOS_INSCRIPTOS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -377,10 +454,8 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (dia: ");
-    result.append(dia);
-    result.append(", cantidadAlumnos: ");
-    result.append(cantidadAlumnos);
+    result.append(" (alumnosInscriptos: ");
+    result.append(alumnosInscriptos);
     result.append(')');
     return result.toString();
   }

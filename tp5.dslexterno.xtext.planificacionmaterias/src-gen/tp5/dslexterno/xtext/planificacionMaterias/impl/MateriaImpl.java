@@ -18,10 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
-import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
 import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
 
 /**
@@ -32,9 +30,9 @@ import tp5.dslexterno.xtext.planificacionMaterias.Recurso;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getCantidadHorasSemanales <em>Cantidad Horas Semanales</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getDiasSemanales <em>Dias Semanales</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getRequerimientos <em>Requerimientos</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getProfesor <em>Profesor</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl#getAula <em>Aula</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +61,46 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getCantidadHorasSemanales() <em>Cantidad Horas Semanales</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCantidadHorasSemanales()
+   * @generated
+   * @ordered
+   */
+  protected static final int CANTIDAD_HORAS_SEMANALES_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getCantidadHorasSemanales() <em>Cantidad Horas Semanales</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCantidadHorasSemanales()
+   * @generated
+   * @ordered
+   */
+  protected int cantidadHorasSemanales = CANTIDAD_HORAS_SEMANALES_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDiasSemanales() <em>Dias Semanales</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDiasSemanales()
+   * @generated
+   * @ordered
+   */
+  protected static final int DIAS_SEMANALES_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getDiasSemanales() <em>Dias Semanales</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDiasSemanales()
+   * @generated
+   * @ordered
+   */
+  protected int diasSemanales = DIAS_SEMANALES_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getRequerimientos() <em>Requerimientos</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -71,26 +109,6 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
    * @ordered
    */
   protected EList<Recurso> requerimientos;
-
-  /**
-   * The cached value of the '{@link #getProfesor() <em>Profesor</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProfesor()
-   * @generated
-   * @ordered
-   */
-  protected Profesor profesor;
-
-  /**
-   * The cached value of the '{@link #getAula() <em>Aula</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAula()
-   * @generated
-   * @ordered
-   */
-  protected Aula aula;
 
   /**
    * <!-- begin-user-doc -->
@@ -141,6 +159,52 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getCantidadHorasSemanales()
+  {
+    return cantidadHorasSemanales;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCantidadHorasSemanales(int newCantidadHorasSemanales)
+  {
+    int oldCantidadHorasSemanales = cantidadHorasSemanales;
+    cantidadHorasSemanales = newCantidadHorasSemanales;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MATERIA__CANTIDAD_HORAS_SEMANALES, oldCantidadHorasSemanales, cantidadHorasSemanales));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getDiasSemanales()
+  {
+    return diasSemanales;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDiasSemanales(int newDiasSemanales)
+  {
+    int oldDiasSemanales = diasSemanales;
+    diasSemanales = newDiasSemanales;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MATERIA__DIAS_SEMANALES, oldDiasSemanales, diasSemanales));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Recurso> getRequerimientos()
   {
     if (requerimientos == null)
@@ -148,92 +212,6 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
       requerimientos = new EObjectContainmentEList<Recurso>(Recurso.class, this, PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS);
     }
     return requerimientos;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Profesor getProfesor()
-  {
-    if (profesor != null && profesor.eIsProxy())
-    {
-      InternalEObject oldProfesor = (InternalEObject)profesor;
-      profesor = (Profesor)eResolveProxy(oldProfesor);
-      if (profesor != oldProfesor)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlanificacionMateriasPackage.MATERIA__PROFESOR, oldProfesor, profesor));
-      }
-    }
-    return profesor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Profesor basicGetProfesor()
-  {
-    return profesor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setProfesor(Profesor newProfesor)
-  {
-    Profesor oldProfesor = profesor;
-    profesor = newProfesor;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MATERIA__PROFESOR, oldProfesor, profesor));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Aula getAula()
-  {
-    if (aula != null && aula.eIsProxy())
-    {
-      InternalEObject oldAula = (InternalEObject)aula;
-      aula = (Aula)eResolveProxy(oldAula);
-      if (aula != oldAula)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlanificacionMateriasPackage.MATERIA__AULA, oldAula, aula));
-      }
-    }
-    return aula;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Aula basicGetAula()
-  {
-    return aula;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAula(Aula newAula)
-  {
-    Aula oldAula = aula;
-    aula = newAula;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.MATERIA__AULA, oldAula, aula));
   }
 
   /**
@@ -264,14 +242,12 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
     {
       case PlanificacionMateriasPackage.MATERIA__NAME:
         return getName();
+      case PlanificacionMateriasPackage.MATERIA__CANTIDAD_HORAS_SEMANALES:
+        return getCantidadHorasSemanales();
+      case PlanificacionMateriasPackage.MATERIA__DIAS_SEMANALES:
+        return getDiasSemanales();
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         return getRequerimientos();
-      case PlanificacionMateriasPackage.MATERIA__PROFESOR:
-        if (resolve) return getProfesor();
-        return basicGetProfesor();
-      case PlanificacionMateriasPackage.MATERIA__AULA:
-        if (resolve) return getAula();
-        return basicGetAula();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -290,15 +266,15 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
       case PlanificacionMateriasPackage.MATERIA__NAME:
         setName((String)newValue);
         return;
+      case PlanificacionMateriasPackage.MATERIA__CANTIDAD_HORAS_SEMANALES:
+        setCantidadHorasSemanales((Integer)newValue);
+        return;
+      case PlanificacionMateriasPackage.MATERIA__DIAS_SEMANALES:
+        setDiasSemanales((Integer)newValue);
+        return;
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         getRequerimientos().clear();
         getRequerimientos().addAll((Collection<? extends Recurso>)newValue);
-        return;
-      case PlanificacionMateriasPackage.MATERIA__PROFESOR:
-        setProfesor((Profesor)newValue);
-        return;
-      case PlanificacionMateriasPackage.MATERIA__AULA:
-        setAula((Aula)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -317,14 +293,14 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
       case PlanificacionMateriasPackage.MATERIA__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case PlanificacionMateriasPackage.MATERIA__CANTIDAD_HORAS_SEMANALES:
+        setCantidadHorasSemanales(CANTIDAD_HORAS_SEMANALES_EDEFAULT);
+        return;
+      case PlanificacionMateriasPackage.MATERIA__DIAS_SEMANALES:
+        setDiasSemanales(DIAS_SEMANALES_EDEFAULT);
+        return;
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         getRequerimientos().clear();
-        return;
-      case PlanificacionMateriasPackage.MATERIA__PROFESOR:
-        setProfesor((Profesor)null);
-        return;
-      case PlanificacionMateriasPackage.MATERIA__AULA:
-        setAula((Aula)null);
         return;
     }
     super.eUnset(featureID);
@@ -342,12 +318,12 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
     {
       case PlanificacionMateriasPackage.MATERIA__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PlanificacionMateriasPackage.MATERIA__CANTIDAD_HORAS_SEMANALES:
+        return cantidadHorasSemanales != CANTIDAD_HORAS_SEMANALES_EDEFAULT;
+      case PlanificacionMateriasPackage.MATERIA__DIAS_SEMANALES:
+        return diasSemanales != DIAS_SEMANALES_EDEFAULT;
       case PlanificacionMateriasPackage.MATERIA__REQUERIMIENTOS:
         return requerimientos != null && !requerimientos.isEmpty();
-      case PlanificacionMateriasPackage.MATERIA__PROFESOR:
-        return profesor != null;
-      case PlanificacionMateriasPackage.MATERIA__AULA:
-        return aula != null;
     }
     return super.eIsSet(featureID);
   }
@@ -365,6 +341,10 @@ public class MateriaImpl extends MinimalEObjectImpl.Container implements Materia
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", cantidadHorasSemanales: ");
+    result.append(cantidadHorasSemanales);
+    result.append(", diasSemanales: ");
+    result.append(diasSemanales);
     result.append(')');
     return result.toString();
   }

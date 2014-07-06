@@ -12,10 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getDia <em>Dia</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria <em>Materia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getCantidadAlumnos <em>Cantidad Alumnos</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getProfesor <em>Profesor</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAula <em>Aula</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAlumnosInscriptos <em>Alumnos Inscriptos</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,35 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Asignacion_Materia extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Dia</b></em>' attribute.
-   * The literals are from the enumeration {@link tp5.dslexterno.xtext.planificacionMaterias.Dia}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Dia</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Dia</em>' attribute.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Dia
-   * @see #setDia(Dia)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_Dia()
-   * @model
-   * @generated
-   */
-  Dia getDia();
-
-  /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getDia <em>Dia</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Dia</em>' attribute.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Dia
-   * @see #getDia()
-   * @generated
-   */
-  void setDia(Dia value);
-
   /**
    * Returns the value of the '<em><b>Rango Horario</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -107,29 +79,81 @@ public interface Asignacion_Materia extends EObject
   void setMateria(Materia value);
 
   /**
-   * Returns the value of the '<em><b>Cantidad Alumnos</b></em>' attribute.
+   * Returns the value of the '<em><b>Profesor</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Cantidad Alumnos</em>' attribute isn't clear,
+   * If the meaning of the '<em>Profesor</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Cantidad Alumnos</em>' attribute.
-   * @see #setCantidadAlumnos(int)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_CantidadAlumnos()
+   * @return the value of the '<em>Profesor</em>' reference.
+   * @see #setProfesor(Profesor)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_Profesor()
    * @model
    * @generated
    */
-  int getCantidadAlumnos();
+  Profesor getProfesor();
 
   /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getCantidadAlumnos <em>Cantidad Alumnos</em>}' attribute.
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getProfesor <em>Profesor</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cantidad Alumnos</em>' attribute.
-   * @see #getCantidadAlumnos()
+   * @param value the new value of the '<em>Profesor</em>' reference.
+   * @see #getProfesor()
    * @generated
    */
-  void setCantidadAlumnos(int value);
+  void setProfesor(Profesor value);
+
+  /**
+   * Returns the value of the '<em><b>Aula</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Aula</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Aula</em>' reference.
+   * @see #setAula(Aula)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_Aula()
+   * @model
+   * @generated
+   */
+  Aula getAula();
+
+  /**
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAula <em>Aula</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Aula</em>' reference.
+   * @see #getAula()
+   * @generated
+   */
+  void setAula(Aula value);
+
+  /**
+   * Returns the value of the '<em><b>Alumnos Inscriptos</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Alumnos Inscriptos</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Alumnos Inscriptos</em>' attribute.
+   * @see #setAlumnosInscriptos(int)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_AlumnosInscriptos()
+   * @model
+   * @generated
+   */
+  int getAlumnosInscriptos();
+
+  /**
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAlumnosInscriptos <em>Alumnos Inscriptos</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Alumnos Inscriptos</em>' attribute.
+   * @see #getAlumnosInscriptos()
+   * @generated
+   */
+  void setAlumnosInscriptos(int value);
 
 } // Asignacion_Materia

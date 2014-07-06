@@ -32,31 +32,22 @@ public interface PlanificacionMateriasFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Materias Abiertas</em>'.
+   * Returns a new object of class '<em>Planificacion</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Materias Abiertas</em>'.
+   * @return a new object of class '<em>Planificacion</em>'.
    * @generated
    */
-  Materias_Abiertas createMaterias_Abiertas();
+  Planificacion createPlanificacion();
 
   /**
-   * Returns a new object of class '<em>Aulas Disponibles</em>'.
+   * Returns a new object of class '<em>Asignacion Diaria</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Aulas Disponibles</em>'.
+   * @return a new object of class '<em>Asignacion Diaria</em>'.
    * @generated
    */
-  Aulas_Disponibles createAulas_Disponibles();
-
-  /**
-   * Returns a new object of class '<em>Nomina Profesores</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Nomina Profesores</em>'.
-   * @generated
-   */
-  Nomina_Profesores createNomina_Profesores();
+  Asignacion_Diaria createAsignacion_Diaria();
 
   /**
    * Returns a new object of class '<em>Asignacion Materia</em>'.
@@ -66,24 +57,6 @@ public interface PlanificacionMateriasFactory extends EFactory
    * @generated
    */
   Asignacion_Materia createAsignacion_Materia();
-
-  /**
-   * Returns a new object of class '<em>Estructuras Planificacion</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Estructuras Planificacion</em>'.
-   * @generated
-   */
-  Estructuras_Planificacion createEstructuras_Planificacion();
-
-  /**
-   * Returns a new object of class '<em>Planificacion</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Planificacion</em>'.
-   * @generated
-   */
-  Planificacion createPlanificacion();
 
   /**
    * Returns a new object of class '<em>Materia</em>'.

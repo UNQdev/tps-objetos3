@@ -67,7 +67,17 @@ public enum Dia implements Enumerator
    * @generated
    * @ordered
    */
-  VIERNES(4, "Viernes", "Viernes");
+  VIERNES(4, "Viernes", "Viernes"),
+
+  /**
+   * The '<em><b>Sabado</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #SABADO_VALUE
+   * @generated
+   * @ordered
+   */
+  SABADO(5, "Sabado", "Sabado");
 
   /**
    * The '<em><b>Lunes</b></em>' literal value.
@@ -145,6 +155,21 @@ public enum Dia implements Enumerator
   public static final int VIERNES_VALUE = 4;
 
   /**
+   * The '<em><b>Sabado</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Sabado</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #SABADO
+   * @model name="Sabado"
+   * @generated
+   * @ordered
+   */
+  public static final int SABADO_VALUE = 5;
+
+  /**
    * An array of all the '<em><b>Dia</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -158,6 +183,7 @@ public enum Dia implements Enumerator
       MIERCOLES,
       JUEVES,
       VIERNES,
+      SABADO,
     };
 
   /**
@@ -221,6 +247,7 @@ public enum Dia implements Enumerator
       case MIERCOLES_VALUE: return MIERCOLES;
       case JUEVES_VALUE: return JUEVES;
       case VIERNES_VALUE: return VIERNES;
+      case SABADO_VALUE: return SABADO;
     }
     return null;
   }

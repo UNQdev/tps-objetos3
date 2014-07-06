@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalPlanificacionMateriasLexer extends Lexer {
-    public static final int RULE_ID=4;
+    public static final int RULE_ID=5;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -74,7 +74,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
     public static final int T__65=65;
     public static final int T__62=62;
     public static final int T__63=63;
+    public static final int T__118=118;
+    public static final int T__119=119;
     public static final int T__116=116;
+    public static final int T__117=117;
     public static final int T__114=114;
     public static final int T__115=115;
     public static final int T__61=61;
@@ -97,8 +100,8 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
     public static final int T__106=106;
     public static final int T__111=111;
     public static final int T__110=110;
-    public static final int RULE_INT=5;
     public static final int T__113=113;
+    public static final int RULE_INT=4;
     public static final int T__112=112;
     public static final int T__50=50;
     public static final int T__42=42;
@@ -145,10 +148,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:11:7: ( 'materias disponibles' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:11:9: 'materias disponibles'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:11:7: ( 'profesores en nomina' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:11:9: 'profesores en nomina'
             {
-            match("materias disponibles"); 
+            match("profesores en nomina"); 
 
 
             }
@@ -206,10 +209,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:14:7: ( 'aulas disponibles' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:14:9: 'aulas disponibles'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:14:7: ( 'aulas' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:14:9: 'aulas'
             {
-            match("aulas disponibles"); 
+            match("aulas"); 
 
 
             }
@@ -227,10 +230,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:15:7: ( 'profesores en nomina' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:15:9: 'profesores en nomina'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:15:7: ( 'materias disponibles' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:15:9: 'materias disponibles'
             {
-            match("profesores en nomina"); 
+            match("materias disponibles"); 
 
 
             }
@@ -248,10 +251,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:16:7: ( ',' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:16:9: ','
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:16:7: ( 'planificacion' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:16:9: 'planificacion'
             {
-            match(','); 
+            match("planificacion"); 
+
 
             }
 
@@ -268,10 +272,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:17:7: ( ':' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:17:9: ':'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:17:7: ( 'semestre' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:17:9: 'semestre'
             {
-            match(':'); 
+            match("semestre"); 
+
 
             }
 
@@ -288,10 +293,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:18:7: ( 'alumnos inscriptos' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:18:9: 'alumnos inscriptos'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:18:7: ( 'materias a dictar:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:18:9: 'materias a dictar:'
             {
-            match("alumnos inscriptos"); 
+            match("materias a dictar:"); 
 
 
             }
@@ -309,10 +314,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:19:7: ( 'planificacion' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:19:9: 'planificacion'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:19:7: ( '::' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:19:9: '::'
             {
-            match("planificacion"); 
+            match("::"); 
 
 
             }
@@ -330,10 +335,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:20:7: ( 'semestre' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:20:9: 'semestre'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:20:7: ( 'profesor a cargo:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:20:9: 'profesor a cargo:'
             {
-            match("semestre"); 
+            match("profesor a cargo:"); 
 
 
             }
@@ -351,10 +356,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:21:7: ( 'a dictar:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:21:9: 'a dictar:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:21:7: ( 'aula:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:21:9: 'aula:'
             {
-            match("a dictar:"); 
+            match("aula:"); 
 
 
             }
@@ -372,10 +377,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:22:7: ( 'asignacion:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:22:9: 'asignacion:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:22:7: ( 'alumnos inscriptos:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:22:9: 'alumnos inscriptos:'
             {
-            match("asignacion:"); 
+            match("alumnos inscriptos:"); 
 
 
             }
@@ -414,10 +419,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:24:7: ( 'requiere:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:24:9: 'requiere:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:24:7: ( 'carga horaria:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:24:9: 'carga horaria:'
             {
-            match("requiere:"); 
+            match("carga horaria:"); 
 
 
             }
@@ -435,10 +440,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:25:7: ( 'dictada por:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:25:9: 'dictada por:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:25:7: ( 'cantidad de dias a la semana:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:25:9: 'cantidad de dias a la semana:'
             {
-            match("dictada por:"); 
+            match("cantidad de dias a la semana:"); 
 
 
             }
@@ -456,10 +461,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:26:7: ( 'en' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:26:9: 'en'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:26:7: ( 'requiere:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:26:9: 'requiere:'
             {
-            match("en"); 
+            match("requiere:"); 
 
 
             }
@@ -519,10 +524,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:29:7: ( 'puede:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:29:9: 'puede:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:29:7: ( 'disponibilidad' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:29:9: 'disponibilidad'
             {
-            match("puede:"); 
+            match("disponibilidad"); 
 
 
             }
@@ -540,10 +545,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:30:7: ( 'no puede' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:30:9: 'no puede'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:30:7: ( 'puede:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:30:9: 'puede:'
             {
-            match("no puede"); 
+            match("puede:"); 
 
 
             }
@@ -561,10 +566,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:31:7: ( 'Simple' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:31:9: 'Simple'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:31:7: ( 'no puede' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:31:9: 'no puede'
             {
-            match("Simple"); 
+            match("no puede"); 
 
 
             }
@@ -582,10 +587,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:32:7: ( 'Semi' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:32:9: 'Semi'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:32:7: ( 'Simple' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:32:9: 'Simple'
             {
-            match("Semi"); 
+            match("Simple"); 
 
 
             }
@@ -603,10 +608,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:33:7: ( 'Exclusiva' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:33:9: 'Exclusiva'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:33:7: ( 'Semi' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:33:9: 'Semi'
             {
-            match("Exclusiva"); 
+            match("Semi"); 
 
 
             }
@@ -624,10 +629,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:34:7: ( 'aula' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:34:9: 'aula'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:34:7: ( 'Exclusiva' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:34:9: 'Exclusiva'
             {
-            match("aula"); 
+            match("Exclusiva"); 
 
 
             }
@@ -645,10 +650,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:35:7: ( 'capacidad maxima:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:35:9: 'capacidad maxima:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:35:7: ( 'aula' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:35:9: 'aula'
             {
-            match("capacidad maxima:"); 
+            match("aula"); 
 
 
             }
@@ -666,10 +671,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:36:7: ( 'alumnos' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:36:9: 'alumnos'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:36:7: ( 'capacidad maxima:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:36:9: 'capacidad maxima:'
             {
-            match("alumnos"); 
+            match("capacidad maxima:"); 
 
 
             }
@@ -687,10 +692,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:37:7: ( 'recursos:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:37:9: 'recursos:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:37:7: ( 'alumnos' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:37:9: 'alumnos'
             {
-            match("recursos:"); 
+            match("alumnos"); 
 
 
             }
@@ -708,10 +713,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:38:7: ( 'de:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:38:9: 'de:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:38:7: ( 'recursos:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:38:9: 'recursos:'
             {
-            match("de:"); 
+            match("recursos:"); 
 
 
             }
@@ -729,11 +734,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:39:7: ( 'a:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:39:9: 'a:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:39:7: ( ':' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:39:9: ':'
             {
-            match("a:"); 
-
+            match(':'); 
 
             }
 
@@ -750,10 +754,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:40:7: ( '=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:40:9: '='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:40:7: ( 'de' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:40:9: 'de'
             {
-            match('='); 
+            match("de"); 
+
 
             }
 
@@ -770,11 +775,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:41:7: ( '+=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:41:9: '+='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:41:7: ( 'a' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:41:9: 'a'
             {
-            match("+="); 
-
+            match('a'); 
 
             }
 
@@ -791,11 +795,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:42:7: ( '-=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:42:9: '-='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:42:7: ( '=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:42:9: '='
             {
-            match("-="); 
-
+            match('='); 
 
             }
 
@@ -812,10 +815,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:43:7: ( '*=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:43:9: '*='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:43:7: ( '+=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:43:9: '+='
             {
-            match("*="); 
+            match("+="); 
 
 
             }
@@ -833,10 +836,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:44:7: ( '/=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:44:9: '/='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:44:7: ( '-=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:44:9: '-='
             {
-            match("/="); 
+            match("-="); 
 
 
             }
@@ -854,10 +857,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:45:7: ( '%=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:45:9: '%='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:45:7: ( '*=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:45:9: '*='
             {
-            match("%="); 
+            match("*="); 
 
 
             }
@@ -875,10 +878,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:46:7: ( '<' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:46:9: '<'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:46:7: ( '/=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:46:9: '/='
             {
-            match('<'); 
+            match("/="); 
+
 
             }
 
@@ -895,10 +899,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:47:7: ( '>' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:47:9: '>'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:47:7: ( '%=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:47:9: '%='
             {
-            match('>'); 
+            match("%="); 
+
 
             }
 
@@ -915,11 +920,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:48:7: ( '>=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:48:9: '>='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:48:7: ( '<' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:48:9: '<'
             {
-            match(">="); 
-
+            match('<'); 
 
             }
 
@@ -936,11 +940,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:49:7: ( '||' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:49:9: '||'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:49:7: ( '>' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:49:9: '>'
             {
-            match("||"); 
-
+            match('>'); 
 
             }
 
@@ -957,10 +960,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:50:7: ( '&&' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:50:9: '&&'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:50:7: ( '>=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:50:9: '>='
             {
-            match("&&"); 
+            match(">="); 
 
 
             }
@@ -978,10 +981,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:51:7: ( '==' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:51:9: '=='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:51:7: ( '||' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:51:9: '||'
             {
-            match("=="); 
+            match("||"); 
 
 
             }
@@ -999,10 +1002,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:52:7: ( '!=' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:52:9: '!='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:52:7: ( '&&' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:52:9: '&&'
             {
-            match("!="); 
+            match("&&"); 
 
 
             }
@@ -1020,10 +1023,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:53:7: ( '===' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:53:9: '==='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:53:7: ( '==' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:53:9: '=='
             {
-            match("==="); 
+            match("=="); 
 
 
             }
@@ -1041,10 +1044,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:54:7: ( '!==' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:54:9: '!=='
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:54:7: ( '!=' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:54:9: '!='
             {
-            match("!=="); 
+            match("!="); 
 
 
             }
@@ -1062,10 +1065,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:55:7: ( 'instanceof' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:55:9: 'instanceof'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:55:7: ( '===' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:55:9: '==='
             {
-            match("instanceof"); 
+            match("==="); 
 
 
             }
@@ -1083,10 +1086,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:56:7: ( '->' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:56:9: '->'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:56:7: ( '!==' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:56:9: '!=='
             {
-            match("->"); 
+            match("!=="); 
 
 
             }
@@ -1104,10 +1107,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:57:7: ( '..<' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:57:9: '..<'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:57:7: ( 'instanceof' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:57:9: 'instanceof'
             {
-            match("..<"); 
+            match("instanceof"); 
 
 
             }
@@ -1125,10 +1128,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:58:7: ( '..' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:58:9: '..'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:58:7: ( '->' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:58:9: '->'
             {
-            match(".."); 
+            match("->"); 
 
 
             }
@@ -1146,10 +1149,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:59:7: ( '=>' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:59:9: '=>'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:59:7: ( '..<' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:59:9: '..<'
             {
-            match("=>"); 
+            match("..<"); 
 
 
             }
@@ -1167,10 +1170,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:60:7: ( '<>' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:60:9: '<>'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:60:7: ( '..' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:60:9: '..'
             {
-            match("<>"); 
+            match(".."); 
 
 
             }
@@ -1188,10 +1191,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:61:7: ( '?:' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:61:9: '?:'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:61:7: ( '=>' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:61:9: '=>'
             {
-            match("?:"); 
+            match("=>"); 
 
 
             }
@@ -1209,10 +1212,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:62:7: ( '+' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:62:9: '+'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:62:7: ( '<>' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:62:9: '<>'
             {
-            match('+'); 
+            match("<>"); 
+
 
             }
 
@@ -1229,10 +1233,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:63:7: ( '-' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:63:9: '-'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:63:7: ( '?:' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:63:9: '?:'
             {
-            match('-'); 
+            match("?:"); 
+
 
             }
 
@@ -1249,10 +1254,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:64:7: ( '*' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:64:9: '*'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:64:7: ( '+' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:64:9: '+'
             {
-            match('*'); 
+            match('+'); 
 
             }
 
@@ -1269,11 +1274,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:65:7: ( '**' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:65:9: '**'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:65:7: ( '-' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:65:9: '-'
             {
-            match("**"); 
-
+            match('-'); 
 
             }
 
@@ -1290,10 +1294,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:66:7: ( '/' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:66:9: '/'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:66:7: ( '*' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:66:9: '*'
             {
-            match('/'); 
+            match('*'); 
 
             }
 
@@ -1310,10 +1314,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:67:7: ( '%' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:67:9: '%'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:67:7: ( '**' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:67:9: '**'
             {
-            match('%'); 
+            match("**"); 
+
 
             }
 
@@ -1330,10 +1335,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:68:7: ( '!' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:68:9: '!'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:68:7: ( '/' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:68:9: '/'
             {
-            match('!'); 
+            match('/'); 
 
             }
 
@@ -1350,11 +1355,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:69:7: ( 'as' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:69:9: 'as'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:69:7: ( '%' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:69:9: '%'
             {
-            match("as"); 
-
+            match('%'); 
 
             }
 
@@ -1371,11 +1375,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:70:7: ( '++' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:70:9: '++'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:70:7: ( '!' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:70:9: '!'
             {
-            match("++"); 
-
+            match('!'); 
 
             }
 
@@ -1392,10 +1395,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:71:7: ( '--' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:71:9: '--'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:71:7: ( 'as' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:71:9: 'as'
             {
-            match("--"); 
+            match("as"); 
 
 
             }
@@ -1413,10 +1416,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:72:7: ( '.' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:72:9: '.'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:72:7: ( '++' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:72:9: '++'
             {
-            match('.'); 
+            match("++"); 
+
 
             }
 
@@ -1433,10 +1437,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:73:7: ( '::' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:73:9: '::'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:73:7: ( '--' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:73:9: '--'
             {
-            match("::"); 
+            match("--"); 
 
 
             }
@@ -1454,11 +1458,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:74:7: ( '?.' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:74:9: '?.'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:74:7: ( '.' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:74:9: '.'
             {
-            match("?."); 
-
+            match('.'); 
 
             }
 
@@ -1475,10 +1478,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:75:7: ( '(' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:75:9: '('
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:75:7: ( '?.' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:75:9: '?.'
             {
-            match('('); 
+            match("?."); 
+
 
             }
 
@@ -1495,10 +1499,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:76:7: ( ')' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:76:9: ')'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:76:7: ( ',' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:76:9: ','
             {
-            match(')'); 
+            match(','); 
 
             }
 
@@ -1515,10 +1519,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:77:7: ( '#' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:77:9: '#'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:77:7: ( '(' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:77:9: '('
             {
-            match('#'); 
+            match('('); 
 
             }
 
@@ -1535,10 +1539,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:78:7: ( '[' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:78:9: '['
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:78:7: ( ')' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:78:9: ')'
             {
-            match('['); 
+            match(')'); 
 
             }
 
@@ -1555,10 +1559,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:79:7: ( ']' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:79:9: ']'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:79:7: ( '#' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:79:9: '#'
             {
-            match(']'); 
+            match('#'); 
 
             }
 
@@ -1575,10 +1579,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:80:7: ( '|' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:80:9: '|'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:80:7: ( '[' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:80:9: '['
             {
-            match('|'); 
+            match('['); 
 
             }
 
@@ -1595,10 +1599,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:81:7: ( ';' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:81:9: ';'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:81:7: ( ']' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:81:9: ']'
             {
-            match(';'); 
+            match(']'); 
 
             }
 
@@ -1615,11 +1619,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:82:7: ( 'if' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:82:9: 'if'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:82:7: ( '|' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:82:9: '|'
             {
-            match("if"); 
-
+            match('|'); 
 
             }
 
@@ -1636,11 +1639,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:83:7: ( 'else' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:83:9: 'else'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:83:7: ( ';' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:83:9: ';'
             {
-            match("else"); 
-
+            match(';'); 
 
             }
 
@@ -1657,10 +1659,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:84:7: ( 'switch' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:84:9: 'switch'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:84:7: ( 'if' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:84:9: 'if'
             {
-            match("switch"); 
+            match("if"); 
 
 
             }
@@ -1678,10 +1680,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:85:7: ( 'default' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:85:9: 'default'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:85:7: ( 'else' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:85:9: 'else'
             {
-            match("default"); 
+            match("else"); 
 
 
             }
@@ -1699,10 +1701,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:86:7: ( 'case' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:86:9: 'case'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:86:7: ( 'switch' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:86:9: 'switch'
             {
-            match("case"); 
+            match("switch"); 
 
 
             }
@@ -1720,10 +1722,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:87:7: ( 'for' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:87:9: 'for'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:87:7: ( 'default' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:87:9: 'default'
             {
-            match("for"); 
+            match("default"); 
 
 
             }
@@ -1741,10 +1743,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:88:7: ( 'while' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:88:9: 'while'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:88:7: ( 'case' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:88:9: 'case'
             {
-            match("while"); 
+            match("case"); 
 
 
             }
@@ -1762,10 +1764,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:89:7: ( 'do' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:89:9: 'do'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:89:7: ( 'for' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:89:9: 'for'
             {
-            match("do"); 
+            match("for"); 
 
 
             }
@@ -1783,10 +1785,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:90:7: ( 'var' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:90:9: 'var'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:90:7: ( 'while' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:90:9: 'while'
             {
-            match("var"); 
+            match("while"); 
 
 
             }
@@ -1804,10 +1806,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:91:7: ( 'val' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:91:9: 'val'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:91:7: ( 'do' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:91:9: 'do'
             {
-            match("val"); 
+            match("do"); 
 
 
             }
@@ -1825,10 +1827,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:92:7: ( 'extends' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:92:9: 'extends'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:92:7: ( 'var' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:92:9: 'var'
             {
-            match("extends"); 
+            match("var"); 
 
 
             }
@@ -1846,10 +1848,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:93:7: ( 'static' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:93:9: 'static'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:93:7: ( 'val' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:93:9: 'val'
             {
-            match("static"); 
+            match("val"); 
 
 
             }
@@ -1867,10 +1869,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:94:7: ( 'import' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:94:9: 'import'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:94:7: ( 'extends' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:94:9: 'extends'
             {
-            match("import"); 
+            match("extends"); 
 
 
             }
@@ -1888,10 +1890,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:95:7: ( 'extension' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:95:9: 'extension'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:95:7: ( 'static' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:95:9: 'static'
             {
-            match("extension"); 
+            match("static"); 
 
 
             }
@@ -1909,10 +1911,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:96:7: ( 'super' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:96:9: 'super'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:96:7: ( 'import' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:96:9: 'import'
             {
-            match("super"); 
+            match("import"); 
 
 
             }
@@ -1930,10 +1932,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:97:7: ( 'new' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:97:9: 'new'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:97:7: ( 'extension' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:97:9: 'extension'
             {
-            match("new"); 
+            match("extension"); 
 
 
             }
@@ -1951,10 +1953,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:98:8: ( 'false' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:98:10: 'false'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:98:8: ( 'super' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:98:10: 'super'
             {
-            match("false"); 
+            match("super"); 
 
 
             }
@@ -1972,10 +1974,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:99:8: ( 'true' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:99:10: 'true'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:99:8: ( 'new' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:99:10: 'new'
             {
-            match("true"); 
+            match("new"); 
 
 
             }
@@ -1993,10 +1995,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:100:8: ( 'null' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:100:10: 'null'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:100:8: ( 'false' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:100:10: 'false'
             {
-            match("null"); 
+            match("false"); 
 
 
             }
@@ -2014,10 +2016,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:101:8: ( 'typeof' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:101:10: 'typeof'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:101:8: ( 'true' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:101:10: 'true'
             {
-            match("typeof"); 
+            match("true"); 
 
 
             }
@@ -2035,10 +2037,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:102:8: ( 'throw' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:102:10: 'throw'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:102:8: ( 'null' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:102:10: 'null'
             {
-            match("throw"); 
+            match("null"); 
 
 
             }
@@ -2056,10 +2058,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:103:8: ( 'return' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:103:10: 'return'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:103:8: ( 'typeof' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:103:10: 'typeof'
             {
-            match("return"); 
+            match("typeof"); 
 
 
             }
@@ -2077,10 +2079,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:104:8: ( 'try' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:104:10: 'try'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:104:8: ( 'throw' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:104:10: 'throw'
             {
-            match("try"); 
+            match("throw"); 
 
 
             }
@@ -2098,10 +2100,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:105:8: ( 'finally' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:105:10: 'finally'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:105:8: ( 'return' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:105:10: 'return'
             {
-            match("finally"); 
+            match("return"); 
 
 
             }
@@ -2119,10 +2121,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:106:8: ( 'synchronized' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:106:10: 'synchronized'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:106:8: ( 'try' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:106:10: 'try'
             {
-            match("synchronized"); 
+            match("try"); 
 
 
             }
@@ -2140,10 +2142,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:107:8: ( 'catch' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:107:10: 'catch'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:107:8: ( 'finally' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:107:10: 'finally'
             {
-            match("catch"); 
+            match("finally"); 
 
 
             }
@@ -2161,10 +2163,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:108:8: ( '?' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:108:10: '?'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:108:8: ( 'synchronized' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:108:10: 'synchronized'
             {
-            match('?'); 
+            match("synchronized"); 
+
 
             }
 
@@ -2181,10 +2184,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:109:8: ( '&' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:109:10: '&'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:109:8: ( 'catch' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:109:10: 'catch'
             {
-            match('&'); 
+            match("catch"); 
+
 
             }
 
@@ -2201,11 +2205,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:110:8: ( 'Lunes' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:110:10: 'Lunes'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:110:8: ( '?' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:110:10: '?'
             {
-            match("Lunes"); 
-
+            match('?'); 
 
             }
 
@@ -2222,11 +2225,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:111:8: ( 'Martes' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:111:10: 'Martes'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:111:8: ( '&' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:111:10: '&'
             {
-            match("Martes"); 
-
+            match('&'); 
 
             }
 
@@ -2243,10 +2245,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:112:8: ( 'Miercoles' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:112:10: 'Miercoles'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:112:8: ( 'Lunes' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:112:10: 'Lunes'
             {
-            match("Miercoles"); 
+            match("Lunes"); 
 
 
             }
@@ -2264,10 +2266,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:113:8: ( 'Jueves' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:113:10: 'Jueves'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:113:8: ( 'Martes' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:113:10: 'Martes'
             {
-            match("Jueves"); 
+            match("Martes"); 
 
 
             }
@@ -2285,10 +2287,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:114:8: ( 'Viernes' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:114:10: 'Viernes'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:114:8: ( 'Miercoles' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:114:10: 'Miercoles'
             {
-            match("Viernes"); 
+            match("Miercoles"); 
 
 
             }
@@ -2301,15 +2303,78 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
     }
     // $ANTLR end "T__116"
 
+    // $ANTLR start "T__117"
+    public final void mT__117() throws RecognitionException {
+        try {
+            int _type = T__117;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:115:8: ( 'Jueves' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:115:10: 'Jueves'
+            {
+            match("Jueves"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__117"
+
+    // $ANTLR start "T__118"
+    public final void mT__118() throws RecognitionException {
+        try {
+            int _type = T__118;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:116:8: ( 'Viernes' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:116:10: 'Viernes'
+            {
+            match("Viernes"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__118"
+
+    // $ANTLR start "T__119"
+    public final void mT__119() throws RecognitionException {
+        try {
+            int _type = T__119;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:117:8: ( 'Sabado' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:117:10: 'Sabado'
+            {
+            match("Sabado"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__119"
+
     // $ANTLR start "RULE_HEX"
     public final void mRULE_HEX() throws RecognitionException {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:12: ( '0x' | '0X' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2337,7 +2402,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:13: '0x'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:13: '0x'
                     {
                     match("0x"); 
 
@@ -2345,7 +2410,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:18: '0X'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:18: '0X'
                     {
                     match("0X"); 
 
@@ -2355,7 +2420,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
             }
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -2393,7 +2458,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2402,10 +2467,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -2423,7 +2488,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2447,7 +2512,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7055:84: ( 'l' | 'L' )
+                            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6991:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2486,11 +2551,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7057:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7057:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6993:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6993:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7057:21: ( '0' .. '9' | '_' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6993:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2539,11 +2604,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2552,7 +2617,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2563,7 +2628,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:36: ( '+' | '-' )?
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2596,7 +2661,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
             }
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2608,7 +2673,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2632,7 +2697,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7059:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6995:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2665,10 +2730,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7061:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7061:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6997:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6997:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7061:11: ( '^' )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6997:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2677,7 +2742,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7061:11: '^'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6997:11: '^'
                     {
                     match('^'); 
 
@@ -2695,7 +2760,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7061:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6997:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2744,10 +2809,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2765,10 +2830,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2784,7 +2849,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2800,7 +2865,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2825,10 +2890,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2844,7 +2909,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2860,7 +2925,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7063:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:6999:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2903,12 +2968,12 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7065:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7065:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7001:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7001:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7065:24: ( options {greedy=false; } : . )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7001:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2933,7 +2998,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7065:52: .
+            	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7001:52: .
             	    {
             	    matchAny(); 
 
@@ -2963,12 +3028,12 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2981,7 +3046,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3001,7 +3066,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 }
             } while (true);
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:40: ( ( '\\r' )? '\\n' )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -3010,9 +3075,9 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:41: ( '\\r' )? '\\n'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:41: ( '\\r' )? '\\n'
                     {
-                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:41: ( '\\r' )?
+                    // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -3021,7 +3086,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7067:41: '\\r'
+                            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7003:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3053,10 +3118,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7069:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7069:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7005:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7005:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7069:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7005:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -3110,8 +3175,8 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7071:16: ( . )
-            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7071:18: .
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7007:16: ( . )
+            // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:7007:18: .
             {
             matchAny(); 
 
@@ -3126,8 +3191,8 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt19=113;
+        // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt19=116;
         alt19 = dfa19.predict(input);
         switch (alt19) {
             case 1 :
@@ -3859,63 +3924,84 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 }
                 break;
             case 105 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:651: RULE_HEX
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:651: T__117
+                {
+                mT__117(); 
+
+                }
+                break;
+            case 106 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:658: T__118
+                {
+                mT__118(); 
+
+                }
+                break;
+            case 107 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:665: T__119
+                {
+                mT__119(); 
+
+                }
+                break;
+            case 108 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:672: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 106 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:660: RULE_INT
+            case 109 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:681: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 107 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:669: RULE_DECIMAL
+            case 110 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:690: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 108 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:682: RULE_ID
+            case 111 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:703: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 109 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:690: RULE_STRING
+            case 112 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:711: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 110 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:702: RULE_ML_COMMENT
+            case 113 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:723: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 111 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:718: RULE_SL_COMMENT
+            case 114 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:739: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 112 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:734: RULE_WS
+            case 115 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:755: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 113 :
-                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:742: RULE_ANY_OTHER
+            case 116 :
+                // ../tp5.dslexterno.xtext.planificacionmaterias/src-gen/tp5/dslexterno/xtext/parser/antlr/internal/InternalPlanificacionMaterias.g:1:763: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3929,257 +4015,263 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\1\uffff\1\65\2\uffff\2\65\1\uffff\1\102\10\65\1\131\1\134\1\140"+
-        "\1\143\1\147\1\151\1\153\1\155\1\157\1\161\1\163\1\65\1\170\1\173"+
-        "\6\uffff\10\65\2\u0091\1\63\1\uffff\2\63\2\uffff\1\65\3\uffff\2"+
-        "\65\1\uffff\1\u0099\1\uffff\3\65\3\uffff\10\65\1\u00a8\1\u00a9\12"+
-        "\65\1\u00b7\32\uffff\1\u00b9\1\uffff\1\65\1\u00bb\1\65\1\u00be\12"+
-        "\uffff\15\65\1\uffff\1\u0091\4\uffff\4\65\1\uffff\14\65\1\uffff"+
-        "\1\65\2\uffff\6\65\1\uffff\1\u00e5\4\65\4\uffff\1\65\1\uffff\1\65"+
-        "\2\uffff\1\u00ec\3\65\1\u00f0\1\u00f1\1\65\1\u00f3\10\65\1\u00fd"+
-        "\17\65\1\u010d\1\65\1\uffff\1\65\1\u0110\1\65\1\uffff\1\u0112\1"+
-        "\65\1\u0114\3\65\1\uffff\3\65\2\uffff\1\u011b\1\uffff\11\65\1\uffff"+
-        "\10\65\1\u012d\6\65\1\uffff\2\65\1\uffff\1\u0137\1\uffff\1\65\1"+
-        "\uffff\3\65\1\u013c\1\65\1\u013e\1\uffff\1\65\1\u0140\1\u0141\5"+
-        "\65\1\uffff\4\65\1\uffff\1\65\1\u014c\1\u014d\1\uffff\3\65\1\u0151"+
-        "\5\65\1\uffff\1\u0157\2\65\1\u015a\1\uffff\1\65\1\uffff\1\u015c"+
-        "\2\uffff\1\u015d\1\65\1\u015f\1\65\1\u0162\1\u0164\4\65\2\uffff"+
-        "\3\65\1\uffff\1\65\1\u016d\1\u016e\2\65\1\uffff\2\65\1\uffff\1\u0173"+
-        "\2\uffff\1\65\1\uffff\1\u0175\1\65\3\uffff\1\65\1\u0179\1\65\1\u017b"+
-        "\3\65\3\uffff\4\65\1\uffff\1\65\2\uffff\2\65\1\uffff\1\65\1\uffff"+
-        "\1\65\2\uffff\1\u0188\1\65\1\u018a\1\65\1\u018c\4\65\3\uffff\1\u0191"+
-        "\3\uffff\2\65\1\uffff\1\65\1\u0195\1\u0196\2\uffff";
+        "\1\uffff\1\67\2\uffff\1\75\2\67\1\105\6\67\1\125\1\130\1\134\1\137"+
+        "\1\143\1\145\1\147\1\151\1\153\1\155\1\157\1\67\1\164\1\167\7\uffff"+
+        "\11\67\2\u0090\1\63\1\uffff\2\63\2\uffff\3\67\3\uffff\2\67\1\u0099"+
+        "\1\uffff\6\67\2\uffff\4\67\1\u00ab\1\u00ac\7\67\1\u00b5\32\uffff"+
+        "\1\u00b7\1\uffff\1\67\1\u00b9\1\67\1\u00bc\13\uffff\17\67\1\uffff"+
+        "\1\u0090\4\uffff\5\67\1\uffff\21\67\3\uffff\1\u00e4\5\67\4\uffff"+
+        "\1\67\1\uffff\1\67\2\uffff\2\67\1\u00ee\3\67\1\u00f2\1\u00f3\1\67"+
+        "\1\u00f5\12\67\1\u0102\12\67\1\u010d\1\67\1\uffff\5\67\1\uffff\1"+
+        "\u0114\1\67\1\u0116\4\67\1\u011b\1\67\1\uffff\3\67\2\uffff\1\u0120"+
+        "\1\uffff\12\67\1\u012b\2\uffff\5\67\1\u0131\4\67\1\uffff\1\u0136"+
+        "\5\67\1\uffff\1\67\1\uffff\4\67\1\uffff\1\67\1\u0143\1\67\1\u0145"+
+        "\1\uffff\1\67\1\u0147\1\u0148\6\67\2\uffff\3\67\1\u0152\1\u0153"+
+        "\1\uffff\1\67\1\uffff\2\67\1\uffff\2\67\1\u0159\2\67\1\u015c\1\u015d"+
+        "\2\67\1\u0160\2\67\1\uffff\1\67\1\uffff\1\u0164\2\uffff\1\u0165"+
+        "\1\67\1\u0167\3\67\1\u016c\1\u016e\1\67\2\uffff\5\67\1\uffff\1\67"+
+        "\1\u0176\2\uffff\2\67\1\uffff\1\u0179\1\67\1\u017b\2\uffff\1\67"+
+        "\1\uffff\1\u017d\1\u0180\1\67\2\uffff\1\67\1\uffff\1\u0183\6\67"+
+        "\1\uffff\2\67\1\uffff\1\67\1\uffff\1\67\1\uffff\1\67\2\uffff\1\67"+
+        "\2\uffff\1\67\1\uffff\1\67\2\uffff\1\67\1\u0195\1\67\1\u0197\1\u0198"+
+        "\2\67\2\uffff\1\67\1\uffff\1\67\1\uffff\1\u019d\3\uffff\3\67\1\uffff"+
+        "\1\67\1\u01a2\1\67\1\u01a4\1\uffff\1\67\1\uffff\1\u01a6\1\uffff";
     static final String DFA19_eofS =
-        "\u0197\uffff";
+        "\u01a7\uffff";
     static final String DFA19_minS =
-        "\1\0\1\141\2\uffff\1\40\1\154\1\uffff\1\72\3\145\1\154\1\141\2\145"+
-        "\1\170\1\75\1\53\1\55\2\52\1\75\1\76\1\75\1\174\1\46\1\75\1\146"+
-        "\2\56\6\uffff\1\141\1\150\1\141\1\150\1\165\1\141\1\165\1\151\2"+
-        "\60\1\44\1\uffff\2\0\2\uffff\1\164\3\uffff\1\154\1\165\1\uffff\1"+
-        "\44\1\uffff\1\157\1\141\1\145\3\uffff\1\155\1\151\1\141\1\160\1"+
-        "\156\2\143\1\72\2\44\1\163\1\164\1\156\1\160\1\40\1\167\1\154\2"+
-        "\155\1\143\1\75\32\uffff\1\75\1\uffff\1\163\1\44\1\160\1\74\12\uffff"+
-        "\1\162\1\154\1\156\1\151\1\154\1\165\1\160\1\162\1\156\1\162\3\145"+
-        "\1\uffff\1\60\4\uffff\1\145\1\141\1\155\1\147\1\uffff\1\146\1\156"+
-        "\1\144\1\145\2\164\1\145\1\143\3\165\1\164\1\uffff\1\141\2\uffff"+
-        "\2\145\1\40\1\141\1\145\1\143\1\uffff\1\44\1\154\1\160\1\151\1\154"+
-        "\4\uffff\1\164\1\uffff\1\157\2\uffff\1\44\1\163\1\141\1\154\2\44"+
-        "\1\145\1\44\1\145\1\157\1\145\1\164\1\162\1\166\2\162\1\44\2\156"+
-        "\1\145\1\151\1\145\1\163\1\143\1\151\1\162\1\150\1\151\2\162\1\141"+
-        "\1\165\1\44\1\156\1\uffff\1\143\1\44\1\150\1\uffff\1\44\1\154\1"+
-        "\44\1\165\1\141\1\162\1\uffff\1\145\1\154\1\145\2\uffff\1\44\1\uffff"+
-        "\1\157\1\167\1\163\1\145\1\143\1\145\1\156\1\151\1\40\1\uffff\1"+
-        "\157\1\141\1\163\1\146\1\72\1\164\1\150\1\143\1\44\1\162\1\145\1"+
-        "\163\1\156\1\144\1\154\1\uffff\1\144\1\151\1\uffff\1\44\1\uffff"+
-        "\1\145\1\uffff\1\163\1\156\1\164\1\44\1\154\1\44\1\uffff\1\146\2"+
-        "\44\1\163\1\157\1\163\1\145\1\141\1\uffff\1\163\1\143\1\157\1\151"+
-        "\1\uffff\1\162\2\44\1\uffff\1\157\1\162\1\157\1\44\1\141\1\164\1"+
-        "\163\1\151\1\144\1\uffff\1\44\1\151\1\143\1\44\1\uffff\1\171\1\uffff"+
-        "\1\44\2\uffff\1\44\1\154\1\44\1\163\1\44\1\40\1\151\1\162\1\143"+
-        "\1\145\2\uffff\1\156\1\145\1\163\1\uffff\1\40\2\44\1\157\1\141\1"+
-        "\uffff\1\166\1\145\1\uffff\1\44\2\uffff\1\145\1\uffff\1\44\1\40"+
-        "\3\uffff\1\157\1\44\1\141\1\44\1\151\2\72\3\uffff\1\156\1\144\1"+
-        "\141\1\157\1\uffff\1\163\2\uffff\1\156\1\163\1\uffff\1\143\1\uffff"+
-        "\1\172\2\uffff\1\44\1\40\1\44\1\146\1\44\1\72\1\40\1\151\1\145\3"+
-        "\uffff\1\44\3\uffff\1\157\1\144\1\uffff\1\156\2\44\2\uffff";
+        "\1\0\1\154\2\uffff\1\44\1\141\1\145\1\72\1\141\3\145\1\141\1\170"+
+        "\1\75\1\53\1\55\2\52\1\75\1\76\1\75\1\174\1\46\1\75\1\146\2\56\7"+
+        "\uffff\1\154\1\141\1\150\1\141\1\150\1\165\1\141\1\165\1\151\2\60"+
+        "\1\44\1\uffff\2\0\2\uffff\1\157\1\141\1\145\3\uffff\1\154\1\165"+
+        "\1\44\1\uffff\1\164\1\155\1\151\1\141\1\160\1\156\2\uffff\2\156"+
+        "\1\143\1\163\2\44\1\40\1\167\1\154\2\155\1\142\1\143\1\75\32\uffff"+
+        "\1\75\1\uffff\1\163\1\44\1\160\1\74\13\uffff\1\163\1\164\1\162\1"+
+        "\154\1\156\1\151\1\154\1\165\1\160\1\162\1\156\1\162\3\145\1\uffff"+
+        "\1\60\4\uffff\1\146\1\156\1\144\1\141\1\155\1\uffff\2\145\2\164"+
+        "\1\145\1\143\1\147\1\164\1\141\1\145\1\143\1\40\3\165\1\160\1\141"+
+        "\3\uffff\1\44\1\154\1\160\1\151\1\141\1\154\4\uffff\1\164\1\uffff"+
+        "\1\157\2\uffff\2\145\1\44\1\163\1\141\1\154\2\44\1\145\1\44\1\145"+
+        "\1\157\1\145\1\164\1\162\1\166\1\162\1\145\1\151\1\145\1\44\1\156"+
+        "\1\162\1\163\1\143\1\151\1\162\1\150\1\141\1\151\1\143\1\44\1\150"+
+        "\1\uffff\1\151\2\162\1\157\1\165\1\uffff\1\44\1\154\1\44\1\144\1"+
+        "\165\1\141\1\162\1\44\1\156\1\uffff\1\145\1\154\1\145\2\uffff\1"+
+        "\44\1\uffff\1\157\1\167\1\163\1\145\1\143\1\145\1\156\1\163\1\146"+
+        "\1\72\1\44\2\uffff\1\157\1\151\1\164\1\150\1\143\1\44\1\162\1\40"+
+        "\1\144\1\151\1\uffff\1\44\1\145\1\163\2\156\1\154\1\uffff\1\145"+
+        "\1\uffff\1\157\1\163\1\156\1\164\1\uffff\1\144\1\44\1\154\1\44\1"+
+        "\uffff\1\146\2\44\1\163\1\157\1\163\1\145\1\157\1\151\2\uffff\1"+
+        "\163\1\141\1\162\2\44\1\uffff\1\157\1\uffff\1\141\1\144\1\uffff"+
+        "\1\162\1\157\1\44\1\151\1\164\2\44\1\151\1\143\1\44\1\163\1\151"+
+        "\1\uffff\1\171\1\uffff\1\44\2\uffff\1\44\1\154\1\44\1\163\1\162"+
+        "\1\143\1\40\1\44\1\145\2\uffff\1\156\1\144\1\141\1\145\1\163\1\uffff"+
+        "\1\142\1\44\2\uffff\1\166\1\145\1\uffff\1\44\1\157\1\44\2\uffff"+
+        "\1\145\1\uffff\1\44\1\40\1\141\2\uffff\1\40\1\uffff\1\44\1\151\1"+
+        "\40\1\144\2\72\1\151\1\uffff\1\141\1\157\1\uffff\1\156\1\uffff\1"+
+        "\163\1\uffff\1\163\2\uffff\1\143\1\141\1\uffff\1\172\1\uffff\1\40"+
+        "\2\uffff\1\154\1\44\1\146\2\44\1\40\1\151\2\uffff\1\145\1\uffff"+
+        "\1\151\1\uffff\1\44\3\uffff\1\157\2\144\1\uffff\1\156\1\44\1\141"+
+        "\1\44\1\uffff\1\144\1\uffff\1\44\1\uffff";
     static final String DFA19_maxS =
-        "\1\uffff\1\141\2\uffff\2\165\1\uffff\1\72\1\171\1\145\1\157\1\170"+
-        "\1\157\1\165\1\151\1\170\1\76\1\75\1\76\3\75\1\76\1\75\1\174\1\46"+
-        "\1\75\1\156\1\56\1\72\6\uffff\1\157\1\150\1\141\1\171\1\165\1\151"+
-        "\1\165\1\151\1\170\1\154\1\172\1\uffff\2\uffff\2\uffff\1\164\3\uffff"+
-        "\1\154\1\165\1\uffff\1\172\1\uffff\1\157\1\141\1\145\3\uffff\1\155"+
-        "\1\151\1\141\1\160\1\156\1\164\1\143\1\146\2\172\1\163\1\164\1\156"+
-        "\1\164\1\40\1\167\1\154\2\155\1\143\1\75\32\uffff\1\75\1\uffff\1"+
-        "\163\1\172\1\160\1\74\12\uffff\1\162\1\154\1\156\1\151\1\162\1\171"+
-        "\1\160\1\162\1\156\1\162\3\145\1\uffff\1\154\4\uffff\1\145\1\141"+
-        "\1\155\1\147\1\uffff\1\146\1\156\1\144\1\145\2\164\1\145\1\143\3"+
-        "\165\1\164\1\uffff\1\141\2\uffff\2\145\1\40\1\141\1\145\1\143\1"+
-        "\uffff\1\172\1\154\1\160\1\151\1\154\4\uffff\1\164\1\uffff\1\157"+
-        "\2\uffff\1\172\1\163\1\141\1\154\2\172\1\145\1\172\1\145\1\157\1"+
-        "\145\1\164\1\162\1\166\2\162\1\172\2\156\1\145\1\151\1\145\1\163"+
-        "\1\143\1\151\1\162\1\150\1\151\2\162\1\141\1\165\1\172\1\156\1\uffff"+
-        "\1\143\1\172\1\150\1\uffff\1\172\1\154\1\172\1\165\1\141\1\162\1"+
-        "\uffff\1\145\1\154\1\145\2\uffff\1\172\1\uffff\1\157\1\167\1\163"+
-        "\1\145\1\143\1\145\1\156\1\151\1\40\1\uffff\1\157\1\141\1\163\1"+
-        "\146\1\72\1\164\1\150\1\143\1\172\1\162\1\145\1\163\1\156\1\144"+
-        "\1\154\1\uffff\1\163\1\151\1\uffff\1\172\1\uffff\1\145\1\uffff\1"+
-        "\163\1\156\1\164\1\172\1\154\1\172\1\uffff\1\146\2\172\1\163\1\157"+
-        "\1\163\1\145\1\141\1\uffff\1\163\1\143\1\157\1\151\1\uffff\1\162"+
-        "\2\172\1\uffff\1\157\1\162\1\157\1\172\1\141\1\164\1\163\1\151\1"+
-        "\144\1\uffff\1\172\1\151\1\143\1\172\1\uffff\1\171\1\uffff\1\172"+
-        "\2\uffff\1\172\1\154\1\172\1\163\2\172\1\151\1\162\1\143\1\145\2"+
-        "\uffff\1\156\1\145\1\163\1\uffff\1\40\2\172\1\157\1\141\1\uffff"+
-        "\1\166\1\145\1\uffff\1\172\2\uffff\1\145\1\uffff\1\172\1\40\3\uffff"+
-        "\1\157\1\172\1\141\1\172\1\151\2\72\3\uffff\1\156\1\144\1\141\1"+
-        "\157\1\uffff\1\163\2\uffff\1\156\1\163\1\uffff\1\143\1\uffff\1\172"+
-        "\2\uffff\1\172\1\40\1\172\1\146\1\172\1\72\1\40\1\151\1\145\3\uffff"+
-        "\1\172\3\uffff\1\157\1\144\1\uffff\1\156\2\172\2\uffff";
+        "\1\uffff\1\165\2\uffff\1\172\1\141\1\171\1\72\1\157\1\145\1\157"+
+        "\1\165\1\151\1\170\1\76\1\75\1\76\3\75\1\76\1\75\1\174\1\46\1\75"+
+        "\1\156\1\56\1\72\7\uffff\1\170\1\157\1\150\1\141\1\171\1\165\1\151"+
+        "\1\165\1\151\1\170\1\154\1\172\1\uffff\2\uffff\2\uffff\1\157\1\141"+
+        "\1\145\3\uffff\1\154\1\165\1\172\1\uffff\1\164\1\155\1\151\1\141"+
+        "\1\160\1\156\2\uffff\1\164\1\156\1\164\1\163\2\172\1\40\1\167\1"+
+        "\154\2\155\1\142\1\143\1\75\32\uffff\1\75\1\uffff\1\163\1\172\1"+
+        "\160\1\74\13\uffff\1\163\1\164\1\162\1\154\1\156\1\151\1\162\1\171"+
+        "\1\160\1\162\1\156\1\162\3\145\1\uffff\1\154\4\uffff\1\146\1\156"+
+        "\1\144\1\141\1\155\1\uffff\2\145\2\164\1\145\1\143\1\147\1\164\1"+
+        "\141\1\145\1\143\1\40\3\165\1\160\1\141\3\uffff\1\172\1\154\1\160"+
+        "\1\151\1\141\1\154\4\uffff\1\164\1\uffff\1\157\2\uffff\2\145\1\172"+
+        "\1\163\1\141\1\154\2\172\1\145\1\172\1\145\1\157\1\145\1\164\1\162"+
+        "\1\166\1\162\1\145\1\151\1\145\1\172\1\156\1\162\1\163\1\143\1\151"+
+        "\1\162\1\150\1\141\1\151\1\143\1\172\1\150\1\uffff\1\151\2\162\1"+
+        "\157\1\165\1\uffff\1\172\1\154\1\172\1\144\1\165\1\141\1\162\1\172"+
+        "\1\156\1\uffff\1\145\1\154\1\145\2\uffff\1\172\1\uffff\1\157\1\167"+
+        "\1\163\1\145\1\143\1\145\1\156\1\163\1\146\1\72\1\172\2\uffff\1"+
+        "\157\1\151\1\164\1\150\1\143\1\172\1\162\1\40\1\144\1\151\1\uffff"+
+        "\1\172\1\145\1\163\2\156\1\154\1\uffff\1\145\1\uffff\1\157\1\163"+
+        "\1\156\1\164\1\uffff\1\163\1\172\1\154\1\172\1\uffff\1\146\2\172"+
+        "\1\163\1\157\1\163\1\145\1\157\1\151\2\uffff\1\163\1\141\1\162\2"+
+        "\172\1\uffff\1\157\1\uffff\1\141\1\144\1\uffff\1\162\1\157\1\172"+
+        "\1\151\1\164\2\172\1\151\1\143\1\172\1\163\1\151\1\uffff\1\171\1"+
+        "\uffff\1\172\2\uffff\1\172\1\154\1\172\1\163\1\162\1\143\2\172\1"+
+        "\145\2\uffff\1\156\1\144\1\141\1\145\1\163\1\uffff\1\142\1\172\2"+
+        "\uffff\1\166\1\145\1\uffff\1\172\1\157\1\172\2\uffff\1\145\1\uffff"+
+        "\2\172\1\141\2\uffff\1\40\1\uffff\1\172\1\151\1\40\1\144\2\72\1"+
+        "\151\1\uffff\1\141\1\157\1\uffff\1\156\1\uffff\1\163\1\uffff\1\163"+
+        "\2\uffff\1\143\1\144\1\uffff\1\172\1\uffff\1\40\2\uffff\1\154\1"+
+        "\172\1\146\2\172\1\40\1\151\2\uffff\1\145\1\uffff\1\151\1\uffff"+
+        "\1\172\3\uffff\1\157\2\144\1\uffff\1\156\1\172\1\141\1\172\1\uffff"+
+        "\1\144\1\uffff\1\172\1\uffff";
     static final String DFA19_acceptS =
-        "\2\uffff\1\2\1\3\2\uffff\1\6\27\uffff\1\101\1\102\1\103\1\104\1"+
-        "\105\1\107\13\uffff\1\154\2\uffff\1\160\1\161\1\uffff\1\154\1\2"+
-        "\1\3\2\uffff\1\13\1\uffff\1\35\3\uffff\1\6\1\77\1\7\25\uffff\1\61"+
-        "\1\36\1\37\1\74\1\64\1\40\1\56\1\75\1\65\1\41\1\67\1\66\1\42\1\156"+
-        "\1\157\1\70\1\43\1\71\1\62\1\44\1\46\1\45\1\47\1\106\1\50\1\143"+
-        "\1\uffff\1\72\4\uffff\1\76\1\63\1\100\1\142\1\101\1\102\1\103\1"+
-        "\104\1\105\1\107\15\uffff\1\151\1\uffff\1\152\1\153\1\155\1\160"+
-        "\4\uffff\1\73\14\uffff\1\34\1\uffff\1\117\1\20\6\uffff\1\24\5\uffff"+
-        "\1\53\1\51\1\54\1\52\1\uffff\1\110\1\uffff\1\57\1\60\42\uffff\1"+
-        "\22\3\uffff\1\127\6\uffff\1\115\3\uffff\1\120\1\121\1\uffff\1\136"+
-        "\11\uffff\1\30\17\uffff\1\111\2\uffff\1\114\1\uffff\1\132\1\uffff"+
-        "\1\26\6\uffff\1\131\10\uffff\1\4\4\uffff\1\23\3\uffff\1\126\11\uffff"+
-        "\1\141\4\uffff\1\130\1\uffff\1\116\1\uffff\1\134\1\144\12\uffff"+
-        "\1\112\1\123\3\uffff\1\135\5\uffff\1\25\2\uffff\1\124\1\uffff\1"+
-        "\133\1\145\1\uffff\1\147\2\uffff\1\15\1\10\1\32\7\uffff\1\17\1\113"+
-        "\1\122\4\uffff\1\137\1\uffff\1\150\1\1\2\uffff\1\21\1\uffff\1\12"+
-        "\1\uffff\1\16\1\33\11\uffff\1\125\1\31\1\27\1\uffff\1\146\1\14\1"+
-        "\5\2\uffff\1\55\3\uffff\1\140\1\11";
+        "\2\uffff\1\2\1\3\30\uffff\1\102\1\103\1\104\1\105\1\106\1\107\1"+
+        "\111\14\uffff\1\157\2\uffff\1\163\1\164\3\uffff\1\157\1\2\1\3\3"+
+        "\uffff\1\37\6\uffff\1\11\1\35\16\uffff\1\63\1\40\1\41\1\76\1\66"+
+        "\1\42\1\60\1\77\1\67\1\43\1\71\1\70\1\44\1\161\1\162\1\72\1\45\1"+
+        "\73\1\64\1\46\1\50\1\47\1\51\1\110\1\52\1\145\1\uffff\1\74\4\uffff"+
+        "\1\100\1\65\1\101\1\144\1\102\1\103\1\104\1\105\1\106\1\107\1\111"+
+        "\17\uffff\1\154\1\uffff\1\155\1\156\1\160\1\163\5\uffff\1\75\21"+
+        "\uffff\1\36\1\121\1\25\6\uffff\1\55\1\53\1\56\1\54\1\uffff\1\112"+
+        "\1\uffff\1\61\1\62\41\uffff\1\22\5\uffff\1\131\11\uffff\1\117\3"+
+        "\uffff\1\122\1\123\1\uffff\1\140\13\uffff\1\13\1\31\12\uffff\1\116"+
+        "\6\uffff\1\134\1\uffff\1\27\4\uffff\1\113\4\uffff\1\133\11\uffff"+
+        "\1\24\1\4\5\uffff\1\130\1\uffff\1\16\2\uffff\1\143\14\uffff\1\132"+
+        "\1\uffff\1\120\1\uffff\1\136\1\146\11\uffff\1\114\1\125\5\uffff"+
+        "\1\137\2\uffff\1\26\1\153\2\uffff\1\126\3\uffff\1\135\1\147\1\uffff"+
+        "\1\151\3\uffff\1\14\1\33\1\uffff\1\15\7\uffff\1\115\2\uffff\1\124"+
+        "\1\uffff\1\141\1\uffff\1\152\1\uffff\1\12\1\21\2\uffff\1\7\1\uffff"+
+        "\1\17\1\uffff\1\20\1\34\7\uffff\1\5\1\10\1\uffff\1\32\1\uffff\1"+
+        "\30\1\uffff\1\127\1\150\1\1\3\uffff\1\57\4\uffff\1\142\1\uffff\1"+
+        "\6\1\uffff\1\23";
     static final String DFA19_specialS =
-        "\1\0\57\uffff\1\2\1\1\u0165\uffff}>";
+        "\1\0\57\uffff\1\2\1\1\u0175\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\11\63\2\62\2\63\1\62\22\63\1\62\1\32\1\60\1\40\1\57\1\25\1"+
-            "\31\1\61\1\36\1\37\1\23\1\21\1\6\1\22\1\34\1\24\1\54\11\55\1"+
-            "\7\1\43\1\26\1\20\1\27\1\35\1\63\4\57\1\17\4\57\1\52\1\57\1"+
-            "\50\1\51\5\57\1\16\2\57\1\53\4\57\1\41\1\63\1\42\1\56\1\57\1"+
-            "\63\1\4\1\57\1\14\1\12\1\13\1\44\2\57\1\33\3\57\1\1\1\15\1\57"+
-            "\1\5\1\57\1\11\1\10\1\47\1\57\1\46\1\45\3\57\1\2\1\30\1\3\uff82"+
-            "\63",
-            "\1\64",
+            "\11\63\2\62\2\63\1\62\22\63\1\62\1\30\1\60\1\37\1\57\1\23\1"+
+            "\27\1\61\1\35\1\36\1\21\1\17\1\34\1\20\1\32\1\22\1\54\11\55"+
+            "\1\7\1\42\1\24\1\16\1\25\1\33\1\63\4\57\1\15\4\57\1\52\1\57"+
+            "\1\50\1\51\5\57\1\14\2\57\1\53\4\57\1\40\1\63\1\41\1\56\1\57"+
+            "\1\63\1\4\1\57\1\10\1\12\1\43\1\44\2\57\1\31\3\57\1\5\1\13\1"+
+            "\57\1\1\1\57\1\11\1\6\1\47\1\57\1\46\1\45\3\57\1\2\1\26\1\3"+
+            "\uff82\63",
+            "\1\65\5\uffff\1\64\2\uffff\1\66",
             "",
             "",
-            "\1\72\31\uffff\1\74\61\uffff\1\71\6\uffff\1\73\1\uffff\1\70",
-            "\1\76\5\uffff\1\75\2\uffff\1\77",
-            "",
-            "\1\101",
-            "\1\103\16\uffff\1\105\1\106\1\uffff\1\104\1\uffff\1\107",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\13"+
+            "\67\1\73\6\67\1\74\1\67\1\72\5\67",
+            "\1\76",
+            "\1\77\16\uffff\1\101\1\102\1\uffff\1\100\1\uffff\1\103",
+            "\1\104",
+            "\1\106\15\uffff\1\107",
             "\1\110",
             "\1\112\3\uffff\1\111\5\uffff\1\113",
-            "\1\115\1\uffff\1\114\11\uffff\1\116",
-            "\1\120\15\uffff\1\117",
-            "\1\122\11\uffff\1\121\5\uffff\1\123",
-            "\1\125\3\uffff\1\124",
-            "\1\126",
-            "\1\127\1\130",
-            "\1\133\21\uffff\1\132",
-            "\1\137\17\uffff\1\135\1\136",
-            "\1\142\22\uffff\1\141",
-            "\1\145\4\uffff\1\146\15\uffff\1\144",
+            "\1\115\11\uffff\1\114\5\uffff\1\116",
+            "\1\121\3\uffff\1\120\3\uffff\1\117",
+            "\1\122",
+            "\1\123\1\124",
+            "\1\127\21\uffff\1\126",
+            "\1\133\17\uffff\1\131\1\132",
+            "\1\136\22\uffff\1\135",
+            "\1\141\4\uffff\1\142\15\uffff\1\140",
+            "\1\144",
+            "\1\146",
             "\1\150",
             "\1\152",
             "\1\154",
             "\1\156",
-            "\1\160",
-            "\1\162",
-            "\1\165\6\uffff\1\166\1\164",
-            "\1\167",
-            "\1\172\13\uffff\1\171",
+            "\1\161\6\uffff\1\162\1\160",
+            "\1\163",
+            "\1\166\13\uffff\1\165",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\u0083\7\uffff\1\u0084\5\uffff\1\u0082",
+            "",
+            "\1\177\13\uffff\1\u0080",
+            "\1\u0082\7\uffff\1\u0083\5\uffff\1\u0081",
+            "\1\u0084",
             "\1\u0085",
-            "\1\u0086",
-            "\1\u0089\11\uffff\1\u0087\6\uffff\1\u0088",
-            "\1\u008a",
-            "\1\u008b\7\uffff\1\u008c",
+            "\1\u0088\11\uffff\1\u0086\6\uffff\1\u0087",
+            "\1\u0089",
+            "\1\u008a\7\uffff\1\u008b",
+            "\1\u008c",
             "\1\u008d",
-            "\1\u008e",
-            "\12\u0090\10\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1\u0092"+
-            "\13\uffff\1\u008f\6\uffff\1\u0090\2\uffff\1\u0092\1\uffff\3"+
-            "\u0092\5\uffff\1\u0092\13\uffff\1\u008f",
-            "\12\u0090\10\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1\u0092"+
-            "\22\uffff\1\u0090\2\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1"+
-            "\u0092",
-            "\1\65\34\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+            "\12\u008f\10\uffff\1\u0091\1\uffff\3\u0091\5\uffff\1\u0091"+
+            "\13\uffff\1\u008e\6\uffff\1\u008f\2\uffff\1\u0091\1\uffff\3"+
+            "\u0091\5\uffff\1\u0091\13\uffff\1\u008e",
+            "\12\u008f\10\uffff\1\u0091\1\uffff\3\u0091\5\uffff\1\u0091"+
+            "\22\uffff\1\u008f\2\uffff\1\u0091\1\uffff\3\u0091\5\uffff\1"+
+            "\u0091",
+            "\1\67\34\uffff\32\67\4\uffff\1\67\1\uffff\32\67",
             "",
-            "\0\u0093",
-            "\0\u0093",
+            "\0\u0092",
+            "\0\u0092",
             "",
             "",
+            "\1\u0094",
             "\1\u0095",
-            "",
-            "",
-            "",
             "\1\u0096",
-            "\1\u0097",
             "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\10"+
-            "\65\1\u0098\21\65",
+            "",
+            "",
+            "\1\u0097",
+            "\1\u0098",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
             "\1\u009a",
             "\1\u009b",
             "\1\u009c",
-            "",
-            "",
-            "",
             "\1\u009d",
             "\1\u009e",
             "\1\u009f",
-            "\1\u00a0",
-            "\1\u00a1",
-            "\1\u00a3\15\uffff\1\u00a2\2\uffff\1\u00a4",
+            "",
+            "",
+            "\1\u00a1\1\uffff\1\u00a2\1\uffff\1\u00a0\1\u00a3\1\u00a4",
             "\1\u00a5",
-            "\1\u00a6\53\uffff\1\u00a7",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u00aa",
-            "\1\u00ab",
-            "\1\u00ac",
-            "\1\u00ad\2\uffff\1\u00ae\1\u00af",
+            "\1\u00a7\15\uffff\1\u00a6\2\uffff\1\u00a8",
+            "\1\u00a9",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\5\67"+
+            "\1\u00aa\24\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u00ad",
+            "\1\u00ae",
+            "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
-            "\1\u00b5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00b6",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u00b8",
-            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00ba",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u00bc",
+            "\1\u00bb",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00bd",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
@@ -4194,9 +4286,9 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             "\1\u00cc",
             "\1\u00cd",
             "",
-            "\12\u0090\10\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1\u0092"+
-            "\22\uffff\1\u0090\2\uffff\1\u0092\1\uffff\3\u0092\5\uffff\1"+
-            "\u0092",
+            "\12\u008f\10\uffff\1\u0091\1\uffff\3\u0091\5\uffff\1\u0091"+
+            "\22\uffff\1\u008f\2\uffff\1\u0091\1\uffff\3\u0091\5\uffff\1"+
+            "\u0091",
             "",
             "",
             "",
@@ -4205,8 +4297,8 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             "\1\u00cf",
             "\1\u00d0",
             "\1\u00d1",
-            "",
             "\1\u00d2",
+            "",
             "\1\u00d3",
             "\1\u00d4",
             "\1\u00d5",
@@ -4218,19 +4310,18 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             "\1\u00db",
             "\1\u00dc",
             "\1\u00dd",
-            "",
             "\1\u00de",
-            "",
-            "",
             "\1\u00df",
             "\1\u00e0",
             "\1\u00e1",
             "\1\u00e2",
             "\1\u00e3",
-            "\1\u00e4",
             "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u00e5",
             "\1\u00e6",
             "\1\u00e7",
             "\1\u00e8",
@@ -4244,33 +4335,32 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             "\1\u00eb",
             "",
             "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u00ec",
             "\1\u00ed",
-            "\1\u00ee",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00ef",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u00f2",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u00f0",
+            "\1\u00f1",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00f4",
-            "\1\u00f5",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u00f6",
             "\1\u00f7",
             "\1\u00f8",
             "\1\u00f9",
             "\1\u00fa",
             "\1\u00fb",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\22"+
-            "\65\1\u00fc\7\65",
+            "\1\u00fc",
+            "\1\u00fd",
             "\1\u00fe",
             "\1\u00ff",
-            "\1\u0100",
-            "\1\u0101",
-            "\1\u0102",
+            "\1\67\13\uffff\12\67\1\u0101\6\uffff\32\67\4\uffff\1\67\1\uffff"+
+            "\22\67\1\u0100\7\67",
             "\1\u0103",
             "\1\u0104",
             "\1\u0105",
@@ -4281,222 +4371,244 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             "\1\u010a",
             "\1\u010b",
             "\1\u010c",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u010e",
             "",
             "\1\u010f",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u0110",
             "\1\u0111",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u0112",
             "\1\u0113",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u0115",
-            "\1\u0116",
-            "\1\u0117",
             "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0115",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0117",
             "\1\u0118",
             "\1\u0119",
             "\1\u011a",
-            "",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u011c",
+            "",
             "\1\u011d",
             "\1\u011e",
             "\1\u011f",
-            "\1\u0120",
+            "",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
             "\1\u0121",
             "\1\u0122",
             "\1\u0123",
             "\1\u0124",
-            "",
             "\1\u0125",
             "\1\u0126",
             "\1\u0127",
             "\1\u0128",
             "\1\u0129",
             "\1\u012a",
-            "\1\u012b",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "",
             "\1\u012c",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u012d",
             "\1\u012e",
             "\1\u012f",
             "\1\u0130",
-            "\1\u0131",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u0132",
             "\1\u0133",
+            "\1\u0134",
+            "\1\u0135",
             "",
-            "\1\u0134\16\uffff\1\u0135",
-            "\1\u0136",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0137",
             "\1\u0138",
-            "",
             "\1\u0139",
             "\1\u013a",
             "\1\u013b",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "",
+            "\1\u013c",
+            "",
             "\1\u013d",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
+            "\1\u013e",
             "\1\u013f",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u0142",
-            "\1\u0143",
-            "\1\u0144",
-            "\1\u0145",
-            "\1\u0146",
+            "\1\u0140",
             "",
-            "\1\u0147",
-            "\1\u0148",
+            "\1\u0141\16\uffff\1\u0142",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0144",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "\1\u0146",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u0149",
             "\1\u014a",
-            "",
             "\1\u014b",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
+            "\1\u014c",
+            "\1\u014d",
             "\1\u014e",
+            "",
+            "",
             "\1\u014f",
             "\1\u0150",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u0152",
-            "\1\u0153",
+            "\1\u0151",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
             "\1\u0154",
+            "",
             "\1\u0155",
             "\1\u0156",
             "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u0157",
             "\1\u0158",
-            "\1\u0159",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u015a",
             "\1\u015b",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u015e",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u0160",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\22"+
-            "\65\1\u0161\7\65",
-            "\1\u0163\3\uffff\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff"+
-            "\1\65\1\uffff\32\65",
-            "\1\u0165",
+            "\1\u015f",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0161",
+            "\1\u0162",
+            "",
+            "\1\u0163",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u0166",
-            "\1\u0167",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u0168",
-            "",
-            "",
             "\1\u0169",
             "\1\u016a",
-            "\1\u016b",
-            "",
-            "\1\u016c",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u016b\3\uffff\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff"+
+            "\1\67\1\uffff\32\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\22"+
+            "\67\1\u016d\7\67",
             "\1\u016f",
-            "\1\u0170",
             "",
+            "",
+            "\1\u0170",
             "\1\u0171",
             "\1\u0172",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
-            "",
+            "\1\u0173",
             "\1\u0174",
             "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\u0176",
-            "",
+            "\1\u0175",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "",
             "",
             "\1\u0177",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\4\65"+
-            "\1\u0178\25\65",
+            "\1\u0178",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u017a",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "",
             "\1\u017c",
-            "\1\u017d",
-            "\1\u017e",
             "",
-            "",
-            "",
-            "\1\u017f",
-            "\1\u0180",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u017f\3\uffff\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff"+
+            "\1\67\1\uffff\4\67\1\u017e\25\67",
             "\1\u0181",
+            "",
+            "",
             "\1\u0182",
             "",
-            "\1\u0183",
-            "",
-            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             "\1\u0184",
             "\1\u0185",
-            "",
             "\1\u0186",
-            "",
             "\1\u0187",
-            "",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "\1\u0188",
             "\1\u0189",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "",
+            "\1\u018a",
             "\1\u018b",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
+            "",
+            "\1\u018c",
+            "",
             "\1\u018d",
+            "",
             "\1\u018e",
+            "",
+            "",
             "\1\u018f",
-            "\1\u0190",
-            "",
-            "",
-            "",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "",
-            "",
+            "\1\u0191\2\uffff\1\u0190",
             "",
             "\1\u0192",
+            "",
             "\1\u0193",
             "",
-            "\1\u0194",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
-            "\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32"+
-            "\65",
             "",
+            "\1\u0194",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0196",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u0199",
+            "\1\u019a",
+            "",
+            "",
+            "\1\u019b",
+            "",
+            "\1\u019c",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "",
+            "",
+            "\1\u019e",
+            "\1\u019f",
+            "\1\u01a0",
+            "",
+            "\1\u01a1",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "\1\u01a3",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
+            "",
+            "\1\u01a5",
+            "",
+            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
+            "\67",
             ""
     };
 
@@ -4530,7 +4642,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -4540,7 +4652,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                         int LA19_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA19_0=='m') ) {s = 1;}
+                        if ( (LA19_0=='p') ) {s = 1;}
 
                         else if ( (LA19_0=='{') ) {s = 2;}
 
@@ -4548,67 +4660,67 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                         else if ( (LA19_0=='a') ) {s = 4;}
 
-                        else if ( (LA19_0=='p') ) {s = 5;}
+                        else if ( (LA19_0=='m') ) {s = 5;}
 
-                        else if ( (LA19_0==',') ) {s = 6;}
+                        else if ( (LA19_0=='s') ) {s = 6;}
 
                         else if ( (LA19_0==':') ) {s = 7;}
 
-                        else if ( (LA19_0=='s') ) {s = 8;}
+                        else if ( (LA19_0=='c') ) {s = 8;}
 
                         else if ( (LA19_0=='r') ) {s = 9;}
 
                         else if ( (LA19_0=='d') ) {s = 10;}
 
-                        else if ( (LA19_0=='e') ) {s = 11;}
+                        else if ( (LA19_0=='n') ) {s = 11;}
 
-                        else if ( (LA19_0=='c') ) {s = 12;}
+                        else if ( (LA19_0=='S') ) {s = 12;}
 
-                        else if ( (LA19_0=='n') ) {s = 13;}
+                        else if ( (LA19_0=='E') ) {s = 13;}
 
-                        else if ( (LA19_0=='S') ) {s = 14;}
+                        else if ( (LA19_0=='=') ) {s = 14;}
 
-                        else if ( (LA19_0=='E') ) {s = 15;}
+                        else if ( (LA19_0=='+') ) {s = 15;}
 
-                        else if ( (LA19_0=='=') ) {s = 16;}
+                        else if ( (LA19_0=='-') ) {s = 16;}
 
-                        else if ( (LA19_0=='+') ) {s = 17;}
+                        else if ( (LA19_0=='*') ) {s = 17;}
 
-                        else if ( (LA19_0=='-') ) {s = 18;}
+                        else if ( (LA19_0=='/') ) {s = 18;}
 
-                        else if ( (LA19_0=='*') ) {s = 19;}
+                        else if ( (LA19_0=='%') ) {s = 19;}
 
-                        else if ( (LA19_0=='/') ) {s = 20;}
+                        else if ( (LA19_0=='<') ) {s = 20;}
 
-                        else if ( (LA19_0=='%') ) {s = 21;}
+                        else if ( (LA19_0=='>') ) {s = 21;}
 
-                        else if ( (LA19_0=='<') ) {s = 22;}
+                        else if ( (LA19_0=='|') ) {s = 22;}
 
-                        else if ( (LA19_0=='>') ) {s = 23;}
+                        else if ( (LA19_0=='&') ) {s = 23;}
 
-                        else if ( (LA19_0=='|') ) {s = 24;}
+                        else if ( (LA19_0=='!') ) {s = 24;}
 
-                        else if ( (LA19_0=='&') ) {s = 25;}
+                        else if ( (LA19_0=='i') ) {s = 25;}
 
-                        else if ( (LA19_0=='!') ) {s = 26;}
+                        else if ( (LA19_0=='.') ) {s = 26;}
 
-                        else if ( (LA19_0=='i') ) {s = 27;}
+                        else if ( (LA19_0=='?') ) {s = 27;}
 
-                        else if ( (LA19_0=='.') ) {s = 28;}
+                        else if ( (LA19_0==',') ) {s = 28;}
 
-                        else if ( (LA19_0=='?') ) {s = 29;}
+                        else if ( (LA19_0=='(') ) {s = 29;}
 
-                        else if ( (LA19_0=='(') ) {s = 30;}
+                        else if ( (LA19_0==')') ) {s = 30;}
 
-                        else if ( (LA19_0==')') ) {s = 31;}
+                        else if ( (LA19_0=='#') ) {s = 31;}
 
-                        else if ( (LA19_0=='#') ) {s = 32;}
+                        else if ( (LA19_0=='[') ) {s = 32;}
 
-                        else if ( (LA19_0=='[') ) {s = 33;}
+                        else if ( (LA19_0==']') ) {s = 33;}
 
-                        else if ( (LA19_0==']') ) {s = 34;}
+                        else if ( (LA19_0==';') ) {s = 34;}
 
-                        else if ( (LA19_0==';') ) {s = 35;}
+                        else if ( (LA19_0=='e') ) {s = 35;}
 
                         else if ( (LA19_0=='f') ) {s = 36;}
 
@@ -4648,7 +4760,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                         int LA19_49 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA19_49>='\u0000' && LA19_49<='\uFFFF')) ) {s = 147;}
+                        if ( ((LA19_49>='\u0000' && LA19_49<='\uFFFF')) ) {s = 146;}
 
                         else s = 51;
 
@@ -4658,7 +4770,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                         int LA19_48 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA19_48>='\u0000' && LA19_48<='\uFFFF')) ) {s = 147;}
+                        if ( ((LA19_48>='\u0000' && LA19_48<='\uFFFF')) ) {s = 146;}
 
                         else s = 51;
 

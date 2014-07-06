@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
+import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
@@ -34,7 +34,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getAnio <em>Anio</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getSemestre <em>Semestre</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getMateriasADictar <em>Materias ADictar</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getAsignacionDeMaterias <em>Asignacion De Materias</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl#getAsignacionesDiarias <em>Asignaciones Diarias</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,14 +93,14 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
   protected EList<Materia> materiasADictar;
 
   /**
-   * The cached value of the '{@link #getAsignacionDeMaterias() <em>Asignacion De Materias</em>}' containment reference list.
+   * The cached value of the '{@link #getAsignacionesDiarias() <em>Asignaciones Diarias</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAsignacionDeMaterias()
+   * @see #getAsignacionesDiarias()
    * @generated
    * @ordered
    */
-  protected EList<Asignacion_Materia> asignacionDeMaterias;
+  protected EList<Asignacion_Diaria> asignacionesDiarias;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,13 +188,13 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Asignacion_Materia> getAsignacionDeMaterias()
+  public EList<Asignacion_Diaria> getAsignacionesDiarias()
   {
-    if (asignacionDeMaterias == null)
+    if (asignacionesDiarias == null)
     {
-      asignacionDeMaterias = new EObjectContainmentEList<Asignacion_Materia>(Asignacion_Materia.class, this, PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS);
+      asignacionesDiarias = new EObjectContainmentEList<Asignacion_Diaria>(Asignacion_Diaria.class, this, PlanificacionMateriasPackage.PLANIFICACION__ASIGNACIONES_DIARIAS);
     }
-    return asignacionDeMaterias;
+    return asignacionesDiarias;
   }
 
   /**
@@ -207,8 +207,8 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
-        return ((InternalEList<?>)getAsignacionDeMaterias()).basicRemove(otherEnd, msgs);
+      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACIONES_DIARIAS:
+        return ((InternalEList<?>)getAsignacionesDiarias()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -229,8 +229,8 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
         return getSemestre();
       case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
         return getMateriasADictar();
-      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
-        return getAsignacionDeMaterias();
+      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACIONES_DIARIAS:
+        return getAsignacionesDiarias();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -256,9 +256,9 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
         getMateriasADictar().clear();
         getMateriasADictar().addAll((Collection<? extends Materia>)newValue);
         return;
-      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
-        getAsignacionDeMaterias().clear();
-        getAsignacionDeMaterias().addAll((Collection<? extends Asignacion_Materia>)newValue);
+      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACIONES_DIARIAS:
+        getAsignacionesDiarias().clear();
+        getAsignacionesDiarias().addAll((Collection<? extends Asignacion_Diaria>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,8 +283,8 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
       case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
         getMateriasADictar().clear();
         return;
-      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
-        getAsignacionDeMaterias().clear();
+      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACIONES_DIARIAS:
+        getAsignacionesDiarias().clear();
         return;
     }
     super.eUnset(featureID);
@@ -306,8 +306,8 @@ public class PlanificacionImpl extends MinimalEObjectImpl.Container implements P
         return semestre != SEMESTRE_EDEFAULT;
       case PlanificacionMateriasPackage.PLANIFICACION__MATERIAS_ADICTAR:
         return materiasADictar != null && !materiasADictar.isEmpty();
-      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACION_DE_MATERIAS:
-        return asignacionDeMaterias != null && !asignacionDeMaterias.isEmpty();
+      case PlanificacionMateriasPackage.PLANIFICACION__ASIGNACIONES_DIARIAS:
+        return asignacionesDiarias != null && !asignacionesDiarias.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -68,88 +68,13 @@ public interface PlanificacionMateriasPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Elementos Planificacion</b></em>' containment reference list.
+   * The feature id for the '<em><b>Profesores Libres</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__ELEMENTOS_PLANIFICACION = 0;
-
-  /**
-   * The feature id for the '<em><b>Planificacion</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PLANIFICACION = 1;
-
-  /**
-   * The number of structural features of the '<em>Model</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Estructuras_PlanificacionImpl <em>Estructuras Planificacion</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Estructuras_PlanificacionImpl
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getEstructuras_Planificacion()
-   * @generated
-   */
-  int ESTRUCTURAS_PLANIFICACION = 5;
-
-  /**
-   * The number of structural features of the '<em>Estructuras Planificacion</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Materias_AbiertasImpl <em>Materias Abiertas</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Materias_AbiertasImpl
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getMaterias_Abiertas()
-   * @generated
-   */
-  int MATERIAS_ABIERTAS = 1;
-
-  /**
-   * The feature id for the '<em><b>Materias Abiertas</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATERIAS_ABIERTAS__MATERIAS_ABIERTAS = ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Materias Abiertas</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATERIAS_ABIERTAS_FEATURE_COUNT = ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Aulas_DisponiblesImpl <em>Aulas Disponibles</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Aulas_DisponiblesImpl
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAulas_Disponibles()
-   * @generated
-   */
-  int AULAS_DISPONIBLES = 2;
+  int MODEL__PROFESORES_LIBRES = 0;
 
   /**
    * The feature id for the '<em><b>Aulas Disponibles</b></em>' containment reference list.
@@ -158,99 +83,34 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AULAS_DISPONIBLES__AULAS_DISPONIBLES = ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT + 0;
+  int MODEL__AULAS_DISPONIBLES = 1;
 
   /**
-   * The number of structural features of the '<em>Aulas Disponibles</em>' class.
+   * The feature id for the '<em><b>Materias Abiertas</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AULAS_DISPONIBLES_FEATURE_COUNT = ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT + 1;
+  int MODEL__MATERIAS_ABIERTAS = 2;
 
   /**
-   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Nomina_ProfesoresImpl <em>Nomina Profesores</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Nomina_ProfesoresImpl
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getNomina_Profesores()
-   * @generated
-   */
-  int NOMINA_PROFESORES = 3;
-
-  /**
-   * The feature id for the '<em><b>Profesores Libres</b></em>' containment reference list.
+   * The feature id for the '<em><b>Planificacion</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NOMINA_PROFESORES__PROFESORES_LIBRES = ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT + 0;
+  int MODEL__PLANIFICACION = 3;
 
   /**
-   * The number of structural features of the '<em>Nomina Profesores</em>' class.
+   * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NOMINA_PROFESORES_FEATURE_COUNT = ESTRUCTURAS_PLANIFICACION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl <em>Asignacion Materia</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl
-   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAsignacion_Materia()
-   * @generated
-   */
-  int ASIGNACION_MATERIA = 4;
-
-  /**
-   * The feature id for the '<em><b>Dia</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASIGNACION_MATERIA__DIA = 0;
-
-  /**
-   * The feature id for the '<em><b>Rango Horario</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASIGNACION_MATERIA__RANGO_HORARIO = 1;
-
-  /**
-   * The feature id for the '<em><b>Materia</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASIGNACION_MATERIA__MATERIA = 2;
-
-  /**
-   * The feature id for the '<em><b>Cantidad Alumnos</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASIGNACION_MATERIA__CANTIDAD_ALUMNOS = 3;
-
-  /**
-   * The number of structural features of the '<em>Asignacion Materia</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASIGNACION_MATERIA_FEATURE_COUNT = 4;
+  int MODEL_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl <em>Planificacion</em>}' class.
@@ -260,7 +120,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getPlanificacion()
    * @generated
    */
-  int PLANIFICACION = 6;
+  int PLANIFICACION = 1;
 
   /**
    * The feature id for the '<em><b>Anio</b></em>' attribute.
@@ -290,13 +150,13 @@ public interface PlanificacionMateriasPackage extends EPackage
   int PLANIFICACION__MATERIAS_ADICTAR = 2;
 
   /**
-   * The feature id for the '<em><b>Asignacion De Materias</b></em>' containment reference list.
+   * The feature id for the '<em><b>Asignaciones Diarias</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLANIFICACION__ASIGNACION_DE_MATERIAS = 3;
+  int PLANIFICACION__ASIGNACIONES_DIARIAS = 3;
 
   /**
    * The number of structural features of the '<em>Planificacion</em>' class.
@@ -308,6 +168,107 @@ public interface PlanificacionMateriasPackage extends EPackage
   int PLANIFICACION_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl <em>Asignacion Diaria</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl
+   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAsignacion_Diaria()
+   * @generated
+   */
+  int ASIGNACION_DIARIA = 2;
+
+  /**
+   * The feature id for the '<em><b>Dia</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_DIARIA__DIA = 0;
+
+  /**
+   * The feature id for the '<em><b>Asignaciones De Materias</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS = 1;
+
+  /**
+   * The number of structural features of the '<em>Asignacion Diaria</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_DIARIA_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl <em>Asignacion Materia</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl
+   * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAsignacion_Materia()
+   * @generated
+   */
+  int ASIGNACION_MATERIA = 3;
+
+  /**
+   * The feature id for the '<em><b>Rango Horario</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_MATERIA__RANGO_HORARIO = 0;
+
+  /**
+   * The feature id for the '<em><b>Materia</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_MATERIA__MATERIA = 1;
+
+  /**
+   * The feature id for the '<em><b>Profesor</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_MATERIA__PROFESOR = 2;
+
+  /**
+   * The feature id for the '<em><b>Aula</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_MATERIA__AULA = 3;
+
+  /**
+   * The feature id for the '<em><b>Alumnos Inscriptos</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS = 4;
+
+  /**
+   * The number of structural features of the '<em>Asignacion Materia</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASIGNACION_MATERIA_FEATURE_COUNT = 5;
+
+  /**
    * The meta object id for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl <em>Materia</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -315,7 +276,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getMateria()
    * @generated
    */
-  int MATERIA = 7;
+  int MATERIA = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -327,31 +288,31 @@ public interface PlanificacionMateriasPackage extends EPackage
   int MATERIA__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Cantidad Horas Semanales</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATERIA__CANTIDAD_HORAS_SEMANALES = 1;
+
+  /**
+   * The feature id for the '<em><b>Dias Semanales</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATERIA__DIAS_SEMANALES = 2;
+
+  /**
    * The feature id for the '<em><b>Requerimientos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MATERIA__REQUERIMIENTOS = 1;
-
-  /**
-   * The feature id for the '<em><b>Profesor</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATERIA__PROFESOR = 2;
-
-  /**
-   * The feature id for the '<em><b>Aula</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATERIA__AULA = 3;
+  int MATERIA__REQUERIMIENTOS = 3;
 
   /**
    * The number of structural features of the '<em>Materia</em>' class.
@@ -370,7 +331,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getProfesor()
    * @generated
    */
-  int PROFESOR = 8;
+  int PROFESOR = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -416,7 +377,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getDisponibilidad()
    * @generated
    */
-  int DISPONIBILIDAD = 9;
+  int DISPONIBILIDAD = 6;
 
   /**
    * The feature id for the '<em><b>Dia</b></em>' attribute.
@@ -453,7 +414,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getDedicacion()
    * @generated
    */
-  int DEDICACION = 10;
+  int DEDICACION = 7;
 
   /**
    * The number of structural features of the '<em>Dedicacion</em>' class.
@@ -472,7 +433,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAula()
    * @generated
    */
-  int AULA = 11;
+  int AULA = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -518,7 +479,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getRecurso()
    * @generated
    */
-  int RECURSO = 12;
+  int RECURSO = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -546,7 +507,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getHorario()
    * @generated
    */
-  int HORARIO = 13;
+  int HORARIO = 10;
 
   /**
    * The feature id for the '<em><b>Hora</b></em>' attribute.
@@ -583,7 +544,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getRango_Horario()
    * @generated
    */
-  int RANGO_HORARIO = 14;
+  int RANGO_HORARIO = 11;
 
   /**
    * The feature id for the '<em><b>Hora Inicio</b></em>' containment reference.
@@ -620,7 +581,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getSimple()
    * @generated
    */
-  int SIMPLE = 15;
+  int SIMPLE = 12;
 
   /**
    * The number of structural features of the '<em>Simple</em>' class.
@@ -639,7 +600,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getSemi()
    * @generated
    */
-  int SEMI = 16;
+  int SEMI = 13;
 
   /**
    * The number of structural features of the '<em>Semi</em>' class.
@@ -658,7 +619,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getExclusiva()
    * @generated
    */
-  int EXCLUSIVA = 17;
+  int EXCLUSIVA = 14;
 
   /**
    * The number of structural features of the '<em>Exclusiva</em>' class.
@@ -677,7 +638,7 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getDia()
    * @generated
    */
-  int DIA = 18;
+  int DIA = 15;
 
 
   /**
@@ -691,153 +652,48 @@ public interface PlanificacionMateriasPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getElementosPlanificacion <em>Elementos Planificacion</em>}'.
+   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getProfesoresLibres <em>Profesores Libres</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elementos Planificacion</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Model#getElementosPlanificacion()
+   * @return the meta object for the containment reference list '<em>Profesores Libres</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Model#getProfesoresLibres()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_ElementosPlanificacion();
+  EReference getModel_ProfesoresLibres();
 
   /**
-   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}'.
+   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getAulasDisponibles <em>Aulas Disponibles</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Planificacion</em>'.
+   * @return the meta object for the containment reference list '<em>Aulas Disponibles</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Model#getAulasDisponibles()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_AulasDisponibles();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getMateriasAbiertas <em>Materias Abiertas</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Materias Abiertas</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Model#getMateriasAbiertas()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_MateriasAbiertas();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Planificacion</em>'.
    * @see tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion()
    * @see #getModel()
    * @generated
    */
   EReference getModel_Planificacion();
-
-  /**
-   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas <em>Materias Abiertas</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Materias Abiertas</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas
-   * @generated
-   */
-  EClass getMaterias_Abiertas();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas#getMateriasAbiertas <em>Materias Abiertas</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Materias Abiertas</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Materias_Abiertas#getMateriasAbiertas()
-   * @see #getMaterias_Abiertas()
-   * @generated
-   */
-  EReference getMaterias_Abiertas_MateriasAbiertas();
-
-  /**
-   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Aulas_Disponibles <em>Aulas Disponibles</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Aulas Disponibles</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Aulas_Disponibles
-   * @generated
-   */
-  EClass getAulas_Disponibles();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Aulas_Disponibles#getAulasDisponibles <em>Aulas Disponibles</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Aulas Disponibles</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Aulas_Disponibles#getAulasDisponibles()
-   * @see #getAulas_Disponibles()
-   * @generated
-   */
-  EReference getAulas_Disponibles_AulasDisponibles();
-
-  /**
-   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores <em>Nomina Profesores</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Nomina Profesores</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores
-   * @generated
-   */
-  EClass getNomina_Profesores();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores#getProfesoresLibres <em>Profesores Libres</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Profesores Libres</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Nomina_Profesores#getProfesoresLibres()
-   * @see #getNomina_Profesores()
-   * @generated
-   */
-  EReference getNomina_Profesores_ProfesoresLibres();
-
-  /**
-   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia <em>Asignacion Materia</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Asignacion Materia</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia
-   * @generated
-   */
-  EClass getAsignacion_Materia();
-
-  /**
-   * Returns the meta object for the attribute '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getDia <em>Dia</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dia</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getDia()
-   * @see #getAsignacion_Materia()
-   * @generated
-   */
-  EAttribute getAsignacion_Materia_Dia();
-
-  /**
-   * Returns the meta object for the containment reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rango Horario</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario()
-   * @see #getAsignacion_Materia()
-   * @generated
-   */
-  EReference getAsignacion_Materia_RangoHorario();
-
-  /**
-   * Returns the meta object for the reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria <em>Materia</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Materia</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria()
-   * @see #getAsignacion_Materia()
-   * @generated
-   */
-  EReference getAsignacion_Materia_Materia();
-
-  /**
-   * Returns the meta object for the attribute '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getCantidadAlumnos <em>Cantidad Alumnos</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cantidad Alumnos</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getCantidadAlumnos()
-   * @see #getAsignacion_Materia()
-   * @generated
-   */
-  EAttribute getAsignacion_Materia_CantidadAlumnos();
-
-  /**
-   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion <em>Estructuras Planificacion</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Estructuras Planificacion</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion
-   * @generated
-   */
-  EClass getEstructuras_Planificacion();
 
   /**
    * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion <em>Planificacion</em>}'.
@@ -883,15 +739,112 @@ public interface PlanificacionMateriasPackage extends EPackage
   EReference getPlanificacion_MateriasADictar();
 
   /**
-   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionDeMaterias <em>Asignacion De Materias</em>}'.
+   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionesDiarias <em>Asignaciones Diarias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Asignacion De Materias</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionDeMaterias()
+   * @return the meta object for the containment reference list '<em>Asignaciones Diarias</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionesDiarias()
    * @see #getPlanificacion()
    * @generated
    */
-  EReference getPlanificacion_AsignacionDeMaterias();
+  EReference getPlanificacion_AsignacionesDiarias();
+
+  /**
+   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria <em>Asignacion Diaria</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Asignacion Diaria</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria
+   * @generated
+   */
+  EClass getAsignacion_Diaria();
+
+  /**
+   * Returns the meta object for the attribute '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getDia <em>Dia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dia</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getDia()
+   * @see #getAsignacion_Diaria()
+   * @generated
+   */
+  EAttribute getAsignacion_Diaria_Dia();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getAsignacionesDeMaterias <em>Asignaciones De Materias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Asignaciones De Materias</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getAsignacionesDeMaterias()
+   * @see #getAsignacion_Diaria()
+   * @generated
+   */
+  EReference getAsignacion_Diaria_AsignacionesDeMaterias();
+
+  /**
+   * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia <em>Asignacion Materia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Asignacion Materia</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia
+   * @generated
+   */
+  EClass getAsignacion_Materia();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rango Horario</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario()
+   * @see #getAsignacion_Materia()
+   * @generated
+   */
+  EReference getAsignacion_Materia_RangoHorario();
+
+  /**
+   * Returns the meta object for the reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria <em>Materia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Materia</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria()
+   * @see #getAsignacion_Materia()
+   * @generated
+   */
+  EReference getAsignacion_Materia_Materia();
+
+  /**
+   * Returns the meta object for the reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getProfesor <em>Profesor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Profesor</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getProfesor()
+   * @see #getAsignacion_Materia()
+   * @generated
+   */
+  EReference getAsignacion_Materia_Profesor();
+
+  /**
+   * Returns the meta object for the reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAula <em>Aula</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Aula</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAula()
+   * @see #getAsignacion_Materia()
+   * @generated
+   */
+  EReference getAsignacion_Materia_Aula();
+
+  /**
+   * Returns the meta object for the attribute '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAlumnosInscriptos <em>Alumnos Inscriptos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Alumnos Inscriptos</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAlumnosInscriptos()
+   * @see #getAsignacion_Materia()
+   * @generated
+   */
+  EAttribute getAsignacion_Materia_AlumnosInscriptos();
 
   /**
    * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia <em>Materia</em>}'.
@@ -915,6 +868,28 @@ public interface PlanificacionMateriasPackage extends EPackage
   EAttribute getMateria_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia#getCantidadHorasSemanales <em>Cantidad Horas Semanales</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Cantidad Horas Semanales</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Materia#getCantidadHorasSemanales()
+   * @see #getMateria()
+   * @generated
+   */
+  EAttribute getMateria_CantidadHorasSemanales();
+
+  /**
+   * Returns the meta object for the attribute '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia#getDiasSemanales <em>Dias Semanales</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dias Semanales</em>'.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Materia#getDiasSemanales()
+   * @see #getMateria()
+   * @generated
+   */
+  EAttribute getMateria_DiasSemanales();
+
+  /**
    * Returns the meta object for the containment reference list '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia#getRequerimientos <em>Requerimientos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -924,28 +899,6 @@ public interface PlanificacionMateriasPackage extends EPackage
    * @generated
    */
   EReference getMateria_Requerimientos();
-
-  /**
-   * Returns the meta object for the reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia#getProfesor <em>Profesor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Profesor</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Materia#getProfesor()
-   * @see #getMateria()
-   * @generated
-   */
-  EReference getMateria_Profesor();
-
-  /**
-   * Returns the meta object for the reference '{@link tp5.dslexterno.xtext.planificacionMaterias.Materia#getAula <em>Aula</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Aula</em>'.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Materia#getAula()
-   * @see #getMateria()
-   * @generated
-   */
-  EReference getMateria_Aula();
 
   /**
    * Returns the meta object for class '{@link tp5.dslexterno.xtext.planificacionMaterias.Profesor <em>Profesor</em>}'.
@@ -1234,48 +1187,12 @@ public interface PlanificacionMateriasPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Elementos Planificacion</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Profesores Libres</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__ELEMENTOS_PLANIFICACION = eINSTANCE.getModel_ElementosPlanificacion();
-
-    /**
-     * The meta object literal for the '<em><b>Planificacion</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__PLANIFICACION = eINSTANCE.getModel_Planificacion();
-
-    /**
-     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Materias_AbiertasImpl <em>Materias Abiertas</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Materias_AbiertasImpl
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getMaterias_Abiertas()
-     * @generated
-     */
-    EClass MATERIAS_ABIERTAS = eINSTANCE.getMaterias_Abiertas();
-
-    /**
-     * The meta object literal for the '<em><b>Materias Abiertas</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MATERIAS_ABIERTAS__MATERIAS_ABIERTAS = eINSTANCE.getMaterias_Abiertas_MateriasAbiertas();
-
-    /**
-     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Aulas_DisponiblesImpl <em>Aulas Disponibles</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Aulas_DisponiblesImpl
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAulas_Disponibles()
-     * @generated
-     */
-    EClass AULAS_DISPONIBLES = eINSTANCE.getAulas_Disponibles();
+    EReference MODEL__PROFESORES_LIBRES = eINSTANCE.getModel_ProfesoresLibres();
 
     /**
      * The meta object literal for the '<em><b>Aulas Disponibles</b></em>' containment reference list feature.
@@ -1283,77 +1200,23 @@ public interface PlanificacionMateriasPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AULAS_DISPONIBLES__AULAS_DISPONIBLES = eINSTANCE.getAulas_Disponibles_AulasDisponibles();
+    EReference MODEL__AULAS_DISPONIBLES = eINSTANCE.getModel_AulasDisponibles();
 
     /**
-     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Nomina_ProfesoresImpl <em>Nomina Profesores</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Nomina_ProfesoresImpl
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getNomina_Profesores()
-     * @generated
-     */
-    EClass NOMINA_PROFESORES = eINSTANCE.getNomina_Profesores();
-
-    /**
-     * The meta object literal for the '<em><b>Profesores Libres</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Materias Abiertas</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NOMINA_PROFESORES__PROFESORES_LIBRES = eINSTANCE.getNomina_Profesores_ProfesoresLibres();
+    EReference MODEL__MATERIAS_ABIERTAS = eINSTANCE.getModel_MateriasAbiertas();
 
     /**
-     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl <em>Asignacion Materia</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAsignacion_Materia()
-     * @generated
-     */
-    EClass ASIGNACION_MATERIA = eINSTANCE.getAsignacion_Materia();
-
-    /**
-     * The meta object literal for the '<em><b>Dia</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Planificacion</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ASIGNACION_MATERIA__DIA = eINSTANCE.getAsignacion_Materia_Dia();
-
-    /**
-     * The meta object literal for the '<em><b>Rango Horario</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASIGNACION_MATERIA__RANGO_HORARIO = eINSTANCE.getAsignacion_Materia_RangoHorario();
-
-    /**
-     * The meta object literal for the '<em><b>Materia</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASIGNACION_MATERIA__MATERIA = eINSTANCE.getAsignacion_Materia_Materia();
-
-    /**
-     * The meta object literal for the '<em><b>Cantidad Alumnos</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ASIGNACION_MATERIA__CANTIDAD_ALUMNOS = eINSTANCE.getAsignacion_Materia_CantidadAlumnos();
-
-    /**
-     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Estructuras_PlanificacionImpl <em>Estructuras Planificacion</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Estructuras_PlanificacionImpl
-     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getEstructuras_Planificacion()
-     * @generated
-     */
-    EClass ESTRUCTURAS_PLANIFICACION = eINSTANCE.getEstructuras_Planificacion();
+    EReference MODEL__PLANIFICACION = eINSTANCE.getModel_Planificacion();
 
     /**
      * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionImpl <em>Planificacion</em>}' class.
@@ -1390,12 +1253,88 @@ public interface PlanificacionMateriasPackage extends EPackage
     EReference PLANIFICACION__MATERIAS_ADICTAR = eINSTANCE.getPlanificacion_MateriasADictar();
 
     /**
-     * The meta object literal for the '<em><b>Asignacion De Materias</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Asignaciones Diarias</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PLANIFICACION__ASIGNACION_DE_MATERIAS = eINSTANCE.getPlanificacion_AsignacionDeMaterias();
+    EReference PLANIFICACION__ASIGNACIONES_DIARIAS = eINSTANCE.getPlanificacion_AsignacionesDiarias();
+
+    /**
+     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl <em>Asignacion Diaria</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl
+     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAsignacion_Diaria()
+     * @generated
+     */
+    EClass ASIGNACION_DIARIA = eINSTANCE.getAsignacion_Diaria();
+
+    /**
+     * The meta object literal for the '<em><b>Dia</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASIGNACION_DIARIA__DIA = eINSTANCE.getAsignacion_Diaria_Dia();
+
+    /**
+     * The meta object literal for the '<em><b>Asignaciones De Materias</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS = eINSTANCE.getAsignacion_Diaria_AsignacionesDeMaterias();
+
+    /**
+     * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl <em>Asignacion Materia</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl
+     * @see tp5.dslexterno.xtext.planificacionMaterias.impl.PlanificacionMateriasPackageImpl#getAsignacion_Materia()
+     * @generated
+     */
+    EClass ASIGNACION_MATERIA = eINSTANCE.getAsignacion_Materia();
+
+    /**
+     * The meta object literal for the '<em><b>Rango Horario</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASIGNACION_MATERIA__RANGO_HORARIO = eINSTANCE.getAsignacion_Materia_RangoHorario();
+
+    /**
+     * The meta object literal for the '<em><b>Materia</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASIGNACION_MATERIA__MATERIA = eINSTANCE.getAsignacion_Materia_Materia();
+
+    /**
+     * The meta object literal for the '<em><b>Profesor</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASIGNACION_MATERIA__PROFESOR = eINSTANCE.getAsignacion_Materia_Profesor();
+
+    /**
+     * The meta object literal for the '<em><b>Aula</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASIGNACION_MATERIA__AULA = eINSTANCE.getAsignacion_Materia_Aula();
+
+    /**
+     * The meta object literal for the '<em><b>Alumnos Inscriptos</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS = eINSTANCE.getAsignacion_Materia_AlumnosInscriptos();
 
     /**
      * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.MateriaImpl <em>Materia</em>}' class.
@@ -1416,28 +1355,28 @@ public interface PlanificacionMateriasPackage extends EPackage
     EAttribute MATERIA__NAME = eINSTANCE.getMateria_Name();
 
     /**
+     * The meta object literal for the '<em><b>Cantidad Horas Semanales</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATERIA__CANTIDAD_HORAS_SEMANALES = eINSTANCE.getMateria_CantidadHorasSemanales();
+
+    /**
+     * The meta object literal for the '<em><b>Dias Semanales</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATERIA__DIAS_SEMANALES = eINSTANCE.getMateria_DiasSemanales();
+
+    /**
      * The meta object literal for the '<em><b>Requerimientos</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MATERIA__REQUERIMIENTOS = eINSTANCE.getMateria_Requerimientos();
-
-    /**
-     * The meta object literal for the '<em><b>Profesor</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MATERIA__PROFESOR = eINSTANCE.getMateria_Profesor();
-
-    /**
-     * The meta object literal for the '<em><b>Aula</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MATERIA__AULA = eINSTANCE.getMateria_Aula();
 
     /**
      * The meta object literal for the '{@link tp5.dslexterno.xtext.planificacionMaterias.impl.ProfesorImpl <em>Profesor</em>}' class.

@@ -66,12 +66,9 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
     switch (eClass.getClassifierID())
     {
       case PlanificacionMateriasPackage.MODEL: return createModel();
-      case PlanificacionMateriasPackage.MATERIAS_ABIERTAS: return createMaterias_Abiertas();
-      case PlanificacionMateriasPackage.AULAS_DISPONIBLES: return createAulas_Disponibles();
-      case PlanificacionMateriasPackage.NOMINA_PROFESORES: return createNomina_Profesores();
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA: return createAsignacion_Materia();
-      case PlanificacionMateriasPackage.ESTRUCTURAS_PLANIFICACION: return createEstructuras_Planificacion();
       case PlanificacionMateriasPackage.PLANIFICACION: return createPlanificacion();
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA: return createAsignacion_Diaria();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA: return createAsignacion_Materia();
       case PlanificacionMateriasPackage.MATERIA: return createMateria();
       case PlanificacionMateriasPackage.PROFESOR: return createProfesor();
       case PlanificacionMateriasPackage.DISPONIBILIDAD: return createDisponibilidad();
@@ -138,10 +135,10 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Materias_Abiertas createMaterias_Abiertas()
+  public Planificacion createPlanificacion()
   {
-    Materias_AbiertasImpl materias_Abiertas = new Materias_AbiertasImpl();
-    return materias_Abiertas;
+    PlanificacionImpl planificacion = new PlanificacionImpl();
+    return planificacion;
   }
 
   /**
@@ -149,21 +146,10 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Aulas_Disponibles createAulas_Disponibles()
+  public Asignacion_Diaria createAsignacion_Diaria()
   {
-    Aulas_DisponiblesImpl aulas_Disponibles = new Aulas_DisponiblesImpl();
-    return aulas_Disponibles;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Nomina_Profesores createNomina_Profesores()
-  {
-    Nomina_ProfesoresImpl nomina_Profesores = new Nomina_ProfesoresImpl();
-    return nomina_Profesores;
+    Asignacion_DiariaImpl asignacion_Diaria = new Asignacion_DiariaImpl();
+    return asignacion_Diaria;
   }
 
   /**
@@ -175,28 +161,6 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
   {
     Asignacion_MateriaImpl asignacion_Materia = new Asignacion_MateriaImpl();
     return asignacion_Materia;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Estructuras_Planificacion createEstructuras_Planificacion()
-  {
-    Estructuras_PlanificacionImpl estructuras_Planificacion = new Estructuras_PlanificacionImpl();
-    return estructuras_Planificacion;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Planificacion createPlanificacion()
-  {
-    PlanificacionImpl planificacion = new PlanificacionImpl();
-    return planificacion;
   }
 
   /**

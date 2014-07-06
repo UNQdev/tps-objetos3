@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getElementosPlanificacion <em>Elementos Planificacion</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getProfesoresLibres <em>Profesores Libres</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getAulasDisponibles <em>Aulas Disponibles</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getMateriasAbiertas <em>Materias Abiertas</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}</li>
  * </ul>
  * </p>
@@ -26,35 +28,77 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Elementos Planificacion</b></em>' containment reference list.
-   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Estructuras_Planificacion}.
+   * Returns the value of the '<em><b>Profesores Libres</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Profesor}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elementos Planificacion</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Profesores Libres</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elementos Planificacion</em>' containment reference list.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_ElementosPlanificacion()
+   * @return the value of the '<em>Profesores Libres</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_ProfesoresLibres()
    * @model containment="true"
    * @generated
    */
-  EList<Estructuras_Planificacion> getElementosPlanificacion();
+  EList<Profesor> getProfesoresLibres();
 
   /**
-   * Returns the value of the '<em><b>Planificacion</b></em>' containment reference list.
-   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion}.
+   * Returns the value of the '<em><b>Aulas Disponibles</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Aula}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Planificacion</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Aulas Disponibles</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Planificacion</em>' containment reference list.
+   * @return the value of the '<em>Aulas Disponibles</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_AulasDisponibles()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Aula> getAulasDisponibles();
+
+  /**
+   * Returns the value of the '<em><b>Materias Abiertas</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Materia}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Materias Abiertas</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Materias Abiertas</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_MateriasAbiertas()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Materia> getMateriasAbiertas();
+
+  /**
+   * Returns the value of the '<em><b>Planificacion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Planificacion</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Planificacion</em>' containment reference.
+   * @see #setPlanificacion(Planificacion)
    * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getModel_Planificacion()
    * @model containment="true"
    * @generated
    */
-  EList<Planificacion> getPlanificacion();
+  Planificacion getPlanificacion();
+
+  /**
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Model#getPlanificacion <em>Planificacion</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Planificacion</em>' containment reference.
+   * @see #getPlanificacion()
+   * @generated
+   */
+  void setPlanificacion(Planificacion value);
 
 } // Model

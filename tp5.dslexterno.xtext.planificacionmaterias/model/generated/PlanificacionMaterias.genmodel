@@ -14,38 +14,36 @@
       <genEnumLiterals ecoreEnumLiteral="PlanificacionMaterias.ecore#//Dia/Miercoles"/>
       <genEnumLiterals ecoreEnumLiteral="PlanificacionMaterias.ecore#//Dia/Jueves"/>
       <genEnumLiterals ecoreEnumLiteral="PlanificacionMaterias.ecore#//Dia/Viernes"/>
+      <genEnumLiterals ecoreEnumLiteral="PlanificacionMaterias.ecore#//Dia/Sabado"/>
     </genEnums>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Model/elementosPlanificacion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Model/profesoresLibres"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Model/aulasDisponibles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Model/materiasAbiertas"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Model/planificacion"/>
     </genClasses>
-    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Materias_Abiertas">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Materias_Abiertas/materiasAbiertas"/>
-    </genClasses>
-    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Aulas_Disponibles">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Aulas_Disponibles/aulasDisponibles"/>
-    </genClasses>
-    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Nomina_Profesores">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Nomina_Profesores/profesoresLibres"/>
-    </genClasses>
-    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Asignacion_Materia">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Materia/dia"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/rangoHorario"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/materia"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Materia/cantidadAlumnos"/>
-    </genClasses>
-    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Estructuras_Planificacion"/>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Planificacion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Planificacion/anio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Planificacion/semestre"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/materiasADictar"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/asignacionDeMaterias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/asignacionesDiarias"/>
+    </genClasses>
+    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Asignacion_Diaria">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Diaria/dia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Diaria/asignacionesDeMaterias"/>
+    </genClasses>
+    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Asignacion_Materia">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/rangoHorario"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/materia"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/profesor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/aula"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Materia/alumnosInscriptos"/>
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Materia">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Materia/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Materia/cantidadHorasSemanales"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Materia/diasSemanales"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Materia/requerimientos"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Materia/profesor"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Materia/aula"/>
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Profesor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Profesor/name"/>

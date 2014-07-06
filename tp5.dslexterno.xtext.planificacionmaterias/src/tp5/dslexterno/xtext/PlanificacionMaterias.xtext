@@ -3,36 +3,28 @@ grammar tp5.dslexterno.xtext.PlanificacionMaterias with org.eclipse.xtext.xbase.
 generate planificacionMaterias "http://www.dslexterno.tp5/xtext/PlanificacionMaterias"
 
 Model:
-	(elementosPlanificacion+=Estructuras_Planificacion)* //seudo-inicializacion de variables
-	(planificacion+=Planificacion)*
+	'profesores en nomina' '{' (profesoresLibres+=Profesor)* '}'
+	'aulas' '{' (aulasDisponibles+=Aula)* '}'
+	'materias disponibles' '{' (materiasAbiertas+=Materia)* '}'
+	planificacion=Planificacion
 ; 
 
 //====================================================================================
 
-Materias_Abiertas:	{Materias_Abiertas}
-	'materias disponibles' '{' (materiasAbiertas+=Materia)* '}'
-;
-Aulas_Disponibles:	{Aulas_Disponibles}
-	'aulas disponibles' '{' (aulasDisponibles+=Aula)* '}'
-;
-Nomina_Profesores:	{Nomina_Profesores}
-	'profesores en nomina' '{' (profesoresLibres+=Profesor)* '}'
-;
-Asignacion_Materia: 
-	dia=Dia rangoHorario=Rango_Horario ',' materia=[Materia] ':' cantidadAlumnos=INT 'alumnos inscriptos'      
-;
-
-
-//====================================================================================
-
-Estructuras_Planificacion:
-	Nomina_Profesores | Aulas_Disponibles | Materias_Abiertas 
-;
 Planificacion:
 	'planificacion' anio=INT 'semestre' semestre=INT '{' 
-		'a dictar:' (materiasADictar+=[Materia])*
-		'asignacion:' '{' (asignacionDeMaterias+=Asignacion_Materia)* '}'
+		'materias a dictar:' (materiasADictar+=[Materia])*
+		(asignacionesDiarias+=Asignacion_Diaria)*
 	'}'
+;
+Asignacion_Diaria:
+	//desactivar la posibilidad de que se definan asignaciones de un dia que ya fue definido
+	 dia=Dia '{'(asignacionesDeMaterias+=Asignacion_Materia)* '}'
+;
+Asignacion_Materia: 
+	rangoHorario=Rango_Horario '::' materia=[Materia]
+		'profesor a cargo:' profesor=[Profesor] 'aula:' aula=[Aula]
+		'alumnos inscriptos:' alumnosInscriptos=INT
 ;
 
 //====================================================================================
@@ -41,25 +33,20 @@ Materia:
 	'materia' name=ID '{'
 		'carga horaria:' cantidadHorasSemanales=INT
 		'cantidad de dias a la semana:' diasSemanales=INT
-		'requiere:' (requerimientos+=Recurso)*
-		'dictada por:' profesor=[Profesor] 'en' aula=[Aula]
+		('requiere:' (requerimientos+=Recurso)+)?
 	'}' 
 ;
 Profesor:
-	'profesor' name=ID 'con dedicacion' dedicacion=Dedicacion '{'
-		(disponibilidad+=Disponibilidad)*
+	'profesor' name=ID 'con dedicacion' dedicacion=Dedicacion 
+	'disponibilidad' '{'
+		(disponibilidad+=Disponibilidad)+
 	'}'
 ;
-
 Disponibilidad:
-	'puede:' dia=Dia |
-	'puede:' dia=Dia rangoHorario=Rango_Horario |
-	'no puede' dia=Dia |
-	'no puede' dia=Dia rangoHorario=Rango_Horario
+	'puede:' dia=Dia (rangosHorario=Rango_Horario)? |
+	'no puede' dia=Dia (rangosHorario=Rango_Horario)?
 ;
-
-Dedicacion:
-	//los defino como clases con el nombre entre llaves, los extension methods deberian definirse con (dispatch) 
+Dedicacion: 
 	  {Simple} 'Simple'
 	| {Semi} 'Semi'
 	| {Exclusiva} 'Exclusiva' 	
@@ -67,7 +54,7 @@ Dedicacion:
 Aula:
 	'aula' name=ID '{'
 		'capacidad maxima:' capacidad=INT 'alumnos'
-		'recursos:' (recusos+=Recurso)*
+		('recursos:' (recusos+=Recurso)+)?
 	'}'
 ;
 Recurso:
@@ -75,15 +62,11 @@ Recurso:
 ;
 
 enum Dia:
-	  Lunes
-	| Martes
-	| Miercoles
-	| Jueves
-	| Viernes
+	Lunes | Martes | Miercoles | Jueves | Viernes | Sabado
 ;
 Horario:
-	hora=INT ':' minutos=INT
+	hora=INT (':' minutos=INT)?
 ;
 Rango_Horario:
-	'de:' horaInicio=Horario 'a:' horaFinal=Horario
+	'de' horaInicio=Horario 'a' horaFinal=Horario
 ;
