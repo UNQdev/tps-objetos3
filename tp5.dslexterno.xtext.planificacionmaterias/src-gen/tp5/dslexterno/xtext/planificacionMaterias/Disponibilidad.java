@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad#getDia <em>Dia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad#getRangoHorario <em>Rango Horario</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad#getRangosHorario <em>Rangos Horario</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,29 +53,29 @@ public interface Disponibilidad extends EObject
   void setDia(Dia value);
 
   /**
-   * Returns the value of the '<em><b>Rango Horario</b></em>' containment reference.
+   * Returns the value of the '<em><b>Rangos Horario</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rango Horario</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Rangos Horario</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rango Horario</em>' containment reference.
-   * @see #setRangoHorario(Rango_Horario)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getDisponibilidad_RangoHorario()
+   * @return the value of the '<em>Rangos Horario</em>' containment reference.
+   * @see #setRangosHorario(Rango_Horario)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getDisponibilidad_RangosHorario()
    * @model containment="true"
    * @generated
    */
-  Rango_Horario getRangoHorario();
+  Rango_Horario getRangosHorario();
 
   /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad#getRangoHorario <em>Rango Horario</em>}' containment reference.
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad#getRangosHorario <em>Rangos Horario</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rango Horario</em>' containment reference.
-   * @see #getRangoHorario()
+   * @param value the new value of the '<em>Rangos Horario</em>' containment reference.
+   * @see #getRangosHorario()
    * @generated
    */
-  void setRangoHorario(Rango_Horario value);
+  void setRangosHorario(Rango_Horario value);
 
 } // Disponibilidad

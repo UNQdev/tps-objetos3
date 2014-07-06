@@ -4,7 +4,6 @@
 package tp5.dslexterno.xtext.validation;
 
 import com.google.common.base.Objects;
-import com.google.common.collect.Iterables;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -25,7 +24,6 @@ import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Horario;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
-import tp5.dslexterno.xtext.planificacionMaterias.Model;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
@@ -46,17 +44,17 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
    * Validaciones iniciales
    */
   @Check
-  public void validarCargaHorariaDocente(final Materia materia) {
-    EObject _eContainer = materia.eContainer();
-    EList<Materia> listaMaterias = ((Model) _eContainer).getMateriasAbiertas();
-    Profesor profesor = this.profesor(materia);
+  public void validarCargaHorariaDocente(final Asignacion_Materia asignacionMateria) {
+    EObject _eContainer = asignacionMateria.eContainer();
+    EList<Asignacion_Materia> listaDeAsignaciones = ((Planificacion) _eContainer).getAsignacionesDeMaterias();
+    Profesor profesor = asignacionMateria.getProfesor();
     int _cantMateriasSegunDedicacion = this.cantMateriasSegunDedicacion(profesor);
-    List<Materia> _materiasDictadasPor = this.materiasDictadasPor(listaMaterias, profesor);
-    int _size = _materiasDictadasPor.size();
+    List<Asignacion_Materia> _materiasAsignadasA = this.materiasAsignadasA(listaDeAsignaciones, profesor);
+    int _size = _materiasAsignadasA.size();
     boolean _lessThan = (_cantMateriasSegunDedicacion < _size);
     if (_lessThan) {
-      List<Materia> _materiasDictadasPor_1 = this.materiasDictadasPor(listaMaterias, profesor);
-      int _size_1 = _materiasDictadasPor_1.size();
+      List<Asignacion_Materia> _materiasAsignadasA_1 = this.materiasAsignadasA(listaDeAsignaciones, profesor);
+      int _size_1 = _materiasAsignadasA_1.size();
       int _cantMateriasSegunDedicacion_1 = this.cantMateriasSegunDedicacion(profesor);
       final int diferenciaMaterias = (_size_1 - _cantMateriasSegunDedicacion_1);
       StringConcatenation _builder = new StringConcatenation();
@@ -66,9 +64,8 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       _builder.append(_upperCase, "");
       _builder.append(" supera en ");
       _builder.append(diferenciaMaterias, "");
-      _builder.append(" el limite de su dedicacion");
-      Asignacion_Materia _asignacion = this.asignacion(materia);
-      this.error(_builder.toString(), _asignacion, 
+      _builder.append(" materia/s el limite de su dedicacion");
+      this.error(_builder.toString(), asignacionMateria, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR);
     }
   }
@@ -76,70 +73,76 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   @Check
   public void validarTodasLasMateriasAsignadas(final Planificacion planificacion) {
     final EList<Materia> materiasADictar = planificacion.getMateriasADictar();
-    final List<Materia> materiasAsignadas = this.materiasAsignadas(planificacion);
+    EList<Asignacion_Materia> _asignacionesDeMaterias = planificacion.getAsignacionesDeMaterias();
+    final Function1<Asignacion_Materia, Materia> _function = new Function1<Asignacion_Materia, Materia>() {
+      public Materia apply(final Asignacion_Materia it) {
+        return it.getMateria();
+      }
+    };
+    final List<Materia> materiasAsignadas = ListExtensions.<Asignacion_Materia, Materia>map(_asignacionesDeMaterias, _function);
     boolean _containsAll = materiasAsignadas.containsAll(materiasADictar);
     boolean _not = (!_containsAll);
     if (_not) {
-      final Function1<Materia, Boolean> _function = new Function1<Materia, Boolean>() {
+      final Function1<Materia, Boolean> _function_1 = new Function1<Materia, Boolean>() {
         public Boolean apply(final Materia it) {
           boolean _contains = materiasAsignadas.contains(it);
           return Boolean.valueOf((!_contains));
         }
       };
-      Iterable<Materia> _filter = IterableExtensions.<Materia>filter(materiasADictar, _function);
-      final Function1<Materia, String> _function_1 = new Function1<Materia, String>() {
+      Iterable<Materia> _filter = IterableExtensions.<Materia>filter(materiasADictar, _function_1);
+      final Function1<Materia, String> _function_2 = new Function1<Materia, String>() {
         public String apply(final Materia it) {
           return it.getName();
         }
       };
-      final Iterable<String> diferenciaMaterias = IterableExtensions.<Materia, String>map(_filter, _function_1);
+      final Iterable<String> diferenciaMaterias = IterableExtensions.<Materia, String>map(_filter, _function_2);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Falta asignar la/s siguiente/s materia/s: ");
       _builder.append(diferenciaMaterias, "");
       this.error(_builder.toString(), planificacion, 
-        PlanificacionMateriasPackage.Literals.PLANIFICACION__ASIGNACIONES_DIARIAS);
+        PlanificacionMateriasPackage.Literals.PLANIFICACION__MATERIAS_ADICTAR);
     }
   }
   
   @Check
-  public void validarCargaHorariaMateria(final Materia materia) {
-    int _horasAsignadas = this.horasAsignadas(materia);
-    int _cantidadHorasSemanales = materia.getCantidadHorasSemanales();
+  public void validarCargaHorariaMateria(final Asignacion_Materia asignacion) {
+    int _horasAsignadas = this.horasAsignadas(asignacion);
+    Materia _materia = asignacion.getMateria();
+    int _cantidadHorasSemanales = _materia.getCantidadHorasSemanales();
     final int diferenciaHoras = (_horasAsignadas - _cantidadHorasSemanales);
     if ((diferenciaHoras < 0)) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("A la materia ");
-      String _name = materia.getName();
+      Materia _materia_1 = asignacion.getMateria();
+      String _name = _materia_1.getName();
       String _upperCase = _name.toUpperCase();
       _builder.append(_upperCase, "");
       _builder.append(" le faltan asignar ");
       String _string = Integer.valueOf(diferenciaHoras).toString();
       _builder.append(_string, "");
       _builder.append(" horas");
-      Asignacion_Materia _asignacion = this.asignacion(materia);
-      this.error(_builder.toString(), _asignacion, 
+      this.error(_builder.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA);
     }
     if ((diferenciaHoras > 0)) {
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("La materia ");
-      String _name_1 = materia.getName();
+      Materia _materia_2 = asignacion.getMateria();
+      String _name_1 = _materia_2.getName();
       String _upperCase_1 = _name_1.toUpperCase();
       _builder_1.append(_upperCase_1, "");
       _builder_1.append(" excede en ");
       String _string_1 = Integer.valueOf(diferenciaHoras).toString();
       _builder_1.append(_string_1, "");
-      _builder_1.append(" horas, las correspondientes a su carga semanal");
-      Asignacion_Materia _asignacion_1 = this.asignacion(materia);
-      this.error(_builder_1.toString(), _asignacion_1, 
+      _builder_1.append(" horas su carga semanal");
+      this.error(_builder_1.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA);
     }
   }
   
   @Check
-  public void validarCompatibilidadAulaMateria(final Materia materia) {
-    Asignacion_Materia _asignacion = this.asignacion(materia);
-    final Aula aula = _asignacion.getAula();
+  public void validarCompatibilidadAulaMateria(final Asignacion_Materia asignacion) {
+    final Aula aula = asignacion.getAula();
     EList<Recurso> _recusos = aula.getRecusos();
     final Function1<Recurso, String> _function = new Function1<Recurso, String>() {
       public String apply(final Recurso it) {
@@ -147,7 +150,8 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       }
     };
     final List<String> recursosAula = ListExtensions.<Recurso, String>map(_recusos, _function);
-    EList<Recurso> _requerimientos = materia.getRequerimientos();
+    Materia _materia = asignacion.getMateria();
+    EList<Recurso> _requerimientos = _materia.getRequerimientos();
     final Function1<Recurso, String> _function_1 = new Function1<Recurso, String>() {
       public String apply(final Recurso it) {
         return it.getName();
@@ -157,165 +161,38 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     boolean _containsAll = recursosAula.containsAll(requerimientosMateria);
     boolean _not = (!_containsAll);
     if (_not) {
-      final Function1<String, Boolean> _function_2 = new Function1<String, Boolean>() {
-        public Boolean apply(final String it) {
-          boolean _contains = recursosAula.contains(it);
-          return Boolean.valueOf((!_contains));
-        }
-      };
-      final Iterable<String> requerimientosPendientes = IterableExtensions.<String>filter(requerimientosMateria, _function_2);
       StringConcatenation _builder = new StringConcatenation();
       String _name = aula.getName();
       String _upperCase = _name.toUpperCase();
       _builder.append(_upperCase, "");
-      _builder.append(" no cuenta con los siguientes recursos, requeridos por la materia ");
-      String _name_1 = materia.getName();
+      _builder.append("  no cuenta con los recursos requeridos por la materia ");
+      Materia _materia_1 = asignacion.getMateria();
+      String _name_1 = _materia_1.getName();
       String _upperCase_1 = _name_1.toUpperCase();
       _builder.append(_upperCase_1, "");
-      _builder.append(": ");
-      final Procedure1<String> _function_3 = new Procedure1<String>() {
-        public void apply(final String it) {
-          it.toUpperCase();
-        }
-      };
-      IterableExtensions.<String>forEach(requerimientosPendientes, _function_3);
-      Asignacion_Materia _asignacion_1 = this.asignacion(materia);
-      this.error(_builder.toString(), _asignacion_1, 
+      this.error(_builder.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__AULA);
     }
-  }
-  
-  @Check
-  public void validarSuperposicionEntreMaterias(final Materia materia) {
-    EObject _eContainer = materia.eContainer();
-    EObject _eContainer_1 = ((Asignacion_Materia) _eContainer).eContainer();
-    final EList<Asignacion_Materia> materiasMismoDia = ((Asignacion_Diaria) _eContainer_1).getAsignacionesDeMaterias();
-    final List<Materia> materiasSuperpuestas = this.seSuperponeCon(materia, materiasMismoDia);
-    int _size = materiasSuperpuestas.size();
-    boolean _greaterThan = (_size > 0);
-    if (_greaterThan) {
-      StringConcatenation _builder = new StringConcatenation();
-      String _name = materia.getName();
-      String _upperCase = _name.toUpperCase();
-      _builder.append(_upperCase, "");
-      _builder.append(" se superpone con: ");
-      final Procedure1<Materia> _function = new Procedure1<Materia>() {
-        public void apply(final Materia m) {
-          String _name = m.getName();
-          _name.toUpperCase();
-        }
-      };
-      IterableExtensions.<Materia>forEach(materiasSuperpuestas, _function);
-      EObject _eContainer_2 = materia.eContainer();
-      this.error(_builder.toString(), ((Asignacion_Materia) _eContainer_2), 
-        PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__RANGO_HORARIO);
-    }
-  }
-  
-  public List<Materia> seSuperponeCon(final Materia materia, final List<Asignacion_Materia> materiasMismoDia) {
-    List<Materia> _xblockexpression = null;
-    {
-      EObject _eContainer = materia.eContainer();
-      final Rango_Horario horariosMateria = ((Asignacion_Materia) _eContainer).getRangoHorario();
-      final Function1<Asignacion_Materia, Boolean> _function = new Function1<Asignacion_Materia, Boolean>() {
-        public Boolean apply(final Asignacion_Materia am) {
-          return Boolean.valueOf(PlanificacionMateriasValidator.this.materiaConSuperposicionHoraria(am, horariosMateria));
-        }
-      };
-      Iterable<Asignacion_Materia> _filter = IterableExtensions.<Asignacion_Materia>filter(materiasMismoDia, _function);
-      final Function1<Asignacion_Materia, Materia> _function_1 = new Function1<Asignacion_Materia, Materia>() {
-        public Materia apply(final Asignacion_Materia it) {
-          return materia;
-        }
-      };
-      Iterable<Materia> _map = IterableExtensions.<Asignacion_Materia, Materia>map(_filter, _function_1);
-      _xblockexpression = IterableExtensions.<Materia>toList(_map);
-    }
-    return _xblockexpression;
-  }
-  
-  public boolean materiaConSuperposicionHoraria(final Asignacion_Materia asignacion, final Rango_Horario rangoHorario) {
-    Rango_Horario _rangoHorario = asignacion.getRangoHorario();
-    return this.sePisaCon(_rangoHorario, rangoHorario);
-  }
-  
-  public boolean sePisaCon(final Rango_Horario rangoHorario1, final Rango_Horario rangoHorario2) {
-    boolean _or = false;
-    Horario _horaInicio = rangoHorario2.getHoraInicio();
-    boolean _estaEntre = this.estaEntre(_horaInicio, rangoHorario1);
-    if (_estaEntre) {
-      _or = true;
-    } else {
-      Horario _horaFinal = rangoHorario2.getHoraFinal();
-      boolean _estaEntre_1 = this.estaEntre(_horaFinal, rangoHorario1);
-      _or = _estaEntre_1;
-    }
-    return _or;
-  }
-  
-  public boolean estaEntre(final Horario horario, final Rango_Horario rangoHorario) {
-    return true;
   }
   
   /**
    * Validaciones de puntos bonus
    */
   @Check
-  public void validarCapacidadAula(final Aula aula) {
-    EObject _eContainer = aula.eContainer();
-    final int alumnosInscriptos = ((Asignacion_Materia) _eContainer).getAlumnosInscriptos();
-    int _capacidad = aula.getCapacidad();
+  public void validarCapacidadAula(final Asignacion_Materia asignacion) {
+    final int alumnosInscriptos = asignacion.getAlumnosInscriptos();
+    Aula _aula = asignacion.getAula();
+    int _capacidad = _aula.getCapacidad();
     boolean _lessThan = (_capacidad < alumnosInscriptos);
     if (_lessThan) {
       StringConcatenation _builder = new StringConcatenation();
-      String _name = aula.getName();
+      Aula _aula_1 = asignacion.getAula();
+      String _name = _aula_1.getName();
       String _upperCase = _name.toUpperCase();
       _builder.append(_upperCase, "");
-      _builder.append(" no tiene capacidad para la cantidad de alumnos inscriptos ( ");
-      int _capacidad_1 = aula.getCapacidad();
-      _builder.append(_capacidad_1, "");
-      _builder.append("<");
-      _builder.append(alumnosInscriptos, "");
-      _builder.append(" )");
-      EObject _eContainer_1 = aula.eContainer();
-      this.error(_builder.toString(), ((Asignacion_Materia) _eContainer_1), 
+      _builder.append("  no tiene capacidad para la cantidad de alumnos inscriptos.");
+      this.error(_builder.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS);
-    }
-  }
-  
-  @Check
-  public void validarDisponibilidadProfesor(final Materia materia) {
-    final Profesor profesor = this.profesor(materia);
-    Asignacion_Materia _asignacion = this.asignacion(materia);
-    final Rango_Horario horariosMateria = _asignacion.getRangoHorario();
-    Asignacion_Materia _asignacion_1 = this.asignacion(materia);
-    EObject _eContainer = _asignacion_1.eContainer();
-    final Dia diaMateria = ((Asignacion_Diaria) _eContainer).getDia();
-    boolean _noEstaDisponibleDia = this.noEstaDisponibleDia(profesor, diaMateria);
-    if (_noEstaDisponibleDia) {
-      StringConcatenation _builder = new StringConcatenation();
-      String _name = profesor.getName();
-      String _upperCase = _name.toUpperCase();
-      _builder.append(_upperCase, "");
-      _builder.append(" no tiene disponibilidad el dia ");
-      String _string = diaMateria.toString();
-      _builder.append(_string, "");
-      Asignacion_Materia _asignacion_2 = this.asignacion(materia);
-      this.error(_builder.toString(), _asignacion_2, 
-        PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR);
-    }
-    boolean _noEstaDisponibleHorario = this.noEstaDisponibleHorario(profesor, horariosMateria);
-    if (_noEstaDisponibleHorario) {
-      StringConcatenation _builder_1 = new StringConcatenation();
-      String _name_1 = profesor.getName();
-      String _upperCase_1 = _name_1.toUpperCase();
-      _builder_1.append(_upperCase_1, "");
-      _builder_1.append(" no tiene disponibilidad en el horario ");
-      String _string_1 = horariosMateria.toString();
-      _builder_1.append(_string_1, "");
-      Asignacion_Materia _asignacion_3 = this.asignacion(materia);
-      this.error(_builder_1.toString(), _asignacion_3, 
-        PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR);
     }
   }
   
@@ -323,23 +200,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
    * Dada la reflexion llevada a cabo mas abajo en la validacion/verificacion extra, esta validacion/verificacion SOLICITADA por el enunciado no me satisface
    * Queda a vuestro gusto si persiste o se va
    */
-  public boolean noEstaDisponibleHorario(final Profesor profesor, final Rango_Horario horarioMateria) {
-    boolean _xblockexpression = false;
-    {
-      final EList<Disponibilidad> disponibilidades = profesor.getDisponibilidad();
-      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
-        public Boolean apply(final Disponibilidad disp) {
-          Rango_Horario _rangoHorario = disp.getRangoHorario();
-          return Boolean.valueOf(PlanificacionMateriasValidator.this.rangoIncluido(_rangoHorario, horarioMateria));
-        }
-      };
-      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function);
-      int _size = IterableExtensions.size(_filter);
-      _xblockexpression = (_size > 0);
-    }
-    return _xblockexpression;
-  }
-  
   public boolean noEstaDisponibleDia(final Profesor profesor, final Dia diaMateria) {
     boolean _xblockexpression = false;
     {
@@ -355,20 +215,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       _xblockexpression = (_size > 0);
     }
     return _xblockexpression;
-  }
-  
-  public boolean rangoIncluido(final Rango_Horario rangoHorario, final Rango_Horario rangoHorarioMateria) {
-    boolean _and = false;
-    Horario _horaInicio = rangoHorarioMateria.getHoraInicio();
-    boolean _estaEntre = this.estaEntre(_horaInicio, rangoHorario);
-    if (!_estaEntre) {
-      _and = false;
-    } else {
-      Horario _horaFinal = rangoHorarioMateria.getHoraFinal();
-      boolean _estaEntre_1 = this.estaEntre(_horaFinal, rangoHorario);
-      _and = _estaEntre_1;
-    }
-    return _and;
   }
   
   public boolean diaIncluido(final Dia dia, final Dia diaMateria) {
@@ -444,28 +290,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   /**
    * Comportamiento agregado via extension methods
    */
-  public List<Materia> materiasAsignadas(final Planificacion planificacion) {
-    EList<Asignacion_Diaria> _asignacionesDiarias = planificacion.getAsignacionesDiarias();
-    final Function1<Asignacion_Diaria, List<Materia>> _function = new Function1<Asignacion_Diaria, List<Materia>>() {
-      public List<Materia> apply(final Asignacion_Diaria ad) {
-        return PlanificacionMateriasValidator.this.materiasPorDia(ad);
-      }
-    };
-    List<List<Materia>> _map = ListExtensions.<Asignacion_Diaria, List<Materia>>map(_asignacionesDiarias, _function);
-    Iterable<Materia> _flatten = Iterables.<Materia>concat(_map);
-    return IterableExtensions.<Materia>toList(_flatten);
-  }
-  
-  public List<Materia> materiasPorDia(final Asignacion_Diaria asignaciones) {
-    EList<Asignacion_Materia> _asignacionesDeMaterias = asignaciones.getAsignacionesDeMaterias();
-    final Function1<Asignacion_Materia, Materia> _function = new Function1<Asignacion_Materia, Materia>() {
-      public Materia apply(final Asignacion_Materia am) {
-        return am.getMateria();
-      }
-    };
-    return ListExtensions.<Asignacion_Materia, Materia>map(_asignacionesDeMaterias, _function);
-  }
-  
   public Planificacion planificacion(final Materia materia) {
     EObject _eContainer = materia.eContainer();
     EObject _eContainer_1 = ((Asignacion_Materia) _eContainer).eContainer();
@@ -473,53 +297,20 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return ((Planificacion) _eContainer_2);
   }
   
-  public Asignacion_Materia asignacion(final Materia materia) {
-    EObject _eContainer = materia.eContainer();
-    return ((Asignacion_Materia) _eContainer);
-  }
-  
-  public Profesor profesor(final Materia materia) {
-    Asignacion_Materia _asignacion = this.asignacion(materia);
-    return _asignacion.getProfesor();
-  }
-  
-  public int horasAsignadas(final Materia materia) {
+  public int horasAsignadas(final Asignacion_Materia asignacion) {
     Integer _xblockexpression = null;
     {
-      EObject _eContainer = materia.eContainer();
-      EObject _eContainer_1 = ((Asignacion_Materia) _eContainer).eContainer();
-      EObject _eContainer_2 = ((Asignacion_Diaria) _eContainer_1).eContainer();
-      final Planificacion planificacion = ((Planificacion) _eContainer_2);
-      final EList<Asignacion_Diaria> asignacionesDiarias = planificacion.getAsignacionesDiarias();
+      final EList<Asignacion_Diaria> asignacionesDiarias = asignacion.getAsignacionesDiarias();
       final Function1<Asignacion_Diaria, Integer> _function = new Function1<Asignacion_Diaria, Integer>() {
-        public Integer apply(final Asignacion_Diaria ad) {
-          EList<Asignacion_Materia> _asignacionesDeMaterias = ad.getAsignacionesDeMaterias();
-          final Function1<Asignacion_Materia, Boolean> _function = new Function1<Asignacion_Materia, Boolean>() {
-            public Boolean apply(final Asignacion_Materia am) {
-              Materia _materia = am.getMateria();
-              return Boolean.valueOf(Objects.equal(_materia, materia));
-            }
-          };
-          Iterable<Asignacion_Materia> _filter = IterableExtensions.<Asignacion_Materia>filter(_asignacionesDeMaterias, _function);
-          final Function1<Asignacion_Materia, Integer> _function_1 = new Function1<Asignacion_Materia, Integer>() {
-            public Integer apply(final Asignacion_Materia am) {
-              Materia _materia = am.getMateria();
-              return Integer.valueOf(_materia.getCantidadHorasSemanales());
-            }
-          };
-          Iterable<Integer> _map = IterableExtensions.<Asignacion_Materia, Integer>map(_filter, _function_1);
-          final Function2<Integer, Integer, Integer> _function_2 = new Function2<Integer, Integer, Integer>() {
-            public Integer apply(final Integer sum, final Integer horas) {
-              return Integer.valueOf(((sum).intValue() + (horas).intValue()));
-            }
-          };
-          return IterableExtensions.<Integer>reduce(_map, _function_2);
+        public Integer apply(final Asignacion_Diaria it) {
+          Rango_Horario _rangoHorario = it.getRangoHorario();
+          return Integer.valueOf(PlanificacionMateriasValidator.this.cantidadDeHoras(_rangoHorario));
         }
       };
       List<Integer> _map = ListExtensions.<Asignacion_Diaria, Integer>map(asignacionesDiarias, _function);
       final Function2<Integer, Integer, Integer> _function_1 = new Function2<Integer, Integer, Integer>() {
-        public Integer apply(final Integer sum, final Integer horas) {
-          return Integer.valueOf(((sum).intValue() + (horas).intValue()));
+        public Integer apply(final Integer sum, final Integer cantHoras) {
+          return Integer.valueOf(((sum).intValue() + (cantHoras).intValue()));
         }
       };
       _xblockexpression = IterableExtensions.<Integer>reduce(_map, _function_1);
@@ -527,15 +318,23 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return (_xblockexpression).intValue();
   }
   
-  public List<Materia> materiasDictadasPor(final List<Materia> listaMaterias, final Profesor profesor) {
-    final Function1<Materia, Boolean> _function = new Function1<Materia, Boolean>() {
-      public Boolean apply(final Materia m) {
-        Profesor _profesor = PlanificacionMateriasValidator.this.profesor(m);
-        return Boolean.valueOf(Objects.equal(_profesor, profesor));
+  public int cantidadDeHoras(final Rango_Horario horario) {
+    Horario _horaFinal = horario.getHoraFinal();
+    int _hora = _horaFinal.getHora();
+    Horario _horaInicio = horario.getHoraInicio();
+    int _hora_1 = _horaInicio.getHora();
+    return (_hora - _hora_1);
+  }
+  
+  public List<Asignacion_Materia> materiasAsignadasA(final List<Asignacion_Materia> listaAsignaciones, final Profesor profesor0) {
+    final Function1<Asignacion_Materia, Boolean> _function = new Function1<Asignacion_Materia, Boolean>() {
+      public Boolean apply(final Asignacion_Materia it) {
+        Profesor _profesor = it.getProfesor();
+        return Boolean.valueOf(Objects.equal(_profesor, profesor0));
       }
     };
-    Iterable<Materia> _filter = IterableExtensions.<Materia>filter(listaMaterias, _function);
-    return IterableExtensions.<Materia>toList(_filter);
+    Iterable<Asignacion_Materia> _filter = IterableExtensions.<Asignacion_Materia>filter(listaAsignaciones, _function);
+    return IterableExtensions.<Asignacion_Materia>toList(_filter);
   }
   
   public int cantMateriasSegunDedicacion(final Profesor profesor) {

@@ -86,17 +86,17 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA:
-      {
-        Asignacion_Diaria asignacion_Diaria = (Asignacion_Diaria)theEObject;
-        T result = caseAsignacion_Diaria(asignacion_Diaria);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA:
       {
         Asignacion_Materia asignacion_Materia = (Asignacion_Materia)theEObject;
         T result = caseAsignacion_Materia(asignacion_Materia);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA:
+      {
+        Asignacion_Diaria asignacion_Diaria = (Asignacion_Diaria)theEObject;
+        T result = caseAsignacion_Diaria(asignacion_Diaria);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -217,22 +217,6 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Asignacion Diaria</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Asignacion Diaria</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAsignacion_Diaria(Asignacion_Diaria object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Asignacion Materia</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -244,6 +228,22 @@ public class PlanificacionMateriasSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAsignacion_Materia(Asignacion_Materia object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Asignacion Diaria</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Asignacion Diaria</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAsignacion_Diaria(Asignacion_Diaria object)
   {
     return null;
   }

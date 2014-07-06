@@ -2,8 +2,6 @@
  */
 package tp5.dslexterno.xtext.planificacionMaterias;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getDia <em>Dia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getAsignacionesDeMaterias <em>Asignaciones De Materias</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getRangoHorario <em>Rango Horario</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,19 +53,29 @@ public interface Asignacion_Diaria extends EObject
   void setDia(Dia value);
 
   /**
-   * Returns the value of the '<em><b>Asignaciones De Materias</b></em>' containment reference list.
-   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia}.
+   * Returns the value of the '<em><b>Rango Horario</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Asignaciones De Materias</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Rango Horario</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Asignaciones De Materias</em>' containment reference list.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Diaria_AsignacionesDeMaterias()
+   * @return the value of the '<em>Rango Horario</em>' containment reference.
+   * @see #setRangoHorario(Rango_Horario)
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Diaria_RangoHorario()
    * @model containment="true"
    * @generated
    */
-  EList<Asignacion_Materia> getAsignacionesDeMaterias();
+  Rango_Horario getRangoHorario();
+
+  /**
+   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria#getRangoHorario <em>Rango Horario</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rango Horario</em>' containment reference.
+   * @see #getRangoHorario()
+   * @generated
+   */
+  void setRangoHorario(Rango_Horario value);
 
 } // Asignacion_Diaria

@@ -2,12 +2,8 @@
  */
 package tp5.dslexterno.xtext.planificacionMaterias.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,13 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria;
-import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Dia;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
+import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +24,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl#getDia <em>Dia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl#getAsignacionesDeMaterias <em>Asignaciones De Materias</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_DiariaImpl#getRangoHorario <em>Rango Horario</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,14 +53,14 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
   protected Dia dia = DIA_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAsignacionesDeMaterias() <em>Asignaciones De Materias</em>}' containment reference list.
+   * The cached value of the '{@link #getRangoHorario() <em>Rango Horario</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAsignacionesDeMaterias()
+   * @see #getRangoHorario()
    * @generated
    * @ordered
    */
-  protected EList<Asignacion_Materia> asignacionesDeMaterias;
+  protected Rango_Horario rangoHorario;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,13 +111,47 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Asignacion_Materia> getAsignacionesDeMaterias()
+  public Rango_Horario getRangoHorario()
   {
-    if (asignacionesDeMaterias == null)
+    return rangoHorario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRangoHorario(Rango_Horario newRangoHorario, NotificationChain msgs)
+  {
+    Rango_Horario oldRangoHorario = rangoHorario;
+    rangoHorario = newRangoHorario;
+    if (eNotificationRequired())
     {
-      asignacionesDeMaterias = new EObjectContainmentEList<Asignacion_Materia>(Asignacion_Materia.class, this, PlanificacionMateriasPackage.ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO, oldRangoHorario, newRangoHorario);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return asignacionesDeMaterias;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRangoHorario(Rango_Horario newRangoHorario)
+  {
+    if (newRangoHorario != rangoHorario)
+    {
+      NotificationChain msgs = null;
+      if (rangoHorario != null)
+        msgs = ((InternalEObject)rangoHorario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO, null, msgs);
+      if (newRangoHorario != null)
+        msgs = ((InternalEObject)newRangoHorario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO, null, msgs);
+      msgs = basicSetRangoHorario(newRangoHorario, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO, newRangoHorario, newRangoHorario));
   }
 
   /**
@@ -137,8 +164,8 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS:
-        return ((InternalEList<?>)getAsignacionesDeMaterias()).basicRemove(otherEnd, msgs);
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO:
+        return basicSetRangoHorario(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -155,8 +182,8 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
     {
       case PlanificacionMateriasPackage.ASIGNACION_DIARIA__DIA:
         return getDia();
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS:
-        return getAsignacionesDeMaterias();
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO:
+        return getRangoHorario();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -166,7 +193,6 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -175,9 +201,8 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
       case PlanificacionMateriasPackage.ASIGNACION_DIARIA__DIA:
         setDia((Dia)newValue);
         return;
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS:
-        getAsignacionesDeMaterias().clear();
-        getAsignacionesDeMaterias().addAll((Collection<? extends Asignacion_Materia>)newValue);
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO:
+        setRangoHorario((Rango_Horario)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,8 +221,8 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
       case PlanificacionMateriasPackage.ASIGNACION_DIARIA__DIA:
         setDia(DIA_EDEFAULT);
         return;
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS:
-        getAsignacionesDeMaterias().clear();
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO:
+        setRangoHorario((Rango_Horario)null);
         return;
     }
     super.eUnset(featureID);
@@ -215,8 +240,8 @@ public class Asignacion_DiariaImpl extends MinimalEObjectImpl.Container implemen
     {
       case PlanificacionMateriasPackage.ASIGNACION_DIARIA__DIA:
         return dia != DIA_EDEFAULT;
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__ASIGNACIONES_DE_MATERIAS:
-        return asignacionesDeMaterias != null && !asignacionesDeMaterias.isEmpty();
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA__RANGO_HORARIO:
+        return rangoHorario != null;
     }
     return super.eIsSet(featureID);
   }

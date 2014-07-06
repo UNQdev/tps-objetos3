@@ -115,18 +115,18 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cMateriasADictarAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final CrossReference cMateriasADictarMateriaCrossReference_6_0 = (CrossReference)cMateriasADictarAssignment_6.eContents().get(0);
 		private final RuleCall cMateriasADictarMateriaIDTerminalRuleCall_6_0_1 = (RuleCall)cMateriasADictarMateriaCrossReference_6_0.eContents().get(1);
-		private final Assignment cAsignacionesDiariasAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cAsignacionesDiariasAsignacion_DiariaParserRuleCall_7_0 = (RuleCall)cAsignacionesDiariasAssignment_7.eContents().get(0);
+		private final Assignment cAsignacionesDeMateriasAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAsignacionesDeMateriasAsignacion_MateriaParserRuleCall_7_0 = (RuleCall)cAsignacionesDeMateriasAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		////====================================================================================
 		//Planificacion:
-		//	"planificacion" anio=INT "semestre" semestre=INT "{" "materias a dictar:" materiasADictar+=[Materia]*
-		//	asignacionesDiarias+=Asignacion_Diaria* "}";
+		//	"planificacion" anio=INT "semestre" semestre=INT "{" "materias a dictar:" materiasADictar+=[Materia]+
+		//	asignacionesDeMaterias+=Asignacion_Materia+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"planificacion" anio=INT "semestre" semestre=INT "{" "materias a dictar:" materiasADictar+=[Materia]*
-		//asignacionesDiarias+=Asignacion_Diaria* "}"
+		//"planificacion" anio=INT "semestre" semestre=INT "{" "materias a dictar:" materiasADictar+=[Materia]+
+		//asignacionesDeMaterias+=Asignacion_Materia+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"planificacion"
@@ -153,7 +153,7 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		//"materias a dictar:"
 		public Keyword getMateriasADictarKeyword_5() { return cMateriasADictarKeyword_5; }
 
-		//materiasADictar+=[Materia]*
+		//materiasADictar+=[Materia]+
 		public Assignment getMateriasADictarAssignment_6() { return cMateriasADictarAssignment_6; }
 
 		//[Materia]
@@ -162,14 +162,112 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getMateriasADictarMateriaIDTerminalRuleCall_6_0_1() { return cMateriasADictarMateriaIDTerminalRuleCall_6_0_1; }
 
-		//asignacionesDiarias+=Asignacion_Diaria*
-		public Assignment getAsignacionesDiariasAssignment_7() { return cAsignacionesDiariasAssignment_7; }
+		//asignacionesDeMaterias+=Asignacion_Materia+
+		public Assignment getAsignacionesDeMateriasAssignment_7() { return cAsignacionesDeMateriasAssignment_7; }
 
-		//Asignacion_Diaria
-		public RuleCall getAsignacionesDiariasAsignacion_DiariaParserRuleCall_7_0() { return cAsignacionesDiariasAsignacion_DiariaParserRuleCall_7_0; }
+		//Asignacion_Materia
+		public RuleCall getAsignacionesDeMateriasAsignacion_MateriaParserRuleCall_7_0() { return cAsignacionesDeMateriasAsignacion_MateriaParserRuleCall_7_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
+
+	public class Asignacion_MateriaElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Asignacion_Materia");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cMateriaAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cMateriaMateriaCrossReference_0_0 = (CrossReference)cMateriaAssignment_0.eContents().get(0);
+		private final RuleCall cMateriaMateriaIDTerminalRuleCall_0_0_1 = (RuleCall)cMateriaMateriaCrossReference_0_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDictadaPorKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cProfesorAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cProfesorProfesorCrossReference_3_0 = (CrossReference)cProfesorAssignment_3.eContents().get(0);
+		private final RuleCall cProfesorProfesorIDTerminalRuleCall_3_0_1 = (RuleCall)cProfesorProfesorCrossReference_3_0.eContents().get(1);
+		private final Keyword cAulaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cAulaAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cAulaAulaCrossReference_5_0 = (CrossReference)cAulaAssignment_5.eContents().get(0);
+		private final RuleCall cAulaAulaIDTerminalRuleCall_5_0_1 = (RuleCall)cAulaAulaCrossReference_5_0.eContents().get(1);
+		private final Keyword cAlumnosInscriptosKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cAlumnosInscriptosAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAlumnosInscriptosINTTerminalRuleCall_7_0 = (RuleCall)cAlumnosInscriptosAssignment_7.eContents().get(0);
+		private final Keyword cHorariosKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cAsignacionesDiariasAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cAsignacionesDiariasAsignacion_DiariaParserRuleCall_10_0 = (RuleCall)cAsignacionesDiariasAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		
+		//Asignacion_Materia:
+		//	materia=[Materia] "{" "dictada por:" profesor=[Profesor] "aula:" aula=[Aula] "alumnos inscriptos:"
+		//	alumnosInscriptos=INT "horarios:" "{" asignacionesDiarias+=Asignacion_Diaria+ "}" "}";
+		public ParserRule getRule() { return rule; }
+
+		//materia=[Materia] "{" "dictada por:" profesor=[Profesor] "aula:" aula=[Aula] "alumnos inscriptos:" alumnosInscriptos=INT
+		//"horarios:" "{" asignacionesDiarias+=Asignacion_Diaria+ "}" "}"
+		public Group getGroup() { return cGroup; }
+
+		//materia=[Materia]
+		public Assignment getMateriaAssignment_0() { return cMateriaAssignment_0; }
+
+		//[Materia]
+		public CrossReference getMateriaMateriaCrossReference_0_0() { return cMateriaMateriaCrossReference_0_0; }
+
+		//ID
+		public RuleCall getMateriaMateriaIDTerminalRuleCall_0_0_1() { return cMateriaMateriaIDTerminalRuleCall_0_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+
+		//"dictada por:"
+		public Keyword getDictadaPorKeyword_2() { return cDictadaPorKeyword_2; }
+
+		//profesor=[Profesor]
+		public Assignment getProfesorAssignment_3() { return cProfesorAssignment_3; }
+
+		//[Profesor]
+		public CrossReference getProfesorProfesorCrossReference_3_0() { return cProfesorProfesorCrossReference_3_0; }
+
+		//ID
+		public RuleCall getProfesorProfesorIDTerminalRuleCall_3_0_1() { return cProfesorProfesorIDTerminalRuleCall_3_0_1; }
+
+		//"aula:"
+		public Keyword getAulaKeyword_4() { return cAulaKeyword_4; }
+
+		//aula=[Aula]
+		public Assignment getAulaAssignment_5() { return cAulaAssignment_5; }
+
+		//[Aula]
+		public CrossReference getAulaAulaCrossReference_5_0() { return cAulaAulaCrossReference_5_0; }
+
+		//ID
+		public RuleCall getAulaAulaIDTerminalRuleCall_5_0_1() { return cAulaAulaIDTerminalRuleCall_5_0_1; }
+
+		//"alumnos inscriptos:"
+		public Keyword getAlumnosInscriptosKeyword_6() { return cAlumnosInscriptosKeyword_6; }
+
+		//alumnosInscriptos=INT
+		public Assignment getAlumnosInscriptosAssignment_7() { return cAlumnosInscriptosAssignment_7; }
+
+		//INT
+		public RuleCall getAlumnosInscriptosINTTerminalRuleCall_7_0() { return cAlumnosInscriptosINTTerminalRuleCall_7_0; }
+
+		//"horarios:"
+		public Keyword getHorariosKeyword_8() { return cHorariosKeyword_8; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+
+		//asignacionesDiarias+=Asignacion_Diaria+
+		public Assignment getAsignacionesDiariasAssignment_10() { return cAsignacionesDiariasAssignment_10; }
+
+		//Asignacion_Diaria
+		public RuleCall getAsignacionesDiariasAsignacion_DiariaParserRuleCall_10_0() { return cAsignacionesDiariasAsignacion_DiariaParserRuleCall_10_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class Asignacion_DiariaElements extends AbstractParserRuleElementFinder {
@@ -177,119 +275,27 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDiaAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDiaDiaEnumRuleCall_0_0 = (RuleCall)cDiaAssignment_0.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAsignacionesDeMateriasAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAsignacionesDeMateriasAsignacion_MateriaParserRuleCall_2_0 = (RuleCall)cAsignacionesDeMateriasAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRangoHorarioAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRangoHorarioRango_HorarioParserRuleCall_1_0 = (RuleCall)cRangoHorarioAssignment_1.eContents().get(0);
 		
-		//Asignacion_Diaria: //desactivar la posibilidad de que se definan asignaciones de un dia que ya fue definido
-		//	dia=Dia "{" asignacionesDeMaterias+=Asignacion_Materia* "}";
+		//Asignacion_Diaria:
+		//	dia=Dia rangoHorario=Rango_Horario;
 		public ParserRule getRule() { return rule; }
 
-		////desactivar la posibilidad de que se definan asignaciones de un dia que ya fue definido
-		//dia=Dia "{" asignacionesDeMaterias+=Asignacion_Materia* "}"
+		//dia=Dia rangoHorario=Rango_Horario
 		public Group getGroup() { return cGroup; }
 
-		////desactivar la posibilidad de que se definan asignaciones de un dia que ya fue definido
 		//dia=Dia
 		public Assignment getDiaAssignment_0() { return cDiaAssignment_0; }
 
 		//Dia
 		public RuleCall getDiaDiaEnumRuleCall_0_0() { return cDiaDiaEnumRuleCall_0_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//asignacionesDeMaterias+=Asignacion_Materia*
-		public Assignment getAsignacionesDeMateriasAssignment_2() { return cAsignacionesDeMateriasAssignment_2; }
-
-		//Asignacion_Materia
-		public RuleCall getAsignacionesDeMateriasAsignacion_MateriaParserRuleCall_2_0() { return cAsignacionesDeMateriasAsignacion_MateriaParserRuleCall_2_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
-	}
-
-	public class Asignacion_MateriaElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Asignacion_Materia");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cRangoHorarioAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cRangoHorarioRango_HorarioParserRuleCall_0_0 = (RuleCall)cRangoHorarioAssignment_0.eContents().get(0);
-		private final Keyword cColonColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cMateriaAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cMateriaMateriaCrossReference_2_0 = (CrossReference)cMateriaAssignment_2.eContents().get(0);
-		private final RuleCall cMateriaMateriaIDTerminalRuleCall_2_0_1 = (RuleCall)cMateriaMateriaCrossReference_2_0.eContents().get(1);
-		private final Keyword cProfesorACargoKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cProfesorAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cProfesorProfesorCrossReference_4_0 = (CrossReference)cProfesorAssignment_4.eContents().get(0);
-		private final RuleCall cProfesorProfesorIDTerminalRuleCall_4_0_1 = (RuleCall)cProfesorProfesorCrossReference_4_0.eContents().get(1);
-		private final Keyword cAulaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAulaAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cAulaAulaCrossReference_6_0 = (CrossReference)cAulaAssignment_6.eContents().get(0);
-		private final RuleCall cAulaAulaIDTerminalRuleCall_6_0_1 = (RuleCall)cAulaAulaCrossReference_6_0.eContents().get(1);
-		private final Keyword cAlumnosInscriptosKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cAlumnosInscriptosAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cAlumnosInscriptosINTTerminalRuleCall_8_0 = (RuleCall)cAlumnosInscriptosAssignment_8.eContents().get(0);
-		
-		//Asignacion_Materia:
-		//	rangoHorario=Rango_Horario "::" materia=[Materia] "profesor a cargo:" profesor=[Profesor] "aula:" aula=[Aula]
-		//	"alumnos inscriptos:" alumnosInscriptos=INT;
-		public ParserRule getRule() { return rule; }
-
-		//rangoHorario=Rango_Horario "::" materia=[Materia] "profesor a cargo:" profesor=[Profesor] "aula:" aula=[Aula]
-		//"alumnos inscriptos:" alumnosInscriptos=INT
-		public Group getGroup() { return cGroup; }
-
 		//rangoHorario=Rango_Horario
-		public Assignment getRangoHorarioAssignment_0() { return cRangoHorarioAssignment_0; }
+		public Assignment getRangoHorarioAssignment_1() { return cRangoHorarioAssignment_1; }
 
 		//Rango_Horario
-		public RuleCall getRangoHorarioRango_HorarioParserRuleCall_0_0() { return cRangoHorarioRango_HorarioParserRuleCall_0_0; }
-
-		//"::"
-		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
-
-		//materia=[Materia]
-		public Assignment getMateriaAssignment_2() { return cMateriaAssignment_2; }
-
-		//[Materia]
-		public CrossReference getMateriaMateriaCrossReference_2_0() { return cMateriaMateriaCrossReference_2_0; }
-
-		//ID
-		public RuleCall getMateriaMateriaIDTerminalRuleCall_2_0_1() { return cMateriaMateriaIDTerminalRuleCall_2_0_1; }
-
-		//"profesor a cargo:"
-		public Keyword getProfesorACargoKeyword_3() { return cProfesorACargoKeyword_3; }
-
-		//profesor=[Profesor]
-		public Assignment getProfesorAssignment_4() { return cProfesorAssignment_4; }
-
-		//[Profesor]
-		public CrossReference getProfesorProfesorCrossReference_4_0() { return cProfesorProfesorCrossReference_4_0; }
-
-		//ID
-		public RuleCall getProfesorProfesorIDTerminalRuleCall_4_0_1() { return cProfesorProfesorIDTerminalRuleCall_4_0_1; }
-
-		//"aula:"
-		public Keyword getAulaKeyword_5() { return cAulaKeyword_5; }
-
-		//aula=[Aula]
-		public Assignment getAulaAssignment_6() { return cAulaAssignment_6; }
-
-		//[Aula]
-		public CrossReference getAulaAulaCrossReference_6_0() { return cAulaAulaCrossReference_6_0; }
-
-		//ID
-		public RuleCall getAulaAulaIDTerminalRuleCall_6_0_1() { return cAulaAulaIDTerminalRuleCall_6_0_1; }
-
-		//"alumnos inscriptos:"
-		public Keyword getAlumnosInscriptosKeyword_7() { return cAlumnosInscriptosKeyword_7; }
-
-		//alumnosInscriptos=INT
-		public Assignment getAlumnosInscriptosAssignment_8() { return cAlumnosInscriptosAssignment_8; }
-
-		//INT
-		public RuleCall getAlumnosInscriptosINTTerminalRuleCall_8_0() { return cAlumnosInscriptosINTTerminalRuleCall_8_0; }
+		public RuleCall getRangoHorarioRango_HorarioParserRuleCall_1_0() { return cRangoHorarioRango_HorarioParserRuleCall_1_0; }
 	}
 
 	public class MateriaElements extends AbstractParserRuleElementFinder {
@@ -383,13 +389,13 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Profesor:
-		//	"profesor" name=ID "con dedicacion" dedicacion=Dedicacion "disponibilidad" "{" disponibilidad+=Disponibilidad+ "}";
+		//	"profesor:" name=ID "con dedicacion" dedicacion=Dedicacion "disponibilidad" "{" disponibilidad+=Disponibilidad+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"profesor" name=ID "con dedicacion" dedicacion=Dedicacion "disponibilidad" "{" disponibilidad+=Disponibilidad+ "}"
+		//"profesor:" name=ID "con dedicacion" dedicacion=Dedicacion "disponibilidad" "{" disponibilidad+=Disponibilidad+ "}"
 		public Group getGroup() { return cGroup; }
 
-		//"profesor"
+		//"profesor:"
 		public Keyword getProfesorKeyword_0() { return cProfesorKeyword_0; }
 
 		//name=ID
@@ -430,38 +436,25 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cPuedeKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cDiaAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cDiaDiaEnumRuleCall_0_1_0 = (RuleCall)cDiaAssignment_0_1.eContents().get(0);
+		private final Assignment cRangosHorarioAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cRangosHorarioRango_HorarioParserRuleCall_0_2_0 = (RuleCall)cRangosHorarioAssignment_0_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cPuedeKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cNoPuedeKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cDiaAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cDiaDiaEnumRuleCall_1_1_0 = (RuleCall)cDiaAssignment_1_1.eContents().get(0);
-		private final Assignment cRangoHorarioAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRangoHorarioRango_HorarioParserRuleCall_1_2_0 = (RuleCall)cRangoHorarioAssignment_1_2.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cNoPuedeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cDiaAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cDiaDiaEnumRuleCall_2_1_0 = (RuleCall)cDiaAssignment_2_1.eContents().get(0);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cNoPuedeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDiaAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDiaDiaEnumRuleCall_3_1_0 = (RuleCall)cDiaAssignment_3_1.eContents().get(0);
-		private final Assignment cRangoHorarioAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cRangoHorarioRango_HorarioParserRuleCall_3_2_0 = (RuleCall)cRangoHorarioAssignment_3_2.eContents().get(0);
+		private final Assignment cRangosHorarioAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRangosHorarioRango_HorarioParserRuleCall_1_2_0 = (RuleCall)cRangosHorarioAssignment_1_2.eContents().get(0);
 		
-		//Disponibilidad: //Ver como generalizarlo. Solo para joder...
-		//	"puede:" dia=Dia | "puede:" dia=Dia rangoHorario=Rango_Horario | "no puede" dia=Dia | "no puede" dia=Dia
-		//	rangoHorario=Rango_Horario;
+		//Disponibilidad:
+		//	"puede:" dia=Dia rangosHorario=Rango_Horario? | "no puede" dia=Dia rangosHorario=Rango_Horario?;
 		public ParserRule getRule() { return rule; }
 
-		////Ver como generalizarlo. Solo para joder...
-		//"puede:" dia=Dia | "puede:" dia=Dia rangoHorario=Rango_Horario | "no puede" dia=Dia | "no puede" dia=Dia
-		//rangoHorario=Rango_Horario
+		//"puede:" dia=Dia rangosHorario=Rango_Horario? | "no puede" dia=Dia rangosHorario=Rango_Horario?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		////Ver como generalizarlo. Solo para joder...
-		//"puede:" dia=Dia
+		//"puede:" dia=Dia rangosHorario=Rango_Horario?
 		public Group getGroup_0() { return cGroup_0; }
 
-		////Ver como generalizarlo. Solo para joder...
 		//"puede:"
 		public Keyword getPuedeKeyword_0_0() { return cPuedeKeyword_0_0; }
 
@@ -471,11 +464,17 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		//Dia
 		public RuleCall getDiaDiaEnumRuleCall_0_1_0() { return cDiaDiaEnumRuleCall_0_1_0; }
 
-		//"puede:" dia=Dia rangoHorario=Rango_Horario
+		//rangosHorario=Rango_Horario?
+		public Assignment getRangosHorarioAssignment_0_2() { return cRangosHorarioAssignment_0_2; }
+
+		//Rango_Horario
+		public RuleCall getRangosHorarioRango_HorarioParserRuleCall_0_2_0() { return cRangosHorarioRango_HorarioParserRuleCall_0_2_0; }
+
+		//"no puede" dia=Dia rangosHorario=Rango_Horario?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"puede:"
-		public Keyword getPuedeKeyword_1_0() { return cPuedeKeyword_1_0; }
+		//"no puede"
+		public Keyword getNoPuedeKeyword_1_0() { return cNoPuedeKeyword_1_0; }
 
 		//dia=Dia
 		public Assignment getDiaAssignment_1_1() { return cDiaAssignment_1_1; }
@@ -483,41 +482,11 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		//Dia
 		public RuleCall getDiaDiaEnumRuleCall_1_1_0() { return cDiaDiaEnumRuleCall_1_1_0; }
 
-		//rangoHorario=Rango_Horario
-		public Assignment getRangoHorarioAssignment_1_2() { return cRangoHorarioAssignment_1_2; }
+		//rangosHorario=Rango_Horario?
+		public Assignment getRangosHorarioAssignment_1_2() { return cRangosHorarioAssignment_1_2; }
 
 		//Rango_Horario
-		public RuleCall getRangoHorarioRango_HorarioParserRuleCall_1_2_0() { return cRangoHorarioRango_HorarioParserRuleCall_1_2_0; }
-
-		//"no puede" dia=Dia
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"no puede"
-		public Keyword getNoPuedeKeyword_2_0() { return cNoPuedeKeyword_2_0; }
-
-		//dia=Dia
-		public Assignment getDiaAssignment_2_1() { return cDiaAssignment_2_1; }
-
-		//Dia
-		public RuleCall getDiaDiaEnumRuleCall_2_1_0() { return cDiaDiaEnumRuleCall_2_1_0; }
-
-		//"no puede" dia=Dia rangoHorario=Rango_Horario
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"no puede"
-		public Keyword getNoPuedeKeyword_3_0() { return cNoPuedeKeyword_3_0; }
-
-		//dia=Dia
-		public Assignment getDiaAssignment_3_1() { return cDiaAssignment_3_1; }
-
-		//Dia
-		public RuleCall getDiaDiaEnumRuleCall_3_1_0() { return cDiaDiaEnumRuleCall_3_1_0; }
-
-		//rangoHorario=Rango_Horario
-		public Assignment getRangoHorarioAssignment_3_2() { return cRangoHorarioAssignment_3_2; }
-
-		//Rango_Horario
-		public RuleCall getRangoHorarioRango_HorarioParserRuleCall_3_2_0() { return cRangoHorarioRango_HorarioParserRuleCall_3_2_0; }
+		public RuleCall getRangosHorarioRango_HorarioParserRuleCall_1_2_0() { return cRangosHorarioRango_HorarioParserRuleCall_1_2_0; }
 	}
 
 	public class DedicacionElements extends AbstractParserRuleElementFinder {
@@ -783,8 +752,8 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 	
 	private ModelElements pModel;
 	private PlanificacionElements pPlanificacion;
-	private Asignacion_DiariaElements pAsignacion_Diaria;
 	private Asignacion_MateriaElements pAsignacion_Materia;
+	private Asignacion_DiariaElements pAsignacion_Diaria;
 	private MateriaElements pMateria;
 	private ProfesorElements pProfesor;
 	private DisponibilidadElements pDisponibilidad;
@@ -846,8 +815,8 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 
 	////====================================================================================
 	//Planificacion:
-	//	"planificacion" anio=INT "semestre" semestre=INT "{" "materias a dictar:" materiasADictar+=[Materia]*
-	//	asignacionesDiarias+=Asignacion_Diaria* "}";
+	//	"planificacion" anio=INT "semestre" semestre=INT "{" "materias a dictar:" materiasADictar+=[Materia]+
+	//	asignacionesDeMaterias+=Asignacion_Materia+ "}";
 	public PlanificacionElements getPlanificacionAccess() {
 		return (pPlanificacion != null) ? pPlanificacion : (pPlanificacion = new PlanificacionElements());
 	}
@@ -856,25 +825,25 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		return getPlanificacionAccess().getRule();
 	}
 
-	//Asignacion_Diaria: //desactivar la posibilidad de que se definan asignaciones de un dia que ya fue definido
-	//	dia=Dia "{" asignacionesDeMaterias+=Asignacion_Materia* "}";
-	public Asignacion_DiariaElements getAsignacion_DiariaAccess() {
-		return (pAsignacion_Diaria != null) ? pAsignacion_Diaria : (pAsignacion_Diaria = new Asignacion_DiariaElements());
-	}
-	
-	public ParserRule getAsignacion_DiariaRule() {
-		return getAsignacion_DiariaAccess().getRule();
-	}
-
 	//Asignacion_Materia:
-	//	rangoHorario=Rango_Horario "::" materia=[Materia] "profesor a cargo:" profesor=[Profesor] "aula:" aula=[Aula]
-	//	"alumnos inscriptos:" alumnosInscriptos=INT;
+	//	materia=[Materia] "{" "dictada por:" profesor=[Profesor] "aula:" aula=[Aula] "alumnos inscriptos:"
+	//	alumnosInscriptos=INT "horarios:" "{" asignacionesDiarias+=Asignacion_Diaria+ "}" "}";
 	public Asignacion_MateriaElements getAsignacion_MateriaAccess() {
 		return (pAsignacion_Materia != null) ? pAsignacion_Materia : (pAsignacion_Materia = new Asignacion_MateriaElements());
 	}
 	
 	public ParserRule getAsignacion_MateriaRule() {
 		return getAsignacion_MateriaAccess().getRule();
+	}
+
+	//Asignacion_Diaria:
+	//	dia=Dia rangoHorario=Rango_Horario;
+	public Asignacion_DiariaElements getAsignacion_DiariaAccess() {
+		return (pAsignacion_Diaria != null) ? pAsignacion_Diaria : (pAsignacion_Diaria = new Asignacion_DiariaElements());
+	}
+	
+	public ParserRule getAsignacion_DiariaRule() {
+		return getAsignacion_DiariaAccess().getRule();
 	}
 
 	////====================================================================================
@@ -890,7 +859,7 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Profesor:
-	//	"profesor" name=ID "con dedicacion" dedicacion=Dedicacion "disponibilidad" "{" disponibilidad+=Disponibilidad+ "}";
+	//	"profesor:" name=ID "con dedicacion" dedicacion=Dedicacion "disponibilidad" "{" disponibilidad+=Disponibilidad+ "}";
 	public ProfesorElements getProfesorAccess() {
 		return (pProfesor != null) ? pProfesor : (pProfesor = new ProfesorElements());
 	}
@@ -899,9 +868,8 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		return getProfesorAccess().getRule();
 	}
 
-	//Disponibilidad: //Ver como generalizarlo. Solo para joder...
-	//	"puede:" dia=Dia | "puede:" dia=Dia rangoHorario=Rango_Horario | "no puede" dia=Dia | "no puede" dia=Dia
-	//	rangoHorario=Rango_Horario;
+	//Disponibilidad:
+	//	"puede:" dia=Dia rangosHorario=Rango_Horario? | "no puede" dia=Dia rangosHorario=Rango_Horario?;
 	public DisponibilidadElements getDisponibilidadAccess() {
 		return (pDisponibilidad != null) ? pDisponibilidad : (pDisponibilidad = new DisponibilidadElements());
 	}

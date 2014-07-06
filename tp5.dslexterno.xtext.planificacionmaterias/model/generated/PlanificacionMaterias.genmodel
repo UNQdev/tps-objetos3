@@ -26,18 +26,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Planificacion/anio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Planificacion/semestre"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/materiasADictar"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/asignacionesDiarias"/>
-    </genClasses>
-    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Asignacion_Diaria">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Diaria/dia"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Diaria/asignacionesDeMaterias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Planificacion/asignacionesDeMaterias"/>
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Asignacion_Materia">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/rangoHorario"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/materia"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/profesor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/aula"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Materia/alumnosInscriptos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Materia/asignacionesDiarias"/>
+    </genClasses>
+    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Asignacion_Diaria">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Asignacion_Diaria/dia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Asignacion_Diaria/rangoHorario"/>
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Materia">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Materia/name"/>
@@ -52,7 +52,7 @@
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Disponibilidad">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlanificacionMaterias.ecore#//Disponibilidad/dia"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Disponibilidad/rangoHorario"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Disponibilidad/rangosHorario"/>
     </genClasses>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Dedicacion"/>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Aula">

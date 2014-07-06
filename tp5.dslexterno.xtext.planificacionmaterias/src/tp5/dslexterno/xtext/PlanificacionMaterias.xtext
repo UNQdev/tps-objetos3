@@ -13,18 +13,22 @@ Model:
 
 Planificacion:
 	'planificacion' anio=INT 'semestre' semestre=INT '{' 
-		'materias a dictar:' (materiasADictar+=[Materia])*
-		(asignacionesDiarias+=Asignacion_Diaria)*
+		'materias a dictar:' (materiasADictar+=[Materia])+
+		(asignacionesDeMaterias+=Asignacion_Materia)+
+	'}'
+;
+Asignacion_Materia: 
+	materia=[Materia] '{'
+		'dictada por:' profesor=[Profesor]
+		'aula:' aula=[Aula]
+		'alumnos inscriptos:' alumnosInscriptos=INT
+		'horarios:' '{'
+			(asignacionesDiarias+=Asignacion_Diaria)+
+		'}'
 	'}'
 ;
 Asignacion_Diaria:
-	//desactivar la posibilidad de que se definan asignaciones de un dia que ya fue definido
-	 dia=Dia '{'(asignacionesDeMaterias+=Asignacion_Materia)* '}'
-;
-Asignacion_Materia: 
-	rangoHorario=Rango_Horario '::' materia=[Materia]
-		'profesor a cargo:' profesor=[Profesor] 'aula:' aula=[Aula]
-		'alumnos inscriptos:' alumnosInscriptos=INT
+	 dia=Dia rangoHorario=Rango_Horario
 ;
 
 //====================================================================================
@@ -37,7 +41,7 @@ Materia:
 	'}' 
 ;
 Profesor:
-	'profesor' name=ID 'con dedicacion' dedicacion=Dedicacion 
+	'profesor:' name=ID 'con dedicacion' dedicacion=Dedicacion 
 	'disponibilidad' '{'
 		(disponibilidad+=Disponibilidad)+
 	'}'

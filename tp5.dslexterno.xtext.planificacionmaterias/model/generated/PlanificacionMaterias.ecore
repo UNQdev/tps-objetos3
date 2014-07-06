@@ -17,21 +17,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semestre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="materiasADictar" unique="false"
         upperBound="-1" eType="#//Materia"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="asignacionesDeMaterias"
+        upperBound="-1" eType="#//Asignacion_Materia" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asignacion_Materia">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="materia" eType="#//Materia"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profesor" eType="#//Profesor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aula" eType="#//Aula"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alumnosInscriptos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="asignacionesDiarias" upperBound="-1"
         eType="#//Asignacion_Diaria" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Asignacion_Diaria">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dia" eType="#//Dia"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="asignacionesDeMaterias"
-        upperBound="-1" eType="#//Asignacion_Materia" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Asignacion_Materia">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rangoHorario" eType="#//Rango_Horario"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="materia" eType="#//Materia"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="profesor" eType="#//Profesor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aula" eType="#//Aula"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alumnosInscriptos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Materia">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -50,7 +50,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Disponibilidad">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dia" eType="#//Dia"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rangoHorario" eType="#//Rango_Horario"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rangosHorario" eType="#//Rango_Horario"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dedicacion"/>

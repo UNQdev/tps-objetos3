@@ -41,15 +41,6 @@ public interface PlanificacionMateriasFactory extends EFactory
   Planificacion createPlanificacion();
 
   /**
-   * Returns a new object of class '<em>Asignacion Diaria</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Asignacion Diaria</em>'.
-   * @generated
-   */
-  Asignacion_Diaria createAsignacion_Diaria();
-
-  /**
    * Returns a new object of class '<em>Asignacion Materia</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +48,15 @@ public interface PlanificacionMateriasFactory extends EFactory
    * @generated
    */
   Asignacion_Materia createAsignacion_Materia();
+
+  /**
+   * Returns a new object of class '<em>Asignacion Diaria</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Asignacion Diaria</em>'.
+   * @generated
+   */
+  Asignacion_Diaria createAsignacion_Diaria();
 
   /**
    * Returns a new object of class '<em>Materia</em>'.

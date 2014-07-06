@@ -2,6 +2,8 @@
  */
 package tp5.dslexterno.xtext.planificacionMaterias;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getMateria <em>Materia</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getProfesor <em>Profesor</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAula <em>Aula</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAlumnosInscriptos <em>Alumnos Inscriptos</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getAsignacionesDiarias <em>Asignaciones Diarias</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,32 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Asignacion_Materia extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Rango Horario</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Rango Horario</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Rango Horario</em>' containment reference.
-   * @see #setRangoHorario(Rango_Horario)
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_RangoHorario()
-   * @model containment="true"
-   * @generated
-   */
-  Rango_Horario getRangoHorario();
-
-  /**
-   * Sets the value of the '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia#getRangoHorario <em>Rango Horario</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rango Horario</em>' containment reference.
-   * @see #getRangoHorario()
-   * @generated
-   */
-  void setRangoHorario(Rango_Horario value);
-
   /**
    * Returns the value of the '<em><b>Materia</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -155,5 +131,21 @@ public interface Asignacion_Materia extends EObject
    * @generated
    */
   void setAlumnosInscriptos(int value);
+
+  /**
+   * Returns the value of the '<em><b>Asignaciones Diarias</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Asignaciones Diarias</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Asignaciones Diarias</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getAsignacion_Materia_AsignacionesDiarias()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Asignacion_Diaria> getAsignacionesDiarias();
 
 } // Asignacion_Materia

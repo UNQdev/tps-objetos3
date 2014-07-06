@@ -2,8 +2,12 @@
  */
 package tp5.dslexterno.xtext.planificacionMaterias.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,12 +15,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria;
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
-import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,11 +32,11 @@ import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getRangoHorario <em>Rango Horario</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getMateria <em>Materia</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getProfesor <em>Profesor</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getAula <em>Aula</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getAlumnosInscriptos <em>Alumnos Inscriptos</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.Asignacion_MateriaImpl#getAsignacionesDiarias <em>Asignaciones Diarias</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,16 +44,6 @@ import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
  */
 public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container implements Asignacion_Materia
 {
-  /**
-   * The cached value of the '{@link #getRangoHorario() <em>Rango Horario</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRangoHorario()
-   * @generated
-   * @ordered
-   */
-  protected Rango_Horario rangoHorario;
-
   /**
    * The cached value of the '{@link #getMateria() <em>Materia</em>}' reference.
    * <!-- begin-user-doc -->
@@ -98,6 +95,16 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   protected int alumnosInscriptos = ALUMNOS_INSCRIPTOS_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getAsignacionesDiarias() <em>Asignaciones Diarias</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAsignacionesDiarias()
+   * @generated
+   * @ordered
+   */
+  protected EList<Asignacion_Diaria> asignacionesDiarias;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -116,54 +123,6 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   protected EClass eStaticClass()
   {
     return PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Rango_Horario getRangoHorario()
-  {
-    return rangoHorario;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRangoHorario(Rango_Horario newRangoHorario, NotificationChain msgs)
-  {
-    Rango_Horario oldRangoHorario = rangoHorario;
-    rangoHorario = newRangoHorario;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, oldRangoHorario, newRangoHorario);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRangoHorario(Rango_Horario newRangoHorario)
-  {
-    if (newRangoHorario != rangoHorario)
-    {
-      NotificationChain msgs = null;
-      if (rangoHorario != null)
-        msgs = ((InternalEObject)rangoHorario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, null, msgs);
-      if (newRangoHorario != null)
-        msgs = ((InternalEObject)newRangoHorario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, null, msgs);
-      msgs = basicSetRangoHorario(newRangoHorario, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO, newRangoHorario, newRangoHorario));
   }
 
   /**
@@ -323,13 +282,27 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Asignacion_Diaria> getAsignacionesDiarias()
+  {
+    if (asignacionesDiarias == null)
+    {
+      asignacionesDiarias = new EObjectContainmentEList<Asignacion_Diaria>(Asignacion_Diaria.class, this, PlanificacionMateriasPackage.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS);
+    }
+    return asignacionesDiarias;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
-        return basicSetRangoHorario(null, msgs);
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS:
+        return ((InternalEList<?>)getAsignacionesDiarias()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -344,8 +317,6 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
-        return getRangoHorario();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         if (resolve) return getMateria();
         return basicGetMateria();
@@ -357,6 +328,8 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
         return basicGetAula();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
         return getAlumnosInscriptos();
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS:
+        return getAsignacionesDiarias();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -366,14 +339,12 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
-        setRangoHorario((Rango_Horario)newValue);
-        return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         setMateria((Materia)newValue);
         return;
@@ -385,6 +356,10 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
         return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
         setAlumnosInscriptos((Integer)newValue);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS:
+        getAsignacionesDiarias().clear();
+        getAsignacionesDiarias().addAll((Collection<? extends Asignacion_Diaria>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -400,9 +375,6 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
-        setRangoHorario((Rango_Horario)null);
-        return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         setMateria((Materia)null);
         return;
@@ -414,6 +386,9 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
         return;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
         setAlumnosInscriptos(ALUMNOS_INSCRIPTOS_EDEFAULT);
+        return;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS:
+        getAsignacionesDiarias().clear();
         return;
     }
     super.eUnset(featureID);
@@ -429,8 +404,6 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__RANGO_HORARIO:
-        return rangoHorario != null;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__MATERIA:
         return materia != null;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__PROFESOR:
@@ -439,6 +412,8 @@ public class Asignacion_MateriaImpl extends MinimalEObjectImpl.Container impleme
         return aula != null;
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS:
         return alumnosInscriptos != ALUMNOS_INSCRIPTOS_EDEFAULT;
+      case PlanificacionMateriasPackage.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS:
+        return asignacionesDiarias != null && !asignacionesDiarias.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -67,8 +67,8 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
     {
       case PlanificacionMateriasPackage.MODEL: return createModel();
       case PlanificacionMateriasPackage.PLANIFICACION: return createPlanificacion();
-      case PlanificacionMateriasPackage.ASIGNACION_DIARIA: return createAsignacion_Diaria();
       case PlanificacionMateriasPackage.ASIGNACION_MATERIA: return createAsignacion_Materia();
+      case PlanificacionMateriasPackage.ASIGNACION_DIARIA: return createAsignacion_Diaria();
       case PlanificacionMateriasPackage.MATERIA: return createMateria();
       case PlanificacionMateriasPackage.PROFESOR: return createProfesor();
       case PlanificacionMateriasPackage.DISPONIBILIDAD: return createDisponibilidad();
@@ -146,10 +146,10 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Asignacion_Diaria createAsignacion_Diaria()
+  public Asignacion_Materia createAsignacion_Materia()
   {
-    Asignacion_DiariaImpl asignacion_Diaria = new Asignacion_DiariaImpl();
-    return asignacion_Diaria;
+    Asignacion_MateriaImpl asignacion_Materia = new Asignacion_MateriaImpl();
+    return asignacion_Materia;
   }
 
   /**
@@ -157,10 +157,10 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Asignacion_Materia createAsignacion_Materia()
+  public Asignacion_Diaria createAsignacion_Diaria()
   {
-    Asignacion_MateriaImpl asignacion_Materia = new Asignacion_MateriaImpl();
-    return asignacion_Materia;
+    Asignacion_DiariaImpl asignacion_Diaria = new Asignacion_DiariaImpl();
+    return asignacion_Diaria;
   }
 
   /**

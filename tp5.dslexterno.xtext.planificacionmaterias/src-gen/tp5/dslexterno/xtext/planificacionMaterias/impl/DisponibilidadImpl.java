@@ -24,7 +24,7 @@ import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario;
  * The following features are implemented:
  * <ul>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.DisponibilidadImpl#getDia <em>Dia</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.DisponibilidadImpl#getRangoHorario <em>Rango Horario</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.impl.DisponibilidadImpl#getRangosHorario <em>Rangos Horario</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,14 +53,14 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
   protected Dia dia = DIA_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRangoHorario() <em>Rango Horario</em>}' containment reference.
+   * The cached value of the '{@link #getRangosHorario() <em>Rangos Horario</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRangoHorario()
+   * @see #getRangosHorario()
    * @generated
    * @ordered
    */
-  protected Rango_Horario rangoHorario;
+  protected Rango_Horario rangosHorario;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,9 +111,9 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Rango_Horario getRangoHorario()
+  public Rango_Horario getRangosHorario()
   {
-    return rangoHorario;
+    return rangosHorario;
   }
 
   /**
@@ -121,13 +121,13 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRangoHorario(Rango_Horario newRangoHorario, NotificationChain msgs)
+  public NotificationChain basicSetRangosHorario(Rango_Horario newRangosHorario, NotificationChain msgs)
   {
-    Rango_Horario oldRangoHorario = rangoHorario;
-    rangoHorario = newRangoHorario;
+    Rango_Horario oldRangosHorario = rangosHorario;
+    rangosHorario = newRangosHorario;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO, oldRangoHorario, newRangoHorario);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO, oldRangosHorario, newRangosHorario);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -138,20 +138,20 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRangoHorario(Rango_Horario newRangoHorario)
+  public void setRangosHorario(Rango_Horario newRangosHorario)
   {
-    if (newRangoHorario != rangoHorario)
+    if (newRangosHorario != rangosHorario)
     {
       NotificationChain msgs = null;
-      if (rangoHorario != null)
-        msgs = ((InternalEObject)rangoHorario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO, null, msgs);
-      if (newRangoHorario != null)
-        msgs = ((InternalEObject)newRangoHorario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO, null, msgs);
-      msgs = basicSetRangoHorario(newRangoHorario, msgs);
+      if (rangosHorario != null)
+        msgs = ((InternalEObject)rangosHorario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO, null, msgs);
+      if (newRangosHorario != null)
+        msgs = ((InternalEObject)newRangosHorario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO, null, msgs);
+      msgs = basicSetRangosHorario(newRangosHorario, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO, newRangoHorario, newRangoHorario));
+      eNotify(new ENotificationImpl(this, Notification.SET, PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO, newRangosHorario, newRangosHorario));
   }
 
   /**
@@ -164,8 +164,8 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO:
-        return basicSetRangoHorario(null, msgs);
+      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO:
+        return basicSetRangosHorario(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -182,8 +182,8 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
     {
       case PlanificacionMateriasPackage.DISPONIBILIDAD__DIA:
         return getDia();
-      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO:
-        return getRangoHorario();
+      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO:
+        return getRangosHorario();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,8 +201,8 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
       case PlanificacionMateriasPackage.DISPONIBILIDAD__DIA:
         setDia((Dia)newValue);
         return;
-      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO:
-        setRangoHorario((Rango_Horario)newValue);
+      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO:
+        setRangosHorario((Rango_Horario)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,8 +221,8 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
       case PlanificacionMateriasPackage.DISPONIBILIDAD__DIA:
         setDia(DIA_EDEFAULT);
         return;
-      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO:
-        setRangoHorario((Rango_Horario)null);
+      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO:
+        setRangosHorario((Rango_Horario)null);
         return;
     }
     super.eUnset(featureID);
@@ -240,8 +240,8 @@ public class DisponibilidadImpl extends MinimalEObjectImpl.Container implements 
     {
       case PlanificacionMateriasPackage.DISPONIBILIDAD__DIA:
         return dia != DIA_EDEFAULT;
-      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGO_HORARIO:
-        return rangoHorario != null;
+      case PlanificacionMateriasPackage.DISPONIBILIDAD__RANGOS_HORARIO:
+        return rangosHorario != null;
     }
     return super.eIsSet(featureID);
   }

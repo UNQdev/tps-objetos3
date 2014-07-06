@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAnio <em>Anio</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getSemestre <em>Semestre</em>}</li>
  *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getMateriasADictar <em>Materias ADictar</em>}</li>
- *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionesDiarias <em>Asignaciones Diarias</em>}</li>
+ *   <li>{@link tp5.dslexterno.xtext.planificacionMaterias.Planificacion#getAsignacionesDeMaterias <em>Asignaciones De Materias</em>}</li>
  * </ul>
  * </p>
  *
@@ -96,19 +96,19 @@ public interface Planificacion extends EObject
   EList<Materia> getMateriasADictar();
 
   /**
-   * Returns the value of the '<em><b>Asignaciones Diarias</b></em>' containment reference list.
-   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria}.
+   * Returns the value of the '<em><b>Asignaciones De Materias</b></em>' containment reference list.
+   * The list contents are of type {@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Asignaciones Diarias</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Asignaciones De Materias</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Asignaciones Diarias</em>' containment reference list.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getPlanificacion_AsignacionesDiarias()
+   * @return the value of the '<em>Asignaciones De Materias</em>' containment reference list.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage#getPlanificacion_AsignacionesDeMaterias()
    * @model containment="true"
    * @generated
    */
-  EList<Asignacion_Diaria> getAsignacionesDiarias();
+  EList<Asignacion_Materia> getAsignacionesDeMaterias();
 
 } // Planificacion

@@ -85,14 +85,14 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
         return createPlanificacionAdapter();
       }
       @Override
-      public Adapter caseAsignacion_Diaria(Asignacion_Diaria object)
-      {
-        return createAsignacion_DiariaAdapter();
-      }
-      @Override
       public Adapter caseAsignacion_Materia(Asignacion_Materia object)
       {
         return createAsignacion_MateriaAdapter();
+      }
+      @Override
+      public Adapter caseAsignacion_Diaria(Asignacion_Diaria object)
+      {
+        return createAsignacion_DiariaAdapter();
       }
       @Override
       public Adapter caseMateria(Materia object)
@@ -202,21 +202,6 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria <em>Asignacion Diaria</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria
-   * @generated
-   */
-  public Adapter createAsignacion_DiariaAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia <em>Asignacion Materia</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -227,6 +212,21 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAsignacion_MateriaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria <em>Asignacion Diaria</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria
+   * @generated
+   */
+  public Adapter createAsignacion_DiariaAdapter()
   {
     return null;
   }
