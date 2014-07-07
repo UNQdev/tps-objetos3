@@ -7,20 +7,16 @@ import java.util.List
 import org.eclipse.xtext.validation.Check
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia
-import tp5.dslexterno.xtext.planificacionMaterias.Aula
+import tp5.dslexterno.xtext.planificacionMaterias.Dia
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva
-import tp5.dslexterno.xtext.planificacionMaterias.Horario
-import tp5.dslexterno.xtext.planificacionMaterias.Materia
-import tp5.dslexterno.xtext.planificacionMaterias.Model
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor
 import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario
 import tp5.dslexterno.xtext.planificacionMaterias.Semi
 import tp5.dslexterno.xtext.planificacionMaterias.Simple
-import tp5.dslexterno.xtext.planificacionMaterias.Dia
+import tp5.dslexterno.xtext.planificacionMaterias.Horario
 
-//import org.eclipse.xtext.validation.Check
 /**
  * Custom validation rules. 
  *
@@ -58,7 +54,7 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	def validarCargaHorariaMateria(Asignacion_Materia asignacion){
 		val diferenciaHoras = asignacion.horasAsignadas - asignacion.materia.cantidadHorasSemanales
 		if (diferenciaHoras < 0){
-			error('''A la materia «asignacion.materia.name.toUpperCase» le faltan asignar «diferenciaHoras.toString» horas''', asignacion,
+			error('''A la materia «asignacion.materia.name.toUpperCase» le faltan asignar «(-diferenciaHoras).toString» horas''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
 		} 
 		if(diferenciaHoras > 0){
@@ -78,32 +74,15 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		}
 	}
 	
-//	@Check
-	// TODO: verificar este engendro :P
-//	def validarSuperposicionEntreMaterias(Asignacion_Materia asignacionMateria){
-//		val materiasMismoDia = ((materia.eContainer as Asignacion_Materia).eContainer as Asignacion_Diaria).asignacionesDeMaterias
-//		val materiasSuperpuestas = materia.seSuperponeCon(materiasMismoDia)
-//		if(materiasSuperpuestas.size > 0){
-//			//NO DARLE BOLA AL MENSAJE DE ERROR, SE PUEDE SIMPLICAR
-//			error('''«materia.name.toUpperCase» se superpone con: «materiasSuperpuestas.forEach[m | m.name.toUpperCase]»''', (materia.eContainer as Asignacion_Materia),
-//				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__RANGO_HORARIO)
-//		}
-//	}	
-	// TODO: Llevarse todos estos extension methods para abajo...
-//	def List<Materia> seSuperponeCon(Materia materia, List<Asignacion_Materia> materiasMismoDia){
-//		val horariosMateria = (materia.eContainer as Asignacion_Materia).rangoHorario
-//		materiasMismoDia.filter[am | am.materiaConSuperposicionHoraria(horariosMateria)].map[materia].toList
-//	}
-//	def boolean materiaConSuperposicionHoraria(Asignacion_Materia asignacion, Rango_Horario rangoHorario){
-//		asignacion.rangoHorario.sePisaCon(rangoHorario)
-//	}
-//	def boolean sePisaCon(Rango_Horario rangoHorario1, Rango_Horario rangoHorario2){
-//		rangoHorario2.horaInicio.estaEntre(rangoHorario1) || rangoHorario2.horaFinal.estaEntre(rangoHorario1) 		
-//	}	
-//	def boolean estaEntre(Horario horario, Rango_Horario rangoHorario){
-//		// TODO: generar una lista con las HORAS del rango horario y hacerle un contains con la HORA del horario :)
-//		true
-//	}
+	@Check
+	def validarSuperposicionEntreMaterias(Asignacion_Materia asignacion){
+		var listaAsignacionesEnMismaAula = (asignacion.eContainer as Planificacion).asignacionesDeMaterias.filter[aula == asignacion.aula].toList
+		if(listaAsignacionesEnMismaAula.seSuperponeConAlguno(asignacion)){
+//			var horarioOcupado = asignacion.horarioSuperpuesto(listaAsignacionesEnMismaAula)
+			error('''«asignacion.aula.name.toUpperCase» ya se encuentra ocupada en algun horario''', asignacion,
+				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
+		}
+	}
 		
 	/*
 	 * Validaciones de puntos bonus
@@ -146,9 +125,6 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		disponibilidades.filter[disp | disp.dia.diaIncluido(diaMateria)].size > 0 
 	}
 		
-//	def boolean rangoIncluido(Rango_Horario rangoHorario, Rango_Horario rangoHorarioMateria){
-//		rangoHorarioMateria.horaInicio.estaEntre(rangoHorario) && rangoHorarioMateria.horaFinal.estaEntre(rangoHorario)
-//	}	
 	def boolean diaIncluido(Dia dia, Dia diaMateria) {
 		dia == diaMateria
 	}
@@ -191,29 +167,31 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	 * Comportamiento agregado via extension methods
 	 */	
 	
-	// MATERIA
-	def Planificacion planificacion(Materia materia){
-		((materia.eContainer as Asignacion_Materia).eContainer as Asignacion_Diaria).eContainer as Planificacion
-	}
-//	def Asignacion_Materia asignacion(Materia materia){
-//		materia.eContainer as Asignacion_Materia
-//	}	
-//	def Profesor profesor(Materia materia){
-//		materia.asignacion.profesor
-//	}
+	// ASIGANCION_MATERIA
 	def int horasAsignadas(Asignacion_Materia asignacion) {
 		val asignacionesDiarias = asignacion.asignacionesDiarias
 		asignacionesDiarias.map[rangoHorario.cantidadDeHoras].reduce[sum, cantHoras | sum + cantHoras]
 	}
+
+	def dispatch boolean seSuperponeConAlguno(List<Asignacion_Materia> asignacionesMaterias, Asignacion_Materia asignacion){
+		asignacionesMaterias.remove(asignacion)
+		val listaAsignacionesDiariasDePlanificacion = asignacionesMaterias.map[asignacionesDiarias].flatten
+		listaAsignacionesDiariasDePlanificacion.exists[seSuperponeConAlguno(asignacion.asignacionesDiarias)]
+	}
+
+	def dispatch boolean seSuperponeConAlguno(Asignacion_Diaria asignacionDeDia, List<Asignacion_Diaria> listaAsignaciones){
+		listaAsignaciones.exists[rangoHorario.seSuperponeCon(asignacionDeDia.rangoHorario) && dia == asignacionDeDia.dia]
+	}
 	
-	def int cantidadDeHoras(Rango_Horario horario){
-		horario.horaFinal.hora - horario.horaInicio.hora
+	def Horario horarioSuperpuesto(Asignacion_Materia materia, List<Asignacion_Materia> materias){
+		
 	}
 	
 	// PROFESOR
 	def List<Asignacion_Materia> materiasAsignadasA(List<Asignacion_Materia> listaAsignaciones, Profesor profesor0){
 		listaAsignaciones.filter[profesor == profesor0].toList
 	}
+	
 	def int cantMateriasSegunDedicacion(Profesor profesor) {
 		profesor.dedicacion.cantidadMaterias
 	}
@@ -222,8 +200,28 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	def dispatch int cantidadMaterias(Simple dedicacion) { return 1 }
 	def dispatch int cantidadMaterias(Semi dedicacion) { return 2 }
 	def dispatch int cantidadMaterias(Exclusiva dedicacion) { return 5 }
+	
 	// HORARIOS
+	def int cantidadDeHoras(Rango_Horario horario){
+		horario.horaFinal.hora - horario.horaInicio.hora
+	}
+
 	def toString(Rango_Horario rangoHorario){
 		rangoHorario.horaInicio.hora.toString + ":" + rangoHorario.horaFinal.hora.toString 
+	}
+	
+	def <(Horario horario1, Horario horario2){
+		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
+	} 
+	
+	def >(Horario horario1, Horario horario2){
+		horario1.hora > horario2.hora || (horario1.hora == horario2.hora && horario1.minutos > horario2.minutos)
+	} 
+	
+	def boolean seSuperponeCon(Rango_Horario rangoHorario1, Rango_Horario rangoHorario2){
+		rangoHorario2.horaInicio.estaEntre(rangoHorario1) || rangoHorario2.horaFinal.estaEntre(rangoHorario1) 		
+	}	
+	def boolean estaEntre(Horario horario, Rango_Horario rangoHorario){
+		rangoHorario.horaInicio < horario && horario < rangoHorario.horaFinal 
 	}
 }

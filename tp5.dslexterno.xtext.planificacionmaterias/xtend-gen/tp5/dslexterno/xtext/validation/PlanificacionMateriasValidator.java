@@ -4,6 +4,7 @@
 package tp5.dslexterno.xtext.validation;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -118,7 +119,7 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       String _upperCase = _name.toUpperCase();
       _builder.append(_upperCase, "");
       _builder.append(" le faltan asignar ");
-      String _string = Integer.valueOf(diferenciaHoras).toString();
+      String _string = Integer.valueOf((-diferenciaHoras)).toString();
       _builder.append(_string, "");
       _builder.append(" horas");
       this.error(_builder.toString(), asignacion, 
@@ -172,6 +173,32 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       _builder.append(_upperCase_1, "");
       this.error(_builder.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__AULA);
+    }
+  }
+  
+  @Check
+  public void validarSuperposicionEntreMaterias(final Asignacion_Materia asignacion) {
+    EObject _eContainer = asignacion.eContainer();
+    EList<Asignacion_Materia> _asignacionesDeMaterias = ((Planificacion) _eContainer).getAsignacionesDeMaterias();
+    final Function1<Asignacion_Materia, Boolean> _function = new Function1<Asignacion_Materia, Boolean>() {
+      public Boolean apply(final Asignacion_Materia it) {
+        Aula _aula = it.getAula();
+        Aula _aula_1 = asignacion.getAula();
+        return Boolean.valueOf(Objects.equal(_aula, _aula_1));
+      }
+    };
+    Iterable<Asignacion_Materia> _filter = IterableExtensions.<Asignacion_Materia>filter(_asignacionesDeMaterias, _function);
+    List<Asignacion_Materia> listaAsignacionesEnMismaAula = IterableExtensions.<Asignacion_Materia>toList(_filter);
+    boolean _seSuperponeConAlguno = this.seSuperponeConAlguno(listaAsignacionesEnMismaAula, asignacion);
+    if (_seSuperponeConAlguno) {
+      StringConcatenation _builder = new StringConcatenation();
+      Aula _aula = asignacion.getAula();
+      String _name = _aula.getName();
+      String _upperCase = _name.toUpperCase();
+      _builder.append(_upperCase, "");
+      _builder.append(" ya se encuentra ocupada en algun horario");
+      this.error(_builder.toString(), asignacion, 
+        PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA);
     }
   }
   
@@ -290,13 +317,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   /**
    * Comportamiento agregado via extension methods
    */
-  public Planificacion planificacion(final Materia materia) {
-    EObject _eContainer = materia.eContainer();
-    EObject _eContainer_1 = ((Asignacion_Materia) _eContainer).eContainer();
-    EObject _eContainer_2 = ((Asignacion_Diaria) _eContainer_1).eContainer();
-    return ((Planificacion) _eContainer_2);
-  }
-  
   public int horasAsignadas(final Asignacion_Materia asignacion) {
     Integer _xblockexpression = null;
     {
@@ -318,12 +338,51 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return (_xblockexpression).intValue();
   }
   
-  public int cantidadDeHoras(final Rango_Horario horario) {
-    Horario _horaFinal = horario.getHoraFinal();
-    int _hora = _horaFinal.getHora();
-    Horario _horaInicio = horario.getHoraInicio();
-    int _hora_1 = _horaInicio.getHora();
-    return (_hora - _hora_1);
+  protected boolean _seSuperponeConAlguno(final List<Asignacion_Materia> asignacionesMaterias, final Asignacion_Materia asignacion) {
+    boolean _xblockexpression = false;
+    {
+      asignacionesMaterias.remove(asignacion);
+      final Function1<Asignacion_Materia, EList<Asignacion_Diaria>> _function = new Function1<Asignacion_Materia, EList<Asignacion_Diaria>>() {
+        public EList<Asignacion_Diaria> apply(final Asignacion_Materia it) {
+          return it.getAsignacionesDiarias();
+        }
+      };
+      List<EList<Asignacion_Diaria>> _map = ListExtensions.<Asignacion_Materia, EList<Asignacion_Diaria>>map(asignacionesMaterias, _function);
+      final Iterable<Asignacion_Diaria> listaAsignacionesDiariasDePlanificacion = Iterables.<Asignacion_Diaria>concat(_map);
+      final Function1<Asignacion_Diaria, Boolean> _function_1 = new Function1<Asignacion_Diaria, Boolean>() {
+        public Boolean apply(final Asignacion_Diaria it) {
+          EList<Asignacion_Diaria> _asignacionesDiarias = asignacion.getAsignacionesDiarias();
+          return Boolean.valueOf(PlanificacionMateriasValidator.this.seSuperponeConAlguno(it, _asignacionesDiarias));
+        }
+      };
+      _xblockexpression = IterableExtensions.<Asignacion_Diaria>exists(listaAsignacionesDiariasDePlanificacion, _function_1);
+    }
+    return _xblockexpression;
+  }
+  
+  protected boolean _seSuperponeConAlguno(final Asignacion_Diaria asignacionDeDia, final List<Asignacion_Diaria> listaAsignaciones) {
+    final Function1<Asignacion_Diaria, Boolean> _function = new Function1<Asignacion_Diaria, Boolean>() {
+      public Boolean apply(final Asignacion_Diaria it) {
+        boolean _and = false;
+        Rango_Horario _rangoHorario = it.getRangoHorario();
+        Rango_Horario _rangoHorario_1 = asignacionDeDia.getRangoHorario();
+        boolean _seSuperponeCon = PlanificacionMateriasValidator.this.seSuperponeCon(_rangoHorario, _rangoHorario_1);
+        if (!_seSuperponeCon) {
+          _and = false;
+        } else {
+          Dia _dia = it.getDia();
+          Dia _dia_1 = asignacionDeDia.getDia();
+          boolean _equals = Objects.equal(_dia, _dia_1);
+          _and = _equals;
+        }
+        return Boolean.valueOf(_and);
+      }
+    };
+    return IterableExtensions.<Asignacion_Diaria>exists(listaAsignaciones, _function);
+  }
+  
+  public Horario horarioSuperpuesto(final Asignacion_Materia materia, final List<Asignacion_Materia> materias) {
+    return null;
   }
   
   public List<Asignacion_Materia> materiasAsignadasA(final List<Asignacion_Materia> listaAsignaciones, final Profesor profesor0) {
@@ -354,6 +413,14 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return 5;
   }
   
+  public int cantidadDeHoras(final Rango_Horario horario) {
+    Horario _horaFinal = horario.getHoraFinal();
+    int _hora = _horaFinal.getHora();
+    Horario _horaInicio = horario.getHoraInicio();
+    int _hora_1 = _horaInicio.getHora();
+    return (_hora - _hora_1);
+  }
+  
   public String toString(final Rango_Horario rangoHorario) {
     Horario _horaInicio = rangoHorario.getHoraInicio();
     int _hora = _horaInicio.getHora();
@@ -363,6 +430,97 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     int _hora_1 = _horaFinal.getHora();
     String _string_1 = Integer.valueOf(_hora_1).toString();
     return (_plus + _string_1);
+  }
+  
+  public boolean operator_lessThan(final Horario horario1, final Horario horario2) {
+    boolean _or = false;
+    int _hora = horario1.getHora();
+    int _hora_1 = horario2.getHora();
+    boolean _lessThan = (_hora < _hora_1);
+    if (_lessThan) {
+      _or = true;
+    } else {
+      boolean _and = false;
+      int _hora_2 = horario1.getHora();
+      int _hora_3 = horario2.getHora();
+      boolean _equals = (_hora_2 == _hora_3);
+      if (!_equals) {
+        _and = false;
+      } else {
+        int _minutos = horario1.getMinutos();
+        int _minutos_1 = horario2.getMinutos();
+        boolean _lessThan_1 = (_minutos < _minutos_1);
+        _and = _lessThan_1;
+      }
+      _or = _and;
+    }
+    return _or;
+  }
+  
+  public boolean operator_greaterThan(final Horario horario1, final Horario horario2) {
+    boolean _or = false;
+    int _hora = horario1.getHora();
+    int _hora_1 = horario2.getHora();
+    boolean _greaterThan = (_hora > _hora_1);
+    if (_greaterThan) {
+      _or = true;
+    } else {
+      boolean _and = false;
+      int _hora_2 = horario1.getHora();
+      int _hora_3 = horario2.getHora();
+      boolean _equals = (_hora_2 == _hora_3);
+      if (!_equals) {
+        _and = false;
+      } else {
+        int _minutos = horario1.getMinutos();
+        int _minutos_1 = horario2.getMinutos();
+        boolean _greaterThan_1 = (_minutos > _minutos_1);
+        _and = _greaterThan_1;
+      }
+      _or = _and;
+    }
+    return _or;
+  }
+  
+  public boolean seSuperponeCon(final Rango_Horario rangoHorario1, final Rango_Horario rangoHorario2) {
+    boolean _or = false;
+    Horario _horaInicio = rangoHorario2.getHoraInicio();
+    boolean _estaEntre = this.estaEntre(_horaInicio, rangoHorario1);
+    if (_estaEntre) {
+      _or = true;
+    } else {
+      Horario _horaFinal = rangoHorario2.getHoraFinal();
+      boolean _estaEntre_1 = this.estaEntre(_horaFinal, rangoHorario1);
+      _or = _estaEntre_1;
+    }
+    return _or;
+  }
+  
+  public boolean estaEntre(final Horario horario, final Rango_Horario rangoHorario) {
+    boolean _and = false;
+    Horario _horaInicio = rangoHorario.getHoraInicio();
+    boolean _lessThan = this.operator_lessThan(_horaInicio, horario);
+    if (!_lessThan) {
+      _and = false;
+    } else {
+      Horario _horaFinal = rangoHorario.getHoraFinal();
+      boolean _lessThan_1 = this.operator_lessThan(horario, _horaFinal);
+      _and = _lessThan_1;
+    }
+    return _and;
+  }
+  
+  public boolean seSuperponeConAlguno(final Object asignacionesMaterias, final Object asignacion) {
+    if (asignacionesMaterias instanceof List
+         && asignacion instanceof Asignacion_Materia) {
+      return _seSuperponeConAlguno((List<Asignacion_Materia>)asignacionesMaterias, (Asignacion_Materia)asignacion);
+    } else if (asignacionesMaterias instanceof Asignacion_Diaria
+         && asignacion instanceof List) {
+      return _seSuperponeConAlguno((Asignacion_Diaria)asignacionesMaterias, (List<Asignacion_Diaria>)asignacion);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(asignacionesMaterias, asignacion).toString());
+    }
   }
   
   public int cantidadMaterias(final Dedicacion dedicacion) {
