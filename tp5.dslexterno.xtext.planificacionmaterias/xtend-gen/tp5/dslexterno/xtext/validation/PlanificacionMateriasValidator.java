@@ -11,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.Functions.Function2;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -167,10 +166,10 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       String _name_3 = _materia_5.getName();
       String _upperCase_3 = _name_3.toUpperCase();
       _builder_3.append(_upperCase_3, "");
-      _builder_3.append(" le falta asignar ");
+      _builder_3.append(" excede en ");
       String _string_3 = Integer.valueOf(diferenciaHoras).toString();
       _builder_3.append(_string_3, "");
-      _builder_3.append(" dias");
+      _builder_3.append(" la cantidad de dias semanales");
       this.error(_builder_3.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA);
     }
@@ -262,9 +261,9 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   public void validarDisponibilidadProfesor(final Asignacion_Materia asignacion) {
     EList<Asignacion_Diaria> horariosMateria = asignacion.getAsignacionesDiarias();
     Profesor _profesor = asignacion.getProfesor();
-    EList<Disponibilidad> disponibilidadProfesor = _profesor.getDisponibilidad();
-    boolean _coincideCon = this.coincideCon(disponibilidadProfesor, horariosMateria);
-    if (_coincideCon) {
+    boolean _estaDisponibleParaLosHorarios = this.estaDisponibleParaLosHorarios(_profesor, horariosMateria);
+    boolean _not = (!_estaDisponibleParaLosHorarios);
+    if (_not) {
       StringConcatenation _builder = new StringConcatenation();
       Profesor _profesor_1 = asignacion.getProfesor();
       String _name = _profesor_1.getName();
@@ -278,7 +277,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   
   /**
    * Validaciones extras
-   * TODO: Mostrar esto!
    */
   @Check
   public void validarDeclaracionRangoHorario(final Rango_Horario rango) {
@@ -418,55 +416,190 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return IterableExtensions.<Asignacion_Diaria>exists(listaAsignaciones, _function);
   }
   
-  public boolean coincideCon(final EList<Disponibilidad> disponibilidades, final EList<Asignacion_Diaria> horariosMateria) {
+  public boolean estaDisponibleParaLosHorarios(final Profesor profesor, final EList<Asignacion_Diaria> horarios) {
     boolean _xblockexpression = false;
     {
-      int cantHorarios = horariosMateria.size();
-      final Function1<Asignacion_Diaria, Boolean> _function = new Function1<Asignacion_Diaria, Boolean>() {
-        public Boolean apply(final Asignacion_Diaria asigDiaria) {
-          return Boolean.valueOf(PlanificacionMateriasValidator.this.estaCubiertaPor(asigDiaria, disponibilidades));
+      EList<Disponibilidad> _disponibilidad = profesor.getDisponibilidad();
+      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          boolean _estaDisponible = PlanificacionMateriasValidator.this.estaDisponible(it);
+          return Boolean.valueOf((!_estaDisponible));
         }
       };
-      Iterable<Asignacion_Diaria> _filter = IterableExtensions.<Asignacion_Diaria>filter(horariosMateria, _function);
-      int _size = IterableExtensions.size(_filter);
-      _xblockexpression = (_size == cantHorarios);
+      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(_disponibilidad, _function);
+      List<Disponibilidad> noDisponible = IterableExtensions.<Disponibilidad>toList(_filter);
+      EList<Disponibilidad> _disponibilidad_1 = profesor.getDisponibilidad();
+      final Function1<Disponibilidad, Boolean> _function_1 = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          return Boolean.valueOf(PlanificacionMateriasValidator.this.estaDisponible(it));
+        }
+      };
+      Iterable<Disponibilidad> _filter_1 = IterableExtensions.<Disponibilidad>filter(_disponibilidad_1, _function_1);
+      List<Disponibilidad> disponible = IterableExtensions.<Disponibilidad>toList(_filter_1);
+      boolean _xifexpression = false;
+      boolean _isEmpty = noDisponible.isEmpty();
+      if (_isEmpty) {
+        _xifexpression = this.estanContenidosEn(horarios, disponible);
+      } else {
+        boolean _xifexpression_1 = false;
+        boolean _isEmpty_1 = disponible.isEmpty();
+        if (_isEmpty_1) {
+          boolean _coincideCon = this.coincideCon(noDisponible, horarios);
+          _xifexpression_1 = (!_coincideCon);
+        } else {
+          boolean _and = false;
+          boolean _coincideCon_1 = this.coincideCon(noDisponible, horarios);
+          boolean _not = (!_coincideCon_1);
+          if (!_not) {
+            _and = false;
+          } else {
+            boolean _estanContenidosEn = this.estanContenidosEn(horarios, disponible);
+            _and = _estanContenidosEn;
+          }
+          _xifexpression_1 = _and;
+        }
+        _xifexpression = _xifexpression_1;
+      }
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
   
-  public boolean estaCubiertaPor(final Asignacion_Diaria asignacionDiaria, final EList<Disponibilidad> disponibilidades) {
-    final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
-      public Boolean apply(final Disponibilidad disponibilidad) {
-        boolean _xifexpression = false;
-        boolean _esDeDiaCompleto = PlanificacionMateriasValidator.this.esDeDiaCompleto(disponibilidad);
-        if (_esDeDiaCompleto) {
-          Dia _dia = disponibilidad.getDia();
-          Dia _dia_1 = asignacionDiaria.getDia();
-          _xifexpression = _dia.equals(_dia_1);
-        } else {
-          boolean _and = false;
-          Dia _dia_2 = disponibilidad.getDia();
-          Dia _dia_3 = asignacionDiaria.getDia();
-          boolean _equals = _dia_2.equals(_dia_3);
-          if (!_equals) {
-            _and = false;
-          } else {
-            Rango_Horario _rangosHorario = disponibilidad.getRangosHorario();
-            Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
-            boolean _abarcaRangoHorario = PlanificacionMateriasValidator.this.abarcaRangoHorario(_rangosHorario, _rangoHorario);
-            _and = _abarcaRangoHorario;
-          }
-          _xifexpression = _and;
+  public boolean coincideCon(final List<Disponibilidad> noDisponibilidades, final EList<Asignacion_Diaria> horariosMateria) {
+    boolean _xblockexpression = false;
+    {
+      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          return Boolean.valueOf(PlanificacionMateriasValidator.this.esDeDiaCompleto(it));
         }
-        return Boolean.valueOf(_xifexpression);
+      };
+      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(noDisponibilidades, _function);
+      final Function1<Disponibilidad, Dia> _function_1 = new Function1<Disponibilidad, Dia>() {
+        public Dia apply(final Disponibilidad it) {
+          return it.getDia();
+        }
+      };
+      Iterable<Dia> _map = IterableExtensions.<Disponibilidad, Dia>map(_filter, _function_1);
+      final List<Dia> diasNoDisponible = IterableExtensions.<Dia>toList(_map);
+      final Function1<Disponibilidad, Boolean> _function_2 = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          boolean _esDeDiaCompleto = PlanificacionMateriasValidator.this.esDeDiaCompleto(it);
+          return Boolean.valueOf((!_esDeDiaCompleto));
+        }
+      };
+      Iterable<Disponibilidad> _filter_1 = IterableExtensions.<Disponibilidad>filter(noDisponibilidades, _function_2);
+      final List<Disponibilidad> horariosNoDisponible = IterableExtensions.<Disponibilidad>toList(_filter_1);
+      boolean _or = false;
+      final Function1<Asignacion_Diaria, Boolean> _function_3 = new Function1<Asignacion_Diaria, Boolean>() {
+        public Boolean apply(final Asignacion_Diaria it) {
+          Dia _dia = it.getDia();
+          return Boolean.valueOf(diasNoDisponible.contains(_dia));
+        }
+      };
+      boolean _exists = IterableExtensions.<Asignacion_Diaria>exists(horariosMateria, _function_3);
+      if (_exists) {
+        _or = true;
+      } else {
+        final Function1<Asignacion_Diaria, Boolean> _function_4 = new Function1<Asignacion_Diaria, Boolean>() {
+          public Boolean apply(final Asignacion_Diaria it) {
+            return Boolean.valueOf(PlanificacionMateriasValidator.this.dentroDeLosRangos(it, horariosNoDisponible));
+          }
+        };
+        boolean _exists_1 = IterableExtensions.<Asignacion_Diaria>exists(horariosMateria, _function_4);
+        _or = _exists_1;
       }
-    };
-    return IterableExtensions.<Disponibilidad>exists(disponibilidades, _function);
+      _xblockexpression = _or;
+    }
+    return _xblockexpression;
   }
   
   public boolean esDeDiaCompleto(final Disponibilidad disponibilidad) {
     Rango_Horario _rangosHorario = disponibilidad.getRangosHorario();
     return Objects.equal(_rangosHorario, null);
+  }
+  
+  public boolean estanContenidosEn(final EList<Asignacion_Diaria> listaDeHorariosGeneral, final List<Disponibilidad> disponibilidades) {
+    boolean _xblockexpression = false;
+    {
+      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          return Boolean.valueOf(PlanificacionMateriasValidator.this.esDeDiaCompleto(it));
+        }
+      };
+      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function);
+      final List<Disponibilidad> diasDisponibles = IterableExtensions.<Disponibilidad>toList(_filter);
+      final Function1<Disponibilidad, Boolean> _function_1 = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          boolean _esDeDiaCompleto = PlanificacionMateriasValidator.this.esDeDiaCompleto(it);
+          return Boolean.valueOf((!_esDeDiaCompleto));
+        }
+      };
+      Iterable<Disponibilidad> _filter_1 = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function_1);
+      final List<Disponibilidad> horariosDisponibles = IterableExtensions.<Disponibilidad>toList(_filter_1);
+      final Function1<Asignacion_Diaria, Boolean> _function_2 = new Function1<Asignacion_Diaria, Boolean>() {
+        public Boolean apply(final Asignacion_Diaria it) {
+          final Function1<Disponibilidad, Dia> _function = new Function1<Disponibilidad, Dia>() {
+            public Dia apply(final Disponibilidad it) {
+              return it.getDia();
+            }
+          };
+          List<Dia> _map = ListExtensions.<Disponibilidad, Dia>map(diasDisponibles, _function);
+          Dia _dia = it.getDia();
+          boolean _contains = _map.contains(_dia);
+          return Boolean.valueOf((!_contains));
+        }
+      };
+      Iterable<Asignacion_Diaria> _filter_2 = IterableExtensions.<Asignacion_Diaria>filter(listaDeHorariosGeneral, _function_2);
+      List<Asignacion_Diaria> horariosGenerales = IterableExtensions.<Asignacion_Diaria>toList(_filter_2);
+      final Function1<Asignacion_Diaria, Boolean> _function_3 = new Function1<Asignacion_Diaria, Boolean>() {
+        public Boolean apply(final Asignacion_Diaria it) {
+          return Boolean.valueOf(PlanificacionMateriasValidator.this.dentroDeLosRangos(it, horariosDisponibles));
+        }
+      };
+      _xblockexpression = IterableExtensions.<Asignacion_Diaria>forall(horariosGenerales, _function_3);
+    }
+    return _xblockexpression;
+  }
+  
+  public boolean dentroDeLosRangos(final Asignacion_Diaria asignacionDiaria, final List<Disponibilidad> disponibilidades) {
+    final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+      public Boolean apply(final Disponibilidad it) {
+        return Boolean.valueOf(PlanificacionMateriasValidator.this.contiene(it, asignacionDiaria));
+      }
+    };
+    return IterableExtensions.<Disponibilidad>exists(disponibilidades, _function);
+  }
+  
+  public boolean contiene(final Disponibilidad disponibilidad, final Asignacion_Diaria asignacionDiaria) {
+    boolean _and = false;
+    Dia _dia = disponibilidad.getDia();
+    Dia _dia_1 = asignacionDiaria.getDia();
+    boolean _equals = Objects.equal(_dia, _dia_1);
+    if (!_equals) {
+      _and = false;
+    } else {
+      Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
+      Rango_Horario _rangosHorario = disponibilidad.getRangosHorario();
+      boolean _dentroDelRango = this.dentroDelRango(_rangoHorario, _rangosHorario);
+      _and = _dentroDelRango;
+    }
+    return _and;
+  }
+  
+  public boolean dentroDelRango(final Rango_Horario horarioInterior, final Rango_Horario horario) {
+    boolean _and = false;
+    Horario _horaInicio = horario.getHoraInicio();
+    Horario _horaInicio_1 = horarioInterior.getHoraInicio();
+    boolean _lessEqualsThan = this.operator_lessEqualsThan(_horaInicio, _horaInicio_1);
+    if (!_lessEqualsThan) {
+      _and = false;
+    } else {
+      Horario _horaFinal = horarioInterior.getHoraFinal();
+      Horario _horaFinal_1 = horario.getHoraFinal();
+      boolean _lessEqualsThan_1 = this.operator_lessEqualsThan(_horaFinal, _horaFinal_1);
+      _and = _lessEqualsThan_1;
+    }
+    return _and;
   }
   
   public List<Asignacion_Materia> materiasAsignadasA(final List<Asignacion_Materia> listaAsignaciones, final Profesor profesor0) {
@@ -693,136 +826,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
     _builder.append(_rangoHorario, "");
     return _builder;
-  }
-  
-  /**
-   * TODO: QUE ONDA CON ESTOS!?
-   */
-  public Asignacion_Diaria horarioNoDisponible(final EList<Disponibilidad> listaDisponibilidades, final EList<Asignacion_Diaria> listaDeHorarios) {
-    return null;
-  }
-  
-  public boolean estanContenidosEn(final EList<Asignacion_Diaria> listaDeHorariosGeneral, final List<Disponibilidad> disponibilidades) {
-    boolean _xblockexpression = false;
-    {
-      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
-        public Boolean apply(final Disponibilidad it) {
-          Rango_Horario _rangosHorario = it.getRangosHorario();
-          return Boolean.valueOf(Objects.equal(_rangosHorario, null));
-        }
-      };
-      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function);
-      final List<Disponibilidad> listaDisponibilidadTodoElDia = IterableExtensions.<Disponibilidad>toList(_filter);
-      Disponibilidad[] _clone = ((Disponibilidad[])Conversions.unwrapArray(disponibilidades, Disponibilidad.class)).clone();
-      final List<Disponibilidad> listaDisponibilidadPorHorarios = IterableExtensions.<Disponibilidad>toList(((Iterable<Disponibilidad>)Conversions.doWrapArray(_clone)));
-      listaDisponibilidadPorHorarios.removeAll(listaDisponibilidadTodoElDia);
-      final Function1<Asignacion_Diaria, Boolean> _function_1 = new Function1<Asignacion_Diaria, Boolean>() {
-        public Boolean apply(final Asignacion_Diaria it) {
-          final Function1<Disponibilidad, Dia> _function = new Function1<Disponibilidad, Dia>() {
-            public Dia apply(final Disponibilidad it) {
-              return it.getDia();
-            }
-          };
-          List<Dia> _map = ListExtensions.<Disponibilidad, Dia>map(listaDisponibilidadPorHorarios, _function);
-          Dia _dia = it.getDia();
-          boolean _contains = _map.contains(_dia);
-          return Boolean.valueOf((!_contains));
-        }
-      };
-      Iterable<Asignacion_Diaria> horariosGeneralFiltradosPorDia = IterableExtensions.<Asignacion_Diaria>filter(listaDeHorariosGeneral, _function_1);
-      final Function1<Asignacion_Diaria, Boolean> _function_2 = new Function1<Asignacion_Diaria, Boolean>() {
-        public Boolean apply(final Asignacion_Diaria it) {
-          boolean _dentroDeLosRangos = PlanificacionMateriasValidator.this.dentroDeLosRangos(it, listaDisponibilidadPorHorarios);
-          return Boolean.valueOf((!_dentroDeLosRangos));
-        }
-      };
-      boolean _exists = IterableExtensions.<Asignacion_Diaria>exists(horariosGeneralFiltradosPorDia, _function_2);
-      _xblockexpression = (!_exists);
-    }
-    return _xblockexpression;
-  }
-  
-  public boolean dentroDeLosRangos(final Asignacion_Diaria asignacionDiaria, final List<Disponibilidad> disponibilidades) {
-    final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
-      public Boolean apply(final Disponibilidad it) {
-        return Boolean.valueOf(PlanificacionMateriasValidator.this.contiene(it, asignacionDiaria));
-      }
-    };
-    return IterableExtensions.<Disponibilidad>exists(disponibilidades, _function);
-  }
-  
-  public boolean contiene(final Disponibilidad disponibilidad, final Asignacion_Diaria asignacionDiaria) {
-    boolean _and = false;
-    Dia _dia = disponibilidad.getDia();
-    Dia _dia_1 = asignacionDiaria.getDia();
-    boolean _equals = Objects.equal(_dia, _dia_1);
-    if (!_equals) {
-      _and = false;
-    } else {
-      Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
-      Rango_Horario _rangosHorario = disponibilidad.getRangosHorario();
-      boolean _dentroDelRango = this.dentroDelRango(_rangoHorario, _rangosHorario);
-      _and = _dentroDelRango;
-    }
-    return _and;
-  }
-  
-  public boolean dentroDelRango(final Rango_Horario horarioInterior, final Rango_Horario horario) {
-    boolean _and = false;
-    Horario _horaInicio = horario.getHoraInicio();
-    Horario _horaInicio_1 = horarioInterior.getHoraInicio();
-    boolean _lessEqualsThan = this.operator_lessEqualsThan(_horaInicio, _horaInicio_1);
-    if (!_lessEqualsThan) {
-      _and = false;
-    } else {
-      Horario _horaFinal = horarioInterior.getHoraFinal();
-      Horario _horaFinal_1 = horario.getHoraFinal();
-      boolean _lessEqualsThan_1 = this.operator_lessEqualsThan(_horaFinal, _horaFinal_1);
-      _and = _lessEqualsThan_1;
-    }
-    return _and;
-  }
-  
-  /**
-   * Dada la reflexion llevada a cabo mas abajo en la validacion/verificacion extra, esta validacion/verificacion SOLICITADA por el enunciado no me satisface
-   * Queda a vuestro gusto si persiste o se va
-   */
-  public boolean noEstaDisponibleHorario(final Profesor profesor, final Rango_Horario horarioMateria) {
-    boolean _xblockexpression = false;
-    {
-      final EList<Disponibilidad> disponibilidades = profesor.getDisponibilidad();
-      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
-        public Boolean apply(final Disponibilidad disp) {
-          Rango_Horario _rangosHorario = disp.getRangosHorario();
-          return Boolean.valueOf(PlanificacionMateriasValidator.this.dentroDelRango(_rangosHorario, horarioMateria));
-        }
-      };
-      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function);
-      int _size = IterableExtensions.size(_filter);
-      _xblockexpression = (_size > 0);
-    }
-    return _xblockexpression;
-  }
-  
-  public boolean noEstaDisponibleDia(final Profesor profesor, final Dia diaMateria) {
-    boolean _xblockexpression = false;
-    {
-      final EList<Disponibilidad> disponibilidades = profesor.getDisponibilidad();
-      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
-        public Boolean apply(final Disponibilidad disp) {
-          Dia _dia = disp.getDia();
-          return Boolean.valueOf(PlanificacionMateriasValidator.this.diaIncluido(_dia, diaMateria));
-        }
-      };
-      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function);
-      int _size = IterableExtensions.size(_filter);
-      _xblockexpression = (_size > 0);
-    }
-    return _xblockexpression;
-  }
-  
-  public boolean diaIncluido(final Dia dia, final Dia diaMateria) {
-    return Objects.equal(dia, diaMateria);
   }
   
   public boolean seSuperponeConAlguno(final Object asignacionesMaterias, final Object asignacion) {
