@@ -131,6 +131,24 @@ public interface PlanificacionMateriasFactory extends EFactory
   Rango_Horario createRango_Horario();
 
   /**
+   * Returns a new object of class '<em>Disponible</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Disponible</em>'.
+   * @generated
+   */
+  Disponible createDisponible();
+
+  /**
+   * Returns a new object of class '<em>No Disponible</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Disponible</em>'.
+   * @generated
+   */
+  No_Disponible createNo_Disponible();
+
+  /**
    * Returns a new object of class '<em>Simple</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

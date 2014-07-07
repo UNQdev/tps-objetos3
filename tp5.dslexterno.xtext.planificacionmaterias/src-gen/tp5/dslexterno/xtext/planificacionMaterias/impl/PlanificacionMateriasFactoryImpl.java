@@ -77,6 +77,8 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
       case PlanificacionMateriasPackage.RECURSO: return createRecurso();
       case PlanificacionMateriasPackage.HORARIO: return createHorario();
       case PlanificacionMateriasPackage.RANGO_HORARIO: return createRango_Horario();
+      case PlanificacionMateriasPackage.DISPONIBLE: return createDisponible();
+      case PlanificacionMateriasPackage.NO_DISPONIBLE: return createNo_Disponible();
       case PlanificacionMateriasPackage.SIMPLE: return createSimple();
       case PlanificacionMateriasPackage.SEMI: return createSemi();
       case PlanificacionMateriasPackage.EXCLUSIVA: return createExclusiva();
@@ -249,6 +251,28 @@ public class PlanificacionMateriasFactoryImpl extends EFactoryImpl implements Pl
   {
     Rango_HorarioImpl rango_Horario = new Rango_HorarioImpl();
     return rango_Horario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Disponible createDisponible()
+  {
+    DisponibleImpl disponible = new DisponibleImpl();
+    return disponible;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public No_Disponible createNo_Disponible()
+  {
+    No_DisponibleImpl no_Disponible = new No_DisponibleImpl();
+    return no_Disponible;
   }
 
   /**

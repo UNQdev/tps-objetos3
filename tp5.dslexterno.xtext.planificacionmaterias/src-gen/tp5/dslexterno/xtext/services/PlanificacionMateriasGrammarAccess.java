@@ -433,60 +433,70 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Disponibilidad");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cPuedeKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cDiaAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cDiaDiaEnumRuleCall_0_1_0 = (RuleCall)cDiaAssignment_0_1.eContents().get(0);
-		private final Assignment cRangosHorarioAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cRangosHorarioRango_HorarioParserRuleCall_0_2_0 = (RuleCall)cRangosHorarioAssignment_0_2.eContents().get(0);
+		private final Action cDisponibleAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cPuedeKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cDiaAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cDiaDiaEnumRuleCall_0_2_0 = (RuleCall)cDiaAssignment_0_2.eContents().get(0);
+		private final Assignment cRangosHorarioAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cRangosHorarioRango_HorarioParserRuleCall_0_3_0 = (RuleCall)cRangosHorarioAssignment_0_3.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cNoPuedeKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cDiaAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cDiaDiaEnumRuleCall_1_1_0 = (RuleCall)cDiaAssignment_1_1.eContents().get(0);
-		private final Assignment cRangosHorarioAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRangosHorarioRango_HorarioParserRuleCall_1_2_0 = (RuleCall)cRangosHorarioAssignment_1_2.eContents().get(0);
+		private final Action cNo_DisponibleAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cNoPuedeKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cDiaAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cDiaDiaEnumRuleCall_1_2_0 = (RuleCall)cDiaAssignment_1_2.eContents().get(0);
+		private final Assignment cRangosHorarioAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cRangosHorarioRango_HorarioParserRuleCall_1_3_0 = (RuleCall)cRangosHorarioAssignment_1_3.eContents().get(0);
 		
 		//Disponibilidad:
-		//	"puede:" dia=Dia rangosHorario=Rango_Horario? | "no puede" dia=Dia rangosHorario=Rango_Horario?;
+		//	{Disponible} "puede:" dia=Dia rangosHorario=Rango_Horario? | {No_Disponible} "no puede" dia=Dia
+		//	rangosHorario=Rango_Horario?;
 		public ParserRule getRule() { return rule; }
 
-		//"puede:" dia=Dia rangosHorario=Rango_Horario? | "no puede" dia=Dia rangosHorario=Rango_Horario?
+		//{Disponible} "puede:" dia=Dia rangosHorario=Rango_Horario? | {No_Disponible} "no puede" dia=Dia
+		//rangosHorario=Rango_Horario?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"puede:" dia=Dia rangosHorario=Rango_Horario?
+		//{Disponible} "puede:" dia=Dia rangosHorario=Rango_Horario?
 		public Group getGroup_0() { return cGroup_0; }
 
+		//{Disponible}
+		public Action getDisponibleAction_0_0() { return cDisponibleAction_0_0; }
+
 		//"puede:"
-		public Keyword getPuedeKeyword_0_0() { return cPuedeKeyword_0_0; }
+		public Keyword getPuedeKeyword_0_1() { return cPuedeKeyword_0_1; }
 
 		//dia=Dia
-		public Assignment getDiaAssignment_0_1() { return cDiaAssignment_0_1; }
+		public Assignment getDiaAssignment_0_2() { return cDiaAssignment_0_2; }
 
 		//Dia
-		public RuleCall getDiaDiaEnumRuleCall_0_1_0() { return cDiaDiaEnumRuleCall_0_1_0; }
+		public RuleCall getDiaDiaEnumRuleCall_0_2_0() { return cDiaDiaEnumRuleCall_0_2_0; }
 
 		//rangosHorario=Rango_Horario?
-		public Assignment getRangosHorarioAssignment_0_2() { return cRangosHorarioAssignment_0_2; }
+		public Assignment getRangosHorarioAssignment_0_3() { return cRangosHorarioAssignment_0_3; }
 
 		//Rango_Horario
-		public RuleCall getRangosHorarioRango_HorarioParserRuleCall_0_2_0() { return cRangosHorarioRango_HorarioParserRuleCall_0_2_0; }
+		public RuleCall getRangosHorarioRango_HorarioParserRuleCall_0_3_0() { return cRangosHorarioRango_HorarioParserRuleCall_0_3_0; }
 
-		//"no puede" dia=Dia rangosHorario=Rango_Horario?
+		//{No_Disponible} "no puede" dia=Dia rangosHorario=Rango_Horario?
 		public Group getGroup_1() { return cGroup_1; }
 
+		//{No_Disponible}
+		public Action getNo_DisponibleAction_1_0() { return cNo_DisponibleAction_1_0; }
+
 		//"no puede"
-		public Keyword getNoPuedeKeyword_1_0() { return cNoPuedeKeyword_1_0; }
+		public Keyword getNoPuedeKeyword_1_1() { return cNoPuedeKeyword_1_1; }
 
 		//dia=Dia
-		public Assignment getDiaAssignment_1_1() { return cDiaAssignment_1_1; }
+		public Assignment getDiaAssignment_1_2() { return cDiaAssignment_1_2; }
 
 		//Dia
-		public RuleCall getDiaDiaEnumRuleCall_1_1_0() { return cDiaDiaEnumRuleCall_1_1_0; }
+		public RuleCall getDiaDiaEnumRuleCall_1_2_0() { return cDiaDiaEnumRuleCall_1_2_0; }
 
 		//rangosHorario=Rango_Horario?
-		public Assignment getRangosHorarioAssignment_1_2() { return cRangosHorarioAssignment_1_2; }
+		public Assignment getRangosHorarioAssignment_1_3() { return cRangosHorarioAssignment_1_3; }
 
 		//Rango_Horario
-		public RuleCall getRangosHorarioRango_HorarioParserRuleCall_1_2_0() { return cRangosHorarioRango_HorarioParserRuleCall_1_2_0; }
+		public RuleCall getRangosHorarioRango_HorarioParserRuleCall_1_3_0() { return cRangosHorarioRango_HorarioParserRuleCall_1_3_0; }
 	}
 
 	public class DedicacionElements extends AbstractParserRuleElementFinder {
@@ -869,7 +879,8 @@ public class PlanificacionMateriasGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Disponibilidad:
-	//	"puede:" dia=Dia rangosHorario=Rango_Horario? | "no puede" dia=Dia rangosHorario=Rango_Horario?;
+	//	{Disponible} "puede:" dia=Dia rangosHorario=Rango_Horario? | {No_Disponible} "no puede" dia=Dia
+	//	rangosHorario=Rango_Horario?;
 	public DisponibilidadElements getDisponibilidadAccess() {
 		return (pDisponibilidad != null) ? pDisponibilidad : (pDisponibilidad = new DisponibilidadElements());
 	}

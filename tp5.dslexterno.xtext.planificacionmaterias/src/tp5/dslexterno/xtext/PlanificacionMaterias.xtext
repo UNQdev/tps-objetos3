@@ -47,8 +47,8 @@ Profesor:
 	'}'
 ;
 Disponibilidad:
-	'puede:' dia=Dia (rangosHorario=Rango_Horario)? |
-	'no puede' dia=Dia (rangosHorario=Rango_Horario)?
+	{Disponible} 'puede:' dia=Dia (rangosHorario=Rango_Horario)? |
+	{No_Disponible} 'no puede' dia=Dia (rangosHorario=Rango_Horario)?
 ;
 Dedicacion: 
 	  {Simple} 'Simple'

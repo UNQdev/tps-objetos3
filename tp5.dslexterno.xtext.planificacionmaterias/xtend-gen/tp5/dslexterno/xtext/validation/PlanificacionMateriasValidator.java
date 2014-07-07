@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.Functions.Function2;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -22,9 +23,11 @@ import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Dedicacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Dia;
 import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad;
+import tp5.dslexterno.xtext.planificacionMaterias.Disponible;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Horario;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
+import tp5.dslexterno.xtext.planificacionMaterias.No_Disponible;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
@@ -223,6 +226,135 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     }
   }
   
+  @Check
+  public void validarDisponibilidadProfesor(final Asignacion_Materia asignacion) {
+    EList<Asignacion_Diaria> listaDeHorarios = asignacion.getAsignacionesDiarias();
+    Profesor _profesor = asignacion.getProfesor();
+    EList<Disponibilidad> listaDisponibilidades = _profesor.getDisponibilidad();
+    boolean _or = false;
+    final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+      public Boolean apply(final Disponibilidad it) {
+        return Boolean.valueOf(PlanificacionMateriasValidator.this.estaDisponible(it));
+      }
+    };
+    Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(listaDisponibilidades, _function);
+    List<Disponibilidad> _list = IterableExtensions.<Disponibilidad>toList(_filter);
+    boolean _estanContenidosEn = this.estanContenidosEn(listaDeHorarios, _list);
+    boolean _not = (!_estanContenidosEn);
+    if (_not) {
+      _or = true;
+    } else {
+      final Function1<Disponibilidad, Boolean> _function_1 = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          boolean _estaDisponible = PlanificacionMateriasValidator.this.estaDisponible(it);
+          return Boolean.valueOf((!_estaDisponible));
+        }
+      };
+      Iterable<Disponibilidad> _filter_1 = IterableExtensions.<Disponibilidad>filter(listaDisponibilidades, _function_1);
+      List<Disponibilidad> _list_1 = IterableExtensions.<Disponibilidad>toList(_filter_1);
+      boolean _estanContenidosEn_1 = this.estanContenidosEn(listaDeHorarios, _list_1);
+      _or = _estanContenidosEn_1;
+    }
+    if (_or) {
+      Asignacion_Diaria horarioNoDisponible = this.horarioNoDisponible(listaDisponibilidades, listaDeHorarios);
+      StringConcatenation _builder = new StringConcatenation();
+      Profesor _profesor_1 = asignacion.getProfesor();
+      String _name = _profesor_1.getName();
+      String _upperCase = _name.toUpperCase();
+      _builder.append(_upperCase, "");
+      _builder.append(" no tiene disponibilidad el dia ");
+      String _string = horarioNoDisponible.toString();
+      _builder.append(_string, "");
+      this.error(_builder.toString(), asignacion, 
+        PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS);
+    }
+  }
+  
+  public Asignacion_Diaria horarioNoDisponible(final EList<Disponibilidad> listaDisponibilidades, final EList<Asignacion_Diaria> listaDeHorarios) {
+    return null;
+  }
+  
+  public boolean estanContenidosEn(final EList<Asignacion_Diaria> listaDeHorariosGeneral, final List<Disponibilidad> disponibilidades) {
+    boolean _xblockexpression = false;
+    {
+      final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+        public Boolean apply(final Disponibilidad it) {
+          Rango_Horario _rangosHorario = it.getRangosHorario();
+          return Boolean.valueOf(Objects.equal(_rangosHorario, null));
+        }
+      };
+      Iterable<Disponibilidad> _filter = IterableExtensions.<Disponibilidad>filter(disponibilidades, _function);
+      final List<Disponibilidad> listaDisponibilidadTodoElDia = IterableExtensions.<Disponibilidad>toList(_filter);
+      Disponibilidad[] _clone = ((Disponibilidad[])Conversions.unwrapArray(disponibilidades, Disponibilidad.class)).clone();
+      final List<Disponibilidad> listaDisponibilidadPorHorarios = IterableExtensions.<Disponibilidad>toList(((Iterable<Disponibilidad>)Conversions.doWrapArray(_clone)));
+      listaDisponibilidadPorHorarios.removeAll(listaDisponibilidadTodoElDia);
+      final Function1<Asignacion_Diaria, Boolean> _function_1 = new Function1<Asignacion_Diaria, Boolean>() {
+        public Boolean apply(final Asignacion_Diaria it) {
+          final Function1<Disponibilidad, Dia> _function = new Function1<Disponibilidad, Dia>() {
+            public Dia apply(final Disponibilidad it) {
+              return it.getDia();
+            }
+          };
+          List<Dia> _map = ListExtensions.<Disponibilidad, Dia>map(listaDisponibilidadPorHorarios, _function);
+          Dia _dia = it.getDia();
+          boolean _contains = _map.contains(_dia);
+          return Boolean.valueOf((!_contains));
+        }
+      };
+      Iterable<Asignacion_Diaria> horariosGeneralFiltradosPorDia = IterableExtensions.<Asignacion_Diaria>filter(listaDeHorariosGeneral, _function_1);
+      final Function1<Asignacion_Diaria, Boolean> _function_2 = new Function1<Asignacion_Diaria, Boolean>() {
+        public Boolean apply(final Asignacion_Diaria it) {
+          boolean _dentroDeLosRangos = PlanificacionMateriasValidator.this.dentroDeLosRangos(it, listaDisponibilidadPorHorarios);
+          return Boolean.valueOf((!_dentroDeLosRangos));
+        }
+      };
+      boolean _exists = IterableExtensions.<Asignacion_Diaria>exists(horariosGeneralFiltradosPorDia, _function_2);
+      _xblockexpression = (!_exists);
+    }
+    return _xblockexpression;
+  }
+  
+  public boolean dentroDeLosRangos(final Asignacion_Diaria asignacionDiaria, final List<Disponibilidad> disponibilidades) {
+    final Function1<Disponibilidad, Boolean> _function = new Function1<Disponibilidad, Boolean>() {
+      public Boolean apply(final Disponibilidad it) {
+        return Boolean.valueOf(PlanificacionMateriasValidator.this.contiene(it, asignacionDiaria));
+      }
+    };
+    return IterableExtensions.<Disponibilidad>exists(disponibilidades, _function);
+  }
+  
+  public boolean contiene(final Disponibilidad disponibilidad, final Asignacion_Diaria asignacionDiaria) {
+    boolean _and = false;
+    Dia _dia = disponibilidad.getDia();
+    Dia _dia_1 = asignacionDiaria.getDia();
+    boolean _equals = Objects.equal(_dia, _dia_1);
+    if (!_equals) {
+      _and = false;
+    } else {
+      Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
+      Rango_Horario _rangosHorario = disponibilidad.getRangosHorario();
+      boolean _dentroDelRango = this.dentroDelRango(_rangoHorario, _rangosHorario);
+      _and = _dentroDelRango;
+    }
+    return _and;
+  }
+  
+  public boolean dentroDelRango(final Rango_Horario horarioInterior, final Rango_Horario horario) {
+    boolean _and = false;
+    Horario _horaInicio = horario.getHoraInicio();
+    Horario _horaInicio_1 = horarioInterior.getHoraInicio();
+    boolean _lessEqualsThan = this.operator_lessEqualsThan(_horaInicio, _horaInicio_1);
+    if (!_lessEqualsThan) {
+      _and = false;
+    } else {
+      Horario _horaFinal = horarioInterior.getHoraFinal();
+      Horario _horaFinal_1 = horario.getHoraFinal();
+      boolean _lessEqualsThan_1 = this.operator_lessEqualsThan(_horaFinal, _horaFinal_1);
+      _and = _lessEqualsThan_1;
+    }
+    return _and;
+  }
+  
   /**
    * Dada la reflexion llevada a cabo mas abajo en la validacion/verificacion extra, esta validacion/verificacion SOLICITADA por el enunciado no me satisface
    * Queda a vuestro gusto si persiste o se va
@@ -413,6 +545,14 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return 5;
   }
   
+  protected boolean _estaDisponible(final Disponible disponibilidad) {
+    return true;
+  }
+  
+  protected boolean _estaDisponible(final No_Disponible disponibilidad) {
+    return false;
+  }
+  
   public int cantidadDeHoras(final Rango_Horario horario) {
     Horario _horaFinal = horario.getHoraFinal();
     int _hora = _horaFinal.getHora();
@@ -421,23 +561,37 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return (_hora - _hora_1);
   }
   
-  public String toString(final Rango_Horario rangoHorario) {
-    Horario _horaInicio = rangoHorario.getHoraInicio();
-    int _hora = _horaInicio.getHora();
-    String _string = Integer.valueOf(_hora).toString();
-    String _plus = (_string + ":");
-    Horario _horaFinal = rangoHorario.getHoraFinal();
-    int _hora_1 = _horaFinal.getHora();
-    String _string_1 = Integer.valueOf(_hora_1).toString();
-    return (_plus + _string_1);
+  protected String _toString(final Horario horario) {
+    int _hora = horario.getHora();
+    String _plus = (Integer.valueOf(_hora) + ":");
+    int _minutos = horario.getMinutos();
+    return (_plus + Integer.valueOf(_minutos));
   }
   
-  public boolean operator_lessThan(final Horario horario1, final Horario horario2) {
+  protected String _toString(final Rango_Horario rangoHorario) {
+    Horario _horaInicio = rangoHorario.getHoraInicio();
+    String _string = _horaInicio.toString();
+    String _plus = ("de" + _string);
+    String _plus_1 = (_plus + "a");
+    Horario _horaFinal = rangoHorario.getHoraFinal();
+    String _string_1 = _horaFinal.toString();
+    return (_plus_1 + _string_1);
+  }
+  
+  protected String _toString(final Asignacion_Diaria asignacionDiaria) {
+    Dia _dia = asignacionDiaria.getDia();
+    String _string = _dia.toString();
+    Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
+    String _string_1 = _rangoHorario.toString();
+    return (_string + _string_1);
+  }
+  
+  public boolean operator_lessEqualsThan(final Horario horario1, final Horario horario2) {
     boolean _or = false;
     int _hora = horario1.getHora();
     int _hora_1 = horario2.getHora();
-    boolean _lessThan = (_hora < _hora_1);
-    if (_lessThan) {
+    boolean _lessEqualsThan = (_hora <= _hora_1);
+    if (_lessEqualsThan) {
       _or = true;
     } else {
       boolean _and = false;
@@ -449,20 +603,20 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       } else {
         int _minutos = horario1.getMinutos();
         int _minutos_1 = horario2.getMinutos();
-        boolean _lessThan_1 = (_minutos < _minutos_1);
-        _and = _lessThan_1;
+        boolean _lessEqualsThan_1 = (_minutos <= _minutos_1);
+        _and = _lessEqualsThan_1;
       }
       _or = _and;
     }
     return _or;
   }
   
-  public boolean operator_greaterThan(final Horario horario1, final Horario horario2) {
+  public boolean operator_greaterEqualsThan(final Horario horario1, final Horario horario2) {
     boolean _or = false;
     int _hora = horario1.getHora();
     int _hora_1 = horario2.getHora();
-    boolean _greaterThan = (_hora > _hora_1);
-    if (_greaterThan) {
+    boolean _greaterEqualsThan = (_hora >= _hora_1);
+    if (_greaterEqualsThan) {
       _or = true;
     } else {
       boolean _and = false;
@@ -474,8 +628,8 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       } else {
         int _minutos = horario1.getMinutos();
         int _minutos_1 = horario2.getMinutos();
-        boolean _greaterThan_1 = (_minutos > _minutos_1);
-        _and = _greaterThan_1;
+        boolean _greaterEqualsThan_1 = (_minutos >= _minutos_1);
+        _and = _greaterEqualsThan_1;
       }
       _or = _and;
     }
@@ -499,13 +653,13 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   public boolean estaEntre(final Horario horario, final Rango_Horario rangoHorario) {
     boolean _and = false;
     Horario _horaInicio = rangoHorario.getHoraInicio();
-    boolean _lessThan = this.operator_lessThan(_horaInicio, horario);
-    if (!_lessThan) {
+    boolean _lessEqualsThan = this.operator_lessEqualsThan(_horaInicio, horario);
+    if (!_lessEqualsThan) {
       _and = false;
     } else {
       Horario _horaFinal = rangoHorario.getHoraFinal();
-      boolean _lessThan_1 = this.operator_lessThan(horario, _horaFinal);
-      _and = _lessThan_1;
+      boolean _lessEqualsThan_1 = this.operator_lessEqualsThan(horario, _horaFinal);
+      _and = _lessEqualsThan_1;
     }
     return _and;
   }
@@ -533,6 +687,30 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(dedicacion).toString());
+    }
+  }
+  
+  public boolean estaDisponible(final Disponibilidad disponibilidad) {
+    if (disponibilidad instanceof Disponible) {
+      return _estaDisponible((Disponible)disponibilidad);
+    } else if (disponibilidad instanceof No_Disponible) {
+      return _estaDisponible((No_Disponible)disponibilidad);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(disponibilidad).toString());
+    }
+  }
+  
+  public String toString(final EObject asignacionDiaria) {
+    if (asignacionDiaria instanceof Asignacion_Diaria) {
+      return _toString((Asignacion_Diaria)asignacionDiaria);
+    } else if (asignacionDiaria instanceof Horario) {
+      return _toString((Horario)asignacionDiaria);
+    } else if (asignacionDiaria instanceof Rango_Horario) {
+      return _toString((Rango_Horario)asignacionDiaria);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(asignacionDiaria).toString());
     }
   }
 }

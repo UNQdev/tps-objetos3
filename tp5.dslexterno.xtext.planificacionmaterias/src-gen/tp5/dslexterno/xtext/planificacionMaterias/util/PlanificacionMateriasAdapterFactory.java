@@ -135,6 +135,16 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
         return createRango_HorarioAdapter();
       }
       @Override
+      public Adapter caseDisponible(Disponible object)
+      {
+        return createDisponibleAdapter();
+      }
+      @Override
+      public Adapter caseNo_Disponible(No_Disponible object)
+      {
+        return createNo_DisponibleAdapter();
+      }
+      @Override
       public Adapter caseSimple(Simple object)
       {
         return createSimpleAdapter();
@@ -347,6 +357,36 @@ public class PlanificacionMateriasAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRango_HorarioAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.Disponible <em>Disponible</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.Disponible
+   * @generated
+   */
+  public Adapter createDisponibleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tp5.dslexterno.xtext.planificacionMaterias.No_Disponible <em>No Disponible</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tp5.dslexterno.xtext.planificacionMaterias.No_Disponible
+   * @generated
+   */
+  public Adapter createNo_DisponibleAdapter()
   {
     return null;
   }

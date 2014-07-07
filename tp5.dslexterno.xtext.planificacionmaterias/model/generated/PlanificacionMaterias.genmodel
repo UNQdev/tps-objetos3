@@ -71,6 +71,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Rango_Horario/horaInicio"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PlanificacionMaterias.ecore#//Rango_Horario/horaFinal"/>
     </genClasses>
+    <genClasses ecoreClass="PlanificacionMaterias.ecore#//Disponible"/>
+    <genClasses ecoreClass="PlanificacionMaterias.ecore#//No_Disponible"/>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Simple"/>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Semi"/>
     <genClasses ecoreClass="PlanificacionMaterias.ecore#//Exclusiva"/>

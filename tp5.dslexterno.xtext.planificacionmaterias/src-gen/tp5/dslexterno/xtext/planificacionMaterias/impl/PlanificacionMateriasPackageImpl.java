@@ -16,10 +16,12 @@ import tp5.dslexterno.xtext.planificacionMaterias.Aula;
 import tp5.dslexterno.xtext.planificacionMaterias.Dedicacion;
 import tp5.dslexterno.xtext.planificacionMaterias.Dia;
 import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad;
+import tp5.dslexterno.xtext.planificacionMaterias.Disponible;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Horario;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Model;
+import tp5.dslexterno.xtext.planificacionMaterias.No_Disponible;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasFactory;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
@@ -120,6 +122,20 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * @generated
    */
   private EClass rango_HorarioEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass disponibleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass no_DisponibleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -657,6 +673,26 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDisponible()
+  {
+    return disponibleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNo_Disponible()
+  {
+    return no_DisponibleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSimple()
   {
     return simpleEClass;
@@ -778,6 +814,10 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     createEReference(rango_HorarioEClass, RANGO_HORARIO__HORA_INICIO);
     createEReference(rango_HorarioEClass, RANGO_HORARIO__HORA_FINAL);
 
+    disponibleEClass = createEClass(DISPONIBLE);
+
+    no_DisponibleEClass = createEClass(NO_DISPONIBLE);
+
     simpleEClass = createEClass(SIMPLE);
 
     semiEClass = createEClass(SEMI);
@@ -817,6 +857,8 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    disponibleEClass.getESuperTypes().add(this.getDisponibilidad());
+    no_DisponibleEClass.getESuperTypes().add(this.getDisponibilidad());
     simpleEClass.getESuperTypes().add(this.getDedicacion());
     semiEClass.getESuperTypes().add(this.getDedicacion());
     exclusivaEClass.getESuperTypes().add(this.getDedicacion());
@@ -877,6 +919,10 @@ public class PlanificacionMateriasPackageImpl extends EPackageImpl implements Pl
     initEClass(rango_HorarioEClass, Rango_Horario.class, "Rango_Horario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRango_Horario_HoraInicio(), this.getHorario(), null, "horaInicio", null, 0, 1, Rango_Horario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRango_Horario_HoraFinal(), this.getHorario(), null, "horaFinal", null, 0, 1, Rango_Horario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(disponibleEClass, Disponible.class, "Disponible", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(no_DisponibleEClass, No_Disponible.class, "No_Disponible", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(simpleEClass, Simple.class, "Simple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

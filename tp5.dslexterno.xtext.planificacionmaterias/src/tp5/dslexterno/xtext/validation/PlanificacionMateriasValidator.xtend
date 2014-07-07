@@ -16,6 +16,10 @@ import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario
 import tp5.dslexterno.xtext.planificacionMaterias.Semi
 import tp5.dslexterno.xtext.planificacionMaterias.Simple
 import tp5.dslexterno.xtext.planificacionMaterias.Horario
+import tp5.dslexterno.xtext.planificacionMaterias.Disponible
+import tp5.dslexterno.xtext.planificacionMaterias.No_Disponible
+import org.eclipse.emf.common.util.EList
+import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad
 
 /**
  * Custom validation rules. 
@@ -96,20 +100,43 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		}
 	}
 	
-//	@Check
-//	def validarDisponibilidadProfesor(Materia materia){
-//		val profesor = materia.profesor
-//		val horariosMateria = materia.asignacion.rangoHorario
-//		val diaMateria = (materia.asignacion.eContainer as Asignacion_Diaria).dia
-//		if(profesor.noEstaDisponibleDia(diaMateria)){
-//			error('''«profesor.name.toUpperCase» no tiene disponibilidad el dia «diaMateria.toString»''', materia.asignacion,
-//				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR)
-//		}
-//		if(profesor.noEstaDisponibleHorario(horariosMateria)){
-//			error('''«profesor.name.toUpperCase» no tiene disponibilidad en el horario «horariosMateria.toString»''', materia.asignacion,
-//				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR)
-//		}
-//	} 
+	@Check
+	def validarDisponibilidadProfesor(Asignacion_Materia asignacion){
+		var listaDeHorarios = asignacion.asignacionesDiarias
+		var listaDisponibilidades = asignacion.profesor.disponibilidad
+		if(!listaDeHorarios.estanContenidosEn(listaDisponibilidades.filter[estaDisponible].toList) ||
+				listaDeHorarios.estanContenidosEn(listaDisponibilidades.filter[!estaDisponible].toList)){
+			var horarioNoDisponible = listaDisponibilidades.horarioNoDisponible(listaDeHorarios)
+			error('''«asignacion.profesor.name.toUpperCase» no tiene disponibilidad el dia «horarioNoDisponible.toString»''', asignacion,
+				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS)
+		}
+	}
+	
+	def Asignacion_Diaria horarioNoDisponible(EList<Disponibilidad> listaDisponibilidades, EList<Asignacion_Diaria> listaDeHorarios){
+		
+	}
+	
+	def boolean estanContenidosEn(EList<Asignacion_Diaria> listaDeHorariosGeneral, List<Disponibilidad> disponibilidades){
+		val listaDisponibilidadTodoElDia = disponibilidades.filter[rangosHorario == null].toList
+		val listaDisponibilidadPorHorarios = disponibilidades.clone.toList
+		listaDisponibilidadPorHorarios.removeAll(listaDisponibilidadTodoElDia)
+		var horariosGeneralFiltradosPorDia = listaDeHorariosGeneral.filter[!listaDisponibilidadPorHorarios.map[dia].contains(it.dia)]
+		! horariosGeneralFiltradosPorDia.exists[!dentroDeLosRangos(listaDisponibilidadPorHorarios)]
+	}
+	
+	def boolean dentroDeLosRangos(Asignacion_Diaria asignacionDiaria, List<Disponibilidad> disponibilidades) {
+		disponibilidades.exists[contiene(asignacionDiaria)]
+	}
+	
+	def boolean contiene(Disponibilidad disponibilidad, Asignacion_Diaria asignacionDiaria) {
+		disponibilidad.dia == asignacionDiaria.dia && asignacionDiaria.rangoHorario.dentroDelRango(disponibilidad.rangosHorario) 
+	}
+	
+	def boolean dentroDelRango(Rango_Horario horarioInterior, Rango_Horario horario){
+		horario.horaInicio <= horarioInterior.horaInicio && horarioInterior.horaFinal <= horario.horaFinal
+	}
+	
+	
 	/*
 	 * Dada la reflexion llevada a cabo mas abajo en la validacion/verificacion extra, esta validacion/verificacion SOLICITADA por el enunciado no me satisface
 	 * Queda a vuestro gusto si persiste o se va
@@ -201,27 +228,47 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	def dispatch int cantidadMaterias(Semi dedicacion) { return 2 }
 	def dispatch int cantidadMaterias(Exclusiva dedicacion) { return 5 }
 	
+	// DISPONIBILIDAD
+	def dispatch boolean estaDisponible(Disponible disponibilidad){ true }
+	def dispatch boolean estaDisponible(No_Disponible disponibilidad){ false }
+	
 	// HORARIOS
 	def int cantidadDeHoras(Rango_Horario horario){
 		horario.horaFinal.hora - horario.horaInicio.hora
 	}
 
-	def toString(Rango_Horario rangoHorario){
-		rangoHorario.horaInicio.hora.toString + ":" + rangoHorario.horaFinal.hora.toString 
+	def dispatch toString(Horario horario){
+		horario.hora + ":" + horario.minutos
 	}
 	
-	def <(Horario horario1, Horario horario2){
-		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
+	def dispatch toString(Rango_Horario rangoHorario){
+		"de" + rangoHorario.horaInicio.toString + "a" + rangoHorario.horaFinal.toString
+	}
+	
+	def dispatch toString(Asignacion_Diaria asignacionDiaria){
+		asignacionDiaria.dia.toString + asignacionDiaria.rangoHorario.toString 
+	}
+	
+//	def <(Horario horario1, Horario horario2){
+//		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
+//	} 
+//	
+//	def >(Horario horario1, Horario horario2){
+//		horario1.hora > horario2.hora || (horario1.hora == horario2.hora && horario1.minutos > horario2.minutos)
+//	}
+	
+	def <=(Horario horario1, Horario horario2){
+		horario1.hora <= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos <= horario2.minutos)
 	} 
 	
-	def >(Horario horario1, Horario horario2){
-		horario1.hora > horario2.hora || (horario1.hora == horario2.hora && horario1.minutos > horario2.minutos)
+	def >=(Horario horario1, Horario horario2){
+		horario1.hora >= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos >= horario2.minutos)
 	} 
 	
 	def boolean seSuperponeCon(Rango_Horario rangoHorario1, Rango_Horario rangoHorario2){
 		rangoHorario2.horaInicio.estaEntre(rangoHorario1) || rangoHorario2.horaFinal.estaEntre(rangoHorario1) 		
 	}	
 	def boolean estaEntre(Horario horario, Rango_Horario rangoHorario){
-		rangoHorario.horaInicio < horario && horario < rangoHorario.horaFinal 
+		rangoHorario.horaInicio <= horario && horario <= rangoHorario.horaFinal 
 	}
 }

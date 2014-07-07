@@ -81,6 +81,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="horaFinal" eType="#//Horario"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Disponible" eSuperTypes="#//Disponibilidad"/>
+  <eClassifiers xsi:type="ecore:EClass" name="No_Disponible" eSuperTypes="#//Disponibilidad"/>
   <eClassifiers xsi:type="ecore:EClass" name="Simple" eSuperTypes="#//Dedicacion"/>
   <eClassifiers xsi:type="ecore:EClass" name="Semi" eSuperTypes="#//Dedicacion"/>
   <eClassifiers xsi:type="ecore:EClass" name="Exclusiva" eSuperTypes="#//Dedicacion"/>

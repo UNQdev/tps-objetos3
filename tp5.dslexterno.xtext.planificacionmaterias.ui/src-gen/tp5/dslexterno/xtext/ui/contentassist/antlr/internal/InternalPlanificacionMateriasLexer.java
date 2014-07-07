@@ -2393,10 +2393,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:12: ( '0x' | '0X' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2424,7 +2424,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:13: '0x'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:13: '0x'
                     {
                     match("0x"); 
 
@@ -2432,7 +2432,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:18: '0X'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:18: '0X'
                     {
                     match("0X"); 
 
@@ -2442,7 +2442,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
             }
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -2480,7 +2480,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2489,10 +2489,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -2510,7 +2510,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2534,7 +2534,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22257:84: ( 'l' | 'L' )
+                            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22323:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2573,11 +2573,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22259:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22259:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22325:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22325:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22259:21: ( '0' .. '9' | '_' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22325:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2626,11 +2626,11 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2639,7 +2639,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2650,7 +2650,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:36: ( '+' | '-' )?
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2683,7 +2683,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
             }
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2695,7 +2695,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2719,7 +2719,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22261:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22327:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2752,10 +2752,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22263:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22263:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22329:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22329:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22263:11: ( '^' )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22329:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2764,7 +2764,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22263:11: '^'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22329:11: '^'
                     {
                     match('^'); 
 
@@ -2782,7 +2782,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22263:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22329:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2831,10 +2831,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2852,10 +2852,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2871,7 +2871,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2887,7 +2887,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2912,10 +2912,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2931,7 +2931,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2947,7 +2947,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22265:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22331:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2990,12 +2990,12 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22267:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22267:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22333:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22333:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22267:24: ( options {greedy=false; } : . )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22333:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -3020,7 +3020,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22267:52: .
+            	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22333:52: .
             	    {
             	    matchAny(); 
 
@@ -3050,12 +3050,12 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -3068,7 +3068,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3088,7 +3088,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                 }
             } while (true);
 
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:40: ( ( '\\r' )? '\\n' )?
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -3097,9 +3097,9 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:41: ( '\\r' )? '\\n'
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:41: ( '\\r' )? '\\n'
                     {
-                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:41: ( '\\r' )?
+                    // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -3108,7 +3108,7 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22269:41: '\\r'
+                            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22335:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3140,10 +3140,10 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22271:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22271:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22337:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22337:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22271:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22337:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -3197,8 +3197,8 @@ public class InternalPlanificacionMateriasLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22273:16: ( . )
-            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22273:18: .
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22339:16: ( . )
+            // ../tp5.dslexterno.xtext.planificacionmaterias.ui/src-gen/tp5/dslexterno/xtext/ui/contentassist/antlr/internal/InternalPlanificacionMaterias.g:22339:18: .
             {
             matchAny(); 
 

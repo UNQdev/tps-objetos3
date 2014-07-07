@@ -289,10 +289,10 @@ public class PlanificacionMateriasParser extends AbstractContentAssistParser {
 					put(grammarAccess.getProfesorAccess().getNameAssignment_1(), "rule__Profesor__NameAssignment_1");
 					put(grammarAccess.getProfesorAccess().getDedicacionAssignment_3(), "rule__Profesor__DedicacionAssignment_3");
 					put(grammarAccess.getProfesorAccess().getDisponibilidadAssignment_6(), "rule__Profesor__DisponibilidadAssignment_6");
-					put(grammarAccess.getDisponibilidadAccess().getDiaAssignment_0_1(), "rule__Disponibilidad__DiaAssignment_0_1");
-					put(grammarAccess.getDisponibilidadAccess().getRangosHorarioAssignment_0_2(), "rule__Disponibilidad__RangosHorarioAssignment_0_2");
-					put(grammarAccess.getDisponibilidadAccess().getDiaAssignment_1_1(), "rule__Disponibilidad__DiaAssignment_1_1");
-					put(grammarAccess.getDisponibilidadAccess().getRangosHorarioAssignment_1_2(), "rule__Disponibilidad__RangosHorarioAssignment_1_2");
+					put(grammarAccess.getDisponibilidadAccess().getDiaAssignment_0_2(), "rule__Disponibilidad__DiaAssignment_0_2");
+					put(grammarAccess.getDisponibilidadAccess().getRangosHorarioAssignment_0_3(), "rule__Disponibilidad__RangosHorarioAssignment_0_3");
+					put(grammarAccess.getDisponibilidadAccess().getDiaAssignment_1_2(), "rule__Disponibilidad__DiaAssignment_1_2");
+					put(grammarAccess.getDisponibilidadAccess().getRangosHorarioAssignment_1_3(), "rule__Disponibilidad__RangosHorarioAssignment_1_3");
 					put(grammarAccess.getAulaAccess().getNameAssignment_1(), "rule__Aula__NameAssignment_1");
 					put(grammarAccess.getAulaAccess().getCapacidadAssignment_4(), "rule__Aula__CapacidadAssignment_4");
 					put(grammarAccess.getAulaAccess().getRecusosAssignment_6_1(), "rule__Aula__RecusosAssignment_6_1");

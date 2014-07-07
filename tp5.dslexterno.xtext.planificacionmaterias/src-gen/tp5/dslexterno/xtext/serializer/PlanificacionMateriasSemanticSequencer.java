@@ -60,11 +60,12 @@ import org.eclipse.xtext.xtype.XtypePackage;
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria;
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Aula;
-import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad;
+import tp5.dslexterno.xtext.planificacionMaterias.Disponible;
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva;
 import tp5.dslexterno.xtext.planificacionMaterias.Horario;
 import tp5.dslexterno.xtext.planificacionMaterias.Materia;
 import tp5.dslexterno.xtext.planificacionMaterias.Model;
+import tp5.dslexterno.xtext.planificacionMaterias.No_Disponible;
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion;
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage;
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor;
@@ -100,9 +101,9 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 					return; 
 				}
 				else break;
-			case PlanificacionMateriasPackage.DISPONIBILIDAD:
+			case PlanificacionMateriasPackage.DISPONIBLE:
 				if(context == grammarAccess.getDisponibilidadRule()) {
-					sequence_Disponibilidad(context, (Disponibilidad) semanticObject); 
+					sequence_Disponibilidad(context, (Disponible) semanticObject); 
 					return; 
 				}
 				else break;
@@ -127,6 +128,12 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 			case PlanificacionMateriasPackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
+					return; 
+				}
+				else break;
+			case PlanificacionMateriasPackage.NO_DISPONIBLE:
+				if(context == grammarAccess.getDisponibilidadRule()) {
+					sequence_Disponibilidad(context, (No_Disponible) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1328,9 +1335,18 @@ public class PlanificacionMateriasSemanticSequencer extends XbaseSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     ((dia=Dia rangosHorario=Rango_Horario?) | (dia=Dia rangosHorario=Rango_Horario?))
+	 *     (dia=Dia rangosHorario=Rango_Horario?)
 	 */
-	protected void sequence_Disponibilidad(EObject context, Disponibilidad semanticObject) {
+	protected void sequence_Disponibilidad(EObject context, Disponible semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (dia=Dia rangosHorario=Rango_Horario?)
+	 */
+	protected void sequence_Disponibilidad(EObject context, No_Disponible semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
