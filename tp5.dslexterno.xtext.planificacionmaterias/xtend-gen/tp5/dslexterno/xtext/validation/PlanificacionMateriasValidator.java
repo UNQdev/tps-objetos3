@@ -115,10 +115,9 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     int _cantidadHorasSemanales = _materia.getCantidadHorasSemanales();
     final int diferenciaHoras = (_horasAsignadas - _cantidadHorasSemanales);
     int _diasAsignados = this.diasAsignados(asignacion);
-    int _minus = (-_diasAsignados);
     Materia _materia_1 = asignacion.getMateria();
     int _diasSemanales = _materia_1.getDiasSemanales();
-    final int diferenciaDias = (_minus - _diasSemanales);
+    final int diferenciaDias = (_diasAsignados - _diasSemanales);
     if ((diferenciaHoras < 0)) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("A la materia ");
@@ -509,6 +508,56 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   /**
    * LA MAGIA DE MODELAR HORARIOS COMO LA GENTE, LPM :D
    */
+  public boolean operator_lessThan(final Horario horario1, final Horario horario2) {
+    boolean _or = false;
+    int _hora = horario1.getHora();
+    int _hora_1 = horario2.getHora();
+    boolean _lessThan = (_hora < _hora_1);
+    if (_lessThan) {
+      _or = true;
+    } else {
+      boolean _and = false;
+      int _hora_2 = horario1.getHora();
+      int _hora_3 = horario2.getHora();
+      boolean _equals = (_hora_2 == _hora_3);
+      if (!_equals) {
+        _and = false;
+      } else {
+        int _minutos = horario1.getMinutos();
+        int _minutos_1 = horario2.getMinutos();
+        boolean _lessThan_1 = (_minutos < _minutos_1);
+        _and = _lessThan_1;
+      }
+      _or = _and;
+    }
+    return _or;
+  }
+  
+  public boolean operator_greaterThan(final Horario horario1, final Horario horario2) {
+    boolean _or = false;
+    int _hora = horario1.getHora();
+    int _hora_1 = horario2.getHora();
+    boolean _greaterThan = (_hora > _hora_1);
+    if (_greaterThan) {
+      _or = true;
+    } else {
+      boolean _and = false;
+      int _hora_2 = horario1.getHora();
+      int _hora_3 = horario2.getHora();
+      boolean _equals = (_hora_2 == _hora_3);
+      if (!_equals) {
+        _and = false;
+      } else {
+        int _minutos = horario1.getMinutos();
+        int _minutos_1 = horario2.getMinutos();
+        boolean _greaterThan_1 = (_minutos > _minutos_1);
+        _and = _greaterThan_1;
+      }
+      _or = _and;
+    }
+    return _or;
+  }
+  
   public boolean operator_lessEqualsThan(final Horario horario1, final Horario horario2) {
     boolean _or = false;
     int _hora = horario1.getHora();
@@ -559,11 +608,14 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return _or;
   }
   
-  protected String _toString(final Horario horario) {
+  protected CharSequence _toString(final Horario horario) {
+    StringConcatenation _builder = new StringConcatenation();
     int _hora = horario.getHora();
-    String _plus = (Integer.valueOf(_hora) + ":");
+    _builder.append(_hora, "");
+    _builder.append(" : ");
     int _minutos = horario.getMinutos();
-    return (_plus + Integer.valueOf(_minutos));
+    _builder.append(_minutos, "");
+    return _builder;
   }
   
   public int cantidadDeHoras(final Rango_Horario rangoHorario) {
@@ -591,13 +643,13 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   public boolean estaEntre(final Horario horario, final Rango_Horario rangoHorario) {
     boolean _and = false;
     Horario _horaInicio = rangoHorario.getHoraInicio();
-    boolean _lessEqualsThan = this.operator_lessEqualsThan(_horaInicio, horario);
-    if (!_lessEqualsThan) {
+    boolean _lessThan = this.operator_lessThan(_horaInicio, horario);
+    if (!_lessThan) {
       _and = false;
     } else {
       Horario _horaFinal = rangoHorario.getHoraFinal();
-      boolean _lessEqualsThan_1 = this.operator_lessEqualsThan(horario, _horaFinal);
-      _and = _lessEqualsThan_1;
+      boolean _lessThan_1 = this.operator_lessThan(horario, _horaFinal);
+      _and = _lessThan_1;
     }
     return _and;
   }
@@ -606,8 +658,8 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     boolean _and = false;
     Horario _horaInicio = rangoHorario.getHoraInicio();
     Horario _horaInicio_1 = rangoHorario2.getHoraInicio();
-    boolean _lessEqualsThan = this.operator_lessEqualsThan(_horaInicio, _horaInicio_1);
-    if (!_lessEqualsThan) {
+    boolean _lessThan = this.operator_lessThan(_horaInicio, _horaInicio_1);
+    if (!_lessThan) {
       _and = false;
     } else {
       Horario _horaFinal = rangoHorario.getHoraFinal();
@@ -618,26 +670,29 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return _and;
   }
   
-  protected String _toString(final Rango_Horario rangoHorario) {
+  protected CharSequence _toString(final Rango_Horario rangoHorario) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("de ");
     Horario _horaInicio = rangoHorario.getHoraInicio();
-    String _string = _horaInicio.toString();
-    String _plus = ("de" + _string);
-    String _plus_1 = (_plus + "a");
+    _builder.append(_horaInicio, "");
+    _builder.append(" a ");
     Horario _horaFinal = rangoHorario.getHoraFinal();
-    String _string_1 = _horaFinal.toString();
-    return (_plus_1 + _string_1);
+    _builder.append(_horaFinal, "");
+    return _builder;
   }
   
   public boolean equals(final Dia dia1, final Dia dia2) {
     return Objects.equal(dia1, dia2);
   }
   
-  protected String _toString(final Asignacion_Diaria asignacionDiaria) {
+  protected CharSequence _toString(final Asignacion_Diaria asignacionDiaria) {
+    StringConcatenation _builder = new StringConcatenation();
     Dia _dia = asignacionDiaria.getDia();
-    String _string = _dia.toString();
+    _builder.append(_dia, "");
+    _builder.append(" ");
     Rango_Horario _rangoHorario = asignacionDiaria.getRangoHorario();
-    String _string_1 = _rangoHorario.toString();
-    return (_string + _string_1);
+    _builder.append(_rangoHorario, "");
+    return _builder;
   }
   
   /**
@@ -807,7 +862,7 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     }
   }
   
-  public String toString(final EObject asignacionDiaria) {
+  public CharSequence toString(final EObject asignacionDiaria) {
     if (asignacionDiaria instanceof Asignacion_Diaria) {
       return _toString((Asignacion_Diaria)asignacionDiaria);
     } else if (asignacionDiaria instanceof Horario) {

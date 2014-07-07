@@ -55,7 +55,7 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	@Check
 	def validarCargaHorariaMateria(Asignacion_Materia asignacion){
 		val diferenciaHoras = asignacion.horasAsignadas - asignacion.materia.cantidadHorasSemanales
-		val diferenciaDias =  - asignacion.diasAsignados - asignacion.materia.diasSemanales
+		val diferenciaDias = asignacion.diasAsignados - asignacion.materia.diasSemanales
 		if (diferenciaHoras < 0){
 			error('''A la materia «asignacion.materia.name.toUpperCase» le falta asignar «(-diferenciaHoras).toString» horas''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
@@ -216,7 +216,13 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	 * LA MAGIA DE MODELAR HORARIOS COMO LA GENTE, LPM :D 
 	 * 
 	 */
-	 //HORARIOS
+	//HORARIOS
+	def <(Horario horario1, Horario horario2){
+		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
+	}	
+	def >(Horario horario1, Horario horario2){
+		horario1.hora > horario2.hora || (horario1.hora == horario2.hora && horario1.minutos > horario2.minutos)
+	}	
 	def <=(Horario horario1, Horario horario2){
 		horario1.hora <= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos <= horario2.minutos)
 	}	
@@ -224,7 +230,7 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		horario1.hora >= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos >= horario2.minutos)
 	}	
 	def dispatch toString(Horario horario){
-		horario.hora + ":" + horario.minutos
+		'''«horario.hora» : «horario.minutos»'''
 	}
 	//RANGOS HORARIOS
 	def int cantidadDeHoras(Rango_Horario rangoHorario){
@@ -234,33 +240,20 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		rangoHorario2.horaInicio.estaEntre(rangoHorario1) || rangoHorario2.horaFinal.estaEntre(rangoHorario1) 		
 	}
 	def boolean estaEntre(Horario horario, Rango_Horario rangoHorario){
-		rangoHorario.horaInicio <= horario && horario <= rangoHorario.horaFinal 
+		rangoHorario.horaInicio < horario && horario < rangoHorario.horaFinal 
 	}
 	def boolean abarcaRangoHorario(Rango_Horario rangoHorario, Rango_Horario rangoHorario2){
-		rangoHorario.horaInicio <= rangoHorario2.horaInicio && rangoHorario.horaFinal >= rangoHorario2.horaFinal 
+		rangoHorario.horaInicio < rangoHorario2.horaInicio && rangoHorario.horaFinal >= rangoHorario2.horaFinal 
 	}
 	def dispatch toString(Rango_Horario rangoHorario){
-		"de" + rangoHorario.horaInicio.toString + "a" + rangoHorario.horaFinal.toString
+		'''de «rangoHorario.horaInicio» a «rangoHorario.horaFinal»'''
 	}
 	def equals(Dia dia1, Dia dia2){
 		dia1 == dia2
 	}
 	def dispatch toString(Asignacion_Diaria asignacionDiaria){
-		asignacionDiaria.dia.toString + asignacionDiaria.rangoHorario.toString 
+		'''«asignacionDiaria.dia» «asignacionDiaria.rangoHorario»''' 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	/*

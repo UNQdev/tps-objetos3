@@ -67177,22 +67177,25 @@ public class InternalPlanificacionMateriasParser extends AbstractInternalContent
         }
     }
     static final String DFA115_eotS =
-        "\37\uffff";
+        "\116\uffff";
     static final String DFA115_eofS =
-        "\37\uffff";
+        "\1\41\115\uffff";
     static final String DFA115_minS =
-        "\1\4\36\0";
+        "\1\4\40\0\55\uffff";
     static final String DFA115_maxS =
-        "\1\170\36\0";
+        "\1\170\40\0\55\uffff";
     static final String DFA115_acceptS =
-        "\37\uffff";
+        "\41\uffff\1\2\53\uffff\1\1";
     static final String DFA115_specialS =
-        "\37\uffff}>";
+        "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
+        "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
+        "\1\32\1\33\1\34\1\35\1\36\1\37\55\uffff}>";
     static final String[] DFA115_transitionS = {
-            "\1\1\1\23\1\24\1\25\1\27\22\uffff\1\15\6\uffff\1\10\1\7\4\uffff"+
-            "\1\6\5\uffff\1\2\1\3\1\4\1\5\1\16\1\21\7\uffff\1\12\40\uffff"+
-            "\1\17\1\20\3\uffff\1\31\1\uffff\1\13\2\uffff\1\32\1\33\1\34"+
-            "\1\11\1\26\1\30\1\35\3\uffff\1\14\7\uffff\1\22",
+            "\1\1\1\23\1\24\1\25\1\27\5\uffff\15\41\1\15\6\41\1\10\1\7\4"+
+            "\41\1\6\5\41\1\2\1\3\1\4\1\5\1\16\1\21\7\uffff\1\12\1\41\31"+
+            "\uffff\1\41\2\uffff\3\41\1\17\1\20\2\41\1\40\1\31\1\41\1\13"+
+            "\2\41\1\32\1\33\1\34\1\11\1\26\1\30\1\35\1\36\1\37\1\41\1\14"+
+            "\1\41\2\uffff\2\41\1\uffff\1\41\1\22",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -67222,7 +67225,54 @@ public class InternalPlanificacionMateriasParser extends AbstractInternalContent
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
-            "\1\uffff"
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
     };
 
     static final short[] DFA115_eot = DFA.unpackEncodedString(DFA115_eotS);
@@ -67256,6 +67306,497 @@ public class InternalPlanificacionMateriasParser extends AbstractInternalContent
         }
         public String getDescription() {
             return "17168:1: ( rule__XReturnExpression__ExpressionAssignment_2 )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA115_1 = input.LA(1);
+
+                         
+                        int index115_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA115_2 = input.LA(1);
+
+                         
+                        int index115_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA115_3 = input.LA(1);
+
+                         
+                        int index115_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA115_4 = input.LA(1);
+
+                         
+                        int index115_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA115_5 = input.LA(1);
+
+                         
+                        int index115_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA115_6 = input.LA(1);
+
+                         
+                        int index115_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA115_7 = input.LA(1);
+
+                         
+                        int index115_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA115_8 = input.LA(1);
+
+                         
+                        int index115_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA115_9 = input.LA(1);
+
+                         
+                        int index115_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA115_10 = input.LA(1);
+
+                         
+                        int index115_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA115_11 = input.LA(1);
+
+                         
+                        int index115_11 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_11);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA115_12 = input.LA(1);
+
+                         
+                        int index115_12 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_12);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA115_13 = input.LA(1);
+
+                         
+                        int index115_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_13);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA115_14 = input.LA(1);
+
+                         
+                        int index115_14 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_14);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA115_15 = input.LA(1);
+
+                         
+                        int index115_15 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_15);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA115_16 = input.LA(1);
+
+                         
+                        int index115_16 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_16);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA115_17 = input.LA(1);
+
+                         
+                        int index115_17 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_17);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA115_18 = input.LA(1);
+
+                         
+                        int index115_18 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_18);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA115_19 = input.LA(1);
+
+                         
+                        int index115_19 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_19);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA115_20 = input.LA(1);
+
+                         
+                        int index115_20 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_20);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA115_21 = input.LA(1);
+
+                         
+                        int index115_21 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_21);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA115_22 = input.LA(1);
+
+                         
+                        int index115_22 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_22);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA115_23 = input.LA(1);
+
+                         
+                        int index115_23 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_23);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 23 : 
+                        int LA115_24 = input.LA(1);
+
+                         
+                        int index115_24 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_24);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA115_25 = input.LA(1);
+
+                         
+                        int index115_25 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_25);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 25 : 
+                        int LA115_26 = input.LA(1);
+
+                         
+                        int index115_26 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_26);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA115_27 = input.LA(1);
+
+                         
+                        int index115_27 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_27);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 27 : 
+                        int LA115_28 = input.LA(1);
+
+                         
+                        int index115_28 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_28);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 28 : 
+                        int LA115_29 = input.LA(1);
+
+                         
+                        int index115_29 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_29);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 29 : 
+                        int LA115_30 = input.LA(1);
+
+                         
+                        int index115_30 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_30);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 30 : 
+                        int LA115_31 = input.LA(1);
+
+                         
+                        int index115_31 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_31);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 31 : 
+                        int LA115_32 = input.LA(1);
+
+                         
+                        int index115_32 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred163_InternalPlanificacionMaterias()) ) {s = 77;}
+
+                        else if ( (true) ) {s = 33;}
+
+                         
+                        input.seek(index115_32);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 115, _s, input);
+            error(nvae);
+            throw nvae;
         }
     }
     static final String DFA124_eotS =
