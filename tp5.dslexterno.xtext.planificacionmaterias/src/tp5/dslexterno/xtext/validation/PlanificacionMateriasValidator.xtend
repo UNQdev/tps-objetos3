@@ -4,22 +4,22 @@
 package tp5.dslexterno.xtext.validation
 
 import java.util.List
+import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.validation.Check
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Diaria
 import tp5.dslexterno.xtext.planificacionMaterias.Asignacion_Materia
 import tp5.dslexterno.xtext.planificacionMaterias.Dia
+import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad
+import tp5.dslexterno.xtext.planificacionMaterias.Disponible
 import tp5.dslexterno.xtext.planificacionMaterias.Exclusiva
+import tp5.dslexterno.xtext.planificacionMaterias.Horario
+import tp5.dslexterno.xtext.planificacionMaterias.No_Disponible
 import tp5.dslexterno.xtext.planificacionMaterias.Planificacion
 import tp5.dslexterno.xtext.planificacionMaterias.PlanificacionMateriasPackage
 import tp5.dslexterno.xtext.planificacionMaterias.Profesor
 import tp5.dslexterno.xtext.planificacionMaterias.Rango_Horario
 import tp5.dslexterno.xtext.planificacionMaterias.Semi
 import tp5.dslexterno.xtext.planificacionMaterias.Simple
-import tp5.dslexterno.xtext.planificacionMaterias.Horario
-import tp5.dslexterno.xtext.planificacionMaterias.Disponible
-import tp5.dslexterno.xtext.planificacionMaterias.No_Disponible
-import org.eclipse.emf.common.util.EList
-import tp5.dslexterno.xtext.planificacionMaterias.Disponibilidad
 
 /**
  * Custom validation rules. 
@@ -42,31 +42,37 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR)
 		}
 	}
-	
 	@Check
 	def validarTodasLasMateriasAsignadas(Planificacion planificacion){
 		val materiasADictar = planificacion.materiasADictar
 		val materiasAsignadas = planificacion.asignacionesDeMaterias.map[materia]
 		if(!materiasAsignadas.containsAll(materiasADictar)){
-			val diferenciaMaterias = materiasADictar.filter[!materiasAsignadas.contains(it)].map[name]			
-			error('''Falta asignar la/s siguiente/s materia/s: «diferenciaMaterias»''', planificacion,
+			val diferenciaMaterias = materiasADictar.filter[!materiasAsignadas.contains(it)]		
+			error('''Falta asignar la/s siguiente/s materia/s: «diferenciaMaterias.forEach[materia | materia.name.toUpperCase]»''', planificacion,
 				PlanificacionMateriasPackage.Literals.PLANIFICACION__MATERIAS_ADICTAR)
 		}
 	}
-	
 	@Check
 	def validarCargaHorariaMateria(Asignacion_Materia asignacion){
 		val diferenciaHoras = asignacion.horasAsignadas - asignacion.materia.cantidadHorasSemanales
+		val diferenciaDias =  - asignacion.diasAsignados - asignacion.materia.diasSemanales
 		if (diferenciaHoras < 0){
-			error('''A la materia «asignacion.materia.name.toUpperCase» le faltan asignar «(-diferenciaHoras).toString» horas''', asignacion,
+			error('''A la materia «asignacion.materia.name.toUpperCase» le falta asignar «(-diferenciaHoras).toString» horas''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
 		} 
 		if(diferenciaHoras > 0){
 			error('''La materia «asignacion.materia.name.toUpperCase» excede en «diferenciaHoras.toString» horas su carga semanal''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
 		}
+		if(diferenciaDias < 0){
+			error('''A la materia «asignacion.materia.name.toUpperCase» le falta asignar «(-diferenciaDias).toString» dias''', asignacion,
+				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
+		}
+		if(diferenciaDias > 0){
+			error('''A la materia «asignacion.materia.name.toUpperCase» le falta asignar «diferenciaHoras.toString» dias''', asignacion,
+				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
+		}
 	}
-	
 	@Check
 	def validarCompatibilidadAulaMateria(Asignacion_Materia asignacion){
 		val aula = asignacion.aula
@@ -77,17 +83,19 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__AULA)
 		}
 	}
-	
 	@Check
 	def validarSuperposicionEntreMaterias(Asignacion_Materia asignacion){
 		var listaAsignacionesEnMismaAula = (asignacion.eContainer as Planificacion).asignacionesDeMaterias.filter[aula == asignacion.aula].toList
 		if(listaAsignacionesEnMismaAula.seSuperponeConAlguno(asignacion)){
 //			var horarioOcupado = asignacion.horarioSuperpuesto(listaAsignacionesEnMismaAula)
-			error('''«asignacion.aula.name.toUpperCase» ya se encuentra ocupada en algun horario''', asignacion,
+			error('''«asignacion.aula.name.toUpperCase» se encuentra asignada en el horario solicitado''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
 		}
 	}
-		
+
+	
+	
+	
 	/*
 	 * Validaciones de puntos bonus
 	 */
@@ -96,25 +104,171 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		val alumnosInscriptos = asignacion.alumnosInscriptos
 		if(asignacion.aula.capacidad < alumnosInscriptos){
 			error('''«asignacion.aula.name.toUpperCase»  no tiene capacidad para la cantidad de alumnos inscriptos.''', asignacion,
-				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__ALUMNOS_INSCRIPTOS)
+				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__AULA)
 		}
 	}
-	
 	@Check
 	def validarDisponibilidadProfesor(Asignacion_Materia asignacion){
-		var listaDeHorarios = asignacion.asignacionesDiarias
-		var listaDisponibilidades = asignacion.profesor.disponibilidad
-		if(!listaDeHorarios.estanContenidosEn(listaDisponibilidades.filter[estaDisponible].toList) ||
-				listaDeHorarios.estanContenidosEn(listaDisponibilidades.filter[!estaDisponible].toList)){
-			var horarioNoDisponible = listaDisponibilidades.horarioNoDisponible(listaDeHorarios)
-			error('''«asignacion.profesor.name.toUpperCase» no tiene disponibilidad el dia «horarioNoDisponible.toString»''', asignacion,
-				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__ASIGNACIONES_DIARIAS)
+		var horariosMateria = asignacion.asignacionesDiarias
+		var disponibilidadProfesor = asignacion.profesor.disponibilidad
+		if(disponibilidadProfesor.coincideCon(horariosMateria)){
+			error('''«asignacion.profesor.name.toUpperCase» no tiene disponibilidad para la materia asignada''', asignacion,
+				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR)
 		}
 	}
+
 	
-	def Asignacion_Diaria horarioNoDisponible(EList<Disponibilidad> listaDisponibilidades, EList<Asignacion_Diaria> listaDeHorarios){
 		
+	
+	
+	/*
+	 * Validaciones extras
+	 * TODO: Mostrar esto!
+	 */
+	@Check
+	def validarDeclaracionRangoHorario(Rango_Horario rango){
+		if (rango.horaInicio.hora == rango.horaFinal.hora){
+			if (rango.horaInicio.minutos >= rango.horaFinal.minutos){
+				error('''El horario de INICIO del rango es posterior al horario de FINALIZACION por: «rango.horaInicio.minutos - rango.horaFinal.minutos» minutos''', rango,
+					PlanificacionMateriasPackage.Literals.RANGO_HORARIO__HORA_INICIO)
+			} 
+		} else {
+			if(rango.horaInicio.hora >= rango.horaFinal.hora){
+				error('''El horario de INICIO del rango es posterior al horario de FINALIZACION por «rango.horaInicio.hora - rango.horaFinal.hora» horas''', rango,
+					PlanificacionMateriasPackage.Literals.RANGO_HORARIO__HORA_INICIO)
+			}
+		}
 	}
+	//TODO: Consultar como puedo saber si tengo un elemento repetido...
+	@Check
+	def validarDeclaracionDisponibilidad(Profesor profesor){
+		val disponibilidadDeclarada = profesor.disponibilidad
+		if(disponibilidadDeclarada.hayRepetidas){
+			error('''Hay disponibilidades repetidas''', profesor,
+				PlanificacionMateriasPackage.Literals.PROFESOR__DISPONIBILIDAD)
+		}
+	}
+	def boolean hayRepetidas(EList<Disponibilidad> disponibilidades){
+//		disponibilidades.filter[disponibilidad | disponibilidad.repetida(disponibilidades)].size > 0
+		false		
+	}
+	
+	/*
+	 * PENDIENTES:
+	 * 
+	 * Validar los horarios declarados en una asignacion diaria
+	 * 
+	 */
+	
+	
+	/*
+	 * Comportamiento agregado via extension methods, como todo buen ser humano...
+	 */
+	// ASIGANCION_MATERIA
+	def int horasAsignadas(Asignacion_Materia asignacion) {
+		asignacion.asignacionesDiarias.map[rangoHorario.cantidadDeHoras].reduce[sum, cantHoras | sum + cantHoras]
+	}
+	def int diasAsignados(Asignacion_Materia asignacion){
+		asignacion.asignacionesDiarias.map[dia].size
+	}	
+	def dispatch boolean seSuperponeConAlguno(List<Asignacion_Materia> asignacionesMaterias, Asignacion_Materia asignacion){
+		asignacionesMaterias.remove(asignacion)
+		val listaAsignacionesDiariasDePlanificacion = asignacionesMaterias.map[asignacionesDiarias].flatten
+		listaAsignacionesDiariasDePlanificacion.exists[seSuperponeConAlguno(asignacion.asignacionesDiarias)]
+	}
+	def dispatch boolean seSuperponeConAlguno(Asignacion_Diaria asignacionDeDia, List<Asignacion_Diaria> listaAsignaciones){
+		listaAsignaciones.exists[rangoHorario.seSuperponeCon(asignacionDeDia.rangoHorario) && dia == asignacionDeDia.dia]
+	}
+	def boolean coincideCon(EList<Disponibilidad> disponibilidades, EList<Asignacion_Diaria> horariosMateria){
+		var cantHorarios = horariosMateria.size
+		horariosMateria.filter[asigDiaria | asigDiaria.estaCubiertaPor(disponibilidades)].size == cantHorarios
+	}
+	def boolean estaCubiertaPor(Asignacion_Diaria asignacionDiaria, EList<Disponibilidad> disponibilidades){
+		disponibilidades.exists[disponibilidad | 
+				if(disponibilidad.esDeDiaCompleto){
+					disponibilidad.dia.equals(asignacionDiaria.dia)
+				} else { disponibilidad.dia.equals(asignacionDiaria.dia) && 
+							disponibilidad.rangosHorario.abarcaRangoHorario(asignacionDiaria.rangoHorario) }]
+	}	
+	def boolean esDeDiaCompleto(Disponibilidad disponibilidad){
+		disponibilidad.rangosHorario == null
+	}
+		
+	// PROFESOR
+	def List<Asignacion_Materia> materiasAsignadasA(List<Asignacion_Materia> listaAsignaciones, Profesor profesor0){
+		listaAsignaciones.filter[profesor == profesor0].toList
+	}	
+	def int cantMateriasSegunDedicacion(Profesor profesor) {
+		profesor.dedicacion.cantidadMaterias
+	}
+	
+	// DEDICACION
+	def dispatch int cantidadMaterias(Simple dedicacion) { return 1 }
+	def dispatch int cantidadMaterias(Semi dedicacion) { return 2 }
+	def dispatch int cantidadMaterias(Exclusiva dedicacion) { return 5 }
+	
+	// DISPONIBILIDAD
+	def dispatch boolean estaDisponible(Disponible disponibilidad){ true }
+	def dispatch boolean estaDisponible(No_Disponible disponibilidad){ false }
+	
+	
+	/*
+	 * LA MAGIA DE MODELAR HORARIOS COMO LA GENTE, LPM :D 
+	 * 
+	 */
+	 //HORARIOS
+	def <=(Horario horario1, Horario horario2){
+		horario1.hora <= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos <= horario2.minutos)
+	}	
+	def >=(Horario horario1, Horario horario2){
+		horario1.hora >= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos >= horario2.minutos)
+	}	
+	def dispatch toString(Horario horario){
+		horario.hora + ":" + horario.minutos
+	}
+	//RANGOS HORARIOS
+	def int cantidadDeHoras(Rango_Horario rangoHorario){
+		rangoHorario.horaFinal.hora - rangoHorario.horaInicio.hora
+	}
+	def boolean seSuperponeCon(Rango_Horario rangoHorario1, Rango_Horario rangoHorario2){
+		rangoHorario2.horaInicio.estaEntre(rangoHorario1) || rangoHorario2.horaFinal.estaEntre(rangoHorario1) 		
+	}
+	def boolean estaEntre(Horario horario, Rango_Horario rangoHorario){
+		rangoHorario.horaInicio <= horario && horario <= rangoHorario.horaFinal 
+	}
+	def boolean abarcaRangoHorario(Rango_Horario rangoHorario, Rango_Horario rangoHorario2){
+		rangoHorario.horaInicio <= rangoHorario2.horaInicio && rangoHorario.horaFinal >= rangoHorario2.horaFinal 
+	}
+	def dispatch toString(Rango_Horario rangoHorario){
+		"de" + rangoHorario.horaInicio.toString + "a" + rangoHorario.horaFinal.toString
+	}
+	def equals(Dia dia1, Dia dia2){
+		dia1 == dia2
+	}
+	def dispatch toString(Asignacion_Diaria asignacionDiaria){
+		asignacionDiaria.dia.toString + asignacionDiaria.rangoHorario.toString 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * TODO: QUE ONDA CON ESTOS!?
+	 * 
+	 */	
+	def Asignacion_Diaria horarioNoDisponible(EList<Disponibilidad> listaDisponibilidades, EList<Asignacion_Diaria> listaDeHorarios){
+	}	
 	
 	def boolean estanContenidosEn(EList<Asignacion_Diaria> listaDeHorariosGeneral, List<Disponibilidad> disponibilidades){
 		val listaDisponibilidadTodoElDia = disponibilidades.filter[rangosHorario == null].toList
@@ -134,19 +288,18 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	
 	def boolean dentroDelRango(Rango_Horario horarioInterior, Rango_Horario horario){
 		horario.horaInicio <= horarioInterior.horaInicio && horarioInterior.horaFinal <= horario.horaFinal
-	}
-	
-	
+	}	
 	/*
 	 * Dada la reflexion llevada a cabo mas abajo en la validacion/verificacion extra, esta validacion/verificacion SOLICITADA por el enunciado no me satisface
 	 * Queda a vuestro gusto si persiste o se va
 	 */
 	
 	//Se que es una cagada que este duplicado, pero es la unica manera que se me ocurre a las (casi) 2AM de mostrar errores "COPADOS" ¬¬
-//	def boolean noEstaDisponibleHorario(Profesor profesor, Rango_Horario horarioMateria){
-//		val disponibilidades = profesor.disponibilidad
-//		disponibilidades.filter[disp | disp.rangoHorario.rangoIncluido(horarioMateria)].size > 0
-//	}
+	def boolean noEstaDisponibleHorario(Profesor profesor, Rango_Horario horarioMateria){
+		val disponibilidades = profesor.disponibilidad
+		disponibilidades.filter[disp | disp.rangosHorario.dentroDelRango(horarioMateria)].size > 0
+	}
+	
 	def boolean noEstaDisponibleDia(Profesor profesor, Dia diaMateria){
 		val disponibilidades = profesor.disponibilidad
 		disponibilidades.filter[disp | disp.dia.diaIncluido(diaMateria)].size > 0 
@@ -155,120 +308,12 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	def boolean diaIncluido(Dia dia, Dia diaMateria) {
 		dia == diaMateria
 	}
-		
-	/*
-	 * Validaciones extras
-	 */
-	@Check
-	def validarDiasDisponibles(Profesor profesor){
-		val diasDisponibles = profesor.disponibilidad.map[dia]
-		val repetidos = diasDisponibles.filter[d | diasDisponibles.map[d].size > 1] 
-		if(repetidos.size > 0){
-			error('''El/Los dia/s «repetidos.forEach[toString]» estan repetidos ''', profesor,
-				PlanificacionMateriasPackage.Literals.PROFESOR__DISPONIBILIDAD)
-		}
-	} /* Zafa, pero no son exactos. Existe la posibilidad de que se hable del mismo dia en distintos horarios.
-	   * un ejemplo rapido:
-	   * 
-	   * puede Lunes { de 8:00 a 12:00 }
-	   * puede Lunes { de 14:00 a 18:00 }
-	   * 
-	   * Entonces,
-	   * diasDisponibles.map[d].size > 1! ---> TRUE
-	   * pero no porque se esten definiendo dos veces al pedo
-	   * 
-	   * Habria que comparar los rangos o, a cada disponibilidad dentro de la lista de disponibilidades, definirlo como una lista de rangosHorario
-	   * Osea:
-	   * 
-	   * Disponibilidad:
-	   * 'puede:' dia=Dia (rangosHorario+=Rango_Horario)? |
-	   * 'no puede' dia=Dia (rangosHorario+=Rango_Horario)?
-	   * 
-	   * Termina siendo un trastorno...
-	   */
-	def validarHorariosDisponibles(Profesor profesor){
-		// TODO: ON HOLD
-	}
 	
-	/*
-	 * Comportamiento agregado via extension methods
-	 */	
-	
-	// ASIGANCION_MATERIA
-	def int horasAsignadas(Asignacion_Materia asignacion) {
-		val asignacionesDiarias = asignacion.asignacionesDiarias
-		asignacionesDiarias.map[rangoHorario.cantidadDeHoras].reduce[sum, cantHoras | sum + cantHoras]
-	}
-
-	def dispatch boolean seSuperponeConAlguno(List<Asignacion_Materia> asignacionesMaterias, Asignacion_Materia asignacion){
-		asignacionesMaterias.remove(asignacion)
-		val listaAsignacionesDiariasDePlanificacion = asignacionesMaterias.map[asignacionesDiarias].flatten
-		listaAsignacionesDiariasDePlanificacion.exists[seSuperponeConAlguno(asignacion.asignacionesDiarias)]
-	}
-
-	def dispatch boolean seSuperponeConAlguno(Asignacion_Diaria asignacionDeDia, List<Asignacion_Diaria> listaAsignaciones){
-		listaAsignaciones.exists[rangoHorario.seSuperponeCon(asignacionDeDia.rangoHorario) && dia == asignacionDeDia.dia]
-	}
-	
-	def Horario horarioSuperpuesto(Asignacion_Materia materia, List<Asignacion_Materia> materias){
-		
-	}
-	
-	// PROFESOR
-	def List<Asignacion_Materia> materiasAsignadasA(List<Asignacion_Materia> listaAsignaciones, Profesor profesor0){
-		listaAsignaciones.filter[profesor == profesor0].toList
-	}
-	
-	def int cantMateriasSegunDedicacion(Profesor profesor) {
-		profesor.dedicacion.cantidadMaterias
-	}
-	
-	// DEDICACION
-	def dispatch int cantidadMaterias(Simple dedicacion) { return 1 }
-	def dispatch int cantidadMaterias(Semi dedicacion) { return 2 }
-	def dispatch int cantidadMaterias(Exclusiva dedicacion) { return 5 }
-	
-	// DISPONIBILIDAD
-	def dispatch boolean estaDisponible(Disponible disponibilidad){ true }
-	def dispatch boolean estaDisponible(No_Disponible disponibilidad){ false }
-	
-	// HORARIOS
-	def int cantidadDeHoras(Rango_Horario horario){
-		horario.horaFinal.hora - horario.horaInicio.hora
-	}
-
-	def dispatch toString(Horario horario){
-		horario.hora + ":" + horario.minutos
-	}
-	
-	def dispatch toString(Rango_Horario rangoHorario){
-		"de" + rangoHorario.horaInicio.toString + "a" + rangoHorario.horaFinal.toString
-	}
-	
-	def dispatch toString(Asignacion_Diaria asignacionDiaria){
-		asignacionDiaria.dia.toString + asignacionDiaria.rangoHorario.toString 
-	}
-	
-//	def <(Horario horario1, Horario horario2){
-//		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
-//	} 
-//	
-//	def >(Horario horario1, Horario horario2){
-//		horario1.hora > horario2.hora || (horario1.hora == horario2.hora && horario1.minutos > horario2.minutos)
-//	}
-	
-	def <=(Horario horario1, Horario horario2){
-		horario1.hora <= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos <= horario2.minutos)
-	} 
-	
-	def >=(Horario horario1, Horario horario2){
-		horario1.hora >= horario2.hora || (horario1.hora == horario2.hora && horario1.minutos >= horario2.minutos)
-	} 
-	
-	def boolean seSuperponeCon(Rango_Horario rangoHorario1, Rango_Horario rangoHorario2){
-		rangoHorario2.horaInicio.estaEntre(rangoHorario1) || rangoHorario2.horaFinal.estaEntre(rangoHorario1) 		
-	}	
-	def boolean estaEntre(Horario horario, Rango_Horario rangoHorario){
-		rangoHorario.horaInicio <= horario && horario <= rangoHorario.horaFinal 
-	}
+	//	def <(Horario horario1, Horario horario2){
+	//		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
+	//	} 
+	//	
+	//	def >(Horario horario1, Horario horario2){
+	//		horario1.hora > horario2.hora || (horario1.hora == horario2.hora && horario1.minutos > horario2.minutos)
+	//	}
 }
