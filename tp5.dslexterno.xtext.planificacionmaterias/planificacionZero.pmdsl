@@ -1,0 +1,64 @@
+
+profesores en nomina {
+	profesor: Javier con dedicacion Exclusiva disponibilidad { puede: Lunes }
+	profesor: Nicolas con dedicacion Simple disponibilidad { puede: Martes }
+	profesor: Arturo con dedicacion Semi disponibilidad { no puede Lunes }
+}
+
+aulas {
+	aula aula60 { 
+		capacidad maxima: 35 alumnos
+		recursos: Proyector MaquinaProfesor MaquinaAlumnado
+	}
+	aula aula37b {
+		capacidad maxima: 30 alumnos
+		recursos: Proyector MaquinaAlumnado MaquinaProfesor
+	}
+}
+
+materias disponibles {
+	materia obj3 {
+		carga horaria: 4
+		cantidad de dias a la semana: 1
+		requiere: Proyector MaquinaProfesor MaquinaAlumnado 
+	}
+	materia interfaces {
+		carga horaria: 4
+		cantidad de dias a la semana: 1
+		requiere: Proyector MaquinaAlumnado MaquinaProfesor
+	}
+	materia funcional {
+		carga horaria: 4
+		cantidad de dias a la semana: 2
+		requiere: Proyector MaquinaProfesor 
+	}
+}
+
+planificacion 2014 semestre 2 {
+	materias a dictar: obj3 interfaces funcional
+	obj3 {
+		dictada por: Nicolas
+		aula: aula60
+		alumnos inscriptos: 20
+		horarios: {
+			Lunes de 14:00 a 18:00
+		}
+	}
+	interfaces {
+		dictada por: Javier
+		aula: aula37b
+		alumnos inscriptos: 15
+		horarios: {
+			Miercoles de 16:00 a 20:00 
+		}
+	}
+	funcional {
+		dictada por: Arturo
+		aula: aula37b
+		alumnos inscriptos: 30
+		horarios: {
+			Martes de 13:00 a 15:00
+			Miercoles de 14:00 a 16:00
+		}
+	}
+}

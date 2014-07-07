@@ -166,10 +166,10 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       String _name_3 = _materia_5.getName();
       String _upperCase_3 = _name_3.toUpperCase();
       _builder_3.append(_upperCase_3, "");
-      _builder_3.append(" excede en ");
-      String _string_3 = Integer.valueOf(diferenciaHoras).toString();
+      _builder_3.append(" le falta asignar ");
+      String _string_3 = Integer.valueOf(diferenciaDias).toString();
       _builder_3.append(_string_3, "");
-      _builder_3.append(" la cantidad de dias semanales");
+      _builder_3.append(" dias");
       this.error(_builder_3.toString(), asignacion, 
         PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA);
     }
@@ -324,22 +324,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
           PlanificacionMateriasPackage.Literals.RANGO_HORARIO__HORA_INICIO);
       }
     }
-  }
-  
-  @Check
-  public void validarDeclaracionDisponibilidad(final Profesor profesor) {
-    final EList<Disponibilidad> disponibilidadDeclarada = profesor.getDisponibilidad();
-    boolean _hayRepetidas = this.hayRepetidas(disponibilidadDeclarada);
-    if (_hayRepetidas) {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hay disponibilidades repetidas");
-      this.error(_builder.toString(), profesor, 
-        PlanificacionMateriasPackage.Literals.PROFESOR__DISPONIBILIDAD);
-    }
-  }
-  
-  public boolean hayRepetidas(final EList<Disponibilidad> disponibilidades) {
-    return false;
   }
   
   /**
