@@ -91,7 +91,7 @@ class PlanificacionMateriasInterpreter {
 	
 	def calcularHorariosLibres(List<Asignacion_Diaria> horariosOcupados){
 		val horariosLibres = new ArrayList()
-		(8..22).forEach[i|
+		(8..21).forEach[i|
 			if(!horariosOcupados.exists[rangoHorario.incluyeAlRango(i, i+1)]){
 				horariosLibres.add(i)
 			}
@@ -175,9 +175,4 @@ class PlanificacionMateriasInterpreter {
 			listaDeMaterias.toString
 		}
 	}
-	
-	
-	
-	
-	
 }

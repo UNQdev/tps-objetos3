@@ -166,7 +166,7 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
       String _name_3 = _materia_5.getName();
       String _upperCase_3 = _name_3.toUpperCase();
       _builder_3.append(_upperCase_3, "");
-      _builder_3.append(" le falta asignar ");
+      _builder_3.append(" excede en ");
       String _string_3 = Integer.valueOf(diferenciaDias).toString();
       _builder_3.append(_string_3, "");
       _builder_3.append(" dias");
@@ -177,8 +177,8 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   
   @Check
   public void validarCompatibilidadAulaMateria(final Asignacion_Materia asignacion) {
-    final Aula aula = asignacion.getAula();
-    EList<Recurso> _recusos = aula.getRecusos();
+    Aula _aula = asignacion.getAula();
+    EList<Recurso> _recusos = _aula.getRecusos();
     final Function1<Recurso, String> _function = new Function1<Recurso, String>() {
       public String apply(final Recurso it) {
         return it.getName();
@@ -197,7 +197,8 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     boolean _not = (!_containsAll);
     if (_not) {
       StringConcatenation _builder = new StringConcatenation();
-      String _name = aula.getName();
+      Aula _aula_1 = asignacion.getAula();
+      String _name = _aula_1.getName();
       String _upperCase = _name.toUpperCase();
       _builder.append(_upperCase, "");
       _builder.append("  no cuenta con los recursos requeridos por la materia ");
@@ -259,9 +260,9 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   
   @Check
   public void validarDisponibilidadProfesor(final Asignacion_Materia asignacion) {
-    EList<Asignacion_Diaria> horariosMateria = asignacion.getAsignacionesDiarias();
     Profesor _profesor = asignacion.getProfesor();
-    boolean _estaDisponibleParaLosHorarios = this.estaDisponibleParaLosHorarios(_profesor, horariosMateria);
+    EList<Asignacion_Diaria> _asignacionesDiarias = asignacion.getAsignacionesDiarias();
+    boolean _estaDisponibleParaLosHorarios = this.estaDisponibleParaLosHorarios(_profesor, _asignacionesDiarias);
     boolean _not = (!_estaDisponibleParaLosHorarios);
     if (_not) {
       StringConcatenation _builder = new StringConcatenation();
@@ -327,7 +328,7 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
   }
   
   /**
-   * Comportamiento agregado via extension methods, como todo buen ser humano...
+   * Extension methods
    */
   public int horasAsignadas(final Asignacion_Materia asignacion) {
     EList<Asignacion_Diaria> _asignacionesDiarias = asignacion.getAsignacionesDiarias();
@@ -622,9 +623,6 @@ public class PlanificacionMateriasValidator extends AbstractPlanificacionMateria
     return false;
   }
   
-  /**
-   * LA MAGIA DE MODELAR HORARIOS COMO LA GENTE, LPM :D
-   */
   public boolean operator_lessThan(final Horario horario1, final Horario horario2) {
     boolean _or = false;
     int _hora = horario1.getHora();

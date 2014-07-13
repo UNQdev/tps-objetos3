@@ -211,7 +211,7 @@ public class PlanificacionMateriasInterpreter {
     ArrayList<Integer> _xblockexpression = null;
     {
       final ArrayList<Integer> horariosLibres = new ArrayList<Integer>();
-      IntegerRange _upTo = new IntegerRange(8, 22);
+      IntegerRange _upTo = new IntegerRange(8, 21);
       final Procedure1<Integer> _function = new Procedure1<Integer>() {
         public void apply(final Integer i) {
           final Function1<Asignacion_Diaria, Boolean> _function = new Function1<Asignacion_Diaria, Boolean>() {

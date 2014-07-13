@@ -69,18 +69,16 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
 		}
 		if(diferenciaDias > 0){
-			error('''A la materia «asignacion.materia.name.toUpperCase» le falta asignar «diferenciaDias.toString» dias''', asignacion,
+			error('''A la materia «asignacion.materia.name.toUpperCase» excede en «diferenciaDias.toString» dias''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__MATERIA)
 		}
 	}
 	@Check
-	// Pisa a la validacion de superposicion entre materias
 	def validarCompatibilidadAulaMateria(Asignacion_Materia asignacion){
-		val aula = asignacion.aula
-		val recursosAula = aula.recusos.map[name]
+		val recursosAula = asignacion.aula.recusos.map[name]
 		val requerimientosMateria = asignacion.materia.requerimientos.map[name]
 		if (!recursosAula.containsAll(requerimientosMateria)){
-			error('''«aula.name.toUpperCase»  no cuenta con los recursos requeridos por la materia «asignacion.materia.name.toUpperCase»''', asignacion,
+			error('''«asignacion.aula.name.toUpperCase»  no cuenta con los recursos requeridos por la materia «asignacion.materia.name.toUpperCase»''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__AULA)
 		}
 	}
@@ -106,8 +104,7 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	}
 	@Check
 	def validarDisponibilidadProfesor(Asignacion_Materia asignacion){
-		var horariosMateria = asignacion.asignacionesDiarias
-		if(!asignacion.profesor.estaDisponibleParaLosHorarios(horariosMateria)){
+		if(!asignacion.profesor.estaDisponibleParaLosHorarios(asignacion.asignacionesDiarias)){
 			error('''«asignacion.profesor.name.toUpperCase» no tiene disponibilidad para la materia asignada''', asignacion,
 				PlanificacionMateriasPackage.Literals.ASIGNACION_MATERIA__PROFESOR)
 		}
@@ -132,22 +129,8 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 		}
 	}
 	
-	//TODO: Consultar como puedo saber si tengo un elemento repetido...
-//	@Check
-//	def validarDeclaracionDisponibilidad(Profesor profesor){
-//		val disponibilidadDeclarada = profesor.disponibilidad
-//		if(disponibilidadDeclarada.hayRepetidas){
-//			error('''Hay disponibilidades repetidas''', profesor,
-//				PlanificacionMateriasPackage.Literals.PROFESOR__DISPONIBILIDAD)
-//		}
-//	}
-//	def boolean hayRepetidas(EList<Disponibilidad> disponibilidades){
-////		disponibilidades.filter[disponibilidad | disponibilidad.repetida(disponibilidades)].size > 0
-//		false		
-//	}
-//	
 	/*
-	 * Comportamiento agregado via extension methods, como todo buen ser humano...
+	 * Extension methods
 	 */
 	 
 	// ASIGANCION_MATERIA
@@ -230,12 +213,7 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	def dispatch boolean estaDisponible(Disponible disponibilidad){ true }
 	def dispatch boolean estaDisponible(No_Disponible disponibilidad){ false }
 	
-	
-	/*
-	 * LA MAGIA DE MODELAR HORARIOS COMO LA GENTE, LPM :D 
-	 * 
-	 */
-	//HORARIOS
+	// HORARIOS
 	def <(Horario horario1, Horario horario2){
 		horario1.hora < horario2.hora || (horario1.hora == horario2.hora && horario1.minutos < horario2.minutos)
 	}	
@@ -251,7 +229,8 @@ class PlanificacionMateriasValidator extends AbstractPlanificacionMateriasValida
 	def dispatch toString(Horario horario){
 		'''«horario.hora» : «horario.minutos»'''
 	}
-	//RANGOS HORARIOS
+	
+	// RANGOS HORARIOS
 	def int cantidadDeHoras(Rango_Horario rangoHorario){
 		rangoHorario.horaFinal.hora - rangoHorario.horaInicio.hora
 	}
